@@ -6,6 +6,19 @@ const config = {
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro"
+  ],
+  tabWidth: 2,
+  semi: false,
+  singleQuote: true,
+  printWidth: 120,
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
   ],
   importOrder: [
     "<TYPES>",

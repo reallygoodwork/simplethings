@@ -1,0 +1,27 @@
+{
+  "name": "@simplethings/design-tokens",
+  "version": "0.0.0",
+  "private": true,
+  "types": "./dist/tokens.d.ts",
+  "exports": {
+    ".": "./dist/tokens.ts",
+    "./tailwind": "./dist/tailwind.ts"
+  },
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "devDependencies": {
+    "@simplethings/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "chroma-js": "^2.4.2",
+    "style-dictionary": "^3.9.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "./library.js"
+    ]
+  },
+  "prettier": "@simplethings/prettier-config"
+}

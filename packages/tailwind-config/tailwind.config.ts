@@ -1,15 +1,20 @@
 import type { Config } from "tailwindcss";
+import {
+  FONT_FAMILY_SANS
+} from "@simplethings/design-tokens/tailwind"
 
 // We want each package to be responsible for its own content.
 const config: Omit<Config, "content"> = {
   theme: {
-    extend: {
-      backgroundImage: {
-        "glow-conic":
-          "conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg)",
-      },
+    fontFamily: {
+      sans: FONT_FAMILY_SANS,
     },
+    colors: {
+      primary: 'hsl(var(--color-primary) / <alpha-value>)',
+      body: 'hsl(var(--color-body) / <alpha-value>)',
+    }
   },
   plugins: [],
 };
+
 export default config;

@@ -1,0 +1,91 @@
+---
+import { SEO as AstroSEO } from 'astro-seo'
+
+import '@styles/fonts.css'
+import '@simplethings/tailwind-config/simplethings.css'
+
+import Favicon from '@components/Favicon.astro'
+
+const {
+  title = 'Really Good Work Inc.',
+  description = 'eco-friendly websites, landing pages, and apps that are way better for the planet and your business.',
+  publishDate,
+  tags = [],
+  image = `${import.meta.env.SITE}/index.png`,
+} = Astro.props
+
+interface OpenGraphProps {
+  image: {
+    url: string
+    type: string
+    alt: string
+  }
+  basic: {
+    title: string
+    type: string
+    image: string
+  }
+  optional: {
+    siteName: string
+    description: string
+    locale: string
+  }
+  article?: {
+    publishedTime: string
+    modifiedTime: string
+    tags: string[]
+  }
+}
+
+const openGraph: OpenGraphProps = {
+  image: {
+    url: image,
+    type: 'image/png',
+    alt: title === 'Really Good Work' ? title : `${title} | Really Good Work`,
+  },
+  basic: {
+    title: title === 'Really Good Work' ? title : `${title} | Really Good Work`,
+    type: publishDate ? 'article' : 'website',
+    image,
+  },
+  optional: {
+    siteName: 'Really Good Work',
+    description,
+    locale: 'en_US',
+  },
+}
+
+if (publishDate) {
+  openGraph.article = {
+    publishedTime: publishDate,
+    modifiedTime: publishDate,
+    tags,
+  }
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <AstroSEO
+      title={title}
+      titleTemplate={title === 'Really Good Work' ? '%s | Sustainable websites' : '%s | Really Good Work'}
+      description={description}
+      openGraph={openGraph}
+      twitter={{
+        card: 'summary_large_image',
+        title,
+        description,
+        image,
+        imageAlt: title === 'Really Good Work' ? title : `${title} | Really Good Work`,
+      }}
+    />
+    <meta name="theme-color" content="#0000ec" />
+    <Favicon />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

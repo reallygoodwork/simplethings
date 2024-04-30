@@ -1,0 +1,57 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transforms": ["attribute/color", "name/cti/constant", "color/hsl-4"],
+      "files": [
+        {
+          "format": "css/variables",
+          "destination": "dist/tokens.css"
+        }
+      ]
+    },
+    "json": {
+      "transforms": ["custom/hsl"],
+      "files": [
+        {
+          "format": "json/nested",
+          "destination": "dist/tokens-flat.json"
+        }
+      ]
+    },
+    "tailwind": {
+      "transforms": ["name/cti/constant", "custom/hsl", "size/rem"],
+      "files": [
+        {
+          "format": "javascript/module",
+          "destination": "dist/tailwind.cjs"
+        },
+        {
+          "format": "javascript/es6",
+          "destination": "dist/tailwind.ts"
+        },
+        {
+          "format": "css/variables",
+          "destination": "dist/tailwind.css"
+        }
+      ]
+    },
+    "javascript": {
+      "transforms": ["attribute/color", "name/cti/constant"],
+      "files": [
+        {
+          "format": "javascript/module",
+          "destination": "dist/tokens.cjs"
+        },
+        {
+          "format": "javascript/es6",
+          "destination": "dist/tokens.ts"
+        },
+        {
+          "format": "typescript/es6-declarations",
+          "destination": "dist/tokens.d.ts"
+        }
+      ]
+    }
+  }
+}

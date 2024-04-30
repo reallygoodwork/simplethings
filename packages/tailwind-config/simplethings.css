@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-family: Satoshi,sans-serif;
+    --color-primary: 167deg 38% 15%;
+    --color-body: 48deg 10% 10%;
+  }
+}
+
+
+@layer components {
+ .st-body {
+  @apply font-sans text-base font-medium;
+  line-height: 1.375rem;
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "size": {
+    "font": {
+      "xs": {
+        "value": 0.75,
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "sm": {
+        "value": 0.875,
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "base": {
+        "value": 1,
+        "attributes": {
+          "category": "size"
+        }
+      },
+      "large": {
+        "value": 1.125,
+        "attributes": {
+          "category": "size"
+        }
+      }
+    }
+  }
+}

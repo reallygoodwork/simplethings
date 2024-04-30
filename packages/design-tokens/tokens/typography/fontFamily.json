@@ -1,0 +1,10 @@
+{
+  "fontFamily": {
+    "sans": {
+      "value": ["Satoshi", "sans-serif"],
+      "attributes": {
+        "category": "font"
+      }
+    }
+  }
+}
