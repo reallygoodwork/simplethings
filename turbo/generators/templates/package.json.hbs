@@ -1,0 +1,9 @@
+{ "name": "@simplethings/{{name}}", "private": true, "version": "0.0.0", "type":
+"module", "exports": { ".": "./src/index.ts" }, "license": "MIT", "scripts": {
+"clean": "rm -rf .turbo node_modules", "format": "prettier --check .
+--ignore-path ../../.gitignore", "lint": "eslint .", "typecheck": "tsc --noEmit"
+}, "devDependencies": { "@simplethings/eslint-config": "*",
+"@simplethings/prettier-config": "*", "@simplethings/typescript-config": "*",
+"eslint": "^8.56.0", "prettier": "^3.2.5", "typescript": "^5.3.3" },
+"eslintConfig": { "extends": [ "@simplethings/eslint-config/base" ] },
+"prettier": "@simplethings/prettier-config" }

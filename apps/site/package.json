@@ -1,5 +1,5 @@
 {
-  "name": "@simplethings/docs",
+  "name": "@simplethings/site",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@auth/core": "0.27.0",
-    "@astrojs/starlight": "^0.21.5",
     "astro": "^4.7.0"
   },
   "devDependencies": {

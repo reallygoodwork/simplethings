@@ -1,0 +1,12 @@
+{
+  "name": "@simplethings/tailwind-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "devDependencies": {
+    "@simplethings/typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.3"
+  }
+}
