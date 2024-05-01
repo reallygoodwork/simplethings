@@ -56,6 +56,63 @@
       "type": "color"
     }
   },
+  "Starship": {
+    "50": {
+      "value": "#fafde9",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#f2fcc5",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#eafa8e",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#e4f64e",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#e4f223",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#dde210",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#c3b80b",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#9b870d",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#816b12",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#6e5715",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#e4f223",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
   "Bamboo": {
     "50": {
       "value": "#ffefe5",
@@ -655,6 +712,10 @@
     "value": "1440px",
     "type": "dimension"
   },
+  "container-horizontal-padding": {
+    "value": "{space-6}",
+    "type": "spacing"
+  },
   "hero-subtitle-spacing": {
     "value": "{space-4}",
     "type": "spacing"
@@ -826,12 +887,6 @@
         "type": "composition"
       }
     }
-  },
-  "container": {
-    "value": {
-      "horizontalPadding": "{space-6}"
-    },
-    "type": "composition"
   },
   "inputRadius": {
     "value": "{rounded-md}",

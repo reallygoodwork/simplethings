@@ -21,6 +21,13 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Components',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Button', link: '/components/button/' },
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.

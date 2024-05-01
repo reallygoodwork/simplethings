@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 01 May 2024 17:57:57 GMT
+ * Generated on Wed, 01 May 2024 19:41:07 GMT
  */
 
 export const AMARANTH_50 = "0deg 100% 96%";
@@ -14,6 +14,17 @@ export const AMARANTH_700 = "344deg 100% 38%";
 export const AMARANTH_800 = "345deg 100% 31%";
 export const AMARANTH_900 = "346deg 100% 24%";
 export const AMARANTH_SOURCE = "350deg 88% 57%";
+export const STARSHIP_50 = "69deg 83% 95%";
+export const STARSHIP_100 = "71deg 90% 88%";
+export const STARSHIP_200 = "69deg 92% 77%";
+export const STARSHIP_300 = "66deg 90% 64%";
+export const STARSHIP_400 = "64deg 89% 54%";
+export const STARSHIP_500 = "61deg 87% 47%";
+export const STARSHIP_600 = "56deg 89% 40%";
+export const STARSHIP_700 = "52deg 85% 33%";
+export const STARSHIP_800 = "48deg 76% 29%";
+export const STARSHIP_900 = "44deg 68% 26%";
+export const STARSHIP_SOURCE = "64deg 89% 54%";
 export const BAMBOO_50 = "23deg 100% 95%";
 export const BAMBOO_100 = "23deg 100% 85%";
 export const BAMBOO_200 = "22deg 100% 76%";
@@ -118,6 +129,7 @@ export const ST_TITLE = "500 3rem/1 'Satoshi Variable'";
 export const ST_SUBTITLE = "500 1.5rem/2rem 'Satoshi Variable'";
 export const ST_LARGE = "500 2.25rem/2.5rem 'Satoshi Variable'";
 export const CONTAINER_MAX_WIDTH = "1440px";
+export const CONTAINER_HORIZONTAL_PADDING = "1.5rem";
 export const HERO_SUBTITLE_SPACING = "1rem";
 export const HERO_PADDING_TOP = "8rem";
 export const HERO_PADDING_BOTTOM = "5rem";
@@ -158,7 +170,6 @@ export const INPUT_LABEL_GAP_SPACING = "0.25rem";
 export const BUTTON_PRIMARY_XS_ITEM_SPACING = "0.625rem";
 export const BUTTON_PRIMARY_XS_VERTICAL_PADDING = "0.625rem";
 export const BUTTON_PRIMARY_XS_HORIZONTAL_PADDING = "1.5rem";
-export const CONTAINER_HORIZONTAL_PADDING = "1.5rem";
 export const INPUT_RADIUS = "0.375rem";
 export const PAGE_BACKGROUND = "#ffffff";
 export const SURFACE_GRAY = "20deg 6% 90%";

@@ -13,7 +13,8 @@
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm lint:ws",
     "typecheck": "turbo typecheck",
-    "build:workspaces": "turbo build --workspaces"
+    "build:tailwind": "turbo run build --filter tailwind-config",
+    "build:tokens": "turbo run build --filter design-tokens"
   },
   "devDependencies": {
     "@simplethings/eslint-config": "workspace:*",

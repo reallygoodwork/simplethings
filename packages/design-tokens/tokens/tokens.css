@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 01 May 2024 17:57:57 GMT
+ * Generated on Wed, 01 May 2024 19:41:07 GMT
  */
 
 :root {
@@ -15,6 +15,17 @@
   --AMARANTH_800: 345deg 100% 31%;
   --AMARANTH_900: 346deg 100% 24%;
   --AMARANTH_SOURCE: 350deg 88% 57%;
+  --STARSHIP_50: 69deg 83% 95%;
+  --STARSHIP_100: 71deg 90% 88%;
+  --STARSHIP_200: 69deg 92% 77%;
+  --STARSHIP_300: 66deg 90% 64%;
+  --STARSHIP_400: 64deg 89% 54%;
+  --STARSHIP_500: 61deg 87% 47%;
+  --STARSHIP_600: 56deg 89% 40%;
+  --STARSHIP_700: 52deg 85% 33%;
+  --STARSHIP_800: 48deg 76% 29%;
+  --STARSHIP_900: 44deg 68% 26%;
+  --STARSHIP_SOURCE: 64deg 89% 54%;
   --BAMBOO_50: 23deg 100% 95%;
   --BAMBOO_100: 23deg 100% 85%;
   --BAMBOO_200: 22deg 100% 76%;
@@ -119,6 +130,7 @@
   --ST_SUBTITLE: 500 1.5rem/2rem 'Satoshi Variable';
   --ST_LARGE: 500 2.25rem/2.5rem 'Satoshi Variable';
   --CONTAINER_MAX_WIDTH: 1440px;
+  --CONTAINER_HORIZONTAL_PADDING: 1.5rem;
   --HERO_SUBTITLE_SPACING: 1rem;
   --HERO_PADDING_TOP: 8rem;
   --HERO_PADDING_BOTTOM: 5rem;
@@ -159,7 +171,6 @@
   --BUTTON_PRIMARY_XS_ITEM_SPACING: 0.625rem;
   --BUTTON_PRIMARY_XS_VERTICAL_PADDING: 0.625rem;
   --BUTTON_PRIMARY_XS_HORIZONTAL_PADDING: 1.5rem;
-  --CONTAINER_HORIZONTAL_PADDING: 1.5rem;
   --INPUT_RADIUS: 0.375rem;
   --PAGE_BACKGROUND: #ffffff;
   --SURFACE_GRAY: 20deg 6% 90%;

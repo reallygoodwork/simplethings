@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 01 May 2024 17:57:57 GMT
+ * Generated on Wed, 01 May 2024 19:41:07 GMT
  */
 
 export const AMARANTH_50 : string;
@@ -14,6 +14,17 @@ export const AMARANTH_700 : string;
 export const AMARANTH_800 : string;
 export const AMARANTH_900 : string;
 export const AMARANTH_SOURCE : string;
+export const STARSHIP_50 : string;
+export const STARSHIP_100 : string;
+export const STARSHIP_200 : string;
+export const STARSHIP_300 : string;
+export const STARSHIP_400 : string;
+export const STARSHIP_500 : string;
+export const STARSHIP_600 : string;
+export const STARSHIP_700 : string;
+export const STARSHIP_800 : string;
+export const STARSHIP_900 : string;
+export const STARSHIP_SOURCE : string;
 export const BAMBOO_50 : string;
 export const BAMBOO_100 : string;
 export const BAMBOO_200 : string;
@@ -118,6 +129,7 @@ export const ST_TITLE : string;
 export const ST_SUBTITLE : string;
 export const ST_LARGE : string;
 export const CONTAINER_MAX_WIDTH : string;
+export const CONTAINER_HORIZONTAL_PADDING : string;
 export const HERO_SUBTITLE_SPACING : string;
 export const HERO_PADDING_TOP : string;
 export const HERO_PADDING_BOTTOM : string;
@@ -158,7 +170,6 @@ export const INPUT_LABEL_GAP_SPACING : string;
 export const BUTTON_PRIMARY_XS_ITEM_SPACING : string;
 export const BUTTON_PRIMARY_XS_VERTICAL_PADDING : string;
 export const BUTTON_PRIMARY_XS_HORIZONTAL_PADDING : string;
-export const CONTAINER_HORIZONTAL_PADDING : string;
 export const INPUT_RADIUS : string;
 export const PAGE_BACKGROUND : string;
 export const SURFACE_GRAY : string;
