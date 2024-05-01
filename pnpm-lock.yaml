@@ -55,16 +55,16 @@ importers:
         version: 3.4.3
     devDependencies:
       '@simplethings/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/eslint-config
       '@simplethings/prettier-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/prettier-config
       '@simplethings/tailwind-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/tailwind-config
       '@simplethings/typescript-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^20.11.20
@@ -122,16 +122,16 @@ importers:
         version: 3.4.3
     devDependencies:
       '@simplethings/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/eslint-config
       '@simplethings/prettier-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/prettier-config
       '@simplethings/tailwind-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/tailwind-config
       '@simplethings/typescript-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^20.11.20
@@ -239,7 +239,7 @@ importers:
         version: 0.5.14(@ianvs/prettier-plugin-sort-imports@4.2.1)(prettier-plugin-astro@0.13.0)(prettier@3.2.5)
     devDependencies:
       '@simplethings/typescript-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../typescript-config
       typescript:
         specifier: ^5.3.3
