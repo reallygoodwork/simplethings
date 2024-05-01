@@ -18,7 +18,7 @@
     "prettier-plugin-tailwindcss": "^0.5.10"
   },
   "devDependencies": {
-    "@simplethings/typescript-config": "*",
+    "@simplethings/typescript-config": "workspace:*",
     "typescript": "^5.3.3"
   },
   "prettier": "@simplethings/prettier-config"
