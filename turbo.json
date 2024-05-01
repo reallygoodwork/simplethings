@@ -4,22 +4,23 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".astro/**", "!.astro/cache/**"]
+      "outputs": [".astro/**", "!.astro/cache/**", "dist/**"]
     },
     "dev": {
       "persistent": true,
       "cache": false
     },
     "format": {
+      "dependsOn": ["^build"],
       "outputs": ["node_modules/.cache/.prettiercache"],
       "outputMode": "new-only"
     },
     "lint": {
-      "dependsOn": ["^topo"],
+      "dependsOn": ["^build"],
       "outputs": ["node_modules/.cache/.eslintcache"]
     },
     "typecheck": {
-      "dependsOn": ["^topo"],
+      "dependsOn": ["^build"],
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     },
     "clean": {

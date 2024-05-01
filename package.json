@@ -12,7 +12,8 @@
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm lint:ws",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "build:workspaces": "turbo build --workspaces"
   },
   "devDependencies": {
     "@simplethings/eslint-config": "workspace:*",
