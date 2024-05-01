@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss";
 import {
-  FONT_FAMILY_SANS
-} from "@simplethings/design-tokens/tailwind"
+  ST_FONT_FAMILY
+} from "@simplethings/design-tokens"
 
 // We want each package to be responsible for its own content.
 const config: Omit<Config, "content"> = {
   theme: {
     fontFamily: {
-      sans: FONT_FAMILY_SANS,
+      sans: ST_FONT_FAMILY,
     },
     colors: {
       primary: 'hsl(var(--color-primary) / <alpha-value>)',

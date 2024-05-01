@@ -1,32 +1,72 @@
+const { registerTransforms } = require('@tokens-studio/sd-transforms');
 const StyleDictionary = require('style-dictionary');
 const chroma = require('chroma-js');
 
 console.log('Build started...');
 console.log('\n==============================================');
 
-
-
+registerTransforms(StyleDictionary, {
+  expand: { composition: true, typography: false, border: false, shadow: false },
+});
 
 StyleDictionary.registerTransform({
-  name: 'custom/hsl', // notice: the name is an override of an existing predefined method (yes, you can do it)
+  name: 'custom/hsl',
   type: 'value',
-  matcher: function(token) {
-      // this is an example of a possible filter (based on the "cti" values) to show how a "matcher" works
-      return token.attributes.category === 'color';
+  matcher: function (prop) {
+    return prop.attributes.category === 'color' || prop.type === 'color';
   },
-  transformer: function (token) {
-    const hsl = chroma(token.value);
-    const saturation = hsl.get('hsl.s') * 100;
-    const lightness = hsl.get('hsl.l') * 100;
-    const hue = hsl.get('hsl.h');
-      return `${hue.toFixed()}deg ${saturation.toFixed()}% ${lightness.toFixed()}%`;
-  }
+  transformer: function (prop) {
+    if (prop.value === 'transparent') {
+      return prop.value;
+    }
+
+    const color = chroma(prop.value);
+    const s = color.get('hsl.s') * 100;
+    const l = color.get('hsl.l') * 100;
+    const h = color.get('hsl.h');
+
+    if (isNaN(h)) {
+      return prop.value;
+    }
+    return `${h.toFixed()}deg ${s.toFixed()}% ${l.toFixed()}%`;
+  },
 });
 
 
-const StyleDictionaryExtended = StyleDictionary.extend(__dirname + '/config.json');
+const StyleDictionaryExtended = StyleDictionary.extend({
+  source: ["studio/**/*.json"], // <-- make sure to have this match your token files!!!
+  platforms: {
+    css: {
+      // transformGroup: 'tokens-studio',
+      transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
+      buildPath: 'build/',
+      files: [
+        {
+          destination: 'tokens.css',
+          format: 'css/variables',
+        },
+      ],
+    },
+    js: {
+      // transformGroup: "tokens-studio",
+      transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
+      buildPath: "build/",
+      files: [
+        {
+          format: "typescript/es6-declarations",
+          destination: "tokens.d.ts"
+        },
+        {
+          destination: "tokens.ts",
+          format: "javascript/es6",
+        }
+      ]
+    }
+  },
+});
 
 // FINALLY, BUILD ALL THE PLATFORMS
+StyleDictionaryExtended.cleanAllPlatforms();
 StyleDictionaryExtended.buildAllPlatforms();
 
 

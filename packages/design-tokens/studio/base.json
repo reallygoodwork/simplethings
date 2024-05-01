@@ -1,0 +1,860 @@
+{
+  "Amaranth": {
+    "50": {
+      "value": "#ffeded",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#ffcac9",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#ffa6a8",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#ff8289",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#ff5f6f",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#f83c57",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#e01644",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#c20034",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#a00028",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#7b001d",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#f23051",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Bamboo": {
+    "50": {
+      "value": "#ffefe5",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#ffd0b2",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#ffb183",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#ff9459",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#f37834",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#df5f10",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#c74900",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#ab3700",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#8c2800",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#6c1e00",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#e96516",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Canary": {
+    "50": {
+      "value": "#f5f4e4",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#dfe0b1",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#c8cb81",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#b0b755",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#97a22c",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#808e00",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#697a00",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#556500",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#435100",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#343e00",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#f5ff78",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Havelock Blue": {
+    "50": {
+      "value": "#f0f3fe",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#d2dcfc",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#b4c6f8",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#95b0f0",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#779ae4",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#5b86d4",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#4172be",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#2b5ea5",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#1d4b88",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#173968",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#5683d2",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Marshland": {
+    "50": {
+      "value": "#f4f3f3",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#dddddb",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#c7c6c3",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#b2b0ac",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#9c9b96",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#888681",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#73726d",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#605e5a",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#4c4b47",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#3a3936",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#1c1b17",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Norway": {
+    "50": {
+      "value": "#f2f4f1",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#d8dfd5",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#bfcabb",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#a7b5a1",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#90a08a",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#7a8b74",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#667760",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#53634e",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#424f3d",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#323c2e",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#aabca3",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Shalimar": {
+    "50": {
+      "value": "#f4f4eb",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#dedfc5",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#c8c9a1",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#b1b480",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#9b9f63",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#858b4a",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#707636",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#5c6227",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#494f1b",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#383c14",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#f6fab2",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Snow": {
+    "50": {
+      "value": "#f3f4f5",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#dadde1",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#c3c7cd",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#acb1b9",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#969ca5",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#808791",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#6c727c",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#595f68",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#474c53",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#36393f",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#e4ebf6",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "Timber-Green": {
+    "50": {
+      "value": "#f0f4f3",
+      "description": "Shade color with 96% of lightness",
+      "type": "color"
+    },
+    "100": {
+      "value": "#d3dfdc",
+      "description": "Shade color with 88% of lightness",
+      "type": "color"
+    },
+    "200": {
+      "value": "#b8cac6",
+      "description": "Shade color with 80% of lightness",
+      "type": "color"
+    },
+    "300": {
+      "value": "#9db6af",
+      "description": "Shade color with 72% of lightness",
+      "type": "color"
+    },
+    "400": {
+      "value": "#85a19a",
+      "description": "Shade color with 64% of lightness",
+      "type": "color"
+    },
+    "500": {
+      "value": "#6e8c85",
+      "description": "Shade color with 56% of lightness",
+      "type": "color"
+    },
+    "600": {
+      "value": "#5a7871",
+      "description": "Shade color with 48% of lightness",
+      "type": "color"
+    },
+    "700": {
+      "value": "#48645d",
+      "description": "Shade color with 40% of lightness",
+      "type": "color"
+    },
+    "800": {
+      "value": "#38504a",
+      "description": "Shade color with 32% of lightness",
+      "type": "color"
+    },
+    "900": {
+      "value": "#2a3d38",
+      "description": "Shade color with 24% of lightness",
+      "type": "color"
+    },
+    "source": {
+      "value": "#17332d",
+      "description": "Source color",
+      "type": "color"
+    }
+  },
+  "body": {
+    "value": "{Marshland.source}",
+    "type": "color",
+    "description": "Body Text"
+  },
+  "body-soft": {
+    "value": "{body}",
+    "type": "color",
+    "$extensions": {
+      "studio.tokens": {
+        "modify": {
+          "type": "alpha",
+          "value": "0.6",
+          "space": "lch"
+        }
+      }
+    },
+    "description": "Body Text"
+  },
+  "body-muted": {
+    "value": "{body}",
+    "type": "color",
+    "$extensions": {
+      "studio.tokens": {
+        "modify": {
+          "type": "alpha",
+          "value": "0.8",
+          "space": "lch"
+        }
+      }
+    },
+    "description": "Body Text"
+  },
+  "st-body": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-base}",
+      "lineHeight": "1.375rem"
+    },
+    "type": "typography"
+  },
+  "st-font-family": {
+    "value": "Satoshi Variable",
+    "type": "fontFamilies"
+  },
+  "st-hero": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-7xl}",
+      "lineHeight": "{leading-none}",
+      "letterSpacing": "-1.44px"
+    },
+    "type": "typography"
+  },
+  "st-caption": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-xs}",
+      "lineHeight": "{leading-4}"
+    },
+    "type": "typography"
+  },
+  "st-small": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-normal}",
+      "fontSize": "{font-sm}",
+      "lineHeight": "{leading-5}"
+    },
+    "type": "typography"
+  },
+  "st-heading--bold": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-bold}",
+      "fontSize": "{font-lg}",
+      "lineHeight": "{leading-6}"
+    },
+    "type": "typography"
+  },
+  "st-heading": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-lg}",
+      "lineHeight": "{leading-6}"
+    },
+    "type": "typography"
+  },
+  "st-lead--tight": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-xl}",
+      "lineHeight": "22"
+    },
+    "type": "typography"
+  },
+  "st-lead": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-xl}",
+      "lineHeight": "{leading-6}"
+    },
+    "type": "typography"
+  },
+  "st-title": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-5xl}",
+      "lineHeight": "{leading-none}",
+      "letterSpacing": "-0.96px"
+    },
+    "type": "typography"
+  },
+  "st-subtitle": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-2xl}",
+      "lineHeight": "{leading-8}"
+    },
+    "type": "typography"
+  },
+  "st-large": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-4xl}",
+      "lineHeight": "{leading-10}",
+      "letterSpacing": "-0.18px"
+    },
+    "type": "typography"
+  },
+  "container-max-width": {
+    "value": "1440px",
+    "type": "dimension"
+  },
+  "hero-subtitle-spacing": {
+    "value": "{space-4}",
+    "type": "spacing"
+  },
+  "hero-padding-top": {
+    "value": "{space-32}",
+    "type": "spacing"
+  },
+  "hero-padding-bottom": {
+    "value": "{space-20}",
+    "type": "spacing"
+  },
+  "st-input-small": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-sm}",
+      "lineHeight": "{leading-none}"
+    },
+    "type": "typography"
+  },
+  "st-input": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-base}",
+      "lineHeight": "{leading-none}"
+    },
+    "type": "typography"
+  },
+  "input-text": {
+    "value": "{Marshland.400}",
+    "type": "color"
+  },
+  "input-bg": {
+    "value": "{white}",
+    "type": "color",
+    "$extensions": {
+      "studio.tokens": {
+        "modify": {
+          "type": "alpha",
+          "value": "0.8",
+          "space": "lch"
+        }
+      }
+    }
+  },
+  "input-border": {
+    "value": "{white}",
+    "type": "color",
+    "$extensions": {
+      "studio.tokens": {
+        "modify": {
+          "type": "darken",
+          "value": "0.1",
+          "space": "lch"
+        }
+      }
+    }
+  },
+  "st-label-small": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-sm}",
+      "lineHeight": "{leading-tight}"
+    },
+    "type": "typography",
+    "description": "Input Labels"
+  },
+  "st-label": {
+    "value": {
+      "fontFamily": "{st-font-family}",
+      "fontWeight": "{font-medium}",
+      "fontSize": "{font-base}",
+      "lineHeight": "{leading-5}"
+    },
+    "type": "typography",
+    "description": "Input Labels"
+  },
+  "input": {
+    "gap": {
+      "value": "{space-2_5}",
+      "type": "spacing"
+    },
+    "horizontalPadding": {
+      "value": "{space-4}",
+      "type": "spacing"
+    },
+    "horizontalPadding-sm": {
+      "value": "{space-3}",
+      "type": "spacing"
+    },
+    "verticalPadding-sm": {
+      "value": "{space-3}",
+      "type": "spacing"
+    },
+    "verticalPadding": {
+      "value": "{space-4}",
+      "type": "spacing"
+    },
+    "gap-helptext": {
+      "value": "{space-1}",
+      "type": "spacing"
+    },
+    "group-gap": {
+      "value": "{space-1}",
+      "type": "spacing"
+    },
+    "default": {
+      "value": {
+        "horizontalPadding": "{space-4}",
+        "verticalPadding": "{space-4}",
+        "itemSpacing": "{space-2_5}",
+        "borderRadius": "{inputRadius}",
+        "fill": "{input-bg}",
+        "borderColor": "{input-border}"
+      },
+      "type": "composition"
+    },
+    "default-noborder": {
+      "value": {
+        "horizontalPadding": "{space-4}",
+        "verticalPadding": "{space-4}",
+        "itemSpacing": "{space-2_5}"
+      },
+      "type": "composition"
+    },
+    "small": {
+      "value": {
+        "horizontalPadding": "{space-3}",
+        "verticalPadding": "{space-3}",
+        "itemSpacing": "{space-2_5}",
+        "borderRadius": "{inputRadius}",
+        "fill": "{input-bg}",
+        "borderColor": "{input-border}"
+      },
+      "type": "composition"
+    },
+    "small-noborder": {
+      "value": {
+        "horizontalPadding": "{space-3}",
+        "verticalPadding": "{space-3}",
+        "itemSpacing": "{space-2_5}"
+      },
+      "type": "composition"
+    },
+    "withHelpText": {
+      "value": {
+        "itemSpacing": "{space-1}"
+      },
+      "type": "composition"
+    },
+    "labelGap": {
+      "value": {
+        "spacing": "{space-1}"
+      },
+      "type": "composition"
+    }
+  },
+  "button": {
+    "primary": {
+      "xs": {
+        "value": {
+          "itemSpacing": "{space-2_5}",
+          "verticalPadding": "{space-2_5}",
+          "horizontalPadding": "{space-6}"
+        },
+        "type": "composition"
+      }
+    }
+  },
+  "container": {
+    "value": {
+      "horizontalPadding": "{space-6}"
+    },
+    "type": "composition"
+  },
+  "inputRadius": {
+    "value": "{rounded-md}",
+    "type": "borderRadius"
+  },
+  "page-background": {
+    "value": "{white}",
+    "type": "color"
+  },
+  "surface-gray": {
+    "value": "{stone.200}",
+    "type": "color"
+  },
+  "primary-bg": {
+    "value": "{Timber-Green.source}",
+    "type": "color"
+  },
+  "text-light-on-dark": {
+    "value": "{white}",
+    "type": "color"
+  },
+  "text-primary-on-dark": {
+    "value": "{Norway.source}",
+    "type": "color"
+  }
+}

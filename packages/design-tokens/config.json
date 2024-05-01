@@ -1,6 +1,17 @@
 {
-  "source": ["tokens/**/*.json"],
+  "source": ["studio/**/*.json"],
   "platforms": {
+    "tokens": {
+      "transformGroup": "tokens-studio",
+      "transforms": ["name/kebab"],
+      "buildPath": "build/css/",
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
     "css": {
       "transforms": ["attribute/color", "name/cti/constant", "color/hsl-4"],
       "files": [
