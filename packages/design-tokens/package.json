@@ -2,10 +2,10 @@
   "name": "@simplethings/design-tokens",
   "version": "0.0.0",
   "private": true,
-  "types": "./build/tokens.d.ts",
+  "types": "./tokens/tokens.d.ts",
   "exports": {
-    ".": "./build/tokens.ts",
-    "./styles": "./build/tokens.css"
+    ".": "./tokens/tokens.ts",
+    "./styles": "./tokens/tokens.css"
   },
   "scripts": {
     "build": "node ./build.js"

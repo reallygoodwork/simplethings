@@ -39,7 +39,7 @@ const StyleDictionaryExtended = StyleDictionary.extend({
     css: {
       // transformGroup: 'tokens-studio',
       transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
-      buildPath: 'build/',
+      buildPath: 'tokens/',
       files: [
         {
           destination: 'tokens.css',
@@ -50,7 +50,7 @@ const StyleDictionaryExtended = StyleDictionary.extend({
     js: {
       // transformGroup: "tokens-studio",
       transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
-      buildPath: "build/",
+      buildPath: "tokens/",
       files: [
         {
           format: "typescript/es6-declarations",
