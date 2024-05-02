@@ -1,0 +1,22 @@
+{
+  "input": {
+    "bg": {
+      "value": "{color.surface.value}",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "text": {
+      "value": "#605e5a",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "border": {
+      "value": "{color.alt.value}",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

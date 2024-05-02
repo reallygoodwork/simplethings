@@ -4,35 +4,113 @@
 
 @layer base {
   :root {
-    --font-family: Satoshi Variable;
+    --baseUnit: 16px;
+    --heading-font-family: "Satoshi Variable";
+    --body-font-family: "Satoshi Variable";
     --color-primary: 167deg 38% 15%;
     --color-body: 48deg 10% 10%;
     --color-alt: 0deg 4% 95%;
-    --color-accent: 64deg 89% 54%;
-    --color-surface: #ffffff;
+    --color-accent: 167deg 38% 15%;
+    --color-surface: 0deg 0% 100%;
     --color-soft: 103deg 16% 69%;
     --color-muted: 50deg 3% 60%;
-    --color-input-bg: #ffffff;
+    --color-input-bg: 0deg 0% 100%;
     --color-input-text: 40deg 3% 36%;
     --color-input-border: 0deg 4% 95%;
-    --button-radius: 0.375rem
+
+    /* Button */
+    --btn-radius: 0.375rem;
+    --btn-x: calc(var(--baseUnit) * 1.5);
+    --btn-xs-y: calc(var(--baseUnit) * 0.625);
+    --btn-sm-y: calc(var(--baseUnit) * 0.625);
+    --btn-md-y: calc(var(--baseUnit) * 0.75);
+    --btn-lg-y: var(--baseUnit);
+    --btn-link-y: calc(var(--baseUnit) * 0.5);
+    --btn-gap: calc(var(--baseUnit) * 1.5);
+    --btn-leading: 1;
+    --btn-font-size-xs: 0.75rem;
+    --btn-font-size-sm: 0.875rem;
+    --btn-font-size: 1rem;
   }
 }
 
 @layer components {
-  .st-body { font: 500 1rem/1.375rem 'Satoshi Variable' }
-  .st-hero { font: 500 4.5rem/1 'Satoshi Variable' }
-  .st-caption { font: 500 0.75rem/1rem 'Satoshi Variable' }
-  .st-small { font: 400 0.875rem/1.25rem 'Satoshi Variable' }
-  .st-heading-bold { font: 700 1.125rem/1.5rem 'Satoshi Variable' }
-  .st-heading { font: 500 1.125rem/1.5rem 'Satoshi Variable' }
-  .st-lead { font: 500 1.25rem/1.5rem 'Satoshi Variable' }
-  .st-lead-tight { font: 500 1.25rem/22 'Satoshi Variable' }
-  .st-title { font: 500 3rem/1 'Satoshi Variable' }
-  .st-subtitle { font: 500 1.5rem/2rem 'Satoshi Variable' }
-  .st-large { font: 500 2.25rem/2.5rem 'Satoshi Variable' }
-  .st-input { font: 500 1rem/1 'Satoshi Variable' }
-  .st-input-small { font: 500 0.875rem/1 'Satoshi Variable' }
-  .st-label { font: 500 1rem/1.25rem 'Satoshi Variable' }
-  .st-label-small { font: 500 0.875rem/1.25 'Satoshi Variable' }
+  .hero {
+    font-family: var(--heading-font-family);
+    font-size: 4.5rem;
+    line-height: 1em;
+    font-weight: 450;
+    letter-spacing: -1.44px;
+  }
+
+  .title {
+    font-family: var(--heading-font-family);
+    font-size: 3rem;
+    line-height: 1em;
+    font-weight: 450;
+    letter-spacing: -0.96px;
+  }
+
+  .large {
+    font-family: var(--heading-font-family);
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 450;
+    letter-spacing: -0.18px;
+  }
+
+  .subtitle {
+    font-family: var(--heading-font-family);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 450;
+  }
+
+  .lead {
+    font-family: var(--heading-font-family);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 450;
+  }
+
+  .lead-tight {
+    font-family: var(--body-font-family);
+    font-size: 1.25rem;
+    line-height: 22px;
+    font-weight: 450;
+  }
+
+  .body {
+    font-family: var(--body-font-family);
+    font-size: 1rem;
+    line-height: 22px;
+    font-weight: 450;
+  }
+
+  .small {
+    font-family: var(--body-font-family);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+
+  .caption {
+    font-family: var(--body-font-family);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 450;
+  }
+}
+
+html {
+  font-family: var(--body-font-family), ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: var(--baseUnit);
+  color: 48deg 10% 10%;
+}
+
+body {
+  font-family: var(--body-font-family), ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  line-height: 22px;
+  font-weight: 450;
 }

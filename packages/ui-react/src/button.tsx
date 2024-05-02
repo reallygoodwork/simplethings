@@ -1,22 +1,26 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const button = cva("rounded-button", {
+export const button = cva("rounded-btn leading-btn px-btn-x focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent", {
   variants: {
-    intent: {
-      primary: ['bg-primary', 'hover:bg-primary/80', 'text-alt'],
-      secondary: [],
-      soft: [],
+    variant: {
+      primary: ['bg-accent hover:bg-accent/60', 'text-primary'],
+      secondary: ['bg-surface', 'text-body', 'hover:bg-primary/10'],
+      soft: ['bg-soft', 'text-primary', 'hover:bg-soft/60'],
       link: [],
-      solid: [],
+      solid: ['bg-primary', 'text-surface', 'hover:bg-primary/80'],
     },
     size: {
-      xs: ['px-6', 'py-2.5'],
-      sm: ['px-5', 'py-2.5'],
-      md: ['px-5', 'py-3'],
-      lg: ['px-5', 'py-4'],
-      xl: ['px-5', 'py-4'],
+      xs: ['py-btn-xs-y', 'text-btn-xs'],
+      sm: ['py-btn-sm-y', 'text-btn-sm'],
+      md: ['py-btn-md-y', 'text-btn'],
+      lg: ['py-btn-lg-y', 'text-btn'],
+      xl: ['py-btn-lg-y', 'text-btn'],
     }
   },
+  defaultVariants: {
+    variant: 'primary',
+    size: 'md',
+  }
 });
 
 export interface ButtonProps
@@ -26,9 +30,9 @@ export interface ButtonProps
 
 export const Button: React.FC<ButtonProps> = ({
   className,
-  intent,
+  variant,
   size,
   ...props
-}) => <button className={button({ intent, size, className })} {...props} />;
+}) => <button className={button({ variant, size, className })} {...props} />;
 
 Button.displayName = "Button";

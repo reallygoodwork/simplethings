@@ -8,7 +8,8 @@
     "./styles": "./tokens/tokens.css"
   },
   "scripts": {
-    "build": "node ./build.js"
+    "build": "tsx ./build.ts",
+    "dev": "tsx watch ./build.ts"
   },
   "devDependencies": {
     "@simplethings/typescript-config": "workspace:*"
@@ -16,7 +17,8 @@
   "dependencies": {
     "@tokens-studio/sd-transforms": "^0.9.2",
     "chroma-js": "^2.4.2",
-    "style-dictionary": "^3.9.2"
+    "style-dictionary": "^3.9.2",
+    "tsx": "^4.7.3"
   },
   "eslintConfig": {
     "root": true,

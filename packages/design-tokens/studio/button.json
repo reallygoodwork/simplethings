@@ -1,0 +1,56 @@
+{
+  "button": {
+    "padding-x": {
+      "value": "calc(var(--baseUnit) * 1.5)"
+    },
+    "lg-y": {
+      "value": "var(--baseUnit)"
+    },
+    "md-y": {
+      "value": "calc(var(--baseUnit) * 0.75)"
+    },
+    "sm-y": {
+      "value": "calc(var(--baseUnit) * 0.625)"
+    },
+    "xs-y": {
+      "value": "calc(var(--baseUnit) * 0.625)"
+    },
+    "radius": {
+      "value": "0.375",
+      "attributes": {
+        "category": "size"
+      }
+    },
+    "gap": {
+      "value": "calc(var(--baseUnit) * 1.5)"
+    },
+    "link-y": {
+      "value": "calc(var(--baseUnit) * 0.5)"
+    },
+    "leading": {
+      "value": "1",
+      "attributes": {
+        "category": "size",
+        "unit": "no-unit"
+      }
+    },
+    "fontSize-xs": {
+      "value": "0.75",
+      "attributes": {
+        "category": "size"
+      }
+    },
+    "fontSize-sm": {
+      "value": "0.875",
+      "attributes": {
+        "category": "size"
+      }
+    },
+    "fontSize": {
+      "value": "1",
+      "attributes": {
+        "category": "size"
+      }
+    }
+  }
+}

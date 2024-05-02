@@ -5,10 +5,6 @@ const chroma = require('chroma-js');
 console.log('Build started...');
 console.log('\n==============================================');
 
-registerTransforms(StyleDictionary, {
-  expand: { composition: true, typography: false, border: false, shadow: false },
-});
-
 StyleDictionary.registerTransform({
   name: 'custom/hsl',
   type: 'value',
@@ -23,14 +19,34 @@ StyleDictionary.registerTransform({
     const color = chroma(prop.value);
     const s = color.get('hsl.s') * 100;
     const l = color.get('hsl.l') * 100;
-    const h = color.get('hsl.h');
+    let h = color.get('hsl.h');
 
     if (isNaN(h)) {
-      return prop.value;
+      h = 0;
     }
     return `${h.toFixed()}deg ${s.toFixed()}% ${l.toFixed()}%`;
   },
 });
+
+StyleDictionary.registerTransform({
+  name: 'custom/unitConvert',
+  type: 'value',
+  matcher: function (prop) {
+    return prop.attributes.category === 'size';
+  },
+  transformer: function (prop) {
+
+    if (prop.attributes.unit === 'px') {
+      return `${prop.value}px`;
+    } else if (prop.attributes.unit === 'em') {
+      return `${prop.value}em`;
+    } else if (prop.attributes.unit === 'no-unit') {
+      return prop.value;
+    } else {
+      return `${prop.value}rem`;
+    }
+  },
+})
 
 
 const StyleDictionaryExtended = StyleDictionary.extend({
@@ -38,7 +54,7 @@ const StyleDictionaryExtended = StyleDictionary.extend({
   platforms: {
     css: {
       // transformGroup: 'tokens-studio',
-      transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
+      transforms: ["name/cti/constant", "custom/unitConvert", "custom/hsl"],
       buildPath: 'tokens/',
       files: [
         {
@@ -49,7 +65,7 @@ const StyleDictionaryExtended = StyleDictionary.extend({
     },
     js: {
       // transformGroup: "tokens-studio",
-      transforms: ["ts/size/px", "ts/opacity", "name/cti/constant", "ts/size/lineheight", "ts/typography/css/shorthand", "custom/hsl"],
+      transforms: ["name/cti/constant", "custom/unitConvert", "custom/hsl"],
       buildPath: "tokens/",
       files: [
         {

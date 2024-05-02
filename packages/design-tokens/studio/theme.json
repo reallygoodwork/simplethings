@@ -1,0 +1,77 @@
+{
+  "baseUnit": {
+    "value": 16,
+    "attributes": {
+      "category": "size",
+      "unit": "px"
+    }
+  },
+  "body-font": {
+    "value": "Satoshi Variable",
+    "attributes": {
+      "category": "font"
+    }
+  },
+  "heading-font": {
+    "value": "Satoshi Variable",
+    "attributes": {
+      "category": "font"
+    }
+  },
+  "color": {
+    "primary": {
+      "value": "#17332d",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "body": {
+      "value": "#1c1b17",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "alt": {
+      "value": "#ffffff",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "accent": {
+      "value": "#e4f223",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "surface": {
+      "value": "#ffffff",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "soft": {
+      "value": "#aabca3",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "muted": {
+      "value": "#9c9b96",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "error": {
+      "value": "#f23051",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "success": {
+      "value": "#697a00",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

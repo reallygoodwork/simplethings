@@ -3,14 +3,18 @@ import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
 import starlightLinksValidator from 'starlight-links-validator'
 import liveCode from 'astro-live-code'
+import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
 	server: { port: 4321, host: true },
 	integrations: [
+		liveCode(),
+		react(),
 		starlight({
 			title: 'Simple Things',
 			customCss: [
+				'./src/fonts/font.css',
 				'./src/tailwind.css'
 			],
 			plugins: [
@@ -43,6 +47,6 @@ export default defineConfig({
 		tailwind({
 			applyBaseStyles: false,
 		}),
-		liveCode()
+
 	],
 });
