@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const button = cva("rounded-btn leading-btn px-btn-x focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent", {
+export const button = cva("rounded-btn leading-btn focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent", {
   variants: {
     variant: {
       primary: ['bg-accent hover:bg-accent/60', 'text-primary'],
@@ -10,11 +10,11 @@ export const button = cva("rounded-btn leading-btn px-btn-x focus-visible:outlin
       solid: ['bg-primary', 'text-surface', 'hover:bg-primary/80'],
     },
     size: {
-      xs: ['py-btn-xs-y', 'text-btn-xs'],
-      sm: ['py-btn-sm-y', 'text-btn-sm'],
-      md: ['py-btn-md-y', 'text-btn'],
-      lg: ['py-btn-lg-y', 'text-btn'],
-      xl: ['py-btn-lg-y', 'text-btn'],
+      xs: ['py-framey px-framex--xl', 'text-btn-xs'],
+      sm: ['py-framey px-framex--xl', 'text-btn-sm'],
+      md: ['py-framey--md px-framex--2xl', 'text-btn'],
+      lg: ['py-framey--lg px-framex--2xl', 'text-btn'],
+      xl: ['py-framey--xl px-framex--2xl', 'text-btn'],
     }
   },
   defaultVariants: {

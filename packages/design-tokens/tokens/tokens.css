@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 02 May 2024 19:14:48 GMT
+ * Generated on Fri, 03 May 2024 03:21:47 GMT
  */
 
 :root {
@@ -13,20 +13,21 @@
   --BUTTON_GAP: calc(var(--baseUnit) * 1.5);
   --BUTTON_LINK_Y: calc(var(--baseUnit) * 0.5);
   --BUTTON_LEADING: 1;
+  --BUTTON_FONT_WEIGHT: 450;
   --BUTTON_FONT_SIZE_XS: 0.75rem;
   --BUTTON_FONT_SIZE_SM: 0.875rem;
   --BUTTON_FONT_SIZE: 1rem;
-  --INPUT_BG: 0deg 0% 100%;
+  --INPUT_BG: 0deg 0% 94%;
   --INPUT_TEXT: 40deg 3% 36%;
-  --INPUT_BORDER: 0deg 4% 95%;
-  --BASE_UNIT: 16px;
+  --INPUT_BORDER: 64deg 100% 74%;
+  --BASE_UNIT: 4px;
   --BODY_FONT: Satoshi Variable;
   --HEADING_FONT: Satoshi Variable;
   --COLOR_PRIMARY: 167deg 38% 15%;
   --COLOR_BODY: 48deg 10% 10%;
-  --COLOR_ALT: 0deg 4% 95%;
-  --COLOR_ACCENT: 167deg 38% 15%;
-  --COLOR_SURFACE: 0deg 0% 100%;
+  --COLOR_ALT: 64deg 100% 74%;
+  --COLOR_ACCENT: 64deg 89% 54%;
+  --COLOR_SURFACE: 0deg 0% 94%;
   --COLOR_SOFT: 103deg 16% 69%;
   --COLOR_MUTED: 50deg 3% 60%;
   --COLOR_ERROR: 350deg 88% 57%;

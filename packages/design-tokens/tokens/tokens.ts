@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 02 May 2024 19:14:48 GMT
+ * Generated on Fri, 03 May 2024 03:21:47 GMT
  */
 
 export const BUTTON_PADDING_X = "calc(var(--baseUnit) * 1.5)";
@@ -12,20 +12,21 @@ export const BUTTON_RADIUS = "0.375rem";
 export const BUTTON_GAP = "calc(var(--baseUnit) * 1.5)";
 export const BUTTON_LINK_Y = "calc(var(--baseUnit) * 0.5)";
 export const BUTTON_LEADING = "1";
+export const BUTTON_FONT_WEIGHT = "450";
 export const BUTTON_FONT_SIZE_XS = "0.75rem";
 export const BUTTON_FONT_SIZE_SM = "0.875rem";
 export const BUTTON_FONT_SIZE = "1rem";
-export const INPUT_BG = "0deg 0% 100%";
+export const INPUT_BG = "0deg 0% 94%";
 export const INPUT_TEXT = "40deg 3% 36%";
-export const INPUT_BORDER = "0deg 4% 95%";
-export const BASE_UNIT = "16px";
+export const INPUT_BORDER = "64deg 100% 74%";
+export const BASE_UNIT = "4px";
 export const BODY_FONT = "Satoshi Variable";
 export const HEADING_FONT = "Satoshi Variable";
 export const COLOR_PRIMARY = "167deg 38% 15%";
 export const COLOR_BODY = "48deg 10% 10%";
-export const COLOR_ALT = "0deg 4% 95%";
-export const COLOR_ACCENT = "167deg 38% 15%";
-export const COLOR_SURFACE = "0deg 0% 100%";
+export const COLOR_ALT = "64deg 100% 74%";
+export const COLOR_ACCENT = "64deg 89% 54%";
+export const COLOR_SURFACE = "0deg 0% 94%";
 export const COLOR_SOFT = "103deg 16% 69%";
 export const COLOR_MUTED = "50deg 3% 60%";
 export const COLOR_ERROR = "350deg 88% 57%";

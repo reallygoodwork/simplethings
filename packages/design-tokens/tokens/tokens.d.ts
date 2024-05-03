@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 02 May 2024 19:14:48 GMT
+ * Generated on Fri, 03 May 2024 03:21:47 GMT
  */
 
 export const BUTTON_PADDING_X : string;
@@ -12,6 +12,7 @@ export const BUTTON_RADIUS : string;
 export const BUTTON_GAP : string;
 export const BUTTON_LINK_Y : string;
 export const BUTTON_LEADING : string;
+export const BUTTON_FONT_WEIGHT : string;
 export const BUTTON_FONT_SIZE_XS : string;
 export const BUTTON_FONT_SIZE_SM : string;
 export const BUTTON_FONT_SIZE : string;

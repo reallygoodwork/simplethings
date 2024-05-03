@@ -34,6 +34,12 @@
         "unit": "no-unit"
       }
     },
+    "fontWeight": {
+      "value": "450",
+      "attributes": {
+        "category": "font"
+      }
+    },
     "fontSize-xs": {
       "value": "0.75",
       "attributes": {

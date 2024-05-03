@@ -1,6 +1,6 @@
 {
   "baseUnit": {
-    "value": 16,
+    "value": 4,
     "attributes": {
       "category": "size",
       "unit": "px"
@@ -32,7 +32,7 @@
       }
     },
     "alt": {
-      "value": "#ffffff",
+      "value": "#f5ff78",
       "attributes": {
         "category": "color"
       }
@@ -44,7 +44,7 @@
       }
     },
     "surface": {
-      "value": "#ffffff",
+      "value": "#efefef",
       "attributes": {
         "category": "color"
       }
