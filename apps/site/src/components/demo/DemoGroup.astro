@@ -1,0 +1,16 @@
+---
+import { Text } from '@simplethings/react'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<div class="py-l flex flex-col gap-l">
+  <Text as="h2" level="large">{title}</Text>
+  <div class="flex flex-wrap gap-l items-center">
+    <slot />
+  </div>
+</div>

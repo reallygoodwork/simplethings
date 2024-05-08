@@ -1,0 +1,39 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { Button } from '@simplethings/react'
+---
+
+<DemoContainer title="Buttons">
+  <DemoGroup title="Extra Small">
+    <Button size="xs" variant="primary">Click me</Button>
+    <Button size="xs" variant="secondary" type="submit">Click me</Button>
+    <Button size="xs" variant="soft" type="submit">Click me</Button>
+    <Button size="xs" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Small">
+    <Button size="sm" variant="primary">Click me</Button>
+    <Button size="sm" variant="secondary" type="submit">Click me</Button>
+    <Button size="sm" variant="soft" type="submit">Click me</Button>
+    <Button size="sm" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Medium">
+    <Button variant="primary">Click me</Button>
+    <Button variant="secondary" type="submit">Click me</Button>
+    <Button variant="soft" type="submit">Click me</Button>
+    <Button variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Large">
+    <Button size="lg" type="submit">Click me</Button>
+    <Button size="lg" variant="secondary" type="submit">Click me</Button>
+    <Button size="lg" variant="soft" type="submit">Click me</Button>
+    <Button size="lg" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Large">
+    <Button size="xl" type="submit">Click me</Button>
+    <Button size="xl" variant="secondary" type="submit">Click me</Button>
+    <Button size="xl" variant="soft" type="submit">Click me</Button>
+    <Button size="xl" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+</DemoContainer>

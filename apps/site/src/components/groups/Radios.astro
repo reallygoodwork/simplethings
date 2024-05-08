@@ -1,0 +1,14 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { Radio } from '@simplethings/react'
+---
+
+<DemoContainer title="Radio">
+  <DemoGroup title="Primary (Default)">
+    <Radio label="Checkbox" scale="sm" htmlFor="radio1" />
+    <Radio label="Checkbox" checked htmlFor="radio2" />
+    <Radio label="Checkbox" scale="lg" htmlFor="radio3" />
+  </DemoGroup>
+</DemoContainer>

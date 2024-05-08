@@ -1,0 +1,14 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { Switch } from '@simplethings/react'
+---
+
+<DemoContainer title="Switch">
+  <DemoGroup title="Primary (Default)">
+    <Switch label="Checkbox" scale="sm" id="switch1" />
+    <Switch label="Checkbox" />
+    <Switch label="Checkbox" scale="lg" />
+  </DemoGroup>
+</DemoContainer>

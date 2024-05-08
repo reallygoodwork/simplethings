@@ -1,0 +1,36 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { Select } from '@simplethings/react'
+
+const options = [
+  { value: 1, label: 'First' },
+  { value: 2, label: 'Second' },
+  { value: 3, label: 'Third' },
+]
+---
+
+<DemoContainer title="Select">
+  <DemoGroup title="Primary (Default)">
+    <Select scale="xs" options={options} />
+    <Select scale="sm" options={options} />
+    <Select scale="md" options={options} />
+    <Select scale="lg" options={options} />
+    <Select scale="xl" options={options} />
+  </DemoGroup>
+  <DemoGroup title="Hollow">
+    <Select scale="xs" variant="hollow" options={options} />
+    <Select scale="sm" variant="hollow" options={options} />
+    <Select scale="md" variant="hollow" options={options} />
+    <Select scale="lg" variant="hollow" options={options} />
+    <Select scale="xl" variant="hollow" options={options} />
+  </DemoGroup>
+  <DemoGroup title="Surface">
+    <Select scale="xs" variant="surface" options={options} />
+    <Select scale="sm" variant="surface" options={options} />
+    <Select scale="md" variant="surface" options={options} />
+    <Select scale="lg" variant="surface" options={options} />
+    <Select scale="xl" variant="surface" options={options} />
+  </DemoGroup>
+</DemoContainer>

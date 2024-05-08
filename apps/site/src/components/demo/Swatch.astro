@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string
+  color: string
+}
+
+const { name, color } = Astro.props
+---
+
+<div class="p-m border border-px border-grey-100 flex flex-col gap-m rounded-base">
+  <div class:list={['size-3xl border border-px border-grey-100 rounded-base', color]}></div>
+  <p class="text-caption">{name}</p>
+</div>

@@ -1,71 +1,92 @@
 import type { Config } from "tailwindcss";
 import {
-  BODY_FONT
+  BODY_FONT,
+  BUTTON_RADIUS
 } from "@simplethings/design-tokens"
-import {fontFamily} from "tailwindcss/defaultTheme";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
-// We want each package to be responsible for its own content.
-const config: Omit<Config, "content"> = {
+import { tailwindColors } from "./src/color";
+import { tailwindSpacing } from "./src/spacing";
+import { tailwindTextFrame } from "./src/textFrame";
+
+const TailwindConfig: Omit<Config, "content"> = {
   theme: {
     fontFamily: {
       sans: [`"${BODY_FONT}"`, ...fontFamily.sans],
     },
     colors: {
-      primary: 'hsl(var(--color-primary) / <alpha-value>)',
-      body: 'hsl(var(--color-body) / <alpha-value>)',
-      alt: 'hsl(var(--color-alt) / <alpha-value>)',
-      accent: 'hsl(var(--color-accent) / <alpha-value>)',
-      surface: 'hsl(var(--color-surface) / <alpha-value>)',
-      soft: 'hsl(var(--color-soft) / <alpha-value>)',
-      muted: 'hsl(var(--color-muted) / <alpha-value>)',
+      ...tailwindColors(),
     },
-    borderRadius: {
-      btn: 'var(--btn-radius)',
-    },
+
     extend: {
+      backgroundImage: {
+        none: 'none',
+      },
+      borderRadius: {
+        base: 'var(--rounded-base)',
+      },
+      letterSpacing: {
+        fr: 'var(--fr-ls)',
+        hero: 'var(--hero-ls)',
+        title: 'var(--title-ls)',
+        subtitle: 'var(--subtitle-ls)',
+        large: 'var(--large-ls)',
+        lead: 'var(--lead-ls)',
+        body: 'var(--body-ls)',
+        small: 'var(--small-ls)',
+        caption: 'var(--caption-ls)',
+        btn: 'var(--btn-ls)',
+      },
+      fontWeight: {
+        fr: 'var(--fr-fw)',
+        hero: 'var(--hero-fw)',
+        title: 'var(--title-fw)',
+        subtitle: 'var(--subtitle-fw)',
+        large: 'var(--large-fw)',
+        lead: 'var(--lead-fw)',
+        body: 'var(--body-fw)',
+        small: 'var(--small-fw)',
+        caption: 'var(--caption-fw)',
+      },
       fontSize: {
-        'btn-xs': 'var(--btn-fz__xs)',
-        'btn-sm': 'var(--btn-fz__sm)',
-        'btn': 'var(--btn-fz)',
+        fr: 'var(--fr-fz)',
+        'fr-xs': 'var(--fr-fz-xs)',
+        'fr-sm': 'var(--fr-fz-sm)',
+        'fr-lg': 'var(--fr-fz-lg)',
+        hero: 'var(--hero-fz)',
+        title: 'var(--title-fz)',
+        subtitle: 'var(--subtitle-fz)',
+        large: 'var(--large-fz)',
+        lead: 'var(--lead-fz)',
+        body: 'var(--body-fz)',
+        small: 'var(--small-fz)',
+        caption: 'var(--caption-fz)',
+        btn: 'var(--btn-fz)',
+        'btn-xs': 'var(--btn-fz--xs)',
+        'btn-sm': 'var(--btn-fz--sm)',
+        'btn-lg': 'var(--btn-fz--lg)',
+        input: 'var(--input-fz)',
       },
       lineHeight: {
-        'btn': 'var(--btn-lh)',
+        fr: 'var(--fr-lh)',
+        hero: 'var(--hero-lh)',
+        title: 'var(--title-lh)',
+        subtitle: 'var(--subtitle-lh)',
+        large: 'var(--large-lh)',
+        lead: 'var(--lead-lh)',
+        body: 'var(--body-lh)',
+        small: 'var(--small-lh)',
+        caption: 'var(--caption-lh)',
+        btn: 'var(--btn-lh)',
+        input: 'var(--input-lh)',
       },
       spacing: {
-        'framex': 'var(--textFrameX)',
-        'framey': 'var(--textFrameY)',
-        'frame': 'var(--textFrame)',
-        'framex--xs': 'var(--textFrameX--xs)',
-        'framey--xs': 'var(--textFrameY--xs)',
-        'frame--xs': 'var(--textFrame--xs)',
-        'framex--sm': 'var(--textFrameX--sm)',
-        'framey--sm': 'var(--textFrameY--sm)',
-        'frame--sm': 'var(--textFrame--sm)',
-        'framex--md': 'var(--textFrameX--md)',
-        'framey--md': 'var(--textFrameY--md)',
-        'frame--md': 'var(--textFrame--md)',
-        'framex--lg': 'var(--textFrameX--lg)',
-        'framey--lg': 'var(--textFrameY--lg)',
-        'frame--lg': 'var(--textFrame--lg)',
-        'framex--xl': 'var(--textFrameX--xl)',
-        'framey--xl': 'var(--textFrameY--xl)',
-        'frame--xl': 'var(--textFrame--xl)',
-        'framex--2xl': 'var(--textFrameX--2xl)',
-        'framey--2xl': 'var(--textFrameY--2xl)',
-        'frame--2xl': 'var(--textFrame--2xl)',
-        'base': 'var(--space-base)',
-        'xs': 'var(--space-xs)',
-        's': 'var(--space-s)',
-        'm': 'var(--space-m)',
-        'l': 'var(--space-l)',
-        'xl': 'var(--space-xl)',
-        '2xl': 'var(--space-2xl)',
-        '3xl': 'var(--space-3xl)',
-        '4xl': 'var(--space-4xl)',
+        ...tailwindSpacing,
+        ...tailwindTextFrame,
+        'content-gap': 'var(--content-gap)',
       }
     }
   },
-  plugins: [],
-};
+}
 
-export default config;
+export default TailwindConfig;

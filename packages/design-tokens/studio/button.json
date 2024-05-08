@@ -57,6 +57,12 @@
       "attributes": {
         "category": "size"
       }
+    },
+    "fontSize-lg": {
+      "value": "1.125",
+      "attributes": {
+        "category": "size"
+      }
     }
   }
 }

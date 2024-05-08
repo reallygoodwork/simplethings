@@ -1,13 +1,19 @@
-import { TextProps } from "../../lib/textProps";
+import { TextCVA, type TextCVAProps } from '@simplethings/tailwind-config/components'
 
-export const Hero = <C extends React.ElementType>({
+export type TextProps<C extends React.ElementType> = {
+  as?: C;
+  children: React.ReactNode;
+} & React.ComponentPropsWithoutRef<C> & TextCVAProps;
+
+export const Text = <C extends React.ElementType>({
   children,
+  level,
   as,
+  className,
   ...restProps
 }: TextProps<C>) => {
   const Component = as || "h1";
-
-  return <Component {...restProps}>{children}</Component>;
+  return <Component className={TextCVA({ level, className })} {...restProps}>{children}</Component>;
 };
 
 // import React from "react";

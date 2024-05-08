@@ -1,88 +1,26 @@
 ---
 import CommonPage from '@components/CommonPage.astro'
-
-import { Button } from '@simplethings/react/button'
+import BadgesGroup from '@components/groups/Badges.astro'
+import ButtonGroup from '@components/groups/Buttons.astro'
+import ButtonsGroup from '@components/groups/ButtonsGroups.astro'
+import CheckboxGroup from '@components/groups/Checkboxes.astro'
+import InputGroup from '@components/groups/Inputs.astro'
+import RadioGroup from '@components/groups/Radios.astro'
+import SelectGroup from '@components/groups/Selects.astro'
+import SwatchesGroup from '@components/groups/Swatches.astro'
+import SwitchGroup from '@components/groups/Switches.astro'
+import TypographyGroup from '@components/groups/Typography.astro'
 ---
 
 <CommonPage>
-  <h1 class="hero">Hello</h1>
-  <h2 class="title">Hello</h2>
-  <h3 class="subtitle">Hello</h3>
-  <p class="large">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem optio facere provident nostrum impedit, placeat
-    voluptatibus suscipit explicabo sint, totam quibusdam consequuntur dolorem consectetur adipisci quisquam pariatur.
-    Nesciunt, dolorum repellat?
-  </p>
-  <h4 class="lead">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus vitae similique cum. Impedit sequi id perferendis
-    laudantium accusantium unde est dicta, perspiciatis dolorum molestiae quasi fugit accusamus, recusandae cum facere!
-  </h4>
-  <h4 class="lead-tight">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error consequatur nesciunt ratione corrupti ut minus unde
-    id beatae distinctio iste, recusandae doloremque obcaecati inventore at atque. Minus tempora reiciendis fugit.
-  </h4>
-
-  <p class="body">
-    Labore et non qui pariatur nulla minim reprehenderit veniam. Magna ipsum reprehenderit nisi est mollit duis ex
-    laboris proident Lorem sint reprehenderit exercitation mollit velit. Qui dolore voluptate anim proident nulla
-    consectetur sit ea anim ullamco aliqua cillum. Aliqua veniam irure est Lorem cupidatat adipisicing cupidatat ipsum
-    cupidatat voluptate commodo sit et sunt exercitation. Proident excepteur dolor non.
-  </p>
-  <p class="small">
-    Labore et non qui pariatur nulla minim reprehenderit veniam. Magna ipsum reprehenderit nisi est mollit duis ex
-    laboris proident Lorem sint reprehenderit exercitation mollit velit. Qui dolore voluptate anim proident nulla
-    consectetur sit ea anim ullamco aliqua cillum. Aliqua veniam irure est Lorem cupidatat adipisicing cupidatat ipsum
-    cupidatat voluptate commodo sit et sunt exercitation. Proident excepteur dolor non.
-  </p>
-  <p class="caption">
-    Labore et non qui pariatur nulla minim reprehenderit veniam. Magna ipsum reprehenderit nisi est mollit duis ex
-    laboris proident Lorem sint reprehenderit exercitation mollit velit. Qui dolore voluptate anim proident nulla
-    consectetur sit ea anim ullamco aliqua cillum. Aliqua veniam irure est Lorem cupidatat adipisicing cupidatat ipsum
-    cupidatat voluptate commodo sit et sunt exercitation. Proident excepteur dolor non.
-  </p>
-  <div class="py-8 flex flex-col gap-2 px-4">
-    <h2 class="large">Extra Small</h2>
-    <div class="flex gap-2">
-      <Button size="xs" type="submit">Click me</Button>
-      <Button size="xs" variant="secondary" type="submit">Click me</Button>
-      <Button size="xs" variant="soft" type="submit">Click me</Button>
-      <Button size="xs" variant="solid" type="submit">Click me</Button>
-    </div>
-  </div>
-  <div class="py-8 flex flex-col gap-2 px-4">
-    <h2 class="large">Small</h2>
-    <div class="flex gap-2">
-      <Button size="sm" type="submit">Click me</Button>
-      <Button size="sm" variant="secondary" type="submit">Click me</Button>
-      <Button size="sm" variant="soft" type="submit">Click me</Button>
-      <Button size="sm" variant="solid" type="submit">Click me</Button>
-    </div>
-  </div>
-  <div class="py-8 flex flex-col gap-2 px-4">
-    <h2 class="large">Medium</h2>
-    <div class="flex gap-2">
-      <Button type="submit">Click me</Button>
-      <Button variant="secondary" type="submit">Click me</Button>
-      <Button variant="soft" type="submit">Click me</Button>
-      <Button variant="solid" type="submit">Click me</Button>
-    </div>
-  </div>
-  <div class="py-8 flex flex-col gap-2 px-4">
-    <h2 class="large">Large</h2>
-    <div class="flex gap-2">
-      <Button size="lg" type="submit">Click me</Button>
-      <Button size="lg" variant="secondary" type="submit">Click me</Button>
-      <Button size="lg" variant="soft" type="submit">Click me</Button>
-      <Button size="lg" variant="solid" type="submit">Click me</Button>
-    </div>
-  </div>
-  <div class="py-8 flex flex-col gap-2 px-4">
-    <h2 class="large">Extra Large</h2>
-    <div class="flex gap-2">
-      <Button size="xl" type="submit">Click me</Button>
-      <Button size="xl" variant="secondary" type="submit">Click me</Button>
-      <Button size="xl" variant="soft" type="submit">Click me</Button>
-      <Button size="xl" variant="solid" type="submit">Click me</Button>
-    </div>
-  </div>
+  <SwatchesGroup />
+  <TypographyGroup />
+  <BadgesGroup />
+  <ButtonGroup />
+  <ButtonsGroup />
+  <InputGroup />
+  <SelectGroup />
+  <CheckboxGroup />
+  <RadioGroup />
+  <SwitchGroup />
 </CommonPage>

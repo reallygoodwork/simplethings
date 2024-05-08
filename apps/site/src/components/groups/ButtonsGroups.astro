@@ -1,0 +1,65 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { ButtonGroup } from '@simplethings/react'
+
+const buttonGroups = [{ label: 'button1' }, { label: 'button2' }, { label: 'button3' }]
+---
+
+<DemoContainer title="Button Groups">
+  <DemoGroup title="Extra Small">
+    <ButtonGroup buttons={buttonGroups} size="xs" variant="primary" />
+    <ButtonGroup buttons={buttonGroups} size="xs" variant="secondary" />
+    <ButtonGroup buttons={buttonGroups} size="xs" variant="soft" />
+    <ButtonGroup buttons={buttonGroups} size="xs" variant="solid" />
+  </DemoGroup>
+  <DemoGroup title="Small">
+    <ButtonGroup buttons={buttonGroups} size="sm" variant="primary" />
+    <ButtonGroup buttons={buttonGroups} size="sm" variant="secondary" />
+    <ButtonGroup buttons={buttonGroups} size="sm" variant="soft" />
+    <ButtonGroup buttons={buttonGroups} size="sm" variant="solid" />
+  </DemoGroup>
+  <DemoGroup title="Medium">
+    <ButtonGroup buttons={buttonGroups} variant="primary" />
+    <ButtonGroup buttons={buttonGroups} variant="secondary" />
+    <ButtonGroup buttons={buttonGroups} variant="soft" />
+    <ButtonGroup buttons={buttonGroups} variant="solid" />
+  </DemoGroup>
+  <DemoGroup title="Large">
+    <ButtonGroup buttons={buttonGroups} size="lg" variant="primary" />
+    <ButtonGroup buttons={buttonGroups} size="lg" variant="secondary" />
+    <ButtonGroup buttons={buttonGroups} size="lg" variant="soft" />
+    <ButtonGroup buttons={buttonGroups} size="lg" variant="solid" />
+  </DemoGroup>
+  <DemoGroup title="Extra Larg">
+    <ButtonGroup buttons={buttonGroups} size="xl" variant="primary" />
+    <ButtonGroup buttons={buttonGroups} size="xl" variant="secondary" />
+    <ButtonGroup buttons={buttonGroups} size="xl" variant="soft" />
+    <ButtonGroup buttons={buttonGroups} size="xl" variant="solid" />
+  </DemoGroup>
+  <!-- <DemoGroup title="Small">
+    <Button size="sm" variant="primary">Click me</Button>
+    <Button size="sm" variant="secondary" type="submit">Click me</Button>
+    <Button size="sm" variant="soft" type="submit">Click me</Button>
+    <Button size="sm" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Medium">
+    <Button variant="primary">Click me</Button>
+    <Button variant="secondary" type="submit">Click me</Button>
+    <Button variant="soft" type="submit">Click me</Button>
+    <Button variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Large">
+    <Button size="lg" type="submit">Click me</Button>
+    <Button size="lg" variant="secondary" type="submit">Click me</Button>
+    <Button size="lg" variant="soft" type="submit">Click me</Button>
+    <Button size="lg" variant="solid" type="submit">Click me</Button>
+  </DemoGroup>
+  <DemoGroup title="Large">
+    <Button size="xl" type="submit">Click me</Button>
+    <Button size="xl" variant="secondary" type="submit">Click me</Button>
+    <Button size="xl" variant="soft" type="submit">Click me</Button>
+    <Button size="xl" variant="solid" type="submit">Click me</Button>
+  </DemoGroup> -->
+</DemoContainer>

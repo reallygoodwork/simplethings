@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 03 May 2024 03:21:47 GMT
+ * Generated on Wed, 08 May 2024 01:20:29 GMT
  */
 
 export const BUTTON_PADDING_X = "calc(var(--baseUnit) * 1.5)";
@@ -16,6 +16,7 @@ export const BUTTON_FONT_WEIGHT = "450";
 export const BUTTON_FONT_SIZE_XS = "0.75rem";
 export const BUTTON_FONT_SIZE_SM = "0.875rem";
 export const BUTTON_FONT_SIZE = "1rem";
+export const BUTTON_FONT_SIZE_LG = "1.125rem";
 export const INPUT_BG = "0deg 0% 94%";
 export const INPUT_TEXT = "40deg 3% 36%";
 export const INPUT_BORDER = "64deg 100% 74%";
@@ -31,44 +32,49 @@ export const COLOR_SOFT = "103deg 16% 69%";
 export const COLOR_MUTED = "50deg 3% 60%";
 export const COLOR_ERROR = "350deg 88% 57%";
 export const COLOR_SUCCESS = "68deg 100% 24%";
+export const COLOR_BG = "0deg 0% 100%";
+export const COLOR_RED = "350deg 88% 57%";
+export const COLOR_ORANGE = "22deg 83% 50%";
+export const COLOR_BLUE = "218deg 58% 58%";
+export const COLOR_GREEN = "142deg 38% 28%";
 export const HERO_FONT_FAMILY = "Satoshi Variable";
 export const HERO_FONT_WEIGHT = "450";
-export const HERO_FONT_SIZE = "4.5rem";
+export const HERO_FONT_SIZE = "4.5";
 export const HERO_LINE_HEIGHT = "1em";
 export const HERO_LETTER_SPACING = "-1.44px";
 export const SMALL_FONT_FAMILY = "Satoshi Variable";
 export const SMALL_FONT_WEIGHT = "400";
-export const SMALL_FONT_SIZE = "0.875rem";
+export const SMALL_FONT_SIZE = "0.875";
 export const SMALL_LINE_HEIGHT = "1.25rem";
 export const CAPTION_FONT_FAMILY = "Satoshi Variable";
 export const CAPTION_FONT_WEIGHT = "450";
-export const CAPTION_FONT_SIZE = "0.75rem";
+export const CAPTION_FONT_SIZE = "0.75";
 export const CAPTION_LINE_HEIGHT = "1rem";
 export const HEADING_FONT_FAMILY = "Satoshi Variable";
 export const HEADING_FONT_WEIGHT = "450";
 export const HEADING_FONT_WEIGHT_BOLD = "700";
-export const HEADING_FONT_SIZE = "1.125rem";
+export const HEADING_FONT_SIZE = "1.125";
 export const HEADING_LINE_HEIGHT = "1.5rem";
 export const LEAD_FONT_FAMILY = "Satoshi Variable";
 export const LEAD_FONT_WEIGHT = "450";
-export const LEAD_FONT_SIZE = "1.25rem";
+export const LEAD_FONT_SIZE = "1.25";
 export const LEAD_LINE_HEIGHT = "1.5rem";
 export const LEAD_LINE_HEIGHT_TIGHT = "22px";
 export const TITLE_FONT_FAMILY = "Satoshi Variable";
 export const TITLE_FONT_WEIGHT = "450";
-export const TITLE_FONT_SIZE = "3rem";
+export const TITLE_FONT_SIZE = "3";
 export const TITLE_LINE_HEIGHT = "1em";
 export const TITLE_LETTER_SPACING = "-0.96px";
 export const SUBTITLE_FONT_FAMILY = "Satoshi Variable";
 export const SUBTITLE_FONT_WEIGHT = "450";
-export const SUBTITLE_FONT_SIZE = "1.5rem";
+export const SUBTITLE_FONT_SIZE = "1.5";
 export const SUBTITLE_LINE_HEIGHT = "2rem";
 export const LARGE_FONT_FAMILY = "Satoshi Variable";
 export const LARGE_FONT_WEIGHT = "450";
-export const LARGE_FONT_SIZE = "2.25rem";
+export const LARGE_FONT_SIZE = "2.25";
 export const LARGE_LINE_HEIGHT = "2.5rem";
 export const LARGE_LETTER_SPACING = "-0.18px";
 export const BODY_FONT_FAMILY = "Satoshi Variable";
 export const BODY_FONT_WEIGHT = "450";
-export const BODY_FONT_SIZE = "1rem";
+export const BODY_FONT_SIZE = "1";
 export const BODY_LINE_HEIGHT = "22px";

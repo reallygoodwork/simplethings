@@ -1,0 +1,30 @@
+---
+import DemoContainer from '@components/demo/DemoContainer.astro'
+import DemoGroup from '@components/demo/DemoGroup.astro'
+
+import { Input } from '@simplethings/react'
+---
+
+<DemoContainer title="Inputs">
+  <DemoGroup title="Primary (Default)">
+    <Input scale="xs" placeholder="Enter your name" />
+    <Input scale="sm" placeholder="Enter your name" />
+    <Input scale="md" placeholder="Enter your name" />
+    <Input scale="lg" placeholder="Enter your name" />
+    <Input scale="xl" placeholder="Enter your name" />
+  </DemoGroup>
+  <DemoGroup title="Hollow">
+    <Input scale="xs" type="password" variant="hollow" placeholder="Enter your name" />
+    <Input scale="sm" variant="hollow" placeholder="Enter your name" />
+    <Input scale="md" variant="hollow" placeholder="Enter your name" />
+    <Input scale="lg" variant="hollow" placeholder="Enter your name" />
+    <Input scale="xl" variant="hollow" placeholder="Enter your name" />
+  </DemoGroup>
+  <DemoGroup title="Surface">
+    <Input scale="xs" variant="surface" placeholder="Enter your name" />
+    <Input scale="sm" variant="surface" placeholder="Enter your name" />
+    <Input scale="md" variant="surface" placeholder="Enter your name" />
+    <Input scale="lg" variant="surface" placeholder="Enter your name" />
+    <Input scale="xl" variant="surface" placeholder="Enter your name" />
+  </DemoGroup>
+</DemoContainer>

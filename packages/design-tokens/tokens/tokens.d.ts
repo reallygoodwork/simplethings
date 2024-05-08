@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 03 May 2024 03:21:47 GMT
+ * Generated on Wed, 08 May 2024 01:20:29 GMT
  */
 
 export const BUTTON_PADDING_X : string;
@@ -16,6 +16,7 @@ export const BUTTON_FONT_WEIGHT : string;
 export const BUTTON_FONT_SIZE_XS : string;
 export const BUTTON_FONT_SIZE_SM : string;
 export const BUTTON_FONT_SIZE : string;
+export const BUTTON_FONT_SIZE_LG : string;
 export const INPUT_BG : string;
 export const INPUT_TEXT : string;
 export const INPUT_BORDER : string;
@@ -31,6 +32,11 @@ export const COLOR_SOFT : string;
 export const COLOR_MUTED : string;
 export const COLOR_ERROR : string;
 export const COLOR_SUCCESS : string;
+export const COLOR_BG : string;
+export const COLOR_RED : string;
+export const COLOR_ORANGE : string;
+export const COLOR_BLUE : string;
+export const COLOR_GREEN : string;
 export const HERO_FONT_FAMILY : string;
 export const HERO_FONT_WEIGHT : string;
 export const HERO_FONT_SIZE : string;
