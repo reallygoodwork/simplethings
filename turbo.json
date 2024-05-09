@@ -6,6 +6,14 @@
       "dependsOn": ["^build"],
       "outputs": [".astro/**", "!.astro/cache/**", "dist/**"]
     },
+    "test:watch": {
+      "persistent": true,
+      "cache": false
+    },
+    "dev:anthropocene": {
+      "persistent": true,
+      "cache": false
+    },
     "dev": {
       "persistent": true,
       "cache": false

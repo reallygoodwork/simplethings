@@ -97,7 +97,7 @@ export const BadgeCVA = cva('badge text-fr-sm py-fry-xs px-frx-s border', {
     {
       variant: 'warning',
       vibe: 'soft',
-      class: 'bg-warning/20 text-warning border-transparent'
+      class: 'bg-warning/10 text-warning border-transparent'
     },
   ],
   defaultVariants: {

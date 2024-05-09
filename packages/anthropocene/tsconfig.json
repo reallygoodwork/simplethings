@@ -1,0 +1,11 @@
+{
+  "extends": "@simplethings/typescript-config/base.json",
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["src/utils/*"]
+    }
+  }
+}
