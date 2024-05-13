@@ -2,17 +2,26 @@
   "name": "@simplethings/anthropocene",
   "version": "0.0.1",
   "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev:anthropocene-tsup": "tsup --watch",
     "dev:anthropocene": "tsx watch ./src/index.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build": "tsup"
   },
   "devDependencies": {
     "@simplethings/eslint-config": "workspace:*",
     "@simplethings/typescript-config": "workspace:*",
+    "@types/hast": "^3.0.4",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.20",
     "eslint": "^8.56.0",

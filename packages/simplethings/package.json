@@ -1,0 +1,28 @@
+{
+  "name": "@simplethings/st-build",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build:components": "tsx index.ts"
+  },
+  "devDependencies": {
+    "@simplethings/anthropocene": "workspace:*",
+    "@simplethings/eslint-config": "workspace:*",
+    "@simplethings/typescript-config": "workspace:*",
+    "@types/node": "^20.11.20",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "json2md": "^2.0.1",
+    "lodash": "^4.17.21",
+    "tsx": "^4.7.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "./library.js"
+    ]
+  },
+  "prettier": "@simplethings/prettier-config"
+}

@@ -1,6 +1,7 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import {visionTool} from '@sanity/vision'
+import { visionTool } from '@sanity/vision'
+import {sanityComponents} from './src/sanity';
 
 export default defineConfig({
   name: "default",
@@ -9,8 +10,6 @@ export default defineConfig({
   dataset: 'production',
   plugins: [structureTool(), visionTool()],
   schema: {
-    types: [
-      /* your content types here*/
-    ],
+    types: sanityComponents,
   },
 });

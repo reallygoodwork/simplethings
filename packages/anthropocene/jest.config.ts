@@ -10,6 +10,7 @@ const config: JestConfigWithTsJest = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['<rootDir>'],
+  modulePathIgnorePatterns: ["<rootDir>/src/_utils"],
   modulePaths: [compilerOptions.baseUrl],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 };

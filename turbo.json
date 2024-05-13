@@ -10,9 +10,17 @@
       "persistent": true,
       "cache": false
     },
+    "generate:components": {
+      "persistent": true,
+      "cache": false
+    },
     "dev:anthropocene": {
       "persistent": true,
       "cache": false
+    },
+    "build:components": {
+      "cache": false,
+      "persistent": true
     },
     "dev": {
       "persistent": true,

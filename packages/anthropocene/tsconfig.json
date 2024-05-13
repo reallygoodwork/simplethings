@@ -5,7 +5,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@configTypes/*": ["src/configTypes/*"],
+      "@configTypes/attributes": ["src/configTypes/attributes/attributes.ts"],
+      "@configTypes/component": ["src/configTypes/component/component.ts"],
+      "@configTypes/element": ["src/configTypes/element/element.ts"],
+      "@configTypes/dependencies": ["src/configTypes/dependencies/dependencies.ts"],
+      "@configTypes/props": ["src/configTypes/props/props.ts"],
+      "@configTypes/sanity": ["src/configTypes/sanity/sanity.ts"],
+      "@configTypes/state": ["src/configTypes/state/state.ts"],
+      "@configTypes/variants": ["src/configTypes/variants/variants.ts"],
+      "@configTypes/compoundVariants": ["src/configTypes/variants/compoundVariants.ts"],
+      "@configTypes/shared": ["src/configTypes/shared.ts"]
     }
   }
 }

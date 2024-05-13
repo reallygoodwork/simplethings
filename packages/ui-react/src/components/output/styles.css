@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.badge {
+  font-size: 0.75rem;
+}
+
+.badge-primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-color: var(--color-primary);
+}
+
+.badge-primary-outlined {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.badge-rounded {
+  border-radius: var(--radius-rounded);
+}

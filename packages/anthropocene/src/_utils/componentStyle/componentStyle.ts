@@ -1,5 +1,5 @@
 import { camelCase } from 'lodash'
-import { util, z } from 'zod'
+import { z } from 'zod'
 
 import { createVariantObject, zVariantOutputObject } from './createVariantObject'
 

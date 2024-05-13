@@ -1,0 +1,27 @@
+{
+  "name": "@simplethings/figma",
+  "private": true,
+  "main": "dist/main.js",
+  "author": "@reallygoodwork",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@figma/eslint-plugin-figma-plugins": "*",
+    "@figma/plugin-typings": "*",
+    "@simplethings/anthropocene": "workspace:*",
+    "@simplethings/eslint-config": "workspace:*",
+    "@simplethings/prettier-config": "workspace:*",
+    "@simplethings/tailwind-config": "workspace:*",
+    "@simplethings/typescript-config": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "tsup": "^8.0.2"
+  },
+  "prettier": "@simplethings/prettier-config"
+}
