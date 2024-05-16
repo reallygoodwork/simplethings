@@ -1,27 +1,62 @@
 {
   "name": "@simplethings/figma",
-  "private": true,
-  "main": "dist/main.js",
-  "author": "@reallygoodwork",
-  "scripts": {
-    "build": "tsc -p tsconfig.json"
+  "version": "1.0.0",
+  "description": "Your Figma Plugin",
+  "type": "module",
+  "figma-plugin": {
+    "name": "Simple Things",
+    "id": "0",
+    "editorType": [
+      "figma"
+    ],
+    "main": "src/main.ts",
+    "ui": "src/ui.tsx"
   },
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
+    "build:figma": "build-figma-plugin --typecheck --minify",
+    "dev": "build-figma-plugin --typecheck --watch"
+  },
+  "author": "",
+  "license": "",
   "devDependencies": {
     "@figma/eslint-plugin-figma-plugins": "*",
     "@figma/plugin-typings": "*",
     "@simplethings/anthropocene": "workspace:*",
-    "@simplethings/eslint-config": "workspace:*",
-    "@simplethings/prettier-config": "workspace:*",
-    "@simplethings/tailwind-config": "workspace:*",
-    "@simplethings/typescript-config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
     "typescript": "^5.3.3"
   },
-  "dependencies": {
-    "tsup": "^8.0.2"
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@figma/figma-plugins/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "root": true,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ]
+    }
   },
-  "prettier": "@simplethings/prettier-config"
+  "dependencies": {
+    "@create-figma-plugin/build": "^3.2.0",
+    "@create-figma-plugin/tsconfig": "^3.2.0",
+    "@create-figma-plugin/ui": "^3.2.0",
+    "@create-figma-plugin/utilities": "^3.2.0",
+    "lodash": "^4.17.21",
+    "preact": "^10.21.0"
+  }
 }

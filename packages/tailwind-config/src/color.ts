@@ -17,13 +17,10 @@ const generateColorScales = (args: Color) => {
   const accentButtonLightness = getAccentButtonLightness(color.l);
   return `
     /* ${name} */
-    --c-${name}-h: ${color.h}deg;
-    --c-${name}-s: ${color.s}%;
-    --c-${name}-l: ${color.l}%;
-    --c-${name}: var(--c-${name}-h) var(--c-${name}-s) var(--c-${name}-l);
+    --c-${name}: ${color.h}deg ${color.s}% ${color.l}%;
     --c-${name}-transparency: 1;
     --c-${name}-hsl: hsl(var(--c-${name}) / var(--c-${name}-transparency));
-    --c-${name}-contrasted: var(--c-${name}-h) var(--c-${name}-s) ${accentButtonLightness}%;
+    --c-${name}-contrasted: ${color.h}deg ${color.s}% ${accentButtonLightness}%;
     --c-${name}-contrasted-hsl: hsl(var(--c-${name}-contrasted) / var(--c-${name}-transparency));
   `;
 };

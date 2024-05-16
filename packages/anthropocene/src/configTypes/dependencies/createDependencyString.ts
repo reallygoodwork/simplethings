@@ -1,16 +1,35 @@
-import { Dependency } from "@configTypes/dependencies";
+import { Dependency } from '@configTypes/dependencies'
 
-export const createDependencyString = (dependency: Dependency[], hasVariants?: boolean) => {
+type options = {
+  hasVariants?: boolean
+  dependencies?: Dependency[]
+  library?: 'react' | 'vue' | 'svelte'
+}
 
+export const createDependencyString = ({ dependencies, hasVariants, library }: options) => {
 
+    if (!dependencies || !dependencies.length) {
+      return ''
+    }
 
-  const dependencies = dependency.map(dep => {
-    return dep.isDefault ? `import ${dep.name} from '${dep.packageName}'` : `import { ${dep.name} } from '${dep.packageName}'`
-  }).join('\n')
+  let dependenciesString = ''
 
-  if (hasVariants) {
-    return dependencies + `\nimport { VariantProps, cva } from 'class-variance-authority'\n`
+  if (library && library === 'react') {
+    dependenciesString += `import React from 'react'\n`
   }
 
-  return dependencies
+    dependenciesString += dependencies
+      .map((dep) => {
+        return dep.isDefault
+          ? `import ${dep.name} from '${dep.packageName}'`
+          : `import { ${dep.name} } from '${dep.packageName}'`
+      })
+      .join('\n')
+
+    if (hasVariants) {
+      return dependenciesString + `\nimport { VariantProps, cva } from 'class-variance-authority'\n`
+    }
+
+    return dependenciesString
+
 }

@@ -14,123 +14,87 @@
     --greyscaleLightnessIncrement: 11.3%;
 
     /* bg */
-    --c-bg-h: 0deg;
-    --c-bg-s: 0%;
-    --c-bg-l: 100%;
-    --c-bg: var(--c-bg-h) var(--c-bg-s) var(--c-bg-l);
+    --c-bg: 0deg 0% 100%;
     --c-bg-transparency: 1;
     --c-bg-hsl: hsl(var(--c-bg) / var(--c-bg-transparency));
-    --c-bg-contrasted: var(--c-bg-h) var(--c-bg-s) 15%;
+    --c-bg-contrasted: 0deg 0% 15%;
     --c-bg-contrasted-hsl: hsl(var(--c-bg-contrasted) / var(--c-bg-transparency));
   
     /* primary */
-    --c-primary-h: 167deg;
-    --c-primary-s: 38%;
-    --c-primary-l: 15%;
-    --c-primary: var(--c-primary-h) var(--c-primary-s) var(--c-primary-l);
+    --c-primary: 167deg 38% 15%;
     --c-primary-transparency: 1;
     --c-primary-hsl: hsl(var(--c-primary) / var(--c-primary-transparency));
-    --c-primary-contrasted: var(--c-primary-h) var(--c-primary-s) 95%;
+    --c-primary-contrasted: 167deg 38% 95%;
     --c-primary-contrasted-hsl: hsl(var(--c-primary-contrasted) / var(--c-primary-transparency));
   
     /* base */
-    --c-base-h: 48deg;
-    --c-base-s: 10%;
-    --c-base-l: 10%;
-    --c-base: var(--c-base-h) var(--c-base-s) var(--c-base-l);
+    --c-base: 48deg 10% 10%;
     --c-base-transparency: 1;
     --c-base-hsl: hsl(var(--c-base) / var(--c-base-transparency));
-    --c-base-contrasted: var(--c-base-h) var(--c-base-s) 95%;
+    --c-base-contrasted: 48deg 10% 95%;
     --c-base-contrasted-hsl: hsl(var(--c-base-contrasted) / var(--c-base-transparency));
   
     /* alt */
-    --c-alt-h: 64deg;
-    --c-alt-s: 100%;
-    --c-alt-l: 74%;
-    --c-alt: var(--c-alt-h) var(--c-alt-s) var(--c-alt-l);
+    --c-alt: 64deg 100% 74%;
     --c-alt-transparency: 1;
     --c-alt-hsl: hsl(var(--c-alt) / var(--c-alt-transparency));
-    --c-alt-contrasted: var(--c-alt-h) var(--c-alt-s) 15%;
+    --c-alt-contrasted: 64deg 100% 15%;
     --c-alt-contrasted-hsl: hsl(var(--c-alt-contrasted) / var(--c-alt-transparency));
   
     /* accent */
-    --c-accent-h: 64deg;
-    --c-accent-s: 89%;
-    --c-accent-l: 54%;
-    --c-accent: var(--c-accent-h) var(--c-accent-s) var(--c-accent-l);
+    --c-accent: 64deg 89% 54%;
     --c-accent-transparency: 1;
     --c-accent-hsl: hsl(var(--c-accent) / var(--c-accent-transparency));
-    --c-accent-contrasted: var(--c-accent-h) var(--c-accent-s) 15%;
+    --c-accent-contrasted: 64deg 89% 15%;
     --c-accent-contrasted-hsl: hsl(var(--c-accent-contrasted) / var(--c-accent-transparency));
   
     /* surface */
-    --c-surface-h: 0deg;
-    --c-surface-s: 0%;
-    --c-surface-l: 94%;
-    --c-surface: var(--c-surface-h) var(--c-surface-s) var(--c-surface-l);
+    --c-surface: 0deg 0% 94%;
     --c-surface-transparency: 1;
     --c-surface-hsl: hsl(var(--c-surface) / var(--c-surface-transparency));
-    --c-surface-contrasted: var(--c-surface-h) var(--c-surface-s) 15%;
+    --c-surface-contrasted: 0deg 0% 15%;
     --c-surface-contrasted-hsl: hsl(var(--c-surface-contrasted) / var(--c-surface-transparency));
   
     /* soft */
-    --c-soft-h: 103deg;
-    --c-soft-s: 16%;
-    --c-soft-l: 69%;
-    --c-soft: var(--c-soft-h) var(--c-soft-s) var(--c-soft-l);
+    --c-soft: 103deg 16% 69%;
     --c-soft-transparency: 1;
     --c-soft-hsl: hsl(var(--c-soft) / var(--c-soft-transparency));
-    --c-soft-contrasted: var(--c-soft-h) var(--c-soft-s) 15%;
+    --c-soft-contrasted: 103deg 16% 15%;
     --c-soft-contrasted-hsl: hsl(var(--c-soft-contrasted) / var(--c-soft-transparency));
   
     /* muted */
-    --c-muted-h: 50deg;
-    --c-muted-s: 3%;
-    --c-muted-l: 60%;
-    --c-muted: var(--c-muted-h) var(--c-muted-s) var(--c-muted-l);
+    --c-muted: 50deg 3% 60%;
     --c-muted-transparency: 1;
     --c-muted-hsl: hsl(var(--c-muted) / var(--c-muted-transparency));
-    --c-muted-contrasted: var(--c-muted-h) var(--c-muted-s) 15%;
+    --c-muted-contrasted: 50deg 3% 15%;
     --c-muted-contrasted-hsl: hsl(var(--c-muted-contrasted) / var(--c-muted-transparency));
   
     /* success */
-    --c-success-h: 142deg;
-    --c-success-s: 38%;
-    --c-success-l: 28%;
-    --c-success: var(--c-success-h) var(--c-success-s) var(--c-success-l);
+    --c-success: 142deg 38% 28%;
     --c-success-transparency: 1;
     --c-success-hsl: hsl(var(--c-success) / var(--c-success-transparency));
-    --c-success-contrasted: var(--c-success-h) var(--c-success-s) 95%;
+    --c-success-contrasted: 142deg 38% 95%;
     --c-success-contrasted-hsl: hsl(var(--c-success-contrasted) / var(--c-success-transparency));
   
     /* error */
-    --c-error-h: 350deg;
-    --c-error-s: 88%;
-    --c-error-l: 57%;
-    --c-error: var(--c-error-h) var(--c-error-s) var(--c-error-l);
+    --c-error: 350deg 88% 57%;
     --c-error-transparency: 1;
     --c-error-hsl: hsl(var(--c-error) / var(--c-error-transparency));
-    --c-error-contrasted: var(--c-error-h) var(--c-error-s) 15%;
+    --c-error-contrasted: 350deg 88% 15%;
     --c-error-contrasted-hsl: hsl(var(--c-error-contrasted) / var(--c-error-transparency));
   
     /* warning */
-    --c-warning-h: 22deg;
-    --c-warning-s: 83%;
-    --c-warning-l: 50%;
-    --c-warning: var(--c-warning-h) var(--c-warning-s) var(--c-warning-l);
+    --c-warning: 22deg 83% 50%;
     --c-warning-transparency: 1;
     --c-warning-hsl: hsl(var(--c-warning) / var(--c-warning-transparency));
-    --c-warning-contrasted: var(--c-warning-h) var(--c-warning-s) 15%;
+    --c-warning-contrasted: 22deg 83% 15%;
     --c-warning-contrasted-hsl: hsl(var(--c-warning-contrasted) / var(--c-warning-transparency));
   
     /* default */
-    --c-default-h: 218deg;
-    --c-default-s: 58%;
-    --c-default-l: 58%;
-    --c-default: var(--c-default-h) var(--c-default-s) var(--c-default-l);
+    --c-default: 218deg 58% 58%;
     --c-default-transparency: 1;
     --c-default-hsl: hsl(var(--c-default) / var(--c-default-transparency));
-    --c-default-contrasted: var(--c-default-h) var(--c-default-s) 15%;
+    --c-default-contrasted: 218deg 58% 15%;
     --c-default-contrasted-hsl: hsl(var(--c-default-contrasted) / var(--c-default-transparency));
   
 

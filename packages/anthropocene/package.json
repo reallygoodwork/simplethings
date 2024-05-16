@@ -12,17 +12,17 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev:anthropocene-tsup": "tsup --watch",
-    "dev:anthropocene": "tsx watch ./src/index.ts",
+    "dev": "tsup --watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "tsup"
+    "build:anthropocene": "tsup"
   },
   "devDependencies": {
     "@simplethings/eslint-config": "workspace:*",
     "@simplethings/typescript-config": "workspace:*",
     "@types/hast": "^3.0.4",
     "@types/jest": "^29.5.12",
+    "@types/json2md": "^1.5.4",
     "@types/node": "^20.11.20",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
@@ -36,7 +36,10 @@
   },
   "prettier": "@simplethings/prettier-config",
   "dependencies": {
+    "@figma/plugin-typings": "*",
+    "console-log-colors": "^0.5.0",
     "hastscript": "^9.0.0",
+    "json2md": "^2.0.1",
     "lodash": "^4.17.21",
     "ts-jest": "^29.1.2",
     "tsup": "^8.0.2",

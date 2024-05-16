@@ -3,9 +3,11 @@
   "include": ["src/**/*.ts"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
     "baseUrl": ".",
     "paths": {
       "@utils/*": ["src/utils/*"],
+      "@lib/*": ["src/lib/*"],
       "@configTypes/*": ["src/configTypes/*"],
       "@configTypes/attributes": ["src/configTypes/attributes/attributes.ts"],
       "@configTypes/component": ["src/configTypes/component/component.ts"],

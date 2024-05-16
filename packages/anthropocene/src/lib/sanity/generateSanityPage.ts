@@ -1,0 +1,51 @@
+import { createClassName } from '@utils/createClassName'
+import { createComponentName } from '@utils/createComponentName'
+
+export const generateSanityPage = (components: any[] = []) => {
+  return new Promise<string>(async (resolve) => {
+    const componentsList = components.filter((component) => component !== 'Page')
+    const imports = await Promise.all(componentsList
+      .map(async (component) => {
+        const name = await createClassName(component)
+        return `import { ${component} } from './${name}'`
+      })).then((imports) => imports.join('\n'))
+
+
+    const ofTypes = await Promise.all(componentsList
+      .map(async (component) => {
+        const name = createComponentName(component)
+        return `{type: ${name}.name}`
+      })).then((types) => types.join(', '))
+
+    const sanityPage = `import {defineField} from 'sanity';
+${imports}
+
+// Don't edit this file. This is a generated file. Edit the component file instead.
+export const Page = defineField({
+  name: 'page',
+  title: 'Page',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'string',
+    }),
+    defineField({
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [${ofTypes}]
+    })
+  ]
+})
+  `
+
+    resolve(sanityPage)
+  })
+}

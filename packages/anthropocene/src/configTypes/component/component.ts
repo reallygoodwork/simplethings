@@ -3,10 +3,11 @@ import { zDependency } from '@configTypes/dependencies'
 import { zElementConfig } from '@configTypes/element'
 import { zState } from '@configTypes/state'
 
+
 export const zComponentConfig = zElementConfig.extend({
   name: z.string(),
   description: z.string().optional(),
-  dependencies: zDependency.array(),
+  dependencies: zDependency.array().optional(),
   state: zState.array().optional(),
   children: zElementConfig.array().nullable(),
   componentType: z.string().optional(),

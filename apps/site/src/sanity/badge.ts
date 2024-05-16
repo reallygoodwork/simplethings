@@ -18,7 +18,7 @@ defineField({
     title: 'variant',
     type: 'string',
     initialValue: 'primary',
-    options: { list: ['grey','primary','alt','accent','success','warning','error','default'] }
+    options: { list: ['primary','alt','accent','success','warning','error'] }
   }),
 defineField({
     name: 'rounded',

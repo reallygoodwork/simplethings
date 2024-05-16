@@ -1,5 +1,5 @@
 import {defineField} from 'sanity';
-import { Badge } from './badge'
+import { Rectangle2 } from './rectangle2'
 
 // Don't edit this file. This is a generated file. Edit the component file instead.
 export const Page = defineField({
@@ -21,7 +21,7 @@ export const Page = defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: Badge.name}]
+      of: [{type: Rectangle2.name}]
     })
   ]
 })

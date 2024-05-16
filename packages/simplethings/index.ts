@@ -1,14 +1,15 @@
-import fs from "fs";
+import { generateReactLibrary, generateSanitySchema, generateDocs } from "@simplethings/anthropocene";
 import path from "path";
-import { generateReactLibrary } from "./lib/react";
-import { generateSanityTypes } from "./lib/sanity";
 import { badge } from "./components/badge";
-import { generateDocs } from "./lib/docs";
 
-const reactComponents = [
-  { name: 'badge', componentName: 'Badge', config: badge, path: 'badge.tsx' },
+const Components = [
+  badge,
 ]
 
-generateReactLibrary(reactComponents);
-generateSanityTypes(reactComponents);
-generateDocs(reactComponents);
+const reactLibraryPath = path.join(__dirname, '..', 'ui-react', 'src');
+const sanityLibraryPath = path.join(__dirname, '..', '..', 'apps', 'site', 'src', 'sanity');
+const docsPath = path.join(__dirname, '..', '..', 'apps', 'docs', 'src', 'content', 'docs');
+
+generateReactLibrary(Components, reactLibraryPath);
+// generateSanitySchema(Components, sanityLibraryPath);
+// generateDocs(Components, docsPath);

@@ -1,8 +1,12 @@
 {
-  "extends": "@simplethings/typescript-config/base.json",
+  "extends": "@create-figma-plugin/tsconfig",
   "compilerOptions": {
-    "outDir": "dist"
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "typeRoots": ["node_modules/@figma", "node_modules/@types"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

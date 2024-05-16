@@ -4,9 +4,12 @@
   "private": true,
   "sideEffects": false,
   "exports": {
-    "./styles.css": "./dist/index.css",
+    "./styles.css": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
+    },
     ".": {
-      "types": "./src/index.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     }
@@ -14,10 +17,10 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "generate:components": "tsx src/index.ts",
-    "build": "tsx src/index.ts && tailwindcss -i ./src/styles.css -o ./dist/index.css && tsup",
+    "generate:components": "tsup",
+    "build": "tailwindcss -i ./src/components/styles.css -o ./dist/styles.css && tsup",
     "dev:tsup": "tsup --watch",
-    "dev:tailwind": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev:tailwind": "tailwindcss -i ./src/components/styles.css -o ./dist/index.css --watch",
     "dev": "concurrently -n tsup,tailwind -c green,blue \"pnpm run dev:tsup\" \"pnpm run dev:tailwind\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
