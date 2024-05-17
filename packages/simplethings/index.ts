@@ -8,8 +8,8 @@ const Components = [
 
 const reactLibraryPath = path.join(__dirname, '..', 'ui-react', 'src');
 const sanityLibraryPath = path.join(__dirname, '..', '..', 'apps', 'site', 'src', 'sanity');
-const docsPath = path.join(__dirname, '..', '..', 'apps', 'docs', 'src', 'content', 'docs');
+const docsPath = path.join(__dirname, '..', '..', 'apps', 'docs');
 
 generateReactLibrary(Components, reactLibraryPath);
-// generateSanitySchema(Components, sanityLibraryPath);
-// generateDocs(Components, docsPath);
+generateSanitySchema(Components, sanityLibraryPath);
+generateDocs(Components, docsPath);

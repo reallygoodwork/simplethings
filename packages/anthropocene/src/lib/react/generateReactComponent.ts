@@ -1,60 +1,60 @@
-
-import { createDependencyString } from '@configTypes/dependencies/createDependencyString'
 import { ElementSchema } from '@configTypes/element/element'
+import { createClassName } from '@utils/createClassName'
 import { createComponentName } from '@utils/createComponentName'
-import { generateCVAStyles } from '@utils/generateCVAStyles'
-import { camelCase } from 'lodash'
-
-const generateReactComponentProps = (configFile: ElementSchema) => {
-
-    const componentProps = configFile.componentProps
-
-    if (!componentProps) {
-      return ''
-    } else {
-      const props = componentProps
-        .map(
-          (prop) =>
-            `${camelCase(prop.name)}${prop.defaultValue !== undefined && prop.defaultValue !== '' ? ` = ${typeof prop.defaultValue !== 'string' ? prop.defaultValue : `'${prop.defaultValue}'`}` : ''}`,
-        )
-        // .concat('className')
-        .concat('...rest')
-        .join(',\n')
-
-      return props
-    }
-
-}
+import handlebars from 'handlebars'
 
 export const generateReactComponent = async (configFile: ElementSchema) => {
-  const componentName = createComponentName(configFile.name)
-  const dependencies = createDependencyString({
+
+  const template = handlebars.compile(templateSource)
+
+  const context = {
+    name: createComponentName(configFile.name),
+    baseClassname: createClassName(configFile.name),
+    elementType: configFile.elementType,
     dependencies: configFile.dependencies,
-    hasVariants: configFile.variants ? true : false,
-    library: 'react',
-  })
-  const cvaStyles = generateCVAStyles(configFile)
-  const componentProps = generateReactComponentProps(configFile)
+    componentProps: configFile.componentProps,
+    variants: configFile.variants,
+    typeScriptType: configFile.typeScriptType || 'HTMLDivElement',
+    children: configFile.children,
+  }
 
-  const hasCVA = configFile && configFile.variants && Object.keys(configFile.variants).length > 0
-  const children = configFile.children
-
-  return `${dependencies}
-${hasCVA ? cvaStyles : '\n'}
-
-interface ${componentName}Props extends React.HTMLAttributes<HTMLDivElement>${hasCVA ? `, VariantProps<typeof ${componentName}CVA>` : ''} {
-  ${configFile.componentProps?.map((prop) => `${prop.name}${!prop.required ? '?' : ''}: ${prop.type}`).join('\n')}
+  return template(context)
 }
 
-export const ${componentName}: React.FC<${componentName}Props> = ({
-  ${componentProps}
-}) => {
-  return <${configFile.elementType} className={${hasCVA ? `${componentName}CVA({ className, ${configFile.variants ? Object.keys(configFile.variants).join(', ') : ''} })` : ''}}>
-    ${children?.map((child) => (child.isText ? (child.boundProps ? `{${child.boundProps}}` : child.textValue) : `<${child.elementType}></${child.elementType}>`)).join('\n')}
-  </${configFile.elementType}>
+const templateSource = `import React from 'react';
+{{#if dependencies}}
+{{#each dependencies}}
+import {{#if this.isDefault}}{{this.name}}{{else}}{{this.name}}{{/if}} from '{{this.packageName}}'
+{{/each}}
+{{/if}}
+{{#if variants}}
+import { cva, VariantProps } from 'class-variance-authority'
+{{/if}}
+
+{{#if variants}}
+const {{name}}CVA = cva('{{baseClassname}}', {
+  variants: {
+
+  }
+})
+{{/if}}
+
+export interface {{name}}Props extends React.HTMLAttributes<HTMLDivElement>{{#if variants}}, VariantProps<typeof {{name}}CVA>{{/if}} {
+  className?: string;
 }
 
-${componentName}.displayName = '${componentName}'
-
-  `
-}
+export const {{name}}: React.FC<{{name}}Props> = ({ className = '' }) => {
+  return (
+    <{{elementType}} className={className}>
+      {{#if children}}
+        {{#each children}}
+          {{#if this.isText}}
+       <{{this.elementType}}>{{#if this.boundProps}}{{{this.boundProps.name}}}{{/if}}{{this.textValue}}</{{this.elementType}}>
+          {{else}}
+            <{{>this.name}} />
+          {{/if}}
+        {{/each}}
+      {{/if}}
+    </{{elementType}}>
+  );
+};`

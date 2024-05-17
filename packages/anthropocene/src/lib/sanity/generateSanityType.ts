@@ -2,33 +2,50 @@ import { ComponentConfig } from '@configTypes/component/component'
 import { ElementSchema } from '@configTypes/element/element'
 import { createClassName } from '@utils/createClassName'
 import { createComponentName } from '@utils/createComponentName'
+import handlebars from 'handlebars'
 
 export const generateSanityType = (configFile: ElementSchema) => {
-  const componentName = createComponentName(configFile.name)
-  const className = createClassName(configFile.name)
+  return new Promise<string>((resolve) => {
+    const template = handlebars.compile(templateSource)
+    handlebars.registerHelper('loud', function (aString) {
+      if (typeof aString === 'boolean') return aString
+      if (typeof aString === 'string') return `'` + aString + `'`
+    })
 
-  const sanityTypes = `import {defineField} from 'sanity';
+    const context = {
+      name: createComponentName(configFile.name),
+      baseClassname: createClassName(configFile.name),
+      elementType: configFile.elementType,
+      dependencies: configFile.dependencies,
+      componentProps: configFile.componentProps,
+      variants: configFile.variants,
+      children: configFile.children,
+    }
 
-// Don't edit this file. This is a generated file. Edit the component file instead.
-export const ${componentName} = defineField({
-  name: '${className}',
-  title: '${componentName}',
+    resolve(template(context))
+  })
+}
+
+const templateSource = `import { defineField } from 'sanity';
+
+export const {{name}} = defineField({
+  name: '{{baseClassname}}',
+  title: '{{name}}',
   type: 'object',
   fields: [
-    ${configFile.componentProps
-      ?.map((prop) => {
-        return `defineField({
-    name: '${prop.name}',
-    title: '${prop.name}',
-    type: '${prop.tsType}',
-    ${prop.defaultValue ? `initialValue: '${prop.defaultValue}',` : ``}
-    ${prop.options ? `options: { list: [${prop.options.map((option: string) => `'${option}'`)}] }` : ``}
-  })`
-      })
-      .join(',\n')}
+    {{#each componentProps}}
+    defineField({
+      name: '{{name}}',
+      title: '{{name}}',
+      type: '{{this.tsType}}',
+      {{#if defaultValue}}
+      initialValue: {{{loud this.defaultValue}}},
+      {{/if}}
+      {{#if options}}
+      options: { list: [{{#each options}}'{{this}}'{{#unless @last}}, {{/unless}}{{/each}}] }
+      {{/if}}
+    }),
+    {{/each}}
   ]
-})\n
-  `
-
-  return sanityTypes
-}
+})
+`

@@ -1,34 +1,30 @@
-import { color } from "console-log-colors"
-import fs from "fs"
-import { createComponentName } from "@utils/createComponentName"
-import { generateReactComponent } from "./generateReactComponent"
-import { transformStylesToString } from "@utils/transformStylesToString"
-import path from "path"
-import { ElementSchema } from "@configTypes/element/element"
+import fs from 'node:fs';
+import { promises as fsPromises } from 'node:fs';
+import { rimraf } from 'rimraf'
+import path from 'path'
+import { ElementSchema } from '@configTypes/element/element'
+import { createComponentName } from '@utils/createComponentName'
+import { transformStylesToString } from '@utils/transformStylesToString'
+import { color } from 'console-log-colors'
+
+import { generateReactComponent } from './generateReactComponent'
 
 export async function generateReactLibrary(components: ElementSchema[], outputDir: string) {
+  // await rimraf(outputDir + '/components')
 
-  if (!fs.existsSync(outputDir + '/components')) {
-    fs.mkdir(outputDir + '/components', (err) => {
-      if (err) {
-        console.error(err)
-      }
-
-      console.log(color.bold.bgCyanBright('React: Output directory created'))
-    })
-
-
+  try {
+    await fsPromises.mkdir(outputDir + '/components')
+    console.log(color.bold.bgCyanBright('React: Index directory created'))
+  } catch (err) {
+    console.error(err)
   }
 
-  fs.writeFile(outputDir + '/components/index.ts', '', (err) => {
-    if (err) {
-      console.error(err)
-    }
-
+  try {
+    await fsPromises.writeFile(outputDir + '/components/index.ts', '')
     console.log(color.bold.bgCyanBright('React: Index directory created'))
-  })
-
-
+  } catch (err) {
+    console.error(err)
+  }
 
   for (const component of components) {
     const result = await generateReactComponent(component)
@@ -36,74 +32,51 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
 
     const componentStyles = path.join(outputDir, 'components', 'styles.css')
     if (!fs.existsSync(componentStyles)) {
-
       // Generate styles file
-      fs.writeFile(
-        outputDir + '/components/styles.css',
-        '',
-        (err) => {
-          if (err) {
-            console.error(err)
-          }
-
-          console.log(color.bold.bgCyanBright('React: Styles file created'))
-        },
-      )
+      try {
+        await fsPromises.writeFile(componentStyles, '')
+        console.log(color.bold.bgCyanBright('React: Styles file created'))
+      } catch (err) {
+        console.error(err)
+      }
     } else {
-      fs.truncate(
-        outputDir + '/components/styles.css',
-        0,
-        (err) => {
-          if (err) {
-            console.error(err)
-          }
-
-          console.log(color.bold.bgCyanBright('React: Styles file cleared'))
-        },
-      )
+      try {
+        fs.truncateSync(componentStyles, 0)
+        console.log(color.bold.bgCyanBright('React: Styles file cleared'))
+      } catch (err) {
+        console.error(err)
+      }
     }
 
-    fs.appendFile(
-      outputDir + '/components/index.ts',
-      `export { ${createComponentName(component.name)} } from './${component.name?.toLowerCase()}';\n`,
-      (err) => {
-        if (err) {
-          console.error(err)
-        }
+    try {
+      await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)} } from './${component.name?.toLowerCase()}';\n`)
+      console.log(color.bgCyanBright.bold(`React: Exported ${component.componentName}`))
+    } catch (err) {
+      console.error(err)
+    }
 
-        console.log(color.bgCyanBright.bold(`React: Exported ${component.componentName}`))
-      },
-    )
+    try {
+      await fsPromises.appendFile(componentStyles, `@tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      `)
+      console.log(color.bgCyanBright.bold('React: Base Component styles added'))
+    } catch (err) {
+      console.error(err)
+    }
 
-    fs.appendFile(
-      componentStyles,
-      `@tailwind base;
-@tailwind components;
-@tailwind utilities;
-`,
-      (err) => {
-        if (err) {
-          console.error(err)
-        }
-        console.log(color.bgCyanBright.bold('React: Base Component styles added'))
-      },
-    )
-
-    fs.appendFile(componentStyles, styles, (err) => {
-      if (err) {
-        console.error(err)
-      }
+    try {
+      await fsPromises.appendFile(componentStyles, styles)
       console.log(color.bgCyanBright.bold('React: Component styles added'))
-    })
+    } catch (err) {
+      console.error(err)
+    }
 
-    fs.writeFile(outputDir + `/components/${component.name}.tsx`, result, (err) => {
-      if (err) {
-        console.error(err)
-      }
-
+    try {
+      await fsPromises.writeFile(outputDir + `/components/${component.name}.tsx`, result)
       console.log(color.bgCyanBright.bold(`React: Component ${component.name} created`))
-    })
-
-
+    } catch (err) {
+      console.error(err)
+    }
   }
 }

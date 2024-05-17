@@ -4,10 +4,15 @@ export const badge: ElementSchema = {
   "name": "rectangle2",
   "isText": false,
   "isComponent": true,
-  "dependencies": [],
+  "dependencies": [{
+    "packageName": "react",
+    "name": "useState",
+    // "isDefault": true
+  }],
   "description": "A badge component",
   "elementAttributes": {},
   "elementType": "div",
+  "typeScriptType": "HTMLDivElement",
   "styles": {
     "height": "45px",
     "backgroundColor": "A00028",

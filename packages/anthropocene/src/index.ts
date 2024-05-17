@@ -18,4 +18,4 @@ export { generateSanitySchema } from '@lib/sanity/generateSanitySchema'
 export { generateDocs } from '@lib/docs/generateDocs'
 export { generateJsonDocs } from '@lib/docs/generateJSONDocs'
 
-export { generateSpec } from '@lib/figma/generateSpec'
+// export { generateSpec } from '@lib/figma/generateSpec'

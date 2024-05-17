@@ -1,72 +1,70 @@
-import fs from 'fs'
+import { promises as fsPromises } from 'node:fs';
+import { rimraf } from 'rimraf'
 import { createComponentName } from '@utils/createComponentName'
 
 import { generateSanityPage } from './generateSanityPage'
 import { generateSanityType } from './generateSanityType'
 import { color } from 'console-log-colors'
 
-const generateSanityOutputDir = (outputDir: string) => {
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdir(outputDir, (err) => {
-      if (err) {
-        console.error(err)
-      }
-      console.log(color.bold.bgRedBright('Sanity: Output directory created'))
-    })
+export async function generateSanitySchema(components: any[], outputDir: string) {
+
+  await rimraf(outputDir)
+
+  try {
+    await fsPromises.mkdir(outputDir)
+    console.log(color.bold.bgRedBright('Sanity: Output directory created'))
+  } catch (err) {
+    console.error(err)
   }
 
-  fs.writeFile(outputDir + '/index.ts', '', (err) => {
-    if (err) {
+  try {
+    await fsPromises.writeFile(outputDir + '/index.ts', '')
+    console.log(color.bold.bgRedBright('Sanity: Index file created'))
+  } catch (err) {
+    console.error(err)
+  }
+
+  const sanityComponents: any[] = []
+
+  for (const component of components) {
+    const result = await generateSanityType(component)
+    const componentName = createComponentName(component.name)
+
+    try {
+      await fsPromises.writeFile(outputDir + `/${component.name}.ts`, result)
+      console.log(color.bold.bgRedBright(`Sanity: Component ${component.name} created`))
+    } catch (err) {
       console.error(err)
     }
 
-    console.log(color.bold.bgRedBright('Sanity: Index file created'))
-  })
-}
-
-export async function generateSanitySchema(components: any[], outputDir: string) {
-  return new Promise<void>(async (resolve) => {
-    generateSanityOutputDir(outputDir)
-
-    const sanityComponents: any[] = []
-
-    for await (const component of components) {
-      const result = generateSanityType(component)
-      const componentName = createComponentName(component.name)
-
-      fs.writeFile(outputDir + `/${component.name}.ts`, result, (err) => {
-        if (err) {
-          console.error(err)
-        }
-        console.log(color.bold.bgRedBright(`Sanity: Component ${component.name} created`))
-      })
-
-      fs.appendFile(outputDir + '/index.ts', `import { ${componentName} } from './${component.name}';\n`, (err) => {
-        if (err) {
-          console.error(err)
-        }
-        console.log(color.bold.bgRedBright(`Sanity: Exported ${component.name}`))
-      })
-
-      sanityComponents.push('Page')
-      sanityComponents.push(componentName)
+    try {
+      await fsPromises.appendFile(outputDir + `/index.ts`, `import { ${componentName} } from './${component.name}';\n`)
+      console.log(color.bold.bgRedBright(`Sanity: Exported ${component.name}`))
+    } catch (err) {
+      console.error(err)
     }
 
-    fs.appendFile(
-      outputDir + '/index.ts',
-      `import { Page } from './page'
+    sanityComponents.push('Page')
+    sanityComponents.push(componentName)
+  }
 
-  export const sanityComponents = [${sanityComponents.join(', ')}]`,
-      (err) => {
-        if (err) {
-          console.error(err)
-        }
-        console.log(color.bold.bgRedBright(`Sanity: Created Schema Exports`))
-      },
-    )
 
-    const sanityPageType = await generateSanityPage(sanityComponents)
-    fs.writeFile(outputDir + '/page.ts', sanityPageType, (err) => {})
-    resolve()
-  })
+
+
+  const sanityPageType = await generateSanityPage(sanityComponents)
+
+  try {
+    await fsPromises.writeFile(outputDir + '/page.ts', sanityPageType)
+    console.log(color.bold.bgRedBright('Sanity: Page created'))
+  } catch (err) {
+    console.error(err)
+  }
+
+  try {
+    await fsPromises.appendFile(outputDir + '/index.ts', `import { Page } from './page'
+
+export const sanityComponents = [${sanityComponents.join(', ')}]`,)
+  } catch (err) {
+    console.error(err)
+  }
 }

@@ -1,15 +1,13 @@
-import { ComponentConfig } from "@configTypes/component/component";
-import { createClassName } from "@utils/createClassName";
 import { generateStyles } from "./generateStyles";
 import { getCommonStyles } from "./getCommonStyles";
 import { removeCommonStyles } from "./removeCommonStyles";
 import { generateComponentProps } from "./generateComponentProps";
 import { generateBoundPropReferences } from "./generateBoundPropReferences";
-import { ElementSchema } from "@configTypes/element/element";
+import { camelize } from './utils'
 
-export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | null> => {
+export const generateSpec = async (spec: SceneNode): Promise<any | null> => {
 
-  const name = createClassName(spec.name)
+  const name = camelize(spec.name)
 
   if (spec.type === 'COMPONENT_SET') {
     const children = spec.children
@@ -32,6 +30,7 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
 
     return {
       name,
+      dependencies: [],
       isText: false,
       isComponent: true,
       elementAttributes: {},

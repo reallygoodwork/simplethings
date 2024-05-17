@@ -11,7 +11,7 @@ export const transformStylesToString = (styles: StyleProperty) =>
     }
 
     Object.keys(styles).forEach((style) => {
-      console.log(style)
+      // console.log(style)
     })
 
     // styles.forEach((style) => {

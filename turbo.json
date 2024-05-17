@@ -18,15 +18,15 @@
       "cache": false
     },
     "dev": {
-      "dependsOn": ["^dev:anthropocene"],
+      "dependsOn": ["build:anthropocene"],
+      "persistent": true,
+      "cache": false
+    },
+    "dev:anthropocene": {
       "persistent": true,
       "cache": false
     },
     "build:anthropocene": {
-      "cache": false,
-      "outputs": ["dist/**"]
-    },
-    "dev:anthropocene": {
       "cache": false,
       "outputs": ["dist/**"]
     },

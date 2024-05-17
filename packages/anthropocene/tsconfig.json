@@ -1,6 +1,14 @@
 {
   "extends": "@simplethings/typescript-config/base.json",
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "../../apps/figma/src/plugin/lib/generateBoundPropReferences.ts",
+    "../../apps/figma/src/plugin/lib/generateComponentProps.ts",
+    "../../apps/figma/src/plugin/lib/generateSpec.ts",
+    "../../apps/figma/src/plugin/lib/generateStyles.ts",
+    "../../apps/figma/src/plugin/lib/getCommonStyles.ts",
+    "../../apps/figma/src/plugin/lib/removeCommonStyles.ts"
+  ],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
