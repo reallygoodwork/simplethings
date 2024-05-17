@@ -1,4 +1,4 @@
-import { generateSpec } from './lib/generateSpec';
+import { generateSpec } from './generators/generateSpec';
 
 figma.showUI(__html__, { width: 600, height: 600 });
 

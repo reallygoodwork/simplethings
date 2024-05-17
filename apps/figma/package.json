@@ -36,9 +36,13 @@
     "vite-svg-loader": "^5.1.0"
   },
   "dependencies": {
+    "colord": "^2.9.3",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "mathjs": "^12.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "svg-parser": "^2.0.4",
     "zod": "^3.23.7"
   },
   "engines": {
@@ -47,7 +51,7 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@simplethings/eslint-config/astro"
+      "./library.js"
     ]
   },
   "prettier": "@simplethings/prettier-config"

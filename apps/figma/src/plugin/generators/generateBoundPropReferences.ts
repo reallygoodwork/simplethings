@@ -1,4 +1,4 @@
-import { BoundProps } from "@configTypes/element/element"
+import { BoundProps } from "../types/element"
 
 
 export function generateBoundPropReferences(node: SceneNode) {

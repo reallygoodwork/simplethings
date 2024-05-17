@@ -4,8 +4,11 @@ import { removeCommonStyles } from "./removeCommonStyles";
 import { generateComponentProps } from "./generateComponentProps";
 import { generateBoundPropReferences } from "./generateBoundPropReferences";
 import { camelize } from './utils'
+import { ElementSchema } from "../types/element";
+import { generateStyleConfig } from "../lib/generateStyleConfig";
+import generateStructure from "../lib/generateStructure";
 
-export const generateSpec = async (spec: SceneNode): Promise<any | null> => {
+export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | null> => {
 
   const name = camelize(spec.name)
 
@@ -13,6 +16,9 @@ export const generateSpec = async (spec: SceneNode): Promise<any | null> => {
     const children = spec.children
     const variantStyles = children.map(async (child) => await generateStyles(child))
     const commonStyles = getCommonStyles(variantStyles)
+    const hello = await generateStructure(spec)
+
+    console.log(hello)
 
     const variants = children.map((child) => {
       const childStyles = generateStyles(child)
@@ -35,7 +41,8 @@ export const generateSpec = async (spec: SceneNode): Promise<any | null> => {
       isComponent: true,
       elementAttributes: {},
       elementType: 'div',
-      styles: commonStyles,
+      typeScriptType: "HTMLDivElement",
+      styles: hello,
       componentProps: generateComponentProps(spec),
       children: hasChildren ? componentChildren.children.map((child: SceneNode) => generateSpec(child)) : [],
       variants
