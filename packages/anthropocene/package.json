@@ -2,6 +2,7 @@
   "name": "@simplethings/anthropocene",
   "version": "0.0.1",
   "private": true,
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
