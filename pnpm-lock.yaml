@@ -260,6 +260,9 @@ importers:
       '@figma/plugin-typings':
         specifier: '*'
         version: 1.93.0
+      '@types/lodash':
+        specifier: ^4.17.4
+        version: 4.17.4
       console-log-colors:
         specifier: ^0.5.0
         version: 0.5.0
@@ -4955,6 +4958,10 @@ packages:
 
   /@types/lodash@4.17.0:
     resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
+    dev: false
+
+  /@types/lodash@4.17.4:
+    resolution: {integrity: sha512-wYCP26ZLxaT3R39kiN2+HcJ4kTd3U1waI/cY7ivWYqFP6pW3ZNpvi6Wd6PHZx7T/t8z0vlkXMg3QYLa7DZ/IJQ==}
     dev: false
 
   /@types/mdast@4.0.3:
