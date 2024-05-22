@@ -1,0 +1,22 @@
+---
+interface Props {
+  content: {
+    _type: string
+    _key: string
+    [key: string]: any
+  }[]
+}
+
+const { content } = Astro.props
+---
+
+{
+  content.map((item) => {
+    switch (item._type) {
+      case '':
+        return <div>Hello</div>
+      default:
+        return <div>No Component: {item._type}</div>
+    }
+  })
+}

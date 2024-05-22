@@ -9,6 +9,7 @@ export const zBoundProps = z.object({
   figmaRef: z.union([z.string(), z.null(), z.undefined()]),
   name: z.union([z.string(), z.null(), z.undefined()]),
   type: z.string(),
+  value: z.any().optional()
 })
 
 export type BoundProps = z.infer<typeof zBoundProps>
@@ -18,7 +19,10 @@ export const zVariant = z.object({
   name: z.string().optional(),
   value: z.string().optional(),
   styles: zStyleProperty.optional(),
+  props: z.record(z.string(), z.any()).array().optional(),
 })
+
+export type Variant = z.infer<typeof zVariant>
 
 export const zElementConfig = z.object({
   name: z.string(),

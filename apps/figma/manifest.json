@@ -1,9 +1,9 @@
 {
   "api": "1.0.0",
   "editorType": ["figma"],
-  "id": "anthropocene",
+  "id": "dave",
   "permissions": [],
-  "name": "Anthropocene",
+  "name": "Dave",
   "main": "dist/code.js",
   "ui": "dist/index.html",
   "networkAccess": {

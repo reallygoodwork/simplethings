@@ -6,29 +6,41 @@ import { ElementSchema } from '@configTypes/element/element'
 import { createComponentName } from '@utils/createComponentName'
 import { transformStylesToString } from '@utils/transformStylesToString'
 import { color } from 'console-log-colors'
+import { camelCase, lowerCase } from "lodash";
 
 import { generateReactComponent } from './generateReactComponent'
 
 export async function generateReactLibrary(components: ElementSchema[], outputDir: string) {
   // await rimraf(outputDir + '/components')
 
-  try {
-    await fsPromises.mkdir(outputDir + '/components')
-    console.log(color.bold.bgCyanBright('React: Index directory created'))
-  } catch (err) {
-    console.error(err)
+  if (!fs.existsSync(outputDir  + '/components')) {
+    try {
+      await fsPromises.mkdir(outputDir + '/components')
+      console.log(color.bold.bgCyanBright('React: Index directory created'))
+    } catch (err) {
+      console.error(err)
+    }
   }
 
-  try {
-    await fsPromises.writeFile(outputDir + '/components/index.ts', '')
-    console.log(color.bold.bgCyanBright('React: Index directory created'))
-  } catch (err) {
-    console.error(err)
+  if (!fs.existsSync(outputDir + '/components/index.ts')) {
+    try {
+      await fsPromises.writeFile(outputDir + '/components/index.ts', '')
+      console.log(color.bold.bgCyanBright('React: Index directory created'))
+    } catch (err) {
+      console.error(err)
+    }
+  } else {
+    try {
+      fs.truncateSync(outputDir + '/components/index.ts', 0)
+      console.log(color.bold.bgCyanBright('React: Index directory cleared'))
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   for (const component of components) {
     const result = await generateReactComponent(component)
-    const styles = await transformStylesToString(component.styles || {})
+    const styles = await transformStylesToString(component)
 
     const componentStyles = path.join(outputDir, 'components', 'styles.css')
     if (!fs.existsSync(componentStyles)) {
@@ -49,7 +61,7 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     }
 
     try {
-      await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)} } from './${component.name?.toLowerCase()}';\n`)
+      await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)} } from './${camelCase(lowerCase(component.name))}';\n`)
       console.log(color.bgCyanBright.bold(`React: Exported ${component.componentName}`))
     } catch (err) {
       console.error(err)
@@ -57,8 +69,8 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
 
     try {
       await fsPromises.appendFile(componentStyles, `@tailwind base;
-      @tailwind components;
-      @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
       `)
       console.log(color.bgCyanBright.bold('React: Base Component styles added'))
     } catch (err) {
@@ -73,8 +85,8 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     }
 
     try {
-      await fsPromises.writeFile(outputDir + `/components/${component.name}.tsx`, result)
-      console.log(color.bgCyanBright.bold(`React: Component ${component.name} created`))
+      await fsPromises.writeFile(outputDir + `/components/${camelCase(lowerCase(component.name))}.tsx`, result)
+      console.log(color.bgCyanBright.bold(`React: Component ${camelCase(lowerCase(component.name))} created`))
     } catch (err) {
       console.error(err)
     }

@@ -1,1 +1,2 @@
-export { Rectangle2 } from './rectangle2';
+export { Hero } from './hero';
+export { Button } from './button';

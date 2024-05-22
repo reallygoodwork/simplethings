@@ -1,39 +1,41 @@
-import { StyleProperty } from '@configTypes/shared'
-import { kebabCase } from 'lodash'
+import { ElementSchema } from '@configTypes/element/element'
+import { createClassName } from '@utils/createClassName';
 
-export const transformStylesToString = (styles: StyleProperty) =>
-  new Promise<string>((resolve) => {
-    let styleString = ''
+function camelCaseToKebabCase(property: string): string {
+  return property.replace(/[A-Z]/g, (match) => '-' + match.toLowerCase());
+}
 
-    if (!styles) {
-      resolve('')
-      return
-    }
+export const transformStylesToString = async (configFile: ElementSchema) => {
 
-    Object.keys(styles).forEach((style) => {
-      // console.log(style)
-    })
+  const baseClassName = createClassName(configFile.name)
 
-    // styles.forEach((style) => {
-    //   if (!style) {
-    //     return
-    //   }
+  const childrenWithText = configFile.children?.filter(child => child.isText)
 
+  let textProps = {}
 
-    //   const key = Object.keys(style)
-    //   styleString += `\n.${key[0]} {\n`
+  if (childrenWithText && childrenWithText.length === 1) {
+    textProps = childrenWithText[0]?.styles
+  }
 
+  const properties = Object.entries(configFile.styles).map(([key, value]) => {
+    return `${camelCaseToKebabCase(key)}: ${value};`
+  }).join('\n')
 
+  const variantStyles = configFile.variants?.map(variant => {
+    return `.${baseClassName}-${variant.props?.map(prop => prop.value).join('-')} {
+    ${Object.entries(variant.styles).map(([key, value]) => {
+      return `${camelCaseToKebabCase(key)}: ${value};`
+    }).join('\n')}
+    }`
+  }).join('\n')
 
-    //   Object.keys(style[key[0]!]!).forEach((prop) => {
-    //     if (prop.startsWith('--')) {
-    //       styleString += `  ${prop}: ${style[key[0]!]![prop]};\n`
-    //     } else {
-    //       styleString += `  ${kebabCase(prop)}: ${style[key[0]!]![prop]};\n`
-    //     }
-    //   })
-
-    //   styleString += '}\n'
-    // })
-    resolve(styleString)
-  })
+  return `
+.${baseClassName} {
+  ${properties}
+  ${Object.entries(textProps).map(([key, value]) => {
+return `${camelCaseToKebabCase(key)}: ${value};`
+  }).join('\n')}
+}
+${variantStyles}
+`
+}

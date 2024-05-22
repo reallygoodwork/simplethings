@@ -20,6 +20,7 @@ export const zBoundProps = z.object({
   figmaRef: z.union([z.string(), z.null(), z.undefined()]),
   name: z.union([z.string(), z.null(), z.undefined()]),
   type: z.string(),
+  value: z.any().optional()
 })
 
 export type BoundProps = z.infer<typeof zBoundProps>

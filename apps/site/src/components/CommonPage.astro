@@ -2,10 +2,12 @@
 import { SEO as AstroSEO } from 'astro-seo'
 
 import '@styles/fonts.css'
-import '@simplethings/react/styles.css'
 import '@simplethings/tailwind-config/simplethings.css'
+import '@simplethings/react/styles.css'
 
 import Favicon from '@components/Favicon.astro'
+
+import { Button } from '@simplethings/react'
 
 const {
   title = 'Really Good Work Inc.',
@@ -86,6 +88,7 @@ if (publishDate) {
     <meta name="theme-color" content="#0000ec" />
     <Favicon />
   </head>
+  <Button buttonText="testing" />
   <body>
     <slot />
   </body>

@@ -55,6 +55,7 @@ export function generateStyleConfig(
   const styleConfig = { ...StyleConfig }
   const definedOnParent = []
 
+
   const hasChildren = node.type !== 'TEXT' && node?.children && node?.children?.length > 0
   try {
     // Generate Parent Defined Styles that will be inherited by Text children
@@ -622,14 +623,15 @@ export function generateStyleConfig(
       }
     }
 
-    if (config.isRoot) {
+    if ('maxWidth' in node && node.layoutMode !== 'FIXED' && node.type !== 'TEXT' && node.maxWidth) {
       styleConfig['maxWidth'] = {
         ...styleConfig['maxWidth'],
-        value: node.width,
+        value: node.maxWidth,
         unit: 'px',
         defined: true,
       }
     }
+
   } catch (error) {
     console.error(error)
     throw error

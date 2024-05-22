@@ -33,6 +33,7 @@ export const {{name}} = defineField({
   title: '{{name}}',
   type: 'object',
   fields: [
+    {{#if componentProps}}
     {{#each componentProps}}
     defineField({
       name: '{{name}}',
@@ -46,6 +47,15 @@ export const {{name}} = defineField({
       {{/if}}
     }),
     {{/each}}
+    {{else}}
+    defineField({
+      name: 'placeholder',
+      title: 'Placeholder',
+      type: 'string',
+    }),
+    {{/if}}
+    {{#if variants}}
+    {{/if}}
   ]
 })
 `

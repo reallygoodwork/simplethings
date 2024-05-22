@@ -1,9 +1,11 @@
 import { generateReactLibrary, generateSanitySchema, generateDocs } from "@simplethings/anthropocene";
 import path from "path";
-import { badge } from "./components/badge";
+import { Hero } from "./components/Hero.schema";
+import { Button } from "./components/Button.schema";
 
 const Components = [
-  badge,
+  Hero,
+  Button
 ]
 
 const reactLibraryPath = path.join(__dirname, '..', 'ui-react', 'src');

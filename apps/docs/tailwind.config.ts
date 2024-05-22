@@ -1,4 +1,5 @@
 import starlightPlugin from '@astrojs/starlight-tailwind';
+import colors from 'tailwindcss/colors';
 
 // Generated color palettes
 const accent = { 200: '#eafa8e', 600: '#c3b80b', 900: '#6e5715', 950: '#402f08' };
@@ -9,7 +10,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			colors: { accent, gray },
+			colors: { accent: colors.indigo, gray: colors.zinc },
 			fontFamily: {
 				sans: ['Satoshi Variable', 'sans-serif'],
 			}

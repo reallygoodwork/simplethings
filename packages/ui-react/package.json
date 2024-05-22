@@ -20,7 +20,7 @@
     "generate:components": "tsup",
     "build": "tailwindcss -i ./src/components/styles.css -o ./dist/styles.css && tsup",
     "dev:tsup": "tsup --watch",
-    "dev:tailwind": "tailwindcss -i ./src/components/styles.css -o ./dist/index.css --watch",
+    "dev:tailwind": "tailwindcss -i ./src/components/styles.css -o ./dist/styles.css --watch",
     "dev": "concurrently -n tsup,tailwind -c green,blue \"pnpm run dev:tsup\" \"pnpm run dev:tailwind\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },

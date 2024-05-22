@@ -38,7 +38,7 @@ export const generateDocs = async (components: ElementSchema[], outputDir: strin
   for (const component of components) {
     const componentName = createComponentName(component.name)
     const jsonDocString = await generateJsonDocs(component)
-    const docsPath = path.join(outputDir, 'src', 'content', 'docs', 'components', `${component.name}.mdx`)
+    const docsPath = path.join(outputDir, 'src', 'content', 'docs', 'components', `${component.name.toLowerCase()}.mdx`)
 
     const heading = `---
 title: ${componentName}
@@ -54,7 +54,7 @@ description: ${component.description}
       console.error(err)
     }
 
-    sideBarNav.push({ label: componentName, link: `/components/${component.name}` })
+    sideBarNav.push({ label: componentName, link: `/components/${component.name.toLowerCase()}` })
   }
 
   try {

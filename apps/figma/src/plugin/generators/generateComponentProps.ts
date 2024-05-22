@@ -10,8 +10,8 @@ export function generateComponentProps(node: SceneNode) {
         figmaRef: key,
         name: camelize(key.split('#')[0].toLowerCase()),
         tsType: prop?.type === 'TEXT' || prop?.type === 'VARIANT' ? 'string' : 'boolean',
-        defaultValue: prop?.defaultValue,
-        options: prop?.variantOptions,
+        defaultValue: prop?.type === 'VARIANT' && prop?.variantOptions?.length > 0 ? camelize(prop.defaultValue as string) : prop.defaultValue,
+        options: prop?.variantOptions?.map((option) => camelize(option)),
       }
 
   }) : []

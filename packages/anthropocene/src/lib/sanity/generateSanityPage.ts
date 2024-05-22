@@ -6,8 +6,7 @@ export const generateSanityPage = (components: any[] = []) => {
     const componentsList = components.filter((component) => component !== 'Page')
     const imports = await Promise.all(componentsList
       .map(async (component) => {
-        const name = await createClassName(component)
-        return `import { ${component} } from './${name}'`
+        return `import { ${component} } from './${component}'`
       })).then((imports) => imports.join('\n'))
 
 
@@ -25,22 +24,48 @@ export const Page = defineField({
   name: 'page',
   title: 'Page',
   type: 'document',
+  groups: [
+    {
+      name: 'content',
+      title: 'Content',
+      default: true
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
+      group: 'content'
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'string',
+      group: 'seo'
     }),
     defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [${ofTypes}]
+      of: [${ofTypes}],
+      group: 'content'
+    }),
+    defineField({
+      name: 'seoTitle', title: 'SEO Title', type: 'string', group: 'seo'
+    }),
+    defineField({
+      name: 'seoKeywords', title: 'SEO Keywords', type: 'string', group: 'seo'
+    }),
+    defineField({
+      name: 'seoDescription', title: 'SEO Description', type: 'string', group: 'seo'
+    }),
+    defineField({
+      name: 'seoImage', title: 'SEO Image', type: 'image', group: 'seo'
     })
   ]
 })

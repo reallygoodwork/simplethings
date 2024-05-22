@@ -1,4 +1,5 @@
 import { BoundProps } from "../types/element"
+import { camelize } from './utils'
 
 
 export function generateBoundPropReferences(node: SceneNode) {
@@ -11,6 +12,7 @@ export function generateBoundPropReferences(node: SceneNode) {
           figmaRef: key,
           name: key.split('#')[0],
           type: 'string',
+          value: node.componentProperties[key]?.value,
         })
       })
     } else if (node.componentPropertyReferences) {
@@ -19,7 +21,7 @@ export function generateBoundPropReferences(node: SceneNode) {
           boundProps.push({
             figmaPropType: key,
             figmaRef: node.componentPropertyReferences ? node.componentPropertyReferences[key] : null,
-            name: node.componentPropertyReferences ? node.componentPropertyReferences[key]?.split('#')[0] : null,
+            name: node.componentPropertyReferences ? camelize(node.componentPropertyReferences[key]?.split('#')[0].trim()) : null,
             type: 'string',
           })
         }

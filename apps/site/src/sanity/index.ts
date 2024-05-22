@@ -1,4 +1,5 @@
-import { Rectangle2 } from './rectangle2';
+import { Hero } from './Hero';
+import { Button } from './Button';
 import { Page } from './page'
 
-export const sanityComponents = [Page, Rectangle2]
+export const sanityComponents = [Hero, Button, Page]

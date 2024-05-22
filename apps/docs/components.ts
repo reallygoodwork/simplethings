@@ -1,4 +1,7 @@
 export const components = [{
-  label: "Rectangle2",
-  link: "/components/rectangle2"
+  label: "Hero",
+  link: "/components/hero"
+}, {
+  label: "Button",
+  link: "/components/button"
 }]

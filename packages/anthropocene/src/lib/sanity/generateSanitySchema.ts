@@ -5,8 +5,9 @@ import { createComponentName } from '@utils/createComponentName'
 import { generateSanityPage } from './generateSanityPage'
 import { generateSanityType } from './generateSanityType'
 import { color } from 'console-log-colors'
+import { ElementSchema } from '@configTypes/element/element';
 
-export async function generateSanitySchema(components: any[], outputDir: string) {
+export async function generateSanitySchema(components: ElementSchema[], outputDir: string) {
 
   await rimraf(outputDir)
 
@@ -44,11 +45,11 @@ export async function generateSanitySchema(components: any[], outputDir: string)
       console.error(err)
     }
 
-    sanityComponents.push('Page')
     sanityComponents.push(componentName)
   }
 
 
+  sanityComponents.push('Page')
 
 
   const sanityPageType = await generateSanityPage(sanityComponents)
