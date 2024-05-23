@@ -141,91 +141,91 @@ declare module 'astro:content' {
   slug: "components/badge";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/button.mdx": {
 	id: "components/button.mdx";
   slug: "components/button";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/card.mdx": {
 	id: "components/card.mdx";
   slug: "components/card";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/cardgrid.mdx": {
 	id: "components/cardgrid.mdx";
   slug: "components/cardgrid";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/cardwithdescription.mdx": {
 	id: "components/cardwithdescription.mdx";
   slug: "components/cardwithdescription";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/featurecard.mdx": {
 	id: "components/featurecard.mdx";
   slug: "components/featurecard";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/hero.mdx": {
 	id: "components/hero.mdx";
   slug: "components/hero";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/heroHeaderSection.mdx": {
 	id: "components/heroHeaderSection.mdx";
   slug: "components/heroheadersection";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/rectangle2.mdx": {
 	id: "components/rectangle2.mdx";
   slug: "components/rectangle2";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "components/sectionheader.mdx": {
 	id: "components/sectionheader.mdx";
   slug: "components/sectionheader";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "guides/example.md": {
 	id: "guides/example.md";
   slug: "guides/example";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
 "index.mdx": {
 	id: "index.mdx";
   slug: "index";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
 "reference/example.md": {
 	id: "reference/example.md";
   slug: "reference/example";
   body: string;
   collection: "docs";
-  data: any
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
 };
 
@@ -237,5 +237,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../src/content/config.js");
 }

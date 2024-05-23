@@ -2,3 +2,49 @@
 title: Card
 description: To be added
 ---
+
+import '@simplethings/react/styles.css'
+
+To be added
+
+## Props
+
+| Name | Type | Default | Options |
+| ---- | ---- | ------- | ------- |
+| showText | boolean |  |  |
+| imagePadding | string | default | default, noBottom, noPadding |
+
+## Compound Variant API
+
+### Image Padding : Default
+
+```jsx live
+import { Card } from '@simplethings/react'
+
+export default () => {
+  return <Card imagePadding={'default'}  />
+}
+
+```
+
+### Image Padding : No Bottom
+
+```jsx live
+import { Card } from '@simplethings/react'
+
+export default () => {
+  return <Card imagePadding={'noBottom'}  />
+}
+
+```
+
+### Image Padding : No Padding
+
+```jsx live
+import { Card } from '@simplethings/react'
+
+export default () => {
+  return <Card imagePadding={'noPadding'}  />
+}
+
+```

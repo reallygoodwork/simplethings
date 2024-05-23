@@ -2,3 +2,75 @@
 title: Badge
 description: ::sanity = false::atomicComponent = true
 ---
+
+import '@simplethings/react/styles.css'
+
+::sanity = false
+
+::atomicComponent = true
+
+## Props
+
+| Name | Type | Default | Options |
+| ---- | ---- | ------- | ------- |
+| badgeText | string | Badge |  |
+| showClose | boolean |  |  |
+| showDot | boolean |  |  |
+| theme | string | primary | default, error, success, warning, primary |
+
+## Compound Variant API
+
+### theme : Primary
+
+```jsx live
+import { Badge } from '@simplethings/react'
+
+export default () => {
+  return <Badge theme={'primary'}  />
+}
+
+```
+
+### theme : Error
+
+```jsx live
+import { Badge } from '@simplethings/react'
+
+export default () => {
+  return <Badge theme={'error'}  />
+}
+
+```
+
+### theme : Success
+
+```jsx live
+import { Badge } from '@simplethings/react'
+
+export default () => {
+  return <Badge theme={'success'}  />
+}
+
+```
+
+### theme : Warning
+
+```jsx live
+import { Badge } from '@simplethings/react'
+
+export default () => {
+  return <Badge theme={'warning'}  />
+}
+
+```
+
+### theme : Default
+
+```jsx live
+import { Badge } from '@simplethings/react'
+
+export default () => {
+  return <Badge theme={'default'}  />
+}
+
+```

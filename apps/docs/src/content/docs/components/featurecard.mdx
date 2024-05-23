@@ -2,3 +2,59 @@
 title: FeatureCard
 description: To be added
 ---
+
+import '@simplethings/react/styles.css'
+
+To be added
+
+## Props
+
+| Name | Type | Default | Options |
+| ---- | ---- | ------- | ------- |
+| property1 | string | default | default, withoutLogo, variant3, variant4 |
+
+## Compound Variant API
+
+### Property 1 : Default
+
+```jsx live
+import { FeatureCard } from '@simplethings/react'
+
+export default () => {
+  return <FeatureCard property1={'default'}  />
+}
+
+```
+
+### Property 1 : Variant3
+
+```jsx live
+import { FeatureCard } from '@simplethings/react'
+
+export default () => {
+  return <FeatureCard property1={'variant3'}  />
+}
+
+```
+
+### Property 1 : Without Logo
+
+```jsx live
+import { FeatureCard } from '@simplethings/react'
+
+export default () => {
+  return <FeatureCard property1={'withoutLogo'}  />
+}
+
+```
+
+### Property 1 : Variant4
+
+```jsx live
+import { FeatureCard } from '@simplethings/react'
+
+export default () => {
+  return <FeatureCard property1={'variant4'}  />
+}
+
+```

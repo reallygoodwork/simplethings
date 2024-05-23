@@ -29,7 +29,7 @@ export const transformStylesToString = async (configFile: ElementSchema) => {
         } else {
         return `.${createClassName(value.name as string)} {
           ${Object.entries(value.styles).map(([key, value]) => {
-          return `${key}: ${value};`
+          return `${camelCaseToKebabCase(key)}: ${value};`
           }).join('\n')}
 
         }`

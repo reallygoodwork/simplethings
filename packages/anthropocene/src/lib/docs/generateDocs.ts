@@ -44,6 +44,8 @@ export const generateDocs = async (components: ElementSchema[], outputDir: strin
 title: ${componentName}
 description: ${component.description ? component.description.replace(/(\r\n|\n|\r)/gm, "") : 'TBD'}
 ---
+
+import '@simplethings/react/styles.css'
 `
     const result = heading + jsonDocString
 
