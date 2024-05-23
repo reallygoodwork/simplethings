@@ -35,19 +35,22 @@ async function generateVariantStyles(children: SceneNode[]): Promise<any[]> {
   );
 }
 
-async function getComponentDependencies(firstChild: SceneNode, isChild: boolean): Promise<any[]> {
-  if (isChild) return [];
+async function getComponentDependencies(firstChild: SceneNode): Promise<any[]> {
 
   const components = await Promise.all(
     ((firstChild as any).children || [])
       ?.filter((child) => child.type === 'INSTANCE')
       .map((child) => ({
         name: `{ ${transformString(child.name)} }`,
-        packageName: `./${transformString(child.name)}`,
+        packageName: `./${transformString(child.name).toLowerCase()}`,
       }))
   );
 
-  return components;
+  return components.filter((value, index, self) =>
+    index === self.findIndex((t) => (
+      t.place === value.place && t.name === value.name
+    ))
+  );
 }
 
 function extractPropsFromChildName(childName: string): any[] {
@@ -57,11 +60,32 @@ function extractPropsFromChildName(childName: string): any[] {
   });
 }
 
+function getChildrenVariantStyles(child: SceneNode[]): any[] {
+  if (!child || !child.length) return [];
+  const childrenStyles = child.map((child) => ({
+    name: transformString(child.name),
+    isText: child.type === 'TEXT',
+    styles: generateStyleConfig(child as any)
+  })).map((child) => {
+    return {
+      ...child,
+      styles: generateStyleObject(child.styles[0])
+    }
+  });
+
+  return childrenStyles;
+
+
+}
+
+
 function createVariant(child: SceneNode, commonStyles: any): any {
   const childStyles = generateStyleConfig(child);
   const childStylesObject = generateStyleObject(childStyles[0]);
   const styles = removeCommonStyles(childStylesObject, commonStyles);
   const props = extractPropsFromChildName(child.name);
+
+
 
   return {
     figmaRef: child.name,
@@ -69,6 +93,7 @@ function createVariant(child: SceneNode, commonStyles: any): any {
     value: child.name.split('=')[1],
     styles,
     props,
+    children: getChildrenVariantStyles(child.children as any),
   };
 }
 
@@ -76,19 +101,17 @@ async function processChildren(children: SceneNode[]): Promise<ElementSchema[]> 
   return await Promise.all(children.map((child) => generateSpec(child, true)));
 }
 
+
+
 export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<ElementSchema | null> => {
   const name = transformString(spec.name);
+  const updated = new Date().toISOString();
 
   if (spec.type === 'COMPONENT_SET') {
-
-    const childrenGroup = spec.children.map((child) => child?.children as any);
-
-    console.log(childrenGroup)
-
     const children = spec.children as SceneNode[];
     const defaultVariant = spec.defaultVariant
     const variantStyles = await generateVariantStyles(children);
-    const componentDependencies = await getComponentDependencies(defaultVariant, isChild);
+    const componentDependencies = await getComponentDependencies(defaultVariant);
     const commonStyles = getCommonStyles(variantStyles);
 
     const variants = children.map((child) => createVariant(child, commonStyles));
@@ -96,7 +119,28 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
     const componentChildren = defaultVariant as any;
     const childrenArray = hasChildren ? await processChildren(componentChildren.children) : [];
 
+    const description = spec.description.split('\n');
+    let configObject = {};
+
+    description.forEach((desc) => {
+      if (desc.includes('::sanity')) {
+        configObject['sanity'] = desc.split('=').at(-1).trim() === 'true'
+      } else if (desc.includes('::atomicComponent')) {
+        configObject['atomicComponent'] = desc.split('=').at(-1).trim() === 'true'
+      }
+    })
+
+    const componentPropsEl = await generateComponentProps(spec);
+    const componentPropsArray = componentPropsEl.filter((value, index) => {
+      const _value = JSON.stringify(value);
+      return index === componentPropsEl.findIndex(obj => {
+        return JSON.stringify(obj) === _value;
+      });
+    });
+
     return {
+      config: configObject,
+      updated,
       name,
       dependencies: componentDependencies,
       description: spec.description || 'To be added',
@@ -106,7 +150,7 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
       elementType: 'div',
       typeScriptType: 'HTMLDivElement',
       styles: commonStyles,
-      componentProps: generateComponentProps(spec),
+      componentProps: componentPropsArray,
       children: childrenArray,
       variants,
     };
@@ -116,6 +160,13 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
   const childStyles = generateStyleConfig(spec as any);
   const styles = generateStyleObject(childStyles[0]);
   const boundProps = await generateBoundPropReferences(spec);
+  const boundPropsArray = boundProps.filter((value, index) => {
+    const _value = JSON.stringify(value);
+    return index === boundProps.findIndex(obj => {
+      return JSON.stringify(obj) === _value;
+    });
+  });
+
   let children: any[] = [];
 
   if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
@@ -125,14 +176,24 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
   const childrenList = await Promise.all(children);
 
   const commonAttributes = {
+    updated,
     name,
     styles,
-    boundProps,
+    boundProps: boundPropsArray,
     isText: false,
     elementType: 'div',
     isComponent: false,
     componentProps: [],
   };
+
+  const componentPropsEl = await generateComponentProps(spec);
+  const componentPropsArray = componentPropsEl.filter((value, index) => {
+    const _value = JSON.stringify(value);
+    return index === componentPropsEl.findIndex(obj => {
+      return JSON.stringify(obj) === _value;
+    });
+  });
+
 
   switch (spec.type) {
     case 'TEXT':
@@ -141,7 +202,6 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
         textValue: spec.characters,
         elementType: 'p',
         isText: true,
-        variants: [],
       };
     case 'VECTOR':
     case 'ELLIPSE':
@@ -164,21 +224,23 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
         children: childrenList,
       };
     case 'INSTANCE':
+
       return {
         ...commonAttributes,
         name: transformString(spec.name),
         isComponent: true,
         elementAttributes: {},
-        componentProps: generateComponentProps(spec),
+        componentProps: componentPropsArray,
       };
     case 'COMPONENT':
-      const componentDependencies = await getComponentDependencies(spec.children[0], isChild);
+      const componentDependencies = await getComponentDependencies(spec);
+
       return {
         ...commonAttributes,
         description: spec.description || 'To be added',
         isComponent: true,
         elementAttributes: {},
-        componentProps: generateComponentProps(spec),
+        componentProps: componentPropsArray,
         children: childrenList,
         dependencies: componentDependencies,
       };

@@ -1,6 +1,32 @@
 import React from 'react';
 import { cva, cx, VariantProps } from 'class-variance-authority'
 
+export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof ButtonCVA> {
+  className?: string;
+  showTrailingIcon: boolean;
+  showLeadingIcon: boolean;
+  buttonText: string;
+  size: 'xs' | 'sm' | 'md' | 'xl' | 'lg';
+  purpose: 'primary' | 'secondary' | 'soft' | 'link' | 'solid';
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  className = '',
+  showTrailingIcon = false,
+  showLeadingIcon = false,
+  buttonText = 'Button Text',
+  size = 'xs',
+  purpose = 'primary',
+}) => {
+  return (
+    <div className={ButtonCVA({ showTrailingIcon, showLeadingIcon, size, purpose, className })}>
+      <p className="buttontext">
+        {buttonText}
+      </p>
+    </div>
+  );
+};
+
 const ButtonCVA = cva('button', {
   variants: {
     showTrailingIcon:{
@@ -34,158 +60,130 @@ const ButtonCVA = cva('button', {
   },
   compoundVariants: [
     {
-      className: 'button-xs-primary',
+      className: 'xs-primary',
       size: 'xs',
       purpose: 'primary',
     },
     {
-      className: 'button-sm-primary',
+      className: 'sm-primary',
       size: 'sm',
       purpose: 'primary',
     },
     {
-      className: 'button-md-primary',
+      className: 'md-primary',
       size: 'md',
       purpose: 'primary',
     },
     {
-      className: 'button-lg-primary',
+      className: 'lg-primary',
       size: 'lg',
       purpose: 'primary',
     },
     {
-      className: 'button-xl-primary',
+      className: 'xl-primary',
       size: 'xl',
       purpose: 'primary',
     },
     {
-      className: 'button-xs-secondary',
+      className: 'xs-secondary',
       size: 'xs',
       purpose: 'secondary',
     },
     {
-      className: 'button-sm-secondary',
+      className: 'sm-secondary',
       size: 'sm',
       purpose: 'secondary',
     },
     {
-      className: 'button-md-secondary',
+      className: 'md-secondary',
       size: 'md',
       purpose: 'secondary',
     },
     {
-      className: 'button-lg-secondary',
+      className: 'lg-secondary',
       size: 'lg',
       purpose: 'secondary',
     },
     {
-      className: 'button-xl-secondary',
+      className: 'xl-secondary',
       size: 'xl',
       purpose: 'secondary',
     },
     {
-      className: 'button-xs-soft',
+      className: 'xs-soft',
       size: 'xs',
       purpose: 'soft',
     },
     {
-      className: 'button-sm-soft',
+      className: 'sm-soft',
       size: 'sm',
       purpose: 'soft',
     },
     {
-      className: 'button-md-soft',
+      className: 'md-soft',
       size: 'md',
       purpose: 'soft',
     },
     {
-      className: 'button-lg-soft',
+      className: 'lg-soft',
       size: 'lg',
       purpose: 'soft',
     },
     {
-      className: 'button-xl-soft',
+      className: 'xl-soft',
       size: 'xl',
       purpose: 'soft',
     },
     {
-      className: 'button-xs-link',
+      className: 'xs-link',
       size: 'xs',
       purpose: 'link',
     },
     {
-      className: 'button-sm-link',
+      className: 'sm-link',
       size: 'sm',
       purpose: 'link',
     },
     {
-      className: 'button-md-link',
+      className: 'md-link',
       size: 'md',
       purpose: 'link',
     },
     {
-      className: 'button-lg-link',
+      className: 'lg-link',
       size: 'lg',
       purpose: 'link',
     },
     {
-      className: 'button-xl-link',
+      className: 'xl-link',
       size: 'xl',
       purpose: 'link',
     },
     {
-      className: 'button-xs-solid',
+      className: 'xs-solid',
       size: 'xs',
       purpose: 'solid',
     },
     {
-      className: 'button-sm-solid',
+      className: 'sm-solid',
       size: 'sm',
       purpose: 'solid',
     },
     {
-      className: 'button-md-solid',
+      className: 'md-solid',
       size: 'md',
       purpose: 'solid',
     },
     {
-      className: 'button-lg-solid',
+      className: 'lg-solid',
       size: 'lg',
       purpose: 'solid',
     },
     {
-      className: 'button-xl-solid',
+      className: 'xl-solid',
       size: 'xl',
       purpose: 'solid',
     },
   ]
 })
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, VariantProps<typeof ButtonCVA> {
-  className?: string;
-  buttonText: string;
-}
-
-export const Button: React.FC<ButtonProps> = ({
-  className = '',
-  showTrailingIcon,
-  showLeadingIcon,
-  size,
-  purpose,
-  buttonText,
-}) => {
-  return (
-    <button className={ButtonCVA({
-      showTrailingIcon,
-      showLeadingIcon,
-      size,
-      purpose,
-      className
-    })
-}>
-      <p className="">
-        {buttonText}
-      </p>
-    </button>
-  );
-};

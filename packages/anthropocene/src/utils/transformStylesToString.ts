@@ -11,31 +11,40 @@ export const transformStylesToString = async (configFile: ElementSchema) => {
 
   const childrenWithText = configFile.children?.filter(child => child.isText)
 
-  let textProps = {}
-
-  if (childrenWithText && childrenWithText.length === 1) {
-    textProps = childrenWithText[0]?.styles
-  }
-
   const properties = Object.entries(configFile.styles).map(([key, value]) => {
     return `${camelCaseToKebabCase(key)}: ${value};`
   }).join('\n')
 
   const variantStyles = configFile.variants?.map(variant => {
-    return `.${baseClassName}-${variant.props?.map(prop => prop.value).join('-')} {
-    ${Object.entries(variant.styles).map(([key, value]) => {
+    return `
+    &.${variant.props?.map(prop => prop.value).join('-')} {
+      ${Object.entries(variant.styles).map(([key, value]) => {
       return `${camelCaseToKebabCase(key)}: ${value};`
-    }).join('\n')}
+      }).join('\n')}
+      ${Object.entries(variant.children || []).map(([key, value]) => {
+        if (value.isText) {
+          return Object.entries(value.styles).map(([key, value]) => {
+            return `${camelCaseToKebabCase(key)}: ${value};`
+          }).join('\n')
+        } else {
+        return `.${createClassName(value.name as string)} {
+          ${Object.entries(value.styles).map(([key, value]) => {
+          return `${key}: ${value};`
+          }).join('\n')}
+
+        }`
+        }
+      }).join('\n')}
     }`
   }).join('\n')
 
   return `
-.${baseClassName} {
-  ${properties}
-  ${Object.entries(textProps).map(([key, value]) => {
-return `${camelCaseToKebabCase(key)}: ${value};`
-  }).join('\n')}
-}
-${variantStyles}
+
+  .${baseClassName} {
+    ${properties}
+    ${variantStyles ? variantStyles : ''}
+  }
+
 `
+
 }

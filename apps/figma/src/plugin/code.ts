@@ -33,7 +33,7 @@ figma.ui.onmessage = async (msg) => {
   }
 
   if (msg.type === 'SAVE_CONFIG') {
-    console.log(msg)
+    // console.log(msg)
     // if (figma.currentPage.selection[0]) {
     //   const selection = figma.currentPage.selection[0]
     //   const spec = await generateSpec(selection);

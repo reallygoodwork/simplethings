@@ -1,6 +1,6 @@
 import { zElementAttributes } from './attributes'
 import { zDependency } from './dependencies'
-import { z } from 'zod'
+import { date, z } from 'zod'
 
 export const zStyleProperty = z.any()
 
@@ -33,6 +33,11 @@ export const zVariant = z.object({
 })
 
 export const zElementConfig = z.object({
+  config: z.object({
+    sanity: z.boolean().optional(),
+    atomicComponent: z.boolean().optional(),
+  }).optional(),
+  updated: z.string().datetime().optional(),
   name: z.string(),
   isText: z.boolean().optional(),
   textValue: z.string().optional(),

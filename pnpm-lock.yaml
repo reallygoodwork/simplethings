@@ -124,7 +124,7 @@ importers:
       '@figma/plugin-typings':
         specifier: '*'
         version: 1.93.0
-      '@simplethings/anthropocene':
+      '@simplethings/dave':
         specifier: workspace:*
         version: link:../../packages/anthropocene
       '@simplethings/eslint-config':
@@ -368,7 +368,7 @@ importers:
         specifier: ^4.7.3
         version: 4.7.3
     devDependencies:
-      '@simplethings/anthropocene':
+      '@simplethings/dave':
         specifier: workspace:*
         version: link:../anthropocene
       '@simplethings/eslint-config':
@@ -445,7 +445,7 @@ importers:
         specifier: ^4.7.3
         version: 4.7.3
     devDependencies:
-      '@simplethings/anthropocene':
+      '@simplethings/dave':
         specifier: workspace:*
         version: link:../anthropocene
       '@simplethings/eslint-config':

@@ -14,6 +14,31 @@ import {{#if this.isDefault}}{{this.name}}{{else}}{{this.name}}{{/if}} from '{{t
 import { cva, cx, VariantProps } from 'class-variance-authority'
 {{/if}}
 
+export interface {{name}}Props extends React.HTMLAttributes<{{typeScriptType}}>{{#if variants}}, VariantProps<typeof {{name}}CVA>{{/if}} {
+  className?: string;
+  {{#each componentProps}}
+  {{name}}: {{tsType}};
+  {{/each}}
+}
+
+export const {{name}}: React.FC<{{name}}Props> = ({
+  className = '',
+  {{#each componentProps}}
+  {{name}} = {{#ifEquals tsType 'boolean'}}{{defaultValue}}{{else}}'{{defaultValue}}'{{/ifEquals}},
+  {{/each}}
+}) => {
+  return (
+    <{{elementType}} className={
+        {{~#if variants}}{{name}}CVA({ {{#each variants}}{{name}}, {{/each}}className })
+      {{~else~}}
+className
+    {{~/if~}}
+    }>
+      {{> DomTreePartial}}
+    </{{elementType}}>
+  );
+};
+
 {{#if variants}}
 const {{name}}CVA = cva('{{baseClassname}}', {
   variants: {
@@ -52,71 +77,71 @@ const {{name}}CVA = cva('{{baseClassname}}', {
 })
 {{/if}}
 
-export interface {{name}}Props extends React.HTMLAttributes<{{typeScriptType}}>{{#if variants}}, VariantProps<typeof {{name}}CVA>{{/if}} {
-  className?: string;
-  {{#each componentProps}}
-  {{name}}: {{tsType}};
-  {{/each}}
-}
-
-export const {{name}}: React.FC<{{name}}Props> = ({
-  className = '',
-  {{#each variants}}
-  {{name}},
-  {{/each}}
-  {{#each componentProps}}
-  {{name}},
-  {{/each}}
-}) => {
-  return (
-    <{{elementType}} className={
-      {{~#if variants}}{{name}}CVA({
-      {{#each variants}}
-      {{name}},
-      {{/each}}
-      className
-    })
-      {{else}}
-className
-    {{~/if~}}
-    }>
-      {{> DomTreePartial}}
-    </{{elementType}}>
-  );
-};`
+`
 
 const DomTreePartial = `{{#if children}}
 {{#each children}}
 {{#if this.isText}}
-<{{this.elementType}} className="">
+{{#isEmptyString this.elementType}}
+{{#hasBoundProps this.boundProps}}
+  {{#boundPropsAreText this.boundProps}}{{{{raw-helper}}}}{buttonText}{{{{/raw-helper}}}}{{/boundPropsAreText}}
+  {{else}}
+  {{this.textValue}}
+  {{/hasBoundProps}}
+{{else}}
+<{{this.elementType}} className="{{toLowerCase this.name}}">
   {{#hasBoundProps this.boundProps}}
   {{#boundPropsAreText this.boundProps}}{{{{raw-helper}}}}{buttonText}{{{{/raw-helper}}}}{{/boundPropsAreText}}
   {{else}}
   {{this.textValue}}
   {{/hasBoundProps}}
 </{{this.elementType}}>
+{{/isEmptyString}}
   {{else}}
   {{#if this.isComponent}}
-<{{this.name}} />
+{{> ComponentPartial}}
   {{else}}
-  <{{this.elementType}}>
+  {{#hasBoundProps this.boundProps}}
+  {{#boundPropsVisible this.boundProps}}
+{ {{~renderVisibleProp}} ?
+  <{{this.elementType}} className="{{toLowerCase this.name}}">
     {{> DomTreePartial}}
   </{{this.elementType}}>
+: null}
+  {{/boundPropsVisible}}
+  {{else}}
+<{{this.elementType}} className="{{toLowerCase this.name}}">
+  {{> DomTreePartial}}
+</{{this.elementType}}>
+  {{/hasBoundProps}}
 {{/if}}
 {{/if}}
 {{/each}}
 {{/if}}`
 
+const ComponentPartial = `<{{this.name}} {{#each this.boundProps}}{{name}}={ {{name}} } {{/each}} />
+`
+
+handlebars.registerPartial('ComponentPartial', ComponentPartial);
+
 function generateComponentProps(
-  variants: { name: string; tsType: string; defaultValue: string | boolean; options: any[] }[],
+  props: { name: string; tsType: string; defaultValue: string | boolean; options: any[] }[]
 ) {
-  return variants
-    .filter(variant => variant.tsType === 'string' && !variant.options)
+  const properties = props
     .map(variant => ({
       name: camelCase(variant.name),
       defaultValue: variant.defaultValue,
-      tsType: variant.tsType,
+      tsType: variant.options ? variant.options.map((option) => `'${option}'`).join(' | ') : variant.tsType,
     }));
+
+
+  // const variantProps = variants.map(variant => ({
+  //   name: camelCase(variant.name),
+  //   defaultValue: variant.props.map(prop => prop.value).join('-'),
+  //   tsType: variant.props.map(prop => prop.value).join('-'),
+  // }));
+
+  return properties;
 }
 
 function generateVariantProps(
@@ -145,8 +170,17 @@ handlebars.registerHelper('json', function(context) {
   return JSON.stringify(context);
 });
 
+handlebars.registerHelper('isEmptyString', function (this: any, arg1: any, options: Options) {
+  return arg1.length === 0 ? options.fn(this) : options.inverse(this);
+
+});
+
 handlebars.registerHelper('hasBoundProps', function (this: any, boundProps: any, options: Options): string {
   return boundProps.length > 0 ? options.fn(this) : options.inverse(this);
+});
+
+handlebars.registerHelper('toLowerCase', function(str) {
+  return str.toLowerCase();
 });
 
 handlebars.registerPartial('DomTreePartial', DomTreePartial);
@@ -158,15 +192,34 @@ handlebars.registerHelper('boundPropsAreText', function (this: any, boundProps: 
   return prop ? new handlebars.SafeString(`{${prop.name}}`) : options.inverse(this);
 });
 
+handlebars.registerHelper('boundPropsVisible', function (this: any, boundProps: any, options: Options):
+  | SafeString
+  | string {
+  const prop = boundProps.find((boundProp: any) => boundProp.figmaPropType === 'visible');
+  return prop ? options.fn(this) : options.inverse(this);
+});
+
+handlebars.registerHelper('renderVisibleProp', function (this: any):
+| SafeString
+  | string {
+  const prop = this.boundProps.find((boundProp: any) => boundProp.figmaPropType === 'visible');
+  return prop.name
+});
+
+handlebars.registerHelper('asciim', function(text) {
+  const result = Handlebars.Utils.escapeExpression(text);
+  return new handlebars.SafeString(result);
+});
+
 handlebars.registerHelper('raw-helper', function (options) {
   return options.fn();
 });
 
-const generateCompoundVariants = (variants?: Variant[], name?: string) => {
+const generateCompoundVariants = (variants?: Variant[]) => {
   if (!variants) return [];
 
   return variants.map(variant => {
-    const className = `${name}-${variant.props?.map(prop => prop.value).join('-')}`;
+    const className = `${variant.props?.map(prop => prop.value).join('-')}`;
     const variantObj: any = {
       className,
     };
@@ -181,8 +234,9 @@ const generateCompoundVariants = (variants?: Variant[], name?: string) => {
 };
 
 export const generateReactComponent = async (configFile: ElementSchema) => {
-  const template = handlebars.compile(templateSource);
+  const template = handlebars.compile(templateSource, { noEscape: true });
   const context = {
+    isComponent: configFile.isComponent,
     name: createComponentName(configFile.name),
     baseClassname: createClassName(configFile.name),
     elementType: configFile.elementType,
@@ -191,7 +245,7 @@ export const generateReactComponent = async (configFile: ElementSchema) => {
     variants: generateVariantProps((configFile.componentProps as any) || []),
     typeScriptType: configFile.typeScriptType || 'HTMLDivElement',
     children: configFile.children,
-    compoundVariants: generateCompoundVariants(configFile.variants, createClassName(configFile.name)),
+    compoundVariants: generateCompoundVariants(configFile.variants),
   };
 
   return template(context);

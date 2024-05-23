@@ -25,7 +25,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@simplethings/anthropocene": "workspace:*",
+    "@simplethings/dave": "workspace:*",
     "@simplethings/eslint-config": "workspace:*",
     "@simplethings/typescript-config": "workspace:*",
     "@types/node": "^20.11.20",

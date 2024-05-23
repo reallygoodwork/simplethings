@@ -4,7 +4,6 @@ import tailwind from '@astrojs/tailwind';
 import starlightLinksValidator from 'starlight-links-validator'
 import liveCode from 'astro-live-code'
 import react from '@astrojs/react'
-import {components} from './components'
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +26,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Components',
-					items: components,
+					autogenerate: { directory: 'components' },
 				},
 				{
 					label: 'Guides',

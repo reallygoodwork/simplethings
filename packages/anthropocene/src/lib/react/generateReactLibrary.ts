@@ -38,11 +38,7 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     }
   }
 
-  for (const component of components) {
-    const result = await generateReactComponent(component)
-    const styles = await transformStylesToString(component)
-
-    const componentStyles = path.join(outputDir, 'components', 'styles.css')
+  const componentStyles = path.join(outputDir, 'components', 'styles.css')
     if (!fs.existsSync(componentStyles)) {
       // Generate styles file
       try {
@@ -60,6 +56,12 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
       }
     }
 
+  for (const component of components) {
+    const result = await generateReactComponent(component)
+    const styles = await transformStylesToString(component)
+
+
+
     try {
       await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)} } from './${camelCase(lowerCase(component.name))}';\n`)
       console.log(color.bgCyanBright.bold(`React: Exported ${component.componentName}`))
@@ -67,15 +69,14 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
       console.error(err)
     }
 
-    try {
-      await fsPromises.appendFile(componentStyles, `@tailwind base;
-@tailwind components;
-@tailwind utilities;
-      `)
-      console.log(color.bgCyanBright.bold('React: Base Component styles added'))
-    } catch (err) {
-      console.error(err)
-    }
+//     try {
+//       await fsPromises.appendFile(componentStyles, `
+// @layer simplethings, theme, layout, utilities;
+// `)
+//       console.log(color.bgCyanBright.bold('React: Base Component styles added'))
+//     } catch (err) {
+//       console.error(err)
+//     }
 
     try {
       await fsPromises.appendFile(componentStyles, styles)

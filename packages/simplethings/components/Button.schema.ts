@@ -1,12 +1,14 @@
 export const Button = {
+  "config": {},
+  "updated": "2024-05-23T16:57:39.830Z",
   "name": "Button",
   "dependencies": [],
   "description": "To be added",
   "isText": false,
   "isComponent": true,
   "elementAttributes": {},
-  "elementType": "button",
-  "typeScriptType": "HTMLButtonElement",
+  "elementType": "div",
+  "typeScriptType": "HTMLDivElement",
   "styles": {
     "borderRadius": "6px"
   },
@@ -58,6 +60,7 @@ export const Button = {
   ],
   "children": [
     {
+      "updated": "2024-05-23T16:57:39.877Z",
       "name": "ButtonText",
       "styles": {
         "color": "#171e15",
@@ -89,7 +92,7 @@ export const Button = {
       "styles": {
         "width": "100%",
         "padding": "10px 24px 10px 24px",
-        "background": "#e4f223"
+        "background": "#280aa2"
       },
       "props": [
         {
@@ -99,6 +102,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "primary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          }
         }
       ]
     },
@@ -120,6 +136,19 @@ export const Button = {
           "name": "Purpose",
           "value": "primary"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -140,6 +169,19 @@ export const Button = {
           "name": "Purpose",
           "value": "primary"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -147,12 +189,8 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#e4f223"
       },
       "props": [
@@ -163,6 +201,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "primary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -171,12 +222,8 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#e4f223"
       },
       "props": [
@@ -188,6 +235,19 @@ export const Button = {
           "name": "Purpose",
           "value": "primary"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          }
+        }
       ]
     },
     {
@@ -195,12 +255,8 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
@@ -214,6 +270,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "secondary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          }
         }
       ]
     },
@@ -222,12 +291,8 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
@@ -241,6 +306,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "secondary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -249,12 +327,8 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "12px 20px 12px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
@@ -268,6 +342,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "secondary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -276,12 +363,8 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
@@ -295,6 +378,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "secondary"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#111827",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -303,12 +399,8 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
@@ -323,6 +415,19 @@ export const Button = {
           "name": "Purpose",
           "value": "secondary"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          }
+        }
       ]
     },
     {
@@ -330,12 +435,8 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#d7dfd3"
       },
       "props": [
@@ -346,6 +447,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "soft"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          }
         }
       ]
     },
@@ -354,12 +468,8 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#d7dfd3"
       },
       "props": [
@@ -370,6 +480,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "soft"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -378,12 +501,8 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "12px 20px 12px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#d7dfd3"
       },
       "props": [
@@ -394,6 +513,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "soft"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -402,12 +534,8 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#d7dfd3"
       },
       "props": [
@@ -418,6 +546,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "soft"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
         }
       ]
     },
@@ -426,12 +567,8 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#d7dfd3"
       },
       "props": [
@@ -443,6 +580,19 @@ export const Button = {
           "name": "Purpose",
           "value": "soft"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          }
+        }
       ]
     },
     {
@@ -450,12 +600,8 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "4px 0px 4px 0px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "rgba(0, 0, 0, 0)"
       },
       "props": [
@@ -466,6 +612,20 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "link"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px",
+            "letterSpacing": "-0.025em"
+          }
         }
       ]
     },
@@ -474,12 +634,8 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "4px 0px 4px 0px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "rgba(0, 0, 0, 0)"
       },
       "props": [
@@ -491,6 +647,19 @@ export const Button = {
           "name": "Purpose",
           "value": "link"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -498,12 +667,8 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "4px 0px 4px 0px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "rgba(0, 0, 0, 0)"
       },
       "props": [
@@ -515,6 +680,19 @@ export const Button = {
           "name": "Purpose",
           "value": "link"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -522,12 +700,8 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "4px 0px 4px 0px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "rgba(0, 0, 0, 0)"
       },
       "props": [
@@ -539,6 +713,19 @@ export const Button = {
           "name": "Purpose",
           "value": "link"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -546,12 +733,8 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "5px 0px 5px 0px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "rgba(0, 0, 0, 0)"
       },
       "props": [
@@ -563,6 +746,19 @@ export const Button = {
           "name": "Purpose",
           "value": "link"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#455540",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          }
+        }
       ]
     },
     {
@@ -570,12 +766,8 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#17332d"
       },
       "props": [
@@ -587,6 +779,19 @@ export const Button = {
           "name": "Purpose",
           "value": "solid"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          }
+        }
       ]
     },
     {
@@ -594,12 +799,8 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "10px 20px 10px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#17332d"
       },
       "props": [
@@ -611,6 +812,19 @@ export const Button = {
           "name": "Purpose",
           "value": "solid"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -618,12 +832,8 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "12px 20px 12px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#17332d"
       },
       "props": [
@@ -635,6 +845,19 @@ export const Button = {
           "name": "Purpose",
           "value": "solid"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -642,12 +865,8 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#17332d"
       },
       "props": [
@@ -659,6 +878,19 @@ export const Button = {
           "name": "Purpose",
           "value": "solid"
         }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          }
+        }
       ]
     },
     {
@@ -666,12 +898,8 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "display": "flex",
         "width": "100%",
         "padding": "16px 20px 16px 20px",
-        "justifyContent": "center",
-        "alignItems": "center",
-        "gap": "6px",
         "background": "#17332d"
       },
       "props": [
@@ -682,6 +910,19 @@ export const Button = {
         {
           "name": "Purpose",
           "value": "solid"
+        }
+      ],
+      "children": [
+        {
+          "name": "ButtonText",
+          "isText": true,
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          }
         }
       ]
     }

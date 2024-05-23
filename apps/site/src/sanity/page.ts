@@ -1,6 +1,11 @@
 import {defineField} from 'sanity';
-import { Hero } from './Hero'
 import { Button } from './Button'
+import { Badge } from './Badge'
+import { SectionHeader } from './SectionHeader'
+import { CardWithDescription } from './CardWithDescription'
+import { FeatureCard } from './FeatureCard'
+import { Card } from './Card'
+import { CardGrid } from './CardGrid'
 
 // Don't edit this file. This is a generated file. Edit the component file instead.
 export const Page = defineField({
@@ -35,7 +40,7 @@ export const Page = defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: Hero.name}, {type: Button.name}],
+      of: [{type: Button.name}, {type: Badge.name}, {type: SectionHeader.name}, {type: CardWithDescription.name}, {type: FeatureCard.name}, {type: Card.name}, {type: CardGrid.name}],
       group: 'content'
     }),
     defineField({

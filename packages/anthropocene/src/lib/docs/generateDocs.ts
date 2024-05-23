@@ -42,7 +42,7 @@ export const generateDocs = async (components: ElementSchema[], outputDir: strin
 
     const heading = `---
 title: ${componentName}
-description: ${component.description}
+description: ${component.description ? component.description.replace(/(\r\n|\n|\r)/gm, "") : 'TBD'}
 ---
 `
     const result = heading + jsonDocString

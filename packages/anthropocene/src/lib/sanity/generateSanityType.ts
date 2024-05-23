@@ -12,6 +12,10 @@ export const generateSanityType = (configFile: ElementSchema) => {
       if (typeof aString === 'string') return `'` + aString + `'`
     })
 
+    handlebars.registerHelper('isAny', function (aString) {
+      return aString === 'any' ? 'string' : aString
+    })
+
     const context = {
       name: createComponentName(configFile.name),
       baseClassname: createClassName(configFile.name),
@@ -38,7 +42,7 @@ export const {{name}} = defineField({
     defineField({
       name: '{{name}}',
       title: '{{name}}',
-      type: '{{this.tsType}}',
+      type: '{{isAny this.tsType}}',
       {{#if defaultValue}}
       initialValue: {{{loud this.defaultValue}}},
       {{/if}}

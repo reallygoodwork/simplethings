@@ -1,6 +1,5 @@
 export const Hero = {
   "name": "Hero",
-  "description": "Here is the party element of the component",
   "styles": {
     "height": "561px",
     "width": "100%",
@@ -12,8 +11,9 @@ export const Hero = {
   "isText": false,
   "elementType": "div",
   "isComponent": true,
-  "elementAttributes": {},
   "componentProps": [],
+  "description": "Here is the party element of the component",
+  "elementAttributes": {},
   "children": [
     {
       "name": "Container",
@@ -30,7 +30,51 @@ export const Hero = {
       "isText": false,
       "elementType": "div",
       "isComponent": false,
+      "componentProps": [],
       "children": [
+        {
+          "name": "BadgeGroup",
+          "styles": {
+            "display": "flex",
+            "padding": "4px 10px 4px 4px",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
+            "gap": "12px",
+            "background": "rgba(255, 255, 255, 0.2)",
+            "borderColor": "#f2f2f166",
+            "borderWidth": "1px",
+            "borderRadius": "8px",
+            "borderStyle": "solid"
+          },
+          "boundProps": [
+            {
+              "figmaPropType": "TEXT",
+              "figmaRef": "Link Text#98:8",
+              "name": "Link Text",
+              "type": "string",
+              "value": "Join our remote team"
+            },
+            {
+              "figmaPropType": "INSTANCE_SWAP",
+              "figmaRef": "Badge Style#98:10",
+              "name": "Badge Style",
+              "type": "string",
+              "value": "98:23231"
+            },
+            {
+              "figmaPropType": "BOOLEAN",
+              "figmaRef": "Show Content#98:9",
+              "name": "Show Content",
+              "type": "string",
+              "value": true
+            }
+          ],
+          "isText": false,
+          "elementType": "div",
+          "isComponent": true,
+          "componentProps": [],
+          "elementAttributes": {}
+        },
         {
           "name": "Frame37",
           "styles": {
@@ -45,6 +89,7 @@ export const Hero = {
           "isText": false,
           "elementType": "div",
           "isComponent": false,
+          "componentProps": [],
           "children": [
             {
               "name": "ItsGivingGreen",
@@ -59,12 +104,11 @@ export const Hero = {
                 "letterSpacing": "-1px"
               },
               "boundProps": [],
-              "textValue": "It’s giving green.",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
-              "elementAttributes": {},
-              "componentProps": []
+              "componentProps": [],
+              "textValue": "It’s giving green."
             },
             {
               "name": "EcofriendlyDesignsTemplatesAndCodeToHelpBuildYourDreamBusinessWhileRespectingTheEarth",
@@ -78,21 +122,34 @@ export const Hero = {
                 "textAlign": "CENTER"
               },
               "boundProps": [],
-              "textValue": "Eco-friendly designs, templates and code to help build your dream business while respecting the earth",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
-              "elementAttributes": {},
-              "componentProps": []
+              "componentProps": [],
+              "textValue": "Eco-friendly designs, templates and code to help build your dream business while respecting the earth"
             }
-          ],
-          "componentProps": []
+          ]
         },
-      ],
-      "componentProps": []
+        {
+          "name": "CtaInputForm",
+          "styles": {
+            "display": "flex",
+            "padding": "1px 4px 1px 4px",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
+            "gap": "12px",
+            "background": "rgba(255, 255, 255, 0.4)",
+            "borderRadius": "6px"
+          },
+          "boundProps": [],
+          "isText": false,
+          "elementType": "div",
+          "isComponent": true,
+          "componentProps": [],
+          "elementAttributes": {}
+        }
+      ]
     }
   ],
-  "dependencies": [
-
-  ]
+  "dependencies": []
 }

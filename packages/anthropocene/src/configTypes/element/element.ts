@@ -20,11 +20,21 @@ export const zVariant = z.object({
   value: z.string().optional(),
   styles: zStyleProperty.optional(),
   props: z.record(z.string(), z.any()).array().optional(),
+  children: z.object({
+    name: z.string().optional(),
+    isText: z.boolean().optional(),
+    styles: zStyleProperty.optional(),
+  }).array().optional()
 })
 
 export type Variant = z.infer<typeof zVariant>
 
 export const zElementConfig = z.object({
+  config: z.object({
+    sanity: z.boolean().optional(),
+    atomicComponent: z.boolean().optional(),
+  }).optional(),
+  updated: z.string().datetime().optional(),
   name: z.string(),
   isText: z.boolean().optional(),
   textValue: z.string().optional(),
