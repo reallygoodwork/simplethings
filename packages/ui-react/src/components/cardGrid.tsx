@@ -11,7 +11,7 @@ export interface CardGridProps extends React.HTMLAttributes<HTMLDivElement>, Var
 export const CardGrid: React.FC<CardGridProps> = ({
   className = '',
   showText = false,
-  imagePadding = 'default',
+  imagePadding = `default`,
 }) => {
   return (
     <div className={CardGridCVA({ showText, className })}>

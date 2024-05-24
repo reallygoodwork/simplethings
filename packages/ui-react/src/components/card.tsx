@@ -3,28 +3,32 @@ import { cva, cx, VariantProps } from 'class-variance-authority'
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof CardCVA> {
   className?: string;
+  title: string;
   showText: boolean;
-  imagePadding: 'default' | 'noBottom' | 'noPadding';
+  body: string;
+  variant: 'default' | 'noBottom' | 'noPadding';
 }
 
 export const Card: React.FC<CardProps> = ({
   className = '',
+  title = `You Believe in Authority`,
   showText = true,
-  imagePadding = 'default',
+  body = `'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day`,
+  variant = `default`,
 }) => {
   return (
-    <div className={CardCVA({ showText, imagePadding, className })}>
+    <div className={CardCVA({ showText, variant, className })}>
       {showText ?
-        <div className="leadsmalllockup">
-          <p className="thecardisjustthestart">
-            The card is just the start
+        <div className="cardbody">
+          <p className="title">
+            {title}
           </p>
-          <p className="quioccaecatametadipisicingexcepteursitmollitanimculpaexercitationloremduiscupidatatlaborislaborisexercitation">
-            Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.
+          <p className="body">
+            {body}
           </p>
         </div>
       : null}
-      <div className="pexelsphotobykennethsurillo">
+      <div className="image">
       </div>
     </div>
   );
@@ -36,7 +40,7 @@ const CardCVA = cva('card', {
       true: '',
       false: '',
     },
-    imagePadding: {
+    variant: {
       default: '',
       noBottom: '',
       noPadding: '',
@@ -44,20 +48,20 @@ const CardCVA = cva('card', {
   },
   defaultVariants: {
     showText: true,
-    imagePadding: 'default',
+    variant: 'default',
   },
   compoundVariants: [
     {
       className: 'default',
-      imagePadding: 'default',
+      variant: 'default',
     },
     {
       className: 'noBottom',
-      imagePadding: 'noBottom',
+      variant: 'noBottom',
     },
     {
       className: 'noPadding',
-      imagePadding: 'noPadding',
+      variant: 'noPadding',
     },
   ]
 })

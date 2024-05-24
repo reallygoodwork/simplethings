@@ -14,9 +14,9 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   showTrailingIcon = false,
   showLeadingIcon = false,
-  buttonText = 'Button Text',
-  size = 'xs',
-  purpose = 'primary',
+  buttonText = `Button Text`,
+  size = `xs`,
+  purpose = `primary`,
 }) => {
   return (
     <div className={ButtonCVA({ showTrailingIcon, showLeadingIcon, size, purpose, className })}>

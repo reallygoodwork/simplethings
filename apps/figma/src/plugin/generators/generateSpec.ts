@@ -5,7 +5,9 @@ import { generateBoundPropReferences } from './generateBoundPropReferences';
 import { generateComponentProps } from './generateComponentProps';
 import { getCommonStyles } from './getCommonStyles';
 import { removeCommonStyles } from './removeCommonStyles';
-import { camelize } from './utils';
+import { camelize, escapeHtml } from './utils';
+
+
 
 function transformString(input: string): string {
   return input
@@ -107,6 +109,10 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
   const name = transformString(spec.name);
   const updated = new Date().toISOString();
 
+  const textStyles = await figma.getLocalTextStylesAsync();
+
+  console.log(textStyles, 'textStyles')
+
   if (spec.type === 'COMPONENT_SET') {
     const children = spec.children as SceneNode[];
     const defaultVariant = spec.defaultVariant
@@ -197,6 +203,10 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
 
   switch (spec.type) {
     case 'TEXT':
+      const styleid = spec.textStyleId;
+      const styles = await figma.getStyleByIdAsync(styleid as string);
+      console.log(styles)
+      console.log(spec)
       return {
         ...commonAttributes,
         textValue: spec.characters,

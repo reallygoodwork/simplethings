@@ -1,4 +1,3 @@
-import { ComponentConfig } from '@configTypes/component/component'
 import { ElementSchema } from '@configTypes/element/element'
 import { createClassName } from '@utils/createClassName'
 import { createComponentName } from '@utils/createComponentName'

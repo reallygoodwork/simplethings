@@ -24,7 +24,7 @@ export interface {{name}}Props extends React.HTMLAttributes<{{typeScriptType}}>{
 export const {{name}}: React.FC<{{name}}Props> = ({
   className = '',
   {{#each componentProps}}
-  {{name}} = {{#ifEquals tsType 'boolean'}}{{defaultValue}}{{else}}'{{defaultValue}}'{{/ifEquals}},
+  {{name}} = {{#ifEquals tsType 'boolean'}}{{defaultValue}}{{else}}\`{{defaultValue}}\`{{/ifEquals}},
   {{/each}}
 }) => {
   return (

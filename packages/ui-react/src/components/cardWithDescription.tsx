@@ -8,8 +8,8 @@ export interface CardWithDescriptionProps extends React.HTMLAttributes<HTMLDivEl
 
 export const CardWithDescription: React.FC<CardWithDescriptionProps> = ({
   className = '',
-  title = 'The card is just the start',
-  body = 'Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.',
+  title = `The card is just the start`,
+  body = `Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.`,
 }) => {
   return (
     <div className={className}>

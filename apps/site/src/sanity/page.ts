@@ -1,6 +1,5 @@
 import {defineField} from 'sanity';
 import { Button } from './Button'
-import { Badge } from './Badge'
 import { SectionHeader } from './SectionHeader'
 import { CardWithDescription } from './CardWithDescription'
 import { FeatureCard } from './FeatureCard'
@@ -40,7 +39,7 @@ export const Page = defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: Button.name}, {type: Badge.name}, {type: SectionHeader.name}, {type: CardWithDescription.name}, {type: FeatureCard.name}, {type: Card.name}, {type: CardGrid.name}],
+      of: [{type: Button.name}, {type: SectionHeader.name}, {type: CardWithDescription.name}, {type: FeatureCard.name}, {type: Card.name}, {type: CardGrid.name}],
       group: 'content'
     }),
     defineField({

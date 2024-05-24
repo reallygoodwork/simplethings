@@ -1,4 +1,6 @@
 ---
+import { SectionHeader } from '@simplethings/react'
+
 interface Props {
   content: {
     _type: string
@@ -13,8 +15,8 @@ const { content } = Astro.props
 {
   content.map((item) => {
     switch (item._type) {
-      case '':
-        return <div>Hello</div>
+      case 'sectionHeader':
+        return <SectionHeader {...item} />
       default:
         return <div>No Component: {item._type}</div>
     }

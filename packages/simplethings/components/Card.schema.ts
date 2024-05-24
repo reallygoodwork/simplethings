@@ -1,6 +1,6 @@
 export const Card = {
   "config": {},
-  "updated": "2024-05-23T18:28:17.358Z",
+  "updated": "2024-05-24T14:44:40.466Z",
   "name": "Card",
   "dependencies": [],
   "description": "To be added",
@@ -21,14 +21,26 @@ export const Card = {
   },
   "componentProps": [
     {
+      "figmaRef": "Title#357:10",
+      "name": "title",
+      "tsType": "string",
+      "defaultValue": "You Believe in Authority"
+    },
+    {
       "figmaRef": "Show Text#168:7",
       "name": "showText",
       "tsType": "boolean",
       "defaultValue": true
     },
     {
-      "figmaRef": "Image Padding",
-      "name": "imagePadding",
+      "figmaRef": "Body#357:14",
+      "name": "body",
+      "tsType": "string",
+      "defaultValue": "'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day"
+    },
+    {
+      "figmaRef": "Variant",
+      "name": "variant",
       "tsType": "string",
       "defaultValue": "default",
       "options": [
@@ -40,8 +52,8 @@ export const Card = {
   ],
   "children": [
     {
-      "updated": "2024-05-23T18:28:17.374Z",
-      "name": "LeadsmallLockup",
+      "updated": "2024-05-24T14:44:40.482Z",
+      "name": "Cardbody",
       "styles": {
         "display": "flex",
         "maxWidth": "260px",
@@ -64,8 +76,8 @@ export const Card = {
       "componentProps": [],
       "children": [
         {
-          "updated": "2024-05-23T18:28:17.376Z",
-          "name": "TheCardIsJustTheStart",
+          "updated": "2024-05-24T14:44:40.484Z",
+          "name": "Title",
           "styles": {
             "color": "#000000",
             "fontSize": "20px",
@@ -73,16 +85,23 @@ export const Card = {
             "fontFamily": "Satoshi Variable",
             "lineHeight": "22px"
           },
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaPropType": "characters",
+              "figmaRef": "Title#357:10",
+              "name": "title",
+              "type": "string"
+            }
+          ],
           "isText": true,
           "elementType": "p",
           "isComponent": false,
           "componentProps": [],
-          "textValue": "The card is just the start"
+          "textValue": "You Believe in Authority"
         },
         {
-          "updated": "2024-05-23T18:28:17.377Z",
-          "name": "QuiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation",
+          "updated": "2024-05-24T14:44:40.486Z",
+          "name": "Body",
           "styles": {
             "height": "auto",
             "color": "#1c1b1799",
@@ -92,18 +111,25 @@ export const Card = {
             "lineHeight": "20px",
             "textAlign": "CENTER"
           },
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaPropType": "characters",
+              "figmaRef": "Body#357:14",
+              "name": "body",
+              "type": "string"
+            }
+          ],
           "isText": true,
           "elementType": "p",
           "isComponent": false,
           "componentProps": [],
-          "textValue": "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation."
+          "textValue": "'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day"
         }
       ]
     },
     {
-      "updated": "2024-05-23T18:28:17.375Z",
-      "name": "PexelsPhotoByKennethSurillo",
+      "updated": "2024-05-24T14:44:40.483Z",
+      "name": "Image",
       "styles": {
         "height": "412px",
         "width": "600px",
@@ -118,8 +144,8 @@ export const Card = {
   ],
   "variants": [
     {
-      "figmaRef": "Image Padding=Default",
-      "name": "Image Padding",
+      "figmaRef": "Variant=Default",
+      "name": "Variant",
       "value": "Default",
       "styles": {
         "width": "100%",
@@ -127,13 +153,13 @@ export const Card = {
       },
       "props": [
         {
-          "name": "imagePadding",
+          "name": "variant",
           "value": "default"
         }
       ],
       "children": [
         {
-          "name": "LeadsmallLockup",
+          "name": "Cardbody",
           "isText": false,
           "styles": {
             "display": "flex",
@@ -145,7 +171,7 @@ export const Card = {
           }
         },
         {
-          "name": "PexelsPhotoByKennethSurillo",
+          "name": "Image",
           "isText": false,
           "styles": {
             "height": "412px",
@@ -156,8 +182,8 @@ export const Card = {
       ]
     },
     {
-      "figmaRef": "Image Padding=No Bottom",
-      "name": "Image Padding",
+      "figmaRef": "Variant=No Bottom",
+      "name": "Variant",
       "value": "No Bottom",
       "styles": {
         "width": "100%",
@@ -165,13 +191,13 @@ export const Card = {
       },
       "props": [
         {
-          "name": "imagePadding",
+          "name": "variant",
           "value": "noBottom"
         }
       ],
       "children": [
         {
-          "name": "LeadsmallLockup",
+          "name": "Cardbody",
           "isText": false,
           "styles": {
             "display": "flex",
@@ -183,7 +209,7 @@ export const Card = {
           }
         },
         {
-          "name": "PexelsPhotoByKennethSurillo",
+          "name": "Image",
           "isText": false,
           "styles": {
             "height": "412px",
@@ -194,8 +220,8 @@ export const Card = {
       ]
     },
     {
-      "figmaRef": "Image Padding=No Padding",
-      "name": "Image Padding",
+      "figmaRef": "Variant=No Padding",
+      "name": "Variant",
       "value": "No Padding",
       "styles": {
         "width": "100%",
@@ -203,13 +229,13 @@ export const Card = {
       },
       "props": [
         {
-          "name": "imagePadding",
+          "name": "variant",
           "value": "noPadding"
         }
       ],
       "children": [
         {
-          "name": "LeadsmallLockup",
+          "name": "Cardbody",
           "isText": false,
           "styles": {
             "display": "flex",
@@ -221,7 +247,7 @@ export const Card = {
           }
         },
         {
-          "name": "PexelsPhotoByKennethSurillo",
+          "name": "Image",
           "isText": false,
           "styles": {
             "height": "412px",

@@ -11,40 +11,42 @@ To be added
 
 | Name | Type | Default | Options |
 | ---- | ---- | ------- | ------- |
+| title | string | You Believe in Authority |  |
 | showText | boolean |  |  |
-| imagePadding | string | default | default, noBottom, noPadding |
+| body | string | 'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day |  |
+| variant | string | default | default, noBottom, noPadding |
 
 ## Compound Variant API
 
-### Image Padding : Default
+### Variant : Default
 
 ```jsx live
 import { Card } from '@simplethings/react'
 
 export default () => {
-  return <Card imagePadding={'default'}  />
+  return <Card variant={'default'}  />
 }
 
 ```
 
-### Image Padding : No Bottom
+### Variant : No Bottom
 
 ```jsx live
 import { Card } from '@simplethings/react'
 
 export default () => {
-  return <Card imagePadding={'noBottom'}  />
+  return <Card variant={'noBottom'}  />
 }
 
 ```
 
-### Image Padding : No Padding
+### Variant : No Padding
 
 ```jsx live
 import { Card } from '@simplethings/react'
 
 export default () => {
-  return <Card imagePadding={'noPadding'}  />
+  return <Card variant={'noPadding'}  />
 }
 
 ```

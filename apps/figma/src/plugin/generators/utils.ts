@@ -4,3 +4,16 @@ export function camelize(str: string) {
     return index === 0 ? match.toLowerCase() : match.toUpperCase();
   });
 }
+
+export const escapeHtml = (str: string): string => {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '`': '&#96;'
+  };
+
+  return str.replace(/[&<>"'`]/g, (char) => map[char]);
+};

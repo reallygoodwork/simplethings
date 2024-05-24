@@ -1,436 +1,738 @@
 
-
-  .button {
-    border-radius: 6px;
-    
-    &.xs-primary {
-      width: 100%;
+.button {
+  border-radius: 6px;
+  
+&.xs-primary {
+  width: 100%;
 padding: 10px 24px 10px 24px;
 background: #280aa2;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 12px;
-    }
+  
 
-    &.sm-primary {
-      width: 100%;
+  
+}
+
+}
+
+&.sm-primary {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #e4f223;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.md-primary {
-      width: 100%;
+  
+}
+
+}
+
+&.md-primary {
+  width: 100%;
 padding: 12px 20px 12px 20px;
 background: #e4f223;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.lg-primary {
-      width: 100%;
+  
+}
+
+}
+
+&.lg-primary {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #e4f223;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.xl-primary {
-      width: 100%;
+  
+}
+
+}
+
+&.xl-primary {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #e4f223;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 16px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 16px;
-    }
+  
 
-    &.xs-secondary {
-      width: 100%;
+  
+}
+
+}
+
+&.xs-secondary {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #ffffff;
 border-color: #f2f2f1;
 border-width: 1px;
 border-style: solid;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 12px;
-    }
+  
 
-    &.sm-secondary {
-      width: 100%;
+  
+}
+
+}
+
+&.sm-secondary {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #ffffff;
 border-color: #f2f2f1;
 border-width: 1px;
 border-style: solid;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.md-secondary {
-      width: 100%;
+  
+}
+
+}
+
+&.md-secondary {
+  width: 100%;
 padding: 12px 20px 12px 20px;
 background: #ffffff;
 border-color: #f2f2f1;
 border-width: 1px;
 border-style: solid;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.lg-secondary {
-      width: 100%;
+  
+}
+
+}
+
+&.lg-secondary {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #ffffff;
 border-color: #f2f2f1;
 border-width: 1px;
 border-style: solid;
-      color: #111827;
+  
+.buttonText {
+  color: #111827;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.xl-secondary {
-      width: 100%;
+  
+}
+
+}
+
+&.xl-secondary {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #ffffff;
 border-color: #f2f2f1;
 border-width: 1px;
 border-style: solid;
-      color: #171e15;
+  
+.buttonText {
+  color: #171e15;
 font-size: 16px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 16px;
-    }
+  
 
-    &.xs-soft {
-      width: 100%;
+  
+}
+
+}
+
+&.xs-soft {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #d7dfd3;
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 12px;
-    }
+  
 
-    &.sm-soft {
-      width: 100%;
+  
+}
+
+}
+
+&.sm-soft {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #d7dfd3;
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.md-soft {
-      width: 100%;
+  
+}
+
+}
+
+&.md-soft {
+  width: 100%;
 padding: 12px 20px 12px 20px;
 background: #d7dfd3;
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.lg-soft {
-      width: 100%;
+  
+}
+
+}
+
+&.lg-soft {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #d7dfd3;
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.xl-soft {
-      width: 100%;
+  
+}
+
+}
+
+&.xl-soft {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #d7dfd3;
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 16px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 16px;
-    }
+  
 
-    &.xs-link {
-      width: 100%;
+  
+}
+
+}
+
+&.xs-link {
+  width: 100%;
 padding: 4px 0px 4px 0px;
 background: rgba(0, 0, 0, 0);
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 12px;
 letter-spacing: -0.025em;
-    }
+  
 
-    &.sm-link {
-      width: 100%;
+  
+}
+
+}
+
+&.sm-link {
+  width: 100%;
 padding: 4px 0px 4px 0px;
 background: rgba(0, 0, 0, 0);
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.md-link {
-      width: 100%;
+  
+}
+
+}
+
+&.md-link {
+  width: 100%;
 padding: 4px 0px 4px 0px;
 background: rgba(0, 0, 0, 0);
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.lg-link {
-      width: 100%;
+  
+}
+
+}
+
+&.lg-link {
+  width: 100%;
 padding: 4px 0px 4px 0px;
 background: rgba(0, 0, 0, 0);
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.xl-link {
-      width: 100%;
+  
+}
+
+}
+
+&.xl-link {
+  width: 100%;
 padding: 5px 0px 5px 0px;
 background: rgba(0, 0, 0, 0);
-      color: #455540;
+  
+.buttonText {
+  color: #455540;
 font-size: 16px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 16px;
-    }
+  
 
-    &.xs-solid {
-      width: 100%;
+  
+}
+
+}
+
+&.xs-solid {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #17332d;
-      color: #f6f8f5;
+  
+.buttonText {
+  color: #f6f8f5;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 12px;
-    }
+  
 
-    &.sm-solid {
-      width: 100%;
+  
+}
+
+}
+
+&.sm-solid {
+  width: 100%;
 padding: 10px 20px 10px 20px;
 background: #17332d;
-      color: #f6f8f5;
+  
+.buttonText {
+  color: #f6f8f5;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.md-solid {
-      width: 100%;
+  
+}
+
+}
+
+&.md-solid {
+  width: 100%;
 padding: 12px 20px 12px 20px;
 background: #17332d;
-      color: #f6f8f5;
+  
+.buttonText {
+  color: #f6f8f5;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.lg-solid {
-      width: 100%;
+  
+}
+
+}
+
+&.lg-solid {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #17332d;
-      color: #f6f8f5;
+  
+.buttonText {
+  color: #f6f8f5;
 font-size: 14px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
-    }
+  
 
-    &.xl-solid {
-      width: 100%;
+  
+}
+
+}
+
+&.xl-solid {
+  width: 100%;
 padding: 16px 20px 16px 20px;
 background: #17332d;
-      color: #f6f8f5;
+  
+.buttonText {
+  color: #f6f8f5;
 font-size: 16px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 16px;
-    }
-  }
+  
 
+  
+}
 
+}
 
-  .badge {
-    display: flex;
+  
+.buttonText {
+  color: #171e15;
+font-size: 12px;
+font-weight: 500;
+font-family: Satoshi;
+line-height: 12px;
+  
+
+  
+}
+
+}
+
+.badge {
+  display: flex;
 align-items: center;
 gap: 6px;
 border-width: 1px;
 border-radius: 9999px;
 border-style: solid;
-    
-    &.primary {
-      height: 21px;
+  
+&.primary {
+  height: 21px;
 width: 100%;
 padding: 3px 8px 4px 8px;
 justify-content: space-between;
 background: #ebefe9;
 border-color: #aabca3;
-      .ellipse1 {
-          background: #6c8463;
+  
+.dot {
+  background: #6c8463;
+  
 
-        }
-color: #455540;
+  
+}
+
+
+.badgetext {
+  color: #455540;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
 text-transform: uppercase;
-.iconamooncloselight {
-          width: 14px;
+  
+
+  
+}
+
+
+.close {
+  width: 14px;
 overflow: hidden;
 position: relative;
+  
 
-        }
-    }
+  
+}
 
-    &.error {
-      width: 100%;
+}
+
+&.error {
+  width: 100%;
 padding: 4px 8px 4px 8px;
 justify-content: flex-start;
 background: #ffe4e6;
 border-color: #fda4af;
-      .ellipse1 {
-          background: #f23051;
+  
+.dot {
+  background: #f23051;
+  
 
-        }
-color: #e01e49;
+  
+}
+
+
+.badgetext {
+  color: #e01e49;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
 text-transform: uppercase;
-.iconamooncloselight {
-          width: 14px;
+  
+
+  
+}
+
+
+.close {
+  width: 14px;
 overflow: hidden;
 position: relative;
+  
 
-        }
-    }
+  
+}
 
-    &.success {
-      width: 100%;
+}
+
+&.success {
+  width: 100%;
 padding: 4px 8px 4px 8px;
 justify-content: flex-start;
 background: #d9eee6;
 border-color: #85c3ae;
-      .ellipse1 {
-          background: #418b75;
+  
+.dot {
+  background: #418b75;
+  
 
-        }
-color: #326f5d;
+  
+}
+
+
+.badgetext {
+  color: #326f5d;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
 text-transform: uppercase;
-.iconamooncloselight {
-          width: 14px;
+  
+
+  
+}
+
+
+.close {
+  width: 14px;
 overflow: hidden;
 position: relative;
+  
 
-        }
-    }
+  
+}
 
-    &.warning {
-      width: 100%;
+}
+
+&.warning {
+  width: 100%;
 padding: 3px 8px 4px 8px;
 justify-content: flex-start;
 background: #fdeed7;
 border-color: #ffa94d;
-      .ellipse1 {
-          background: #fd7e14;
+  
+.dot {
+  background: #fd7e14;
+  
 
-        }
-color: #e8590c;
+  
+}
+
+
+.badgetext {
+  color: #e8590c;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
 text-transform: uppercase;
-.iconamooncloselight {
-          width: 14px;
+  
+
+  
+}
+
+
+.close {
+  width: 14px;
 overflow: hidden;
 position: relative;
+  
 
-        }
-    }
+  
+}
 
-    &.default {
-      width: 100%;
+}
+
+&.default {
+  width: 100%;
 padding: 3px 8px 4px 8px;
 justify-content: flex-start;
 background: #e6e4e1;
 border-color: #cdc9c2;
-      .ellipse1 {
-          background: #8a8577;
+  
+.dot {
+  background: #8a8577;
+  
 
-        }
-color: #3c3933;
+  
+}
+
+
+.badgetext {
+  color: #3c3933;
 font-size: 12px;
 font-weight: 500;
 font-family: Satoshi;
 line-height: 14px;
 text-transform: uppercase;
-.iconamooncloselight {
-          width: 14px;
+  
+
+  
+}
+
+
+.close {
+  width: 14px;
 overflow: hidden;
 position: relative;
+  
 
-        }
-    }
-  }
+  
+}
+
+}
+
+  
+.dot {
+  background: #6c8463;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
 
 
+.badgetext {
+  color: #455540;
+font-size: 12px;
+font-weight: 500;
+font-family: Satoshi;
+line-height: 14px;
+text-transform: uppercase;
+  
 
-  .sectionHeader {
-    display: flex;
+  
+}
+
+
+.close {
+  width: 14px;
+overflow: hidden;
+position: relative;
+  
+
+  
+.vector {
+  width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
+
+}
+
+}
+
+.sectionHeader {
+  display: flex;
 width: 100%;
 padding: 144px 0px 0px 0px;
 flex-direction: column;
@@ -438,25 +740,108 @@ justify-content: flex-start;
 align-items: center;
 gap: 16px;
 border-radius: 6px;
-    
-  }
+  
+
+  
+.theCardIsJustTheStart {
+  color: #000000;
+font-size: 48px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 100%;
+text-align: CENTER;
+letter-spacing: -1px;
+  
+
+  
+}
 
 
+.quiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation {
+  height: auto;
+color: #1c1b17cc;
+font-size: 18px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 24px;
+text-align: CENTER;
+  
 
-  .cardWithDescription {
-    display: flex;
+  
+}
+
+
+.button {
+  padding: 4px 0px 4px 0px;
+background: rgba(0, 0, 0, 0);
+border-radius: 6px;
+  
+
+  
+}
+
+}
+
+.cardWithDescription {
+  display: flex;
 width: 100%;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
 gap: 24px;
-    
-  }
+  
+
+  
+.card {
+  padding: 32px 24px 32px 24px;
+overflow: hidden;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
 
 
+.body {
+  display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 9px;
+  
 
-  .featureCard {
-    display: flex;
+  
+.theCardIsJustTheStart {
+  color: #1c1b17;
+font-size: 20px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 24px;
+  
+
+  
+}
+
+
+.quiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation {
+  height: auto;
+color: #1c1b17cc;
+font-size: 16px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 22px;
+  
+
+  
+}
+
+}
+
+}
+
+.featureCard {
+  display: flex;
 height: 576px;
 max-width: 1440px;
 padding: 16px;
@@ -465,76 +850,241 @@ justify-content: flex-start;
 align-items: flex-start;
 gap: 16px;
 border-radius: 8px;
-    
-    &.default {
-      width: 100%;
+  
+&.default {
+  width: 100%;
 background: #17332d;
-      .leadsmallLockup {
-          display: flex;
+  
+.leadsmallLockup {
+  display: flex;
 padding: 32px;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
+  
 
-        }
+  
+}
+
+
 .leadsmallLockup {
-          border-radius: 8px;
+  border-radius: 8px;
 object-fit: cover;
+  
 
-        }
-    }
+  
+}
 
-    &.variant3 {
-      width: 100%;
+}
+
+&.variant3 {
+  width: 100%;
 background: #f4f3f3;
-      .leadsmallLockup {
-          display: flex;
+  
+.leadsmallLockup {
+  display: flex;
 padding: 32px;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
+  
 
-        }
+  
+}
+
+
 .leadsmallLockup {
-          border-radius: 8px;
+  border-radius: 8px;
 object-fit: cover;
+  
 
-        }
-    }
+  
+}
 
-    &.withoutLogo {
-      width: 100%;
+}
+
+&.withoutLogo {
+  width: 100%;
 background: #17332d;
-      .leadsmallLockup {
-          padding: 32px;
-
-        }
+  
 .leadsmallLockup {
-          border-radius: 8px;
+  padding: 32px;
+  
+
+  
+}
+
+
+.leadsmallLockup {
+  border-radius: 8px;
 object-fit: cover;
+  
 
-        }
-    }
+  
+}
 
-    &.variant4 {
-      width: 100%;
+}
+
+&.variant4 {
+  width: 100%;
 background: rgba(255, 255, 255, 0.8);
-      .leadsmallLockup {
-          padding: 32px;
-
-        }
+  
 .leadsmallLockup {
-          border-radius: 8px;
+  padding: 32px;
+  
+
+  
+}
+
+
+.leadsmallLockup {
+  border-radius: 8px;
 object-fit: cover;
+  
 
-        }
-    }
-  }
+  
+}
+
+}
+
+  
+.leadsmallLockup {
+  display: flex;
+padding: 32px;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+  
+
+  
+.mejurilogosvg {
+  display: flex;
+padding: 0px 0px 64px 0px;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 11px;
+  
+
+  
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
 
 
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
 
-  .card {
-    display: flex;
+  
+}
+
+
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
+
+
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
+
+
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
+
+
+.vector {
+  background: #e4ebf6;
+width: auto;
+height: auto;
+border-radius: 50%;
+  
+
+  
+}
+
+}
+
+
+.frame40 {
+  display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 24px;
+  
+
+  
+.ourFinanceTeamAndEmployeesAlikeLoveRampForItsEaseOfUseSpendVisibilityAndExcellentCustomerServiceItsModernSpendControlsHelpUsAllTakeAccountabilityForTheOperatingEfficiencyOfTheCompany {
+  height: auto;
+color: #ffffff;
+font-size: 24px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 32px;
+  
+
+  
+}
+
+
+.ivanMakarovVpOfFinanceWebflow {
+  height: auto;
+color: #aabca3;
+font-size: 16px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 22px;
+  
+
+  
+}
+
+}
+
+}
+
+
+.leadsmallLockup {
+  border-radius: 8px;
+object-fit: cover;
+  
+
+  
+}
+
+}
+
+.card {
+  display: flex;
 overflow: hidden;
 flex-direction: column;
 justify-content: flex-start;
@@ -542,77 +1092,228 @@ align-items: center;
 gap: 16px;
 background: #efefef;
 border-radius: 8px;
-    
-    &.default {
-      width: 100%;
+  
+&.default {
+  width: 100%;
 padding: 32px 24px 32px 24px;
-      .leadsmallLockup {
-          display: flex;
+  
+.cardbody {
+  display: flex;
 max-width: 260px;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 gap: 8px;
+  
 
-        }
-.pexelsPhotoByKennethSurillo {
-          height: 412px;
+  
+}
+
+
+.image {
+  height: 412px;
 width: 600px;
 object-fit: contain;
+  
 
-        }
-    }
+  
+}
 
-    &.noBottom {
-      width: 100%;
+}
+
+&.noBottom {
+  width: 100%;
 padding: 32px 24px 0px 24px;
-      .leadsmallLockup {
-          display: flex;
+  
+.cardbody {
+  display: flex;
 max-width: 260px;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 gap: 8px;
+  
 
-        }
-.pexelsPhotoByKennethSurillo {
-          height: 412px;
+  
+}
+
+
+.image {
+  height: 412px;
 width: 600px;
 object-fit: contain;
+  
 
-        }
-    }
+  
+}
 
-    &.noPadding {
-      width: 100%;
+}
+
+&.noPadding {
+  width: 100%;
 padding: 32px 0px 0px 0px;
-      .leadsmallLockup {
-          display: flex;
+  
+.cardbody {
+  display: flex;
 max-width: 260px;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 gap: 8px;
+  
 
-        }
-.pexelsPhotoByKennethSurillo {
-          height: 412px;
+  
+}
+
+
+.image {
+  height: 412px;
 width: 600px;
 object-fit: contain;
+  
 
-        }
-    }
-  }
+  
+}
+
+}
+
+  
+.cardbody {
+  display: flex;
+max-width: 260px;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 8px;
+  
+
+  
+.title {
+  color: #000000;
+font-size: 20px;
+font-weight: 500;
+font-family: Satoshi Variable;
+line-height: 22px;
+  
+
+  
+}
 
 
+.body {
+  height: auto;
+color: #1c1b1799;
+font-size: 14px;
+font-weight: 400;
+font-family: Satoshi Variable;
+line-height: 20px;
+text-align: CENTER;
+  
 
-  .cardGrid {
-    display: flex;
+  
+}
+
+}
+
+
+.image {
+  height: 412px;
+width: 600px;
+object-fit: contain;
+  
+
+  
+}
+
+}
+
+.cardGrid {
+  display: flex;
 height: 1267px;
 padding: 112px 0px 112px 0px;
 justify-content: flex-start;
 align-items: flex-start;
 gap: 24px;
-    
-  }
+  
 
+  
+.card {
+  display: flex;
+padding: 32px 24px 32px 24px;
+overflow: hidden;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
+
+
+.card {
+  display: flex;
+padding: 32px 24px 32px 24px;
+overflow: hidden;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
+
+
+.card {
+  display: flex;
+padding: 32px 24px 32px 24px;
+overflow: hidden;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
+
+
+.card {
+  display: flex;
+padding: 32px 24px 32px 24px;
+overflow: hidden;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
+
+
+.card {
+  display: flex;
+padding: 32px 24px 32px 24px;
+overflow: hidden;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+gap: 16px;
+background: #efefef;
+border-radius: 8px;
+  
+
+  
+}
+
+}

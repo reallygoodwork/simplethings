@@ -11,22 +11,22 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, Varian
 
 export const Badge: React.FC<BadgeProps> = ({
   className = '',
-  badgeText = 'Badge',
+  badgeText = `Badge`,
   showClose = true,
   showDot = true,
-  theme = 'primary',
+  theme = `primary`,
 }) => {
   return (
     <div className={BadgeCVA({ showClose, showDot, theme, className })}>
       {showDot ?
-        <div className="ellipse1">
+        <div className="dot">
         </div>
       : null}
-      <p className="badge">
+      <p className="badgetext">
         {badgeText}
       </p>
       {showClose ?
-        <div className="iconamooncloselight">
+        <div className="close">
           <div className="vector">
           </div>
         </div>

@@ -3,7 +3,7 @@ export const Badge = {
     "sanity": false,
     "atomicComponent": true
   },
-  "updated": "2024-05-23T18:22:44.613Z",
+  "updated": "2024-05-23T19:40:20.335Z",
   "name": "Badge",
   "dependencies": [],
   "description": "::sanity = false\n::atomicComponent = true",
@@ -55,8 +55,8 @@ export const Badge = {
   ],
   "children": [
     {
-      "updated": "2024-05-23T18:22:44.637Z",
-      "name": "Ellipse1",
+      "updated": "2024-05-23T19:40:20.365Z",
+      "name": "Dot",
       "styles": {
         "background": "#6c8463",
         "width": "auto",
@@ -77,8 +77,8 @@ export const Badge = {
       "componentProps": []
     },
     {
-      "updated": "2024-05-23T18:22:44.637Z",
-      "name": "Badge",
+      "updated": "2024-05-23T19:40:20.366Z",
+      "name": "Badgetext",
       "styles": {
         "color": "#455540",
         "fontSize": "12px",
@@ -102,8 +102,8 @@ export const Badge = {
       "textValue": "Badge"
     },
     {
-      "updated": "2024-05-23T18:22:44.638Z",
-      "name": "Iconamooncloselight",
+      "updated": "2024-05-23T19:40:20.367Z",
+      "name": "Close",
       "styles": {
         "width": "14px",
         "overflow": "hidden",
@@ -123,7 +123,7 @@ export const Badge = {
       "componentProps": [],
       "children": [
         {
-          "updated": "2024-05-23T18:22:44.638Z",
+          "updated": "2024-05-23T19:40:20.367Z",
           "name": "Vector",
           "styles": {
             "width": "auto",
@@ -160,14 +160,14 @@ export const Badge = {
       ],
       "children": [
         {
-          "name": "Ellipse1",
+          "name": "Dot",
           "isText": false,
           "styles": {
             "background": "#6c8463"
           }
         },
         {
-          "name": "Badge",
+          "name": "Badgetext",
           "isText": true,
           "styles": {
             "color": "#455540",
@@ -179,7 +179,7 @@ export const Badge = {
           }
         },
         {
-          "name": "Iconamooncloselight",
+          "name": "Close",
           "isText": false,
           "styles": {
             "width": "14px",
@@ -208,14 +208,14 @@ export const Badge = {
       ],
       "children": [
         {
-          "name": "Ellipse1",
+          "name": "Dot",
           "isText": false,
           "styles": {
             "background": "#f23051"
           }
         },
         {
-          "name": "Badge",
+          "name": "Badgetext",
           "isText": true,
           "styles": {
             "color": "#e01e49",
@@ -227,7 +227,7 @@ export const Badge = {
           }
         },
         {
-          "name": "Iconamooncloselight",
+          "name": "Close",
           "isText": false,
           "styles": {
             "width": "14px",
@@ -256,14 +256,14 @@ export const Badge = {
       ],
       "children": [
         {
-          "name": "Ellipse1",
+          "name": "Dot",
           "isText": false,
           "styles": {
             "background": "#418b75"
           }
         },
         {
-          "name": "Badge",
+          "name": "Badgetext",
           "isText": true,
           "styles": {
             "color": "#326f5d",
@@ -275,7 +275,7 @@ export const Badge = {
           }
         },
         {
-          "name": "Iconamooncloselight",
+          "name": "Close",
           "isText": false,
           "styles": {
             "width": "14px",
@@ -304,14 +304,14 @@ export const Badge = {
       ],
       "children": [
         {
-          "name": "Ellipse1",
+          "name": "Dot",
           "isText": false,
           "styles": {
             "background": "#fd7e14"
           }
         },
         {
-          "name": "Badge",
+          "name": "Badgetext",
           "isText": true,
           "styles": {
             "color": "#e8590c",
@@ -323,7 +323,7 @@ export const Badge = {
           }
         },
         {
-          "name": "Iconamooncloselight",
+          "name": "Close",
           "isText": false,
           "styles": {
             "width": "14px",
@@ -352,14 +352,14 @@ export const Badge = {
       ],
       "children": [
         {
-          "name": "Ellipse1",
+          "name": "Dot",
           "isText": false,
           "styles": {
             "background": "#8a8577"
           }
         },
         {
-          "name": "Badge",
+          "name": "Badgetext",
           "isText": true,
           "styles": {
             "color": "#3c3933",
@@ -371,7 +371,7 @@ export const Badge = {
           }
         },
         {
-          "name": "Iconamooncloselight",
+          "name": "Close",
           "isText": false,
           "styles": {
             "width": "14px",

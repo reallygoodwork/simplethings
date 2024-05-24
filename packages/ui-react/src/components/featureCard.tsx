@@ -8,7 +8,7 @@ export interface FeatureCardProps extends React.HTMLAttributes<HTMLDivElement>, 
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({
   className = '',
-  property1 = 'default',
+  property1 = `default`,
 }) => {
   return (
     <div className={FeatureCardCVA({ property1, className })}>

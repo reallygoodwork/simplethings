@@ -16,6 +16,7 @@
     "@simplethings/eslint-config": "workspace:*",
     "@simplethings/prettier-config": "workspace:*",
     "@simplethings/typescript-config": "workspace:*",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",

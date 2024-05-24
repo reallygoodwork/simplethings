@@ -17,13 +17,13 @@ export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement>
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   className = '',
   showButton = true,
-  subtitle = 'Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.',
-  title = 'The card is just the start',
+  subtitle = `Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.`,
+  title = `The card is just the start`,
   showTrailingIcon = false,
   showLeadingIcon = false,
-  buttonText = 'Learn More',
-  size = 'sm',
-  purpose = 'link',
+  buttonText = `Learn More`,
+  size = `sm`,
+  purpose = `link`,
 }) => {
   return (
     <div className={SectionHeaderCVA({ showButton, showTrailingIcon, showLeadingIcon, className })}>
