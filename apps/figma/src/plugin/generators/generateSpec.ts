@@ -1,28 +1,32 @@
-import { generateStyleConfig } from '../lib/generateStyleConfig';
-import { generateStyleObject } from '../lib/generateStyleObject';
-import { ElementSchema } from '../types/element';
-import { generateBoundPropReferences } from './generateBoundPropReferences';
-import { generateComponentProps } from './generateComponentProps';
-import { getCommonStyles } from './getCommonStyles';
-import { removeCommonStyles } from './removeCommonStyles';
-import { camelize, escapeHtml } from './utils';
-
-
+import { generateStyleConfig } from '../lib/generateStyleConfig'
+import { generateStyleObject } from '../lib/generateStyleObject'
+import { generateTailwindStyleString } from '../lib/generateTailwindStyleString'
+import { ElementSchema } from '../types/element'
+import { generateBoundPropReferences } from './generateBoundPropReferences'
+import { generateComponentProps } from './generateComponentProps'
+import { getCommonStyles } from './getCommonStyles'
+import { removeCommonStyles } from './removeCommonStyles'
+import { camelize } from './utils'
 
 function transformString(input: string): string {
   return input
     .replace(/[^a-zA-Z0-9\s]/g, '')
     .split(/\s+/)
     .map((word, index) =>
-      index === 0
-        ? word.toLowerCase()
-        : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
     )
     .join('')
-    .replace(/^./, str => str.toUpperCase());
+    .replace(/^./, (str) => str.toUpperCase())
 }
 
-async function generateVariantStyles(children: SceneNode[]): Promise<any[]> {
+type StyleObject = {
+  variantStyles: {
+    [key: string]: string
+  }
+  tailwindStyles: string
+}
+
+async function generateVariantStyles(children: SceneNode[]): Promise<StyleObject[]> {
   return await Promise.all(
     children.map(async (child) => {
       const mainStyles = generateStyleConfig(child as any, {
@@ -31,188 +35,525 @@ async function generateVariantStyles(children: SceneNode[]): Promise<any[]> {
         parentLayout: null,
         parentDefinedStyles: [],
         groupTopLeft: { x: 0, y: 0 },
-      });
-      return generateStyleObject(mainStyles[0]);
-    })
-  );
+      })
+
+      return {
+        variantStyles: generateStyleObject(mainStyles[0]),
+        tailwindStyles: generateTailwindStyleString(mainStyles),
+      }
+    }),
+  )
 }
 
 async function getComponentDependencies(firstChild: SceneNode): Promise<any[]> {
-
   const components = await Promise.all(
     ((firstChild as any).children || [])
       ?.filter((child) => child.type === 'INSTANCE')
       .map((child) => ({
         name: `{ ${transformString(child.name)} }`,
         packageName: `./${transformString(child.name).toLowerCase()}`,
-      }))
-  );
+      })),
+  )
 
-  return components.filter((value, index, self) =>
-    index === self.findIndex((t) => (
-      t.place === value.place && t.name === value.name
-    ))
-  );
+  return components.filter(
+    (value, index, self) => index === self.findIndex((t) => t.place === value.place && t.name === value.name),
+  )
 }
 
 function extractPropsFromChildName(childName: string): any[] {
   return childName.split(',').map((prop) => {
-    const [name, value] = prop.split('=').map(camelize);
-    return { name: name.trim(), value: value.trim() };
-  });
+    const [name, value] = prop.split('=').map(camelize)
+    return { name: name.trim(), value: value.trim() }
+  })
 }
 
 function getChildrenVariantStyles(child: SceneNode[]): any[] {
-  if (!child || !child.length) return [];
-  const childrenStyles = child.map((child) => ({
-    name: transformString(child.name),
-    isText: child.type === 'TEXT',
-    styles: generateStyleConfig(child as any)
-  })).map((child) => {
-    return {
-      ...child,
-      styles: generateStyleObject(child.styles[0])
-    }
-  });
+  if (!child || !child.length) return []
+  const childrenStyles = child
+    .map((child) => ({
+      name: transformString(child.name),
+      isText: child.type === 'TEXT',
+      styles: generateStyleConfig(child as any),
+    }))
+    .map((child) => {
+      return {
+        ...child,
+        className: generateTailwindStyleString(child.styles),
+        styles: generateStyleObject(child.styles[0]),
+      }
+    })
 
-  return childrenStyles;
-
-
+  return childrenStyles
 }
 
-
 function createVariant(child: SceneNode, commonStyles: any): any {
-  const childStyles = generateStyleConfig(child);
-  const childStylesObject = generateStyleObject(childStyles[0]);
-  const styles = removeCommonStyles(childStylesObject, commonStyles);
-  const props = extractPropsFromChildName(child.name);
-
-
+  const childStyles = generateStyleConfig(child)
+  const childStylesObject = generateStyleObject(childStyles[0])
+  const styles = removeCommonStyles(childStylesObject, commonStyles)
+  const props = extractPropsFromChildName(child.name)
 
   return {
     figmaRef: child.name,
     name: child.name.split('=')[0],
     value: child.name.split('=')[1],
     styles,
+    className: generateTailwindStyleString(childStyles).trim(),
     props,
-    children: getChildrenVariantStyles(child.children as any),
-  };
+    children: getChildrenVariantStyles((child as any).children as any),
+  }
 }
 
 async function processChildren(children: SceneNode[]): Promise<ElementSchema[]> {
-  return await Promise.all(children.map((child) => generateSpec(child, true)));
+  return await Promise.all(children.map((child) => generateSpec(child)))
+}
+
+const getCommonTailwindClasses = (styles: StyleObject[]): string[] => {
+  if (styles.length === 0) return []
+
+  // Extract and split the tailwindStyles strings into arrays of classes
+  const tailwindClassesArrays = styles.map((style) => style.tailwindStyles.trim().split(/\s+/))
+
+  // Find the intersection of all class arrays
+  const commonClasses = tailwindClassesArrays.reduce((acc, classes) => {
+    return acc.filter((className) => classes.includes(className))
+  })
+
+  return commonClasses
+}
+
+const generateDefaultVariants = (defaultVariant: ComponentNode): VariantProperties => {
+  return Object.entries(defaultVariant.variantProperties)
+    .map(([key, value]) => {
+      return {
+        [camelize(key)]: camelize(value),
+      }
+    })
+    .reduce((acc, obj) => {
+      return { ...acc, ...obj }
+    }, {})
+}
+
+const generateCVAVariants = (node: ComponentSetNode) => {
+  const variants = node.componentPropertyDefinitions
+
+  const variantConfig = Object.entries(variants)
+    .filter(([key, value]) => value.type !== 'TEXT')
+    .map(([key, value]) => {
+      let options = {}
+
+      if (value.type === 'BOOLEAN') {
+        options = {
+          true: '',
+          false: '',
+        }
+      } else if (value.type === 'VARIANT') {
+        options = value.variantOptions.reduce((acc, obj) => {
+          return { ...acc, [camelize(obj)]: '' }
+        }, {})
+      }
+      return {
+        [camelize(key.split('#')[0])]: {
+          ...options,
+        },
+      }
+    })
+    .reduce((acc, obj) => {
+      return { ...acc, ...obj }
+    }, {})
+
+  return variantConfig
+}
+
+const generateCompoundVariants = (node: ComponentNode[]) => {
+  const variants = node.map((variant) => {
+    const variantName = generateDefaultVariants(variant as any)
+    const childStyles = generateStyleConfig(variant)
+    return {
+      ...variantName,
+      className: generateTailwindStyleString(childStyles),
+    }
+  })
+
+  return variants
+}
+
+type ChildrenNode = Exclude<
+  SceneNode,
+  SliceNode | GroupNode | ConnectorNode | CodeBlockNode | WidgetNode | EmbedNode | LinkUnfurlNode | MediaNode
+>
+type VariantProperties = {
+  [x: string]: string
+}
+
+const handleTextChild = async (child: TextNode) => {
+  const textObject = {
+    textValue: child.characters,
+    textStyleClass: '',
+  }
+
+  if (child.textStyleId !== '') {
+    const textStyleId = child.textStyleId
+    const textStyles = await figma.getLocalTextStylesAsync()
+
+    const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
+
+    textObject['textStyleClass'] = textStyle.name
+  }
+
+  return textObject
+}
+
+const traverseChildren = async (
+  children: ChildrenNode[],
+  variantProperties?: VariantProperties,
+): Promise<StyleObjectType[]> => {
+  const childPromises = children.map(async (child) => {
+    const childStyles = generateStyleConfig(child as any)
+    const styles = generateStyleObject(childStyles[0])
+    const hasBackgroundImage = typeof child.fills === 'object' ? (child?.fills as readonly Paint[])?.some((fill) => fill.type === 'IMAGE') : false
+
+    const object: StyleObjectType = {
+      boundProps: Object.entries(child.componentPropertyReferences).map(([key, value]) => {
+        return {
+          figmaRef: key,
+          name: camelize(value.split('#')[0]),
+          value: value,
+        }
+      }),
+      name: camelize(child.name),
+      elementType: child.type === 'TEXT' ? 'p' : 'div',
+      isText: child.type === 'TEXT',
+      hasBackgroundImage,
+      styles,
+      textStyleClass: '',
+      className: generateTailwindStyleString(childStyles).trim(),
+    }
+
+    if (variantProperties) {
+      object['variantProperties'] = variantProperties
+    }
+
+
+    if (child.type === 'TEXT') {
+      const textObject = await handleTextChild(child)
+      object['textValue'] = textObject.textValue
+      object['textStyleClass'] = textObject.textStyleClass
+
+      if (child.textStyleId !== '') {
+        const textStyleId = child.textStyleId
+        const textStyles = await figma.getLocalTextStylesAsync()
+
+        const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
+
+        object['textStyleClass'] = textStyle.name
+      }
+    }
+
+    if ((child as any).children) {
+      object['children'] = await traverseChildren((child as any).children as ChildrenNode[], variantProperties)
+    }
+
+    return object
+  })
+
+  return Promise.all(childPromises)
+}
+
+type StyleObjectType = {
+  name: string
+  isText: boolean
+  hasBackgroundImage: boolean
+  styles: { [key: string]: any }
+  className: string
+  variantProperties?: { [key: string]: string }
+  children?: StyleObjectType[]
+  textValue?: string
+  textStyleClass?: string
+  elementType?: string
+  boundProps?: any
+}
+
+type StyleObjectTypeArray = StyleObjectType[][]
+
+const processStyleObjectArrays = (styleObjectArrays: StyleObjectTypeArray) => {
+  const maxLength = Math.max(...styleObjectArrays.map((arr) => arr.length))
+
+  const aggregatedData: StyleObjectType[][] = Array.from({ length: maxLength }, () => [])
+
+  const processStyleObject = (styleObject: StyleObjectType, index: number) => {
+    aggregatedData[index].push(styleObject)
+
+    if (styleObject.children) {
+      const childAggregatedData = processStyleObjectArrays([styleObject.children])
+
+      styleObject.children = childAggregatedData.map((childArray) => {
+        return childArray.reduce((acc, child) => {
+          acc.name = acc.name || child.name
+          acc.isText = acc.isText || child.isText
+          acc.hasBackgroundImage = acc.hasBackgroundImage || child.hasBackgroundImage
+          acc.styles = { ...acc.styles, ...child.styles }
+          acc.className = child.className
+          acc.textValue = child.textValue
+          acc.textStyleClass = child.textStyleClass
+          acc.children = child.children
+          acc.variantProperties = child.variantProperties
+          acc.boundProps = child.boundProps
+          return acc
+        }, {} as StyleObjectType)
+      })
+    }
+  }
+
+  for (const styleObjectArray of styleObjectArrays) {
+    styleObjectArray.forEach((styleObject, index) => {
+      processStyleObject(styleObject, index)
+    })
+  }
+
+  return aggregatedData
+}
+
+const generateVariantChildren = async (node: ComponentSetNode) => {
+  const variantsPromises = node.children.map(async (variant: ComponentNode) => {
+    const variantProperties = generateDefaultVariants(variant)
+    return await traverseChildren(variant.children as ChildrenNode[], variantProperties)
+  })
+
+  return await Promise.all(variantsPromises)
+}
+
+type Variant = {
+  properties: VariantProperties;
+  styles: { [key: string]: any }
+  className: string;
+  textStyleClass?: string;
+  boundProps?: any;
+  elementType?: string;
+  isText: boolean;
+};
+
+type ResultNode = {
+  elementType?: string;
+  variants: Variant[];
+  children?: { [key: string]: ResultNode };
+  isText: boolean;
+  hasBackgroundImage: boolean;
+  textValue?: string;
+  boundProps?: any;
+};
+
+function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: ResultNode } {
+  const result: { [key: string]: ResultNode } = {};
+
+  function traverse(node: StyleObjectType, path: string) {
+    if (!result[path]) {
+      result[path] = {
+        boundProps: node.boundProps,
+        elementType: node.isText ? 'p' : 'div',
+        isText: node.isText,
+        hasBackgroundImage: node.hasBackgroundImage,
+        textValue: node.textValue,
+        variants: []
+      };
+    }
+
+    const variantProperties = node.variantProperties;
+    const existingVariant = result[path].variants.find(v => JSON.stringify(v.properties) === JSON.stringify(variantProperties));
+
+    if (existingVariant) {
+      existingVariant.className += node.className;
+    } else {
+      result[path].variants.push({
+        elementType: node.isText ? 'p' : 'div',
+        boundProps: node.boundProps,
+        properties: variantProperties,
+        styles: node.styles,
+        isText: node.isText,
+        className: node.className,
+        textStyleClass: node.textStyleClass
+      });
+    }
+
+    if (node.children) {
+      node.children.forEach(child => {
+        traverse(child, `${path}.${child.name}`);
+      });
+    }
+  }
+
+  structure.forEach(group => {
+    group.forEach(node => {
+      traverse(node, node.name);
+    });
+  });
+
+  // Convert children objects into nested format
+  function convertChildren(path: string, obj: ResultNode) {
+    const childrenPaths = Object.keys(result).filter(key => key.startsWith(`${path}.`) && key.split('.').length === path.split('.').length + 1);
+    childrenPaths.forEach(childPath => {
+      const childKey = childPath.split('.').slice(-1)[0];
+      if (!obj.children) obj.children = {};
+      obj.children[childKey] = result[childPath];
+      convertChildren(childPath, obj.children[childKey]);
+    });
+  }
+
+
+  const rootKeys = Array.from(new Set(structure.flat().map(node => node.name)));
+  const consolidatedResult: { [key: string]: ResultNode } = {};
+  rootKeys.forEach(rootKey => {
+    consolidatedResult[rootKey] = result[rootKey];
+    convertChildren(rootKey, consolidatedResult[rootKey]);
+  });
+
+  return consolidatedResult;
 }
 
 
+const generateChildrenList = async (node: ComponentSetNode) => {
+  const variantChildren = await generateVariantChildren(node)
+  return consolidateVariants(variantChildren)
+}
 
-export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<ElementSchema | null> => {
-  const name = transformString(spec.name);
-  const updated = new Date().toISOString();
-
-  const textStyles = await figma.getLocalTextStylesAsync();
-
-  console.log(textStyles, 'textStyles')
+// The main function that generates the spec
+export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | null> => {
+  const name = transformString(spec.name)
+  const updated = new Date().toISOString()
 
   if (spec.type === 'COMPONENT_SET') {
-    const children = spec.children as SceneNode[];
+    const children = spec.children as SceneNode[]
     const defaultVariant = spec.defaultVariant
-    const variantStyles = await generateVariantStyles(children);
-    const componentDependencies = await getComponentDependencies(defaultVariant);
-    const commonStyles = getCommonStyles(variantStyles);
+    const data = await generateVariantStyles(children)
+    const componentDependencies = await getComponentDependencies(defaultVariant)
+    const commonStyles = getCommonStyles(data.map((d) => d.variantStyles))
 
-    const variants = children.map((child) => createVariant(child, commonStyles));
-    const hasChildren = children && children.length > 0;
-    const componentChildren = defaultVariant as any;
-    const childrenArray = hasChildren ? await processChildren(componentChildren.children) : [];
+    const variants = children.map((child) => createVariant(child, commonStyles))
 
-    const description = spec.description.split('\n');
-    let configObject = {};
+    const descriptionBlock = spec.description.split('\n')
+    const description = spec.description.split('\n---')[0]
 
-    description.forEach((desc) => {
+    let configObject = {}
+    let elementType = 'div'
+    let typeScriptType = 'HTMLDivElement'
+
+    descriptionBlock.forEach((desc) => {
       if (desc.includes('::sanity')) {
         configObject['sanity'] = desc.split('=').at(-1).trim() === 'true'
       } else if (desc.includes('::atomicComponent')) {
         configObject['atomicComponent'] = desc.split('=').at(-1).trim() === 'true'
+      } else if (desc.includes('::elementType')) {
+        elementType = desc.split('=').at(-1).trim()
+      } else if (desc.includes('::typeScriptType')) {
+        typeScriptType = desc.split('=').at(-1).trim()
       }
     })
 
-    const componentPropsEl = await generateComponentProps(spec);
+    const componentPropsEl = await generateComponentProps(spec)
     const componentPropsArray = componentPropsEl.filter((value, index) => {
-      const _value = JSON.stringify(value);
-      return index === componentPropsEl.findIndex(obj => {
-        return JSON.stringify(obj) === _value;
-      });
-    });
+      const _value = JSON.stringify(value)
+      return (
+        index ===
+        componentPropsEl.findIndex((obj) => {
+          return JSON.stringify(obj) === _value
+        })
+      )
+    })
 
     return {
       config: configObject,
       updated,
       name,
       dependencies: componentDependencies,
-      description: spec.description || 'To be added',
+      description: description || 'To be added',
       isText: false,
       isComponent: true,
       elementAttributes: {},
-      elementType: 'div',
-      typeScriptType: 'HTMLDivElement',
+      elementType,
+      typeScriptType,
       styles: commonStyles,
+      className: getCommonTailwindClasses(data).join(' '),
       componentProps: componentPropsArray,
-      children: childrenArray,
+      children: await generateChildrenList(spec as any),
+      variantOptions: generateCVAVariants(spec),
+      defaultVariants: generateDefaultVariants(defaultVariant),
+      compoundVariants: generateCompoundVariants(children as ComponentNode[]),
       variants,
-    };
+    }
   }
 
-
-  const childStyles = generateStyleConfig(spec as any);
-  const styles = generateStyleObject(childStyles[0]);
-  const boundProps = await generateBoundPropReferences(spec);
+  const childStyles = generateStyleConfig(spec as any)
+  const styles = generateStyleObject(childStyles[0])
+  const tailwindStyles = generateTailwindStyleString(childStyles)
+  const boundProps = await generateBoundPropReferences(spec)
   const boundPropsArray = boundProps.filter((value, index) => {
-    const _value = JSON.stringify(value);
-    return index === boundProps.findIndex(obj => {
-      return JSON.stringify(obj) === _value;
-    });
-  });
+    const _value = JSON.stringify(value)
+    return (
+      index ===
+      boundProps.findIndex((obj) => {
+        return JSON.stringify(obj) === _value
+      })
+    )
+  })
 
-  let children: any[] = [];
+  let children: any[] = []
 
   if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
-    children = await processChildren(spec.children as SceneNode[]);
+    children = await processChildren(spec.children as SceneNode[])
   }
 
-  const childrenList = await Promise.all(children);
+  const childrenList = await Promise.all(children)
 
   const commonAttributes = {
-    updated,
     name,
     styles,
-    boundProps: boundPropsArray,
+    className: tailwindStyles,
     isText: false,
     elementType: 'div',
     isComponent: false,
-    componentProps: [],
-  };
+    componentProps: boundPropsArray,
+    textStyleClass: '',
+    boundProps: Object.entries(spec.componentPropertyReferences).map(([key, value]) => {
+      return {
+        figmaRef: key,
+        name: camelize(value.split('#')[0].toLowerCase()),
+        value: value,
+      }
+    }),
+  }
 
-  const componentPropsEl = await generateComponentProps(spec);
+  if (spec.type === 'TEXT') {
+    const textObject = await handleTextChild(spec)
+    commonAttributes['textStyleClass'] = textObject.textStyleClass
+
+    if (spec.textStyleId !== '') {
+      const textStyleId = spec.textStyleId
+      const textStyles = await figma.getLocalTextStylesAsync()
+
+      const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
+
+      commonAttributes['textStyleClass'] = textStyle.name
+    }
+  }
+
+  const componentPropsEl = await generateComponentProps(spec)
   const componentPropsArray = componentPropsEl.filter((value, index) => {
-    const _value = JSON.stringify(value);
-    return index === componentPropsEl.findIndex(obj => {
-      return JSON.stringify(obj) === _value;
-    });
-  });
-
+    const _value = JSON.stringify(value)
+    return (
+      index ===
+      componentPropsEl.findIndex((obj) => {
+        return JSON.stringify(obj) === _value
+      })
+    )
+  })
 
   switch (spec.type) {
     case 'TEXT':
-      const styleid = spec.textStyleId;
-      const styles = await figma.getStyleByIdAsync(styleid as string);
-      console.log(styles)
-      console.log(spec)
       return {
         ...commonAttributes,
         textValue: spec.characters,
         elementType: 'p',
         isText: true,
-      };
+      }
     case 'VECTOR':
     case 'ELLIPSE':
       return {
@@ -223,27 +564,26 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
           height: styles.height || 'auto',
           borderRadius: '50%',
         },
-      };
+      }
     case 'POLYGON':
     case 'RECTANGLE':
-      return commonAttributes;
+      return commonAttributes
     case 'GROUP':
     case 'FRAME':
       return {
         ...commonAttributes,
         children: childrenList,
-      };
+      }
     case 'INSTANCE':
-
       return {
         ...commonAttributes,
         name: transformString(spec.name),
         isComponent: true,
         elementAttributes: {},
-        componentProps: componentPropsArray,
-      };
+        componentProps: boundPropsArray,
+      }
     case 'COMPONENT':
-      const componentDependencies = await getComponentDependencies(spec);
+      const componentDependencies = await getComponentDependencies(spec)
 
       return {
         ...commonAttributes,
@@ -253,8 +593,8 @@ export const generateSpec = async (spec: SceneNode, isChild?: boolean): Promise<
         componentProps: componentPropsArray,
         children: childrenList,
         dependencies: componentDependencies,
-      };
+      }
     default:
-      return null;
+      return null
   }
-};
+}

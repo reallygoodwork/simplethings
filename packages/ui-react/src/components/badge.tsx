@@ -17,12 +17,14 @@ export const Badge: React.FC<BadgeProps> = ({
   theme = `primary`,
 }) => {
   return (
-    <div className={BadgeCVA({ showClose, showDot, theme, className })}>
+    <div className={
+
+    }>
       {showDot ?
         <div className="dot">
         </div>
       : null}
-      <p className="badgetext">
+      <p className="">
         {badgeText}
       </p>
       {showClose ?
@@ -35,50 +37,10 @@ export const Badge: React.FC<BadgeProps> = ({
   );
 };
 
-const BadgeCVA = cva('badge', {
+const BadgeCVA = cva('', {
   variants: {
-    showClose:{
-      true: '',
-      false: '',
-    },
-    showDot:{
-      true: '',
-      false: '',
-    },
-    theme: {
-      default: '',
-      error: '',
-      success: '',
-      warning: '',
-      primary: '',
-    },
   },
-  defaultVariants: {
-    showClose: true,
-    showDot: true,
-    theme: 'primary',
-  },
-  compoundVariants: [
-    {
-      className: 'primary',
-      theme: 'primary',
-    },
-    {
-      className: 'error',
-      theme: 'error',
-    },
-    {
-      className: 'success',
-      theme: 'success',
-    },
-    {
-      className: 'warning',
-      theme: 'warning',
-    },
-    {
-      className: 'default',
-      theme: 'default',
-    },
-  ]
+
+
 })
 

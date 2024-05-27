@@ -19,10 +19,17 @@ function App() {
     );
   }
 
+  const generateTypo = () => {
+    parent.postMessage(
+      { pluginMessage: { type: "GENERATE_TYPOGRAPHY" } },
+      "*"
+    );
+  }
+
 
   React.useEffect(() => {
     window.onmessage = (event) => {
-      const { type, spec } = event.data.pluginMessage;
+      const { type, spec, typography } = event.data.pluginMessage;
       if (type === "SPEC") {
         setSpec(`export const ${spec.name} = ${JSON.stringify(spec, null, 2)}`);
       } else if (type === "SAVED") {
@@ -31,6 +38,8 @@ function App() {
         setHasSavedSpec(true);
       } else if (type === "CLEAR_SAVED") {
         setHasSavedSpec(false);
+      } else if (type === 'TYPOGRAPHY') {
+        setSpec(`export const typography = ${JSON.stringify(typography, null, 2)}`);
       }
     };
   }, []);
@@ -38,6 +47,7 @@ function App() {
   return <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
     <div style={{ display: 'flex', gap: '12px' }}>
       <button disabled={!hasSavedSpec} style={{ flex: 1, height: 72, backgroundColor: 'greenyellow', appearance: 'none', border: 'none' }} onClick={useSaved}>Use saved spec</button>
+      <button style={{ flex: 1, height: 72, backgroundColor: 'blueviolet', appearance: 'none', border: 'none' }} onClick={generateTypo}>Generate Typography</button>
       <button style={{ flex: 1, height: 72, backgroundColor: 'olivedrab', appearance: 'none', border: 'none' }} onClick={onCreate}>Generate New Spec</button>
       </div>
     <textarea value={spec} id="spec" style={{ width: '100%', height: '500px' }} readOnly={true}></textarea>

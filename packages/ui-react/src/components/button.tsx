@@ -1,7 +1,11 @@
+// Generated with Anthropocene
+// 2024-05-27T18:55:37.905Z
+// Do not modify this file directly. Instead, modify the source file and re-run the generator.
+
 import React from 'react';
 import { cva, cx, VariantProps } from 'class-variance-authority'
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof ButtonCVA> {
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, VariantProps<typeof ButtonCVA> {
   className?: string;
   showTrailingIcon: boolean;
   showLeadingIcon: boolean;
@@ -19,171 +23,169 @@ export const Button: React.FC<ButtonProps> = ({
   purpose = `primary`,
 }) => {
   return (
-    <div className={ButtonCVA({ showTrailingIcon, showLeadingIcon, size, purpose, className })}>
-      <p className="buttontext">
+    <button className={ButtonCVA({showTrailingIcon, showLeadingIcon, size, purpose, className })}>
+      <p className="">
         {buttonText}
       </p>
-    </div>
+    </button>
   );
 };
 
-const ButtonCVA = cva('button', {
+const ButtonCVA = cva('rounded-md', {
   variants: {
-    showTrailingIcon:{
-      true: '',
-      false: '',
-    },
-    showLeadingIcon:{
-      true: '',
-      false: '',
-    },
-    size: {
-      xs: '',
-      sm: '',
-      md: '',
-      xl: '',
-      lg: '',
-    },
-    purpose: {
-      primary: '',
-      secondary: '',
-      soft: '',
-      link: '',
-      solid: '',
-    },
+  "showTrailingIcon": {
+    "true": "",
+    "false": ""
   },
+  "showLeadingIcon": {
+    "true": "",
+    "false": ""
+  },
+  "size": {
+    "xs": "",
+    "sm": "",
+    "md": "",
+    "xl": "",
+    "lg": ""
+  },
+  "purpose": {
+    "primary": "",
+    "secondary": "",
+    "soft": "",
+    "link": "",
+    "solid": ""
+  }
+},
   defaultVariants: {
-    showTrailingIcon: false,
-    showLeadingIcon: false,
-    size: 'xs',
-    purpose: 'primary',
-  },
+  "size": "xs",
+  "purpose": "primary"
+},
   compoundVariants: [
-    {
-      className: 'xs-primary',
-      size: 'xs',
-      purpose: 'primary',
-    },
-    {
-      className: 'sm-primary',
-      size: 'sm',
-      purpose: 'primary',
-    },
-    {
-      className: 'md-primary',
-      size: 'md',
-      purpose: 'primary',
-    },
-    {
-      className: 'lg-primary',
-      size: 'lg',
-      purpose: 'primary',
-    },
-    {
-      className: 'xl-primary',
-      size: 'xl',
-      purpose: 'primary',
-    },
-    {
-      className: 'xs-secondary',
-      size: 'xs',
-      purpose: 'secondary',
-    },
-    {
-      className: 'sm-secondary',
-      size: 'sm',
-      purpose: 'secondary',
-    },
-    {
-      className: 'md-secondary',
-      size: 'md',
-      purpose: 'secondary',
-    },
-    {
-      className: 'lg-secondary',
-      size: 'lg',
-      purpose: 'secondary',
-    },
-    {
-      className: 'xl-secondary',
-      size: 'xl',
-      purpose: 'secondary',
-    },
-    {
-      className: 'xs-soft',
-      size: 'xs',
-      purpose: 'soft',
-    },
-    {
-      className: 'sm-soft',
-      size: 'sm',
-      purpose: 'soft',
-    },
-    {
-      className: 'md-soft',
-      size: 'md',
-      purpose: 'soft',
-    },
-    {
-      className: 'lg-soft',
-      size: 'lg',
-      purpose: 'soft',
-    },
-    {
-      className: 'xl-soft',
-      size: 'xl',
-      purpose: 'soft',
-    },
-    {
-      className: 'xs-link',
-      size: 'xs',
-      purpose: 'link',
-    },
-    {
-      className: 'sm-link',
-      size: 'sm',
-      purpose: 'link',
-    },
-    {
-      className: 'md-link',
-      size: 'md',
-      purpose: 'link',
-    },
-    {
-      className: 'lg-link',
-      size: 'lg',
-      purpose: 'link',
-    },
-    {
-      className: 'xl-link',
-      size: 'xl',
-      purpose: 'link',
-    },
-    {
-      className: 'xs-solid',
-      size: 'xs',
-      purpose: 'solid',
-    },
-    {
-      className: 'sm-solid',
-      size: 'sm',
-      purpose: 'solid',
-    },
-    {
-      className: 'md-solid',
-      size: 'md',
-      purpose: 'solid',
-    },
-    {
-      className: 'lg-solid',
-      size: 'lg',
-      purpose: 'solid',
-    },
-    {
-      className: 'xl-solid',
-      size: 'xl',
-      purpose: 'solid',
-    },
-  ]
+  {
+    "size": "xs",
+    "purpose": "primary",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]"
+  },
+  {
+    "size": "sm",
+    "purpose": "primary",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]"
+  },
+  {
+    "size": "md",
+    "purpose": "primary",
+    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]"
+  },
+  {
+    "size": "lg",
+    "purpose": "primary",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+  },
+  {
+    "size": "xl",
+    "purpose": "primary",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+  },
+  {
+    "size": "xs",
+    "purpose": "secondary",
+    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+  },
+  {
+    "size": "sm",
+    "purpose": "secondary",
+    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+  },
+  {
+    "size": "md",
+    "purpose": "secondary",
+    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white"
+  },
+  {
+    "size": "lg",
+    "purpose": "secondary",
+    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+  },
+  {
+    "size": "xl",
+    "purpose": "secondary",
+    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+  },
+  {
+    "size": "xs",
+    "purpose": "soft",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+  },
+  {
+    "size": "sm",
+    "purpose": "soft",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+  },
+  {
+    "size": "md",
+    "purpose": "soft",
+    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]"
+  },
+  {
+    "size": "lg",
+    "purpose": "soft",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+  },
+  {
+    "size": "xl",
+    "purpose": "soft",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+  },
+  {
+    "size": "xs",
+    "purpose": "link",
+    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+  },
+  {
+    "size": "sm",
+    "purpose": "link",
+    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+  },
+  {
+    "size": "md",
+    "purpose": "link",
+    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+  },
+  {
+    "size": "lg",
+    "purpose": "link",
+    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+  },
+  {
+    "size": "xl",
+    "purpose": "link",
+    "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent"
+  },
+  {
+    "size": "xs",
+    "purpose": "solid",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+  },
+  {
+    "size": "sm",
+    "purpose": "solid",
+    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+  },
+  {
+    "size": "md",
+    "purpose": "solid",
+    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]"
+  },
+  {
+    "size": "lg",
+    "purpose": "solid",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+  },
+  {
+    "size": "xl",
+    "purpose": "solid",
+    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+  }
+]
 })
 

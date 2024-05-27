@@ -1,8 +1,12 @@
+// Generated with Anthropocene
+// 
+// Do not modify this file directly. Instead, modify the source file and re-run the generator.
+
 import React from 'react';
 import { Button } from './button'
-import { cva, cx, VariantProps } from 'class-variance-authority'
+import { cx } from 'class-variance-authority'
 
-export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof SectionHeaderCVA> {
+export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   showButton: boolean;
   subtitle: string;
@@ -26,37 +30,18 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   purpose = `link`,
 }) => {
   return (
-    <div className={SectionHeaderCVA({ showButton, showTrailingIcon, showLeadingIcon, className })}>
-      <p className="thecardisjustthestart">
+    <div className={cx('rounded-[0rem] flex w-[6.25rem] pt-36 pb-0 px-0 flex-col gap-4 justify-start items-center', className)}>
+      <p className="st-title">
         {title}
       </p>
-      <p className="quioccaecatametadipisicingexcepteursitmollitanimculpaexercitationloremduiscupidatatlaborislaborisexercitation">
+      <p className="st-heading">
         {subtitle}
       </p>
-      <Button showTrailingIcon={ showTrailingIcon } showLeadingIcon={ showLeadingIcon } buttonText={ buttonText } size={ size } purpose={ purpose }  />
+      {showButton ?
+        <Button showTrailingIcon={showTrailingIcon} showLeadingIcon={showLeadingIcon} buttonText={buttonText} size={size} purpose={purpose}  />
+      : null}
     </div>
   );
 };
 
-const SectionHeaderCVA = cva('sectionHeader', {
-  variants: {
-    showButton:{
-      true: '',
-      false: '',
-    },
-    showTrailingIcon:{
-      true: '',
-      false: '',
-    },
-    showLeadingIcon:{
-      true: '',
-      false: '',
-    },
-  },
-  defaultVariants: {
-    showButton: true,
-    showTrailingIcon: false,
-    showLeadingIcon: false,
-  },
-})
 

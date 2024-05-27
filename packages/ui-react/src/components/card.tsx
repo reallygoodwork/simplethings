@@ -34,7 +34,7 @@ export const Card: React.FC<CardProps> = ({
   );
 };
 
-const CardCVA = cva('card', {
+const CardCVA = cva('', {
   variants: {
     showText:{
       true: '',

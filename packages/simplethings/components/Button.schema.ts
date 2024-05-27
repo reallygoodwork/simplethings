@@ -1,17 +1,18 @@
 export const Button = {
   "config": {},
-  "updated": "2024-05-23T16:57:39.830Z",
+  "updated": "2024-05-27T18:55:37.905Z",
   "name": "Button",
   "dependencies": [],
-  "description": "To be added",
+  "description": "Generic Button Component",
   "isText": false,
   "isComponent": true,
   "elementAttributes": {},
-  "elementType": "div",
-  "typeScriptType": "HTMLDivElement",
+  "elementType": "button",
+  "typeScriptType": "HTMLButtonElement",
   "styles": {
     "borderRadius": "6px"
   },
+  "className": "rounded-md",
   "componentProps": [
     {
       "figmaRef": "Show Trailing Icon#10:5",
@@ -58,30 +59,777 @@ export const Button = {
       ]
     }
   ],
-  "children": [
-    {
-      "updated": "2024-05-23T16:57:39.877Z",
-      "name": "ButtonText",
-      "styles": {
-        "color": "#171e15",
-        "fontSize": "12px",
-        "fontWeight": "500",
-        "fontFamily": "Satoshi",
-        "lineHeight": "12px"
-      },
+  "children": {
+    "buttonText": {
       "boundProps": [
         {
-          "figmaPropType": "characters",
-          "figmaRef": "Button Text#6:1",
+          "figmaRef": "characters",
           "name": "buttonText",
-          "type": "string"
+          "value": "Button Text#6:1"
         }
       ],
-      "isText": true,
       "elementType": "p",
-      "isComponent": false,
-      "componentProps": [],
-      "textValue": "Button Text"
+      "isText": true,
+      "hasBackgroundImage": false,
+      "textValue": "Button Text",
+      "variants": [
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xs",
+            "purpose": "primary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          },
+          "isText": true,
+          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "sm",
+            "purpose": "primary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "fontFamily": "Satoshi Variable",
+            "lineHeight": "20px"
+          },
+          "isText": true,
+          "className": "font-normal text-sm font-[Satoshi Variable] text-[#171e15] leading-5",
+          "textStyleClass": "st-small"
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "md",
+            "purpose": "primary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "lg",
+            "purpose": "primary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xl",
+            "purpose": "primary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          },
+          "isText": true,
+          "className": "font-medium text-base font-[Satoshi] text-[#171e15] leading-4",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xs",
+            "purpose": "secondary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          },
+          "isText": true,
+          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "sm",
+            "purpose": "secondary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "md",
+            "purpose": "secondary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "lg",
+            "purpose": "secondary"
+          },
+          "styles": {
+            "color": "#111827",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-gray-900 leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xl",
+            "purpose": "secondary"
+          },
+          "styles": {
+            "color": "#171e15",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          },
+          "isText": true,
+          "className": "font-medium text-base font-[Satoshi] text-[#171e15] leading-4",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xs",
+            "purpose": "soft"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          },
+          "isText": true,
+          "className": "font-medium text-xs font-[Satoshi] text-[#455540] leading-[0.75rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "sm",
+            "purpose": "soft"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "md",
+            "purpose": "soft"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "lg",
+            "purpose": "soft"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xl",
+            "purpose": "soft"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          },
+          "isText": true,
+          "className": "font-medium text-base font-[Satoshi] text-[#455540] leading-4",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xs",
+            "purpose": "link"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px",
+            "letterSpacing": "-0.025em"
+          },
+          "isText": true,
+          "className": "font-medium text-xs font-[Satoshi] text-[#455540] leading-[0.75rem] tracking-[-0.025px]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "sm",
+            "purpose": "link"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "md",
+            "purpose": "link"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "lg",
+            "purpose": "link"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xl",
+            "purpose": "link"
+          },
+          "styles": {
+            "color": "#455540",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          },
+          "isText": true,
+          "className": "font-medium text-base font-[Satoshi] text-[#455540] leading-4",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xs",
+            "purpose": "solid"
+          },
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "12px"
+          },
+          "isText": true,
+          "className": "font-medium text-xs font-[Satoshi] text-[#f6f8f5] leading-[0.75rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "sm",
+            "purpose": "solid"
+          },
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "md",
+            "purpose": "solid"
+          },
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "lg",
+            "purpose": "solid"
+          },
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "14px"
+          },
+          "isText": true,
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]",
+          "textStyleClass": ""
+        },
+        {
+          "elementType": "p",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "buttonText",
+              "value": "Button Text#6:1"
+            }
+          ],
+          "properties": {
+            "size": "xl",
+            "purpose": "solid"
+          },
+          "styles": {
+            "color": "#f6f8f5",
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "fontFamily": "Satoshi",
+            "lineHeight": "16px"
+          },
+          "isText": true,
+          "className": "font-medium text-base font-[Satoshi] text-[#f6f8f5] leading-4",
+          "textStyleClass": ""
+        }
+      ]
+    }
+  },
+  "variantOptions": {
+    "showTrailingIcon": {
+      "true": "",
+      "false": ""
+    },
+    "showLeadingIcon": {
+      "true": "",
+      "false": ""
+    },
+    "size": {
+      "xs": "",
+      "sm": "",
+      "md": "",
+      "xl": "",
+      "lg": ""
+    },
+    "purpose": {
+      "primary": "",
+      "secondary": "",
+      "soft": "",
+      "link": "",
+      "solid": ""
+    }
+  },
+  "defaultVariants": {
+    "size": "xs",
+    "purpose": "primary"
+  },
+  "compoundVariants": [
+    {
+      "size": "xs",
+      "purpose": "primary",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]"
+    },
+    {
+      "size": "sm",
+      "purpose": "primary",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]"
+    },
+    {
+      "size": "md",
+      "purpose": "primary",
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]"
+    },
+    {
+      "size": "lg",
+      "purpose": "primary",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+    },
+    {
+      "size": "xl",
+      "purpose": "primary",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+    },
+    {
+      "size": "xs",
+      "purpose": "secondary",
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+    },
+    {
+      "size": "sm",
+      "purpose": "secondary",
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+    },
+    {
+      "size": "md",
+      "purpose": "secondary",
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white"
+    },
+    {
+      "size": "lg",
+      "purpose": "secondary",
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+    },
+    {
+      "size": "xl",
+      "purpose": "secondary",
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+    },
+    {
+      "size": "xs",
+      "purpose": "soft",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+    },
+    {
+      "size": "sm",
+      "purpose": "soft",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+    },
+    {
+      "size": "md",
+      "purpose": "soft",
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]"
+    },
+    {
+      "size": "lg",
+      "purpose": "soft",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+    },
+    {
+      "size": "xl",
+      "purpose": "soft",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+    },
+    {
+      "size": "xs",
+      "purpose": "link",
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    },
+    {
+      "size": "sm",
+      "purpose": "link",
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    },
+    {
+      "size": "md",
+      "purpose": "link",
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    },
+    {
+      "size": "lg",
+      "purpose": "link",
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    },
+    {
+      "size": "xl",
+      "purpose": "link",
+      "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent"
+    },
+    {
+      "size": "xs",
+      "purpose": "solid",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+    },
+    {
+      "size": "sm",
+      "purpose": "solid",
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+    },
+    {
+      "size": "md",
+      "purpose": "solid",
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]"
+    },
+    {
+      "size": "lg",
+      "purpose": "solid",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+    },
+    {
+      "size": "xl",
+      "purpose": "solid",
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
     }
   ],
   "variants": [
@@ -94,6 +842,7 @@ export const Button = {
         "padding": "10px 24px 10px 24px",
         "background": "#280aa2"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]",
       "props": [
         {
           "name": "size",
@@ -114,7 +863,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "12px"
-          }
+          },
+          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]"
         }
       ]
     },
@@ -127,6 +877,7 @@ export const Button = {
         "padding": "10px 20px 10px 20px",
         "background": "#e4f223"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -144,10 +895,11 @@ export const Button = {
           "styles": {
             "color": "#171e15",
             "fontSize": "14px",
-            "fontWeight": "500",
-            "fontFamily": "Satoshi",
-            "lineHeight": "14px"
-          }
+            "fontWeight": "400",
+            "fontFamily": "Satoshi Variable",
+            "lineHeight": "20px"
+          },
+          "className": "font-normal text-sm font-[Satoshi Variable] text-[#171e15] leading-5"
         }
       ]
     },
@@ -160,6 +912,7 @@ export const Button = {
         "padding": "12px 20px 12px 20px",
         "background": "#e4f223"
       },
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -180,7 +933,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]"
         }
       ]
     },
@@ -193,6 +947,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#e4f223"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -213,7 +968,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]"
         }
       ]
     },
@@ -226,6 +982,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#e4f223"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -246,7 +1003,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "16px"
-          }
+          },
+          "className": "font-medium text-base font-[Satoshi] text-[#171e15] leading-4"
         }
       ]
     },
@@ -262,6 +1020,7 @@ export const Button = {
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -282,7 +1041,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "12px"
-          }
+          },
+          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]"
         }
       ]
     },
@@ -298,6 +1058,7 @@ export const Button = {
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -318,7 +1079,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]"
         }
       ]
     },
@@ -334,6 +1096,7 @@ export const Button = {
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -354,7 +1117,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#171e15] leading-[0.875rem]"
         }
       ]
     },
@@ -370,6 +1134,7 @@ export const Button = {
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -390,7 +1155,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-gray-900 leading-[0.875rem]"
         }
       ]
     },
@@ -406,6 +1172,7 @@ export const Button = {
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
+      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -426,7 +1193,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "16px"
-          }
+          },
+          "className": "font-medium text-base font-[Satoshi] text-[#171e15] leading-4"
         }
       ]
     },
@@ -439,6 +1207,7 @@ export const Button = {
         "padding": "10px 20px 10px 20px",
         "background": "#d7dfd3"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -459,7 +1228,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "12px"
-          }
+          },
+          "className": "font-medium text-xs font-[Satoshi] text-[#455540] leading-[0.75rem]"
         }
       ]
     },
@@ -472,6 +1242,7 @@ export const Button = {
         "padding": "10px 20px 10px 20px",
         "background": "#d7dfd3"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -492,7 +1263,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -505,6 +1277,7 @@ export const Button = {
         "padding": "12px 20px 12px 20px",
         "background": "#d7dfd3"
       },
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -525,7 +1298,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -538,6 +1312,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#d7dfd3"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -558,7 +1333,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -571,6 +1347,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#d7dfd3"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -591,7 +1368,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "16px"
-          }
+          },
+          "className": "font-medium text-base font-[Satoshi] text-[#455540] leading-4"
         }
       ]
     },
@@ -604,6 +1382,7 @@ export const Button = {
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -625,7 +1404,8 @@ export const Button = {
             "fontFamily": "Satoshi",
             "lineHeight": "12px",
             "letterSpacing": "-0.025em"
-          }
+          },
+          "className": "font-medium text-xs font-[Satoshi] text-[#455540] leading-[0.75rem] tracking-[-0.025px]"
         }
       ]
     },
@@ -638,6 +1418,7 @@ export const Button = {
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -658,7 +1439,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -671,6 +1453,7 @@ export const Button = {
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -691,7 +1474,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -704,6 +1488,7 @@ export const Button = {
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
+      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -724,7 +1509,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]"
         }
       ]
     },
@@ -737,6 +1523,7 @@ export const Button = {
         "padding": "5px 0px 5px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
+      "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -757,7 +1544,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "16px"
-          }
+          },
+          "className": "font-medium text-base font-[Satoshi] text-[#455540] leading-4"
         }
       ]
     },
@@ -770,6 +1558,7 @@ export const Button = {
         "padding": "10px 20px 10px 20px",
         "background": "#17332d"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -790,7 +1579,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "12px"
-          }
+          },
+          "className": "font-medium text-xs font-[Satoshi] text-[#f6f8f5] leading-[0.75rem]"
         }
       ]
     },
@@ -803,6 +1593,7 @@ export const Button = {
         "padding": "10px 20px 10px 20px",
         "background": "#17332d"
       },
+      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -823,7 +1614,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]"
         }
       ]
     },
@@ -836,6 +1628,7 @@ export const Button = {
         "padding": "12px 20px 12px 20px",
         "background": "#17332d"
       },
+      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -856,7 +1649,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]"
         }
       ]
     },
@@ -869,6 +1663,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#17332d"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -889,7 +1684,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "14px"
-          }
+          },
+          "className": "font-medium text-sm font-[Satoshi] text-[#f6f8f5] leading-[0.875rem]"
         }
       ]
     },
@@ -902,6 +1698,7 @@ export const Button = {
         "padding": "16px 20px 16px 20px",
         "background": "#17332d"
       },
+      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -922,7 +1719,8 @@ export const Button = {
             "fontWeight": "500",
             "fontFamily": "Satoshi",
             "lineHeight": "16px"
-          }
+          },
+          "className": "font-medium text-base font-[Satoshi] text-[#f6f8f5] leading-4"
         }
       ]
     }

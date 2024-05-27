@@ -30,7 +30,6 @@ export function generateJsonDocs(config: ElementSchema) {
 
       for (const entry of config.variants) {
         content.push({ h3: `${entry.name} : ${entry.value}` })
-        console.log(entry)
         content.push({
           code: {
             language: 'jsx live',

@@ -16,9 +16,11 @@ function generateCSSForElement(element: ElementSchema): string {
     ?.map(variant => generateVariantCSS(variant))
     .join('\n') || '';
 
-  const childrenStyles = element.children
-    ?.map(child => generateCSSForElement(child))
-    .join('\n') || '';
+  const childrenStyles = ''
+
+    // element?.children
+    // ?.map(child => generateCSSForElement(child))
+    // .join('\n') || '';
 
   return `
 .${baseClassName} {

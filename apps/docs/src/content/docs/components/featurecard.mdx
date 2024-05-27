@@ -11,50 +11,31 @@ To be added
 
 | Name | Type | Default | Options |
 | ---- | ---- | ------- | ------- |
-| property1 | string | default | default, withoutLogo, variant3, variant4 |
+| showLogo | boolean |  |  |
+| attribution | string | lorem ipsum dolor sit |  |
+| quote | string | Velit commodo ipsum nulla labore incididunt ullamco ad voluptate cupidatat commodo. Veniam ex ad magna id. Adipisicing quis ut incididunt elit. Occaecat exercitation id aliqua exercitation eu laborum tempor nisi est aliqua enim ex voluptate. |  |
+| variant | string | default | default, light |
 
 ## Compound Variant API
 
-### Property 1 : Default
+### Variant : Default
 
 ```jsx live
 import { FeatureCard } from '@simplethings/react'
 
 export default () => {
-  return <FeatureCard property1={'default'}  />
+  return <FeatureCard variant={'default'}  />
 }
 
 ```
 
-### Property 1 : Variant3
+### Variant : Light
 
 ```jsx live
 import { FeatureCard } from '@simplethings/react'
 
 export default () => {
-  return <FeatureCard property1={'variant3'}  />
-}
-
-```
-
-### Property 1 : Without Logo
-
-```jsx live
-import { FeatureCard } from '@simplethings/react'
-
-export default () => {
-  return <FeatureCard property1={'withoutLogo'}  />
-}
-
-```
-
-### Property 1 : Variant4
-
-```jsx live
-import { FeatureCard } from '@simplethings/react'
-
-export default () => {
-  return <FeatureCard property1={'variant4'}  />
+  return <FeatureCard variant={'light'}  />
 }
 
 ```

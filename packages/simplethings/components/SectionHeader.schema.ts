@@ -1,5 +1,4 @@
 export const SectionHeader = {
-  "updated": "2024-05-23T19:04:00.368Z",
   "name": "SectionHeader",
   "styles": {
     "display": "flex",
@@ -8,46 +7,9 @@ export const SectionHeader = {
     "flexDirection": "column",
     "justifyContent": "flex-start",
     "alignItems": "center",
-    "gap": "16px",
-    "borderRadius": "6px"
+    "gap": "16px"
   },
-  "boundProps": [
-    {
-      "figmaPropType": "BOOLEAN",
-      "figmaRef": "Show Trailing Icon#10:5",
-      "name": "showTrailingIcon",
-      "type": "string",
-      "value": true
-    },
-    {
-      "figmaPropType": "BOOLEAN",
-      "figmaRef": "Show Leading Icon#10:3",
-      "name": "showLeadingIcon",
-      "type": "string",
-      "value": false
-    },
-    {
-      "figmaPropType": "TEXT",
-      "figmaRef": "Button Text#6:1",
-      "name": "buttonText",
-      "type": "string",
-      "value": "Learn More"
-    },
-    {
-      "figmaPropType": "VARIANT",
-      "figmaRef": "Size",
-      "name": "size",
-      "type": "string",
-      "value": "sm"
-    },
-    {
-      "figmaPropType": "VARIANT",
-      "figmaRef": "Purpose",
-      "name": "purpose",
-      "type": "string",
-      "value": "Link"
-    }
-  ],
+  "className": "rounded-[0rem] flex w-[6.25rem] pt-36 pb-0 px-0 flex-col gap-4 justify-start items-center",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
@@ -115,12 +77,13 @@ export const SectionHeader = {
       ]
     }
   ],
+  "textStyleClass": "",
+  "boundProps": [],
   "description": "This is a cool description",
   "elementAttributes": {},
   "children": [
     {
-      "updated": "2024-05-23T19:04:00.370Z",
-      "name": "TheCardIsJustTheStart",
+      "name": "Title",
       "styles": {
         "color": "#000000",
         "fontSize": "48px",
@@ -130,7 +93,11 @@ export const SectionHeader = {
         "textAlign": "CENTER",
         "letterSpacing": "-1px"
       },
-      "boundProps": [
+      "className": "font-medium text-5xl font-[Satoshi Variable] text-black leading-none tracking-[-1px]",
+      "isText": true,
+      "elementType": "p",
+      "isComponent": false,
+      "componentProps": [
         {
           "figmaPropType": "characters",
           "figmaRef": "Title#168:3",
@@ -138,15 +105,18 @@ export const SectionHeader = {
           "type": "string"
         }
       ],
-      "isText": true,
-      "elementType": "p",
-      "isComponent": false,
-      "componentProps": [],
+      "textStyleClass": "st-title",
+      "boundProps": [
+        {
+          "figmaRef": "characters",
+          "name": "title",
+          "value": "Title#168:3"
+        }
+      ],
       "textValue": "The card is just the start"
     },
     {
-      "updated": "2024-05-23T19:04:00.370Z",
-      "name": "QuiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation",
+      "name": "Subtitle",
       "styles": {
         "height": "auto",
         "color": "#1c1b17cc",
@@ -156,7 +126,11 @@ export const SectionHeader = {
         "lineHeight": "24px",
         "textAlign": "CENTER"
       },
-      "boundProps": [
+      "className": "font-medium text-lg font-[Satoshi Variable] text-[#1c1b17cc] leading-6 h-auto",
+      "isText": true,
+      "elementType": "p",
+      "isComponent": false,
+      "componentProps": [
         {
           "figmaPropType": "characters",
           "figmaRef": "Subtitle#168:4",
@@ -164,21 +138,28 @@ export const SectionHeader = {
           "type": "string"
         }
       ],
-      "isText": true,
-      "elementType": "p",
-      "isComponent": false,
-      "componentProps": [],
+      "textStyleClass": "st-heading",
+      "boundProps": [
+        {
+          "figmaRef": "characters",
+          "name": "subtitle",
+          "value": "Subtitle#168:4"
+        }
+      ],
       "textValue": "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation."
     },
     {
-      "updated": "2024-05-23T19:04:00.371Z",
       "name": "Button",
       "styles": {
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)",
         "borderRadius": "6px"
       },
-      "boundProps": [
+      "className": "rounded-md py-1 px-0 bg-transparent",
+      "isText": false,
+      "elementType": "div",
+      "isComponent": true,
+      "componentProps": [
         {
           "figmaPropType": "BOOLEAN",
           "figmaRef": "Show Trailing Icon#10:5",
@@ -215,10 +196,14 @@ export const SectionHeader = {
           "value": "Link"
         }
       ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
+      "textStyleClass": "",
+      "boundProps": [
+        {
+          "figmaRef": "visible",
+          "name": "showButton",
+          "value": "Show Button#168:5"
+        }
+      ],
       "elementAttributes": {}
     }
   ],

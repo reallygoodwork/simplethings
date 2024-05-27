@@ -1,1319 +1,151 @@
 
-.button {
-  border-radius: 6px;
-  
-&.xs-primary {
-  width: 100%;
-padding: 10px 24px 10px 24px;
-background: #280aa2;
-  
-.buttonText {
-  color: #171e15;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-  
-
-  
-}
-
-}
-
-&.sm-primary {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #e4f223;
-  
-.buttonText {
-  color: #171e15;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.md-primary {
-  width: 100%;
-padding: 12px 20px 12px 20px;
-background: #e4f223;
-  
-.buttonText {
-  color: #171e15;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.lg-primary {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #e4f223;
-  
-.buttonText {
-  color: #171e15;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.xl-primary {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #e4f223;
-  
-.buttonText {
-  color: #171e15;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 16px;
-  
-
-  
-}
-
-}
-
-&.xs-secondary {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #ffffff;
-border-color: #f2f2f1;
-border-width: 1px;
-border-style: solid;
-  
-.buttonText {
-  color: #171e15;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-  
-
-  
-}
-
-}
-
-&.sm-secondary {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #ffffff;
-border-color: #f2f2f1;
-border-width: 1px;
-border-style: solid;
-  
-.buttonText {
-  color: #171e15;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.md-secondary {
-  width: 100%;
-padding: 12px 20px 12px 20px;
-background: #ffffff;
-border-color: #f2f2f1;
-border-width: 1px;
-border-style: solid;
-  
-.buttonText {
-  color: #171e15;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.lg-secondary {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #ffffff;
-border-color: #f2f2f1;
-border-width: 1px;
-border-style: solid;
-  
-.buttonText {
-  color: #111827;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.xl-secondary {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #ffffff;
-border-color: #f2f2f1;
-border-width: 1px;
-border-style: solid;
-  
-.buttonText {
-  color: #171e15;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 16px;
-  
-
-  
-}
-
-}
-
-&.xs-soft {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #d7dfd3;
-  
-.buttonText {
-  color: #455540;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-  
-
-  
-}
-
-}
-
-&.sm-soft {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #d7dfd3;
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.md-soft {
-  width: 100%;
-padding: 12px 20px 12px 20px;
-background: #d7dfd3;
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.lg-soft {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #d7dfd3;
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.xl-soft {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #d7dfd3;
-  
-.buttonText {
-  color: #455540;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 16px;
-  
-
-  
-}
-
-}
-
-&.xs-link {
-  width: 100%;
-padding: 4px 0px 4px 0px;
-background: rgba(0, 0, 0, 0);
-  
-.buttonText {
-  color: #455540;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-letter-spacing: -0.025em;
-  
-
-  
-}
-
-}
-
-&.sm-link {
-  width: 100%;
-padding: 4px 0px 4px 0px;
-background: rgba(0, 0, 0, 0);
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.md-link {
-  width: 100%;
-padding: 4px 0px 4px 0px;
-background: rgba(0, 0, 0, 0);
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.lg-link {
-  width: 100%;
-padding: 4px 0px 4px 0px;
-background: rgba(0, 0, 0, 0);
-  
-.buttonText {
-  color: #455540;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.xl-link {
-  width: 100%;
-padding: 5px 0px 5px 0px;
-background: rgba(0, 0, 0, 0);
-  
-.buttonText {
-  color: #455540;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 16px;
-  
-
-  
-}
-
-}
-
-&.xs-solid {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #17332d;
-  
-.buttonText {
-  color: #f6f8f5;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-  
-
-  
-}
-
-}
-
-&.sm-solid {
-  width: 100%;
-padding: 10px 20px 10px 20px;
-background: #17332d;
-  
-.buttonText {
-  color: #f6f8f5;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.md-solid {
-  width: 100%;
-padding: 12px 20px 12px 20px;
-background: #17332d;
-  
-.buttonText {
-  color: #f6f8f5;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.lg-solid {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #17332d;
-  
-.buttonText {
-  color: #f6f8f5;
-font-size: 14px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-  
-
-  
-}
-
-}
-
-&.xl-solid {
-  width: 100%;
-padding: 16px 20px 16px 20px;
-background: #17332d;
-  
-.buttonText {
-  color: #f6f8f5;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 16px;
-  
-
-  
-}
-
-}
-
-  
-.buttonText {
-  color: #171e15;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 12px;
-  
-
-  
-}
-
-}
-
-.badge {
-  display: flex;
-align-items: center;
-gap: 6px;
-border-width: 1px;
-border-radius: 9999px;
-border-style: solid;
-  
-&.primary {
-  height: 21px;
-width: 100%;
-padding: 3px 8px 4px 8px;
-justify-content: space-between;
-background: #ebefe9;
-border-color: #aabca3;
-  
-.dot {
-  background: #6c8463;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #455540;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-}
-
-}
-
-&.error {
-  width: 100%;
-padding: 4px 8px 4px 8px;
-justify-content: flex-start;
-background: #ffe4e6;
-border-color: #fda4af;
-  
-.dot {
-  background: #f23051;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #e01e49;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-}
-
-}
-
-&.success {
-  width: 100%;
-padding: 4px 8px 4px 8px;
-justify-content: flex-start;
-background: #d9eee6;
-border-color: #85c3ae;
-  
-.dot {
-  background: #418b75;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #326f5d;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-}
-
-}
-
-&.warning {
-  width: 100%;
-padding: 3px 8px 4px 8px;
-justify-content: flex-start;
-background: #fdeed7;
-border-color: #ffa94d;
-  
-.dot {
-  background: #fd7e14;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #e8590c;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-}
-
-}
-
-&.default {
-  width: 100%;
-padding: 3px 8px 4px 8px;
-justify-content: flex-start;
-background: #e6e4e1;
-border-color: #cdc9c2;
-  
-.dot {
-  background: #8a8577;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #3c3933;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-}
-
-}
-
-  
-.dot {
-  background: #6c8463;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.badgetext {
-  color: #455540;
-font-size: 12px;
-font-weight: 500;
-font-family: Satoshi;
-line-height: 14px;
-text-transform: uppercase;
-  
-
-  
-}
-
-
-.close {
-  width: 14px;
-overflow: hidden;
-position: relative;
-  
-
-  
-.vector {
-  width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-}
-
-}
-
-.sectionHeader {
-  display: flex;
-width: 100%;
-padding: 144px 0px 0px 0px;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-border-radius: 6px;
-  
-
-  
-.theCardIsJustTheStart {
-  color: #000000;
-font-size: 48px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 100%;
-text-align: CENTER;
-letter-spacing: -1px;
-  
-
-  
-}
-
-
-.quiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation {
-  height: auto;
-color: #1c1b17cc;
-font-size: 18px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 24px;
-text-align: CENTER;
-  
-
-  
-}
-
-
-.button {
-  padding: 4px 0px 4px 0px;
-background: rgba(0, 0, 0, 0);
-border-radius: 6px;
-  
-
-  
-}
-
-}
-
-.cardWithDescription {
-  display: flex;
-width: 100%;
-flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 24px;
-  
-
-  
-.card {
-  padding: 32px 24px 32px 24px;
-overflow: hidden;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-
-.body {
-  display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 9px;
-  
-
-  
-.theCardIsJustTheStart {
-  color: #1c1b17;
-font-size: 20px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 24px;
-  
-
-  
-}
-
-
-.quiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation {
-  height: auto;
-color: #1c1b17cc;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 22px;
-  
-
-  
-}
-
-}
-
-}
-
-.featureCard {
-  display: flex;
-height: 576px;
-max-width: 1440px;
-padding: 16px;
-overflow: hidden;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 16px;
-border-radius: 8px;
-  
-&.default {
-  width: 100%;
-background: #17332d;
-  
-.leadsmallLockup {
-  display: flex;
-padding: 32px;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-  
-
-  
-}
-
-
-.leadsmallLockup {
-  border-radius: 8px;
-object-fit: cover;
-  
-
-  
-}
-
-}
-
-&.variant3 {
-  width: 100%;
-background: #f4f3f3;
-  
-.leadsmallLockup {
-  display: flex;
-padding: 32px;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-  
-
-  
-}
-
-
-.leadsmallLockup {
-  border-radius: 8px;
-object-fit: cover;
-  
-
-  
-}
-
-}
-
-&.withoutLogo {
-  width: 100%;
-background: #17332d;
-  
-.leadsmallLockup {
-  padding: 32px;
-  
-
-  
-}
-
-
-.leadsmallLockup {
-  border-radius: 8px;
-object-fit: cover;
-  
-
-  
-}
-
-}
-
-&.variant4 {
-  width: 100%;
-background: rgba(255, 255, 255, 0.8);
-  
-.leadsmallLockup {
-  padding: 32px;
-  
-
-  
-}
-
-
-.leadsmallLockup {
-  border-radius: 8px;
-object-fit: cover;
-  
-
-  
-}
-
-}
-
-  
-.leadsmallLockup {
-  display: flex;
-padding: 32px;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-  
-
-  
-.mejurilogosvg {
-  display: flex;
-padding: 0px 0px 64px 0px;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 11px;
-  
-
-  
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-
-.vector {
-  background: #e4ebf6;
-width: auto;
-height: auto;
-border-radius: 50%;
-  
-
-  
-}
-
-}
-
-
-.frame40 {
-  display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 24px;
-  
-
-  
-.ourFinanceTeamAndEmployeesAlikeLoveRampForItsEaseOfUseSpendVisibilityAndExcellentCustomerServiceItsModernSpendControlsHelpUsAllTakeAccountabilityForTheOperatingEfficiencyOfTheCompany {
-  height: auto;
-color: #ffffff;
-font-size: 24px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 32px;
-  
-
-  
-}
-
-
-.ivanMakarovVpOfFinanceWebflow {
-  height: auto;
-color: #aabca3;
-font-size: 16px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 22px;
-  
-
-  
-}
-
-}
-
-}
-
-
-.leadsmallLockup {
-  border-radius: 8px;
-object-fit: cover;
-  
-
-  
-}
-
-}
-
-.card {
-  display: flex;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-&.default {
-  width: 100%;
-padding: 32px 24px 32px 24px;
-  
-.cardbody {
-  display: flex;
-max-width: 260px;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 8px;
-  
-
-  
-}
-
-
-.image {
-  height: 412px;
-width: 600px;
-object-fit: contain;
-  
-
-  
-}
-
-}
-
-&.noBottom {
-  width: 100%;
-padding: 32px 24px 0px 24px;
-  
-.cardbody {
-  display: flex;
-max-width: 260px;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 8px;
-  
-
-  
-}
-
-
-.image {
-  height: 412px;
-width: 600px;
-object-fit: contain;
-  
-
-  
-}
-
-}
-
-&.noPadding {
-  width: 100%;
-padding: 32px 0px 0px 0px;
-  
-.cardbody {
-  display: flex;
-max-width: 260px;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 8px;
-  
-
-  
-}
-
-
-.image {
-  height: 412px;
-width: 600px;
-object-fit: contain;
-  
-
-  
-}
-
-}
-
-  
-.cardbody {
-  display: flex;
-max-width: 260px;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 8px;
-  
-
-  
-.title {
-  color: #000000;
-font-size: 20px;
-font-weight: 500;
-font-family: Satoshi Variable;
-line-height: 22px;
-  
-
-  
-}
-
-
-.body {
-  height: auto;
-color: #1c1b1799;
-font-size: 14px;
-font-weight: 400;
-font-family: Satoshi Variable;
-line-height: 20px;
-text-align: CENTER;
-  
-
-  
-}
-
-}
-
-
-.image {
-  height: 412px;
-width: 600px;
-object-fit: contain;
-  
-
-  
-}
-
-}
-
-.cardGrid {
-  display: flex;
-height: 1267px;
-padding: 112px 0px 112px 0px;
-justify-content: flex-start;
-align-items: flex-start;
-gap: 24px;
-  
-
-  
-.card {
-  display: flex;
-padding: 32px 24px 32px 24px;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-
-.card {
-  display: flex;
-padding: 32px 24px 32px 24px;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-
-.card {
-  display: flex;
-padding: 32px 24px 32px 24px;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-
-.card {
-  display: flex;
-padding: 32px 24px 32px 24px;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-
-.card {
-  display: flex;
-padding: 32px 24px 32px 24px;
-overflow: hidden;
-flex-direction: column;
-justify-content: flex-start;
-align-items: center;
-gap: 16px;
-background: #efefef;
-border-radius: 8px;
-  
-
-  
-}
-
-}
+.st-body {
+  font-family: Satoshi Variable;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-hero {
+  font-family: Satoshi Variable;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: -1.440000057220459px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-caption {
+  font-family: Satoshi Variable;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-small {
+  font-family: Satoshi Variable;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-heading--bold {
+  font-family: Satoshi Variable;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-heading {
+  font-family: Satoshi Variable;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-lead--tight {
+  font-family: Satoshi Variable;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-lead {
+  font-family: Satoshi Variable;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-title {
+  font-family: Satoshi Variable;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: -0.9599999785423279px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-subtitle {
+  font-family: Satoshi Variable;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-large {
+  font-family: Satoshi Variable;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.18000000715255737px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-input-small {
+  font-family: Satoshi Variable;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-input {
+  font-family: Satoshi Variable;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-label-small {
+  font-family: Satoshi Variable;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    
+.st-label {
+  font-family: Satoshi Variable;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: original;
+}
+    

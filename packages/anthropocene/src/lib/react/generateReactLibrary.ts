@@ -10,7 +10,7 @@ import { camelCase, lowerCase } from "lodash";
 
 import { generateReactComponent } from './generateReactComponent'
 
-export async function generateReactLibrary(components: ElementSchema[], outputDir: string) {
+export async function generateReactLibrary(components: ElementSchema[], outputDir: string, typography?: string) {
   // await rimraf(outputDir + '/components')
 
   if (!fs.existsSync(outputDir  + '/components')) {
@@ -42,7 +42,7 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     if (!fs.existsSync(componentStyles)) {
       // Generate styles file
       try {
-        await fsPromises.writeFile(componentStyles, '')
+        await fsPromises.writeFile(componentStyles, typography ? typography : '')
         console.log(color.bold.bgCyanBright('React: Styles file created'))
       } catch (err) {
         console.error(err)
@@ -54,6 +54,13 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
       } catch (err) {
         console.error(err)
       }
+    }
+
+    try {
+      await fsPromises.appendFile(componentStyles, typography ? typography : '')
+      console.log(color.bgCyanBright.bold('React: Base Component styles added'))
+    } catch (err) {
+      console.error(err)
     }
 
   for (const component of components) {
@@ -78,12 +85,12 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
 //       console.error(err)
 //     }
 
-    try {
-      await fsPromises.appendFile(componentStyles, styles)
-      console.log(color.bgCyanBright.bold('React: Component styles added'))
-    } catch (err) {
-      console.error(err)
-    }
+    // try {
+    //   await fsPromises.appendFile(componentStyles, styles)
+    //   console.log(color.bgCyanBright.bold('React: Component styles added'))
+    // } catch (err) {
+    //   console.error(err)
+    // }
 
     try {
       await fsPromises.writeFile(outputDir + `/components/${camelCase(lowerCase(component.name))}.tsx`, result)

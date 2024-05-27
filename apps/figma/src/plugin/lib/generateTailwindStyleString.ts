@@ -18,5 +18,5 @@ export function generateTailwindStyleString(styles: Styles[]): string {
     styleString.push(fills(style))
   })
 
-  return styleString.join(' ').trim()
+  return styleString.join(' ').trim().replace(/\s+/g, ' ')
 }

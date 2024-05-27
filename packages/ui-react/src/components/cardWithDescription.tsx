@@ -12,14 +12,16 @@ export const CardWithDescription: React.FC<CardWithDescriptionProps> = ({
   body = `Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.`,
 }) => {
   return (
-    <div className={className}>
+    <div className={
+
+    }>
       <div className="card">
       </div>
       <div className="body">
-        <p className="thecardisjustthestart">
+        <p className="">
           {title}
         </p>
-        <p className="quioccaecatametadipisicingexcepteursitmollitanimculpaexercitationloremduiscupidatatlaborislaborisexercitation">
+        <p className="">
           {body}
         </p>
       </div>

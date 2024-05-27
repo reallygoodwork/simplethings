@@ -8,22 +8,27 @@ import { CardWithDescription } from "./components/CardWithDescription.schema";
 import { FeatureCard } from "./components/FeatureCard.schema";
 import { Card } from "./components/Card.schema";
 import { CardGrid } from "./components/CardGrid.schema";
+import { generateTypography, typography } from "./styles/typography";
+
+
 
 const Components = [
   // Hero,
   Button,
-  Badge,
+  // Badge,
   SectionHeader,
-  CardWithDescription,
+  // CardWithDescription,
   FeatureCard,
-  Card,
-  CardGrid
+  // Card,
+  // CardGrid
 ]
 
 const reactLibraryPath = path.join(__dirname, '..', 'ui-react', 'src');
 const sanityLibraryPath = path.join(__dirname, '..', '..', 'apps', 'site', 'src', 'sanity');
 const docsPath = path.join(__dirname, '..', '..', 'apps', 'docs');
 
-generateReactLibrary(Components, reactLibraryPath);
+const typographyStyles = generateTypography(typography)
+
+generateReactLibrary(Components, reactLibraryPath, typographyStyles);
 generateSanitySchema(Components, sanityLibraryPath);
 generateDocs(Components, docsPath);

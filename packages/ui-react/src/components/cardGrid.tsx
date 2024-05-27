@@ -24,7 +24,7 @@ export const CardGrid: React.FC<CardGridProps> = ({
   );
 };
 
-const CardGridCVA = cva('cardGrid', {
+const CardGridCVA = cva('', {
   variants: {
     showText:{
       true: '',
