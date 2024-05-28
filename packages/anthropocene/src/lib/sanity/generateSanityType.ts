@@ -8,7 +8,7 @@ export const generateSanityType = (configFile: ElementSchema) => {
     const template = handlebars.compile(templateSource)
     handlebars.registerHelper('loud', function (aString) {
       if (typeof aString === 'boolean') return aString
-      if (typeof aString === 'string') return `'` + aString + `'`
+      if (typeof aString === 'string') return `"` + aString + `"`
     })
 
     handlebars.registerHelper('isAny', function (aString) {

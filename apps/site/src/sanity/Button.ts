@@ -19,20 +19,20 @@ export const Button = defineField({
       name: 'buttonText',
       title: 'buttonText',
       type: 'string',
-      initialValue: 'Button Text',
+      initialValue: "Button Text",
     }),
     defineField({
       name: 'size',
       title: 'size',
       type: 'string',
-      initialValue: 'xs',
+      initialValue: "xs",
       options: { list: ['xs', 'sm', 'md', 'xl', 'lg'] }
     }),
     defineField({
       name: 'purpose',
       title: 'purpose',
       type: 'string',
-      initialValue: 'primary',
+      initialValue: "primary",
       options: { list: ['primary', 'secondary', 'soft', 'link', 'solid'] }
     }),
   ]

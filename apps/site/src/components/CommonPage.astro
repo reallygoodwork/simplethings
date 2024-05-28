@@ -7,6 +7,7 @@ import '@simplethings/react/styles.css'
 // import '@simplethings/tailwind-config/simplethings.css'
 
 import Favicon from '@components/Favicon.astro'
+import { VisualEditing } from '@sanity/astro/visual-editing'
 
 const {
   title = 'Really Good Work Inc.',
@@ -64,6 +65,8 @@ if (publishDate) {
     tags,
   }
 }
+
+const visualEditingEnabled = import.meta.env.SANITY_VISUAL_EDITING_ENABLED == 'true'
 ---
 
 <html lang="en">
@@ -89,5 +92,6 @@ if (publishDate) {
   </head>
   <body>
     <slot />
+    <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
   </body>
 </html>

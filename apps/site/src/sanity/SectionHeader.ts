@@ -15,13 +15,13 @@ export const SectionHeader = defineField({
       name: 'subtitle',
       title: 'subtitle',
       type: 'string',
-      initialValue: 'Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.',
+      initialValue: "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.",
     }),
     defineField({
       name: 'title',
       title: 'title',
       type: 'string',
-      initialValue: 'The card is just the start',
+      initialValue: "The card is just the start",
     }),
     defineField({
       name: 'showTrailingIcon',
@@ -37,20 +37,20 @@ export const SectionHeader = defineField({
       name: 'buttonText',
       title: 'buttonText',
       type: 'string',
-      initialValue: 'Learn More',
+      initialValue: "Learn More",
     }),
     defineField({
       name: 'size',
       title: 'size',
       type: 'string',
-      initialValue: 'sm',
+      initialValue: "sm",
       options: { list: ['xs', 'sm', 'md', 'xl', 'lg'] }
     }),
     defineField({
       name: 'purpose',
       title: 'purpose',
       type: 'string',
-      initialValue: 'link',
+      initialValue: "link",
       options: { list: ['primary', 'secondary', 'soft', 'link', 'solid'] }
     }),
   ]

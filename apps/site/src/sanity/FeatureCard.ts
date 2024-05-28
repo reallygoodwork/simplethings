@@ -15,19 +15,19 @@ export const FeatureCard = defineField({
       name: 'attribution',
       title: 'attribution',
       type: 'string',
-      initialValue: 'lorem ipsum dolor sit',
+      initialValue: "lorem ipsum dolor sit",
     }),
     defineField({
       name: 'quote',
       title: 'quote',
       type: 'string',
-      initialValue: 'Velit commodo ipsum nulla labore incididunt ullamco ad voluptate cupidatat commodo. Veniam ex ad magna id. Adipisicing quis ut incididunt elit. Occaecat exercitation id aliqua exercitation eu laborum tempor nisi est aliqua enim ex voluptate.',
+      initialValue: "Velit commodo ipsum nulla labore incididunt ullamco ad voluptate cupidatat commodo. Veniam ex ad magna id. Adipisicing quis ut incididunt elit. Occaecat exercitation id aliqua exercitation eu laborum tempor nisi est aliqua enim ex voluptate.",
     }),
     defineField({
       name: 'variant',
       title: 'variant',
       type: 'string',
-      initialValue: 'default',
+      initialValue: "default",
       options: { list: ['default', 'light'] }
     }),
   ]
