@@ -2,11 +2,11 @@
 import type {
   FeatureCardProps,
   FeatureRowProps,
-  FeatureRowReverseProps,
+  FeatureRowReversedProps,
   HeroProps,
   SectionHeaderProps,
 } from '@simplethings/react'
-import { FeatureCard, FeatureRow, FeatureRowReverse, Hero, SectionHeader } from '@simplethings/react'
+import { FeatureCard, FeatureRow, FeatureRowReversed, Hero, SectionHeader } from '@simplethings/react'
 
 interface Props {
   content: {
@@ -32,7 +32,7 @@ const { content } = Astro.props
       case 'featureRow':
         return <FeatureRow {...(rest as FeatureRowProps)} />
       case 'featureRowReverse':
-        return <FeatureRowReverse {...(rest as FeatureRowReverseProps)} />
+        return <FeatureRowReversed {...(rest as FeatureRowReversedProps)} />
       default:
         return <div>No Component: {item._type}</div>
     }
