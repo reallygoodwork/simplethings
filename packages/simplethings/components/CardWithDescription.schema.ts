@@ -1,54 +1,54 @@
 export const CardWithDescription = {
-  "updated": "2024-05-23T18:25:49.761Z",
   "name": "CardWithDescription",
   "styles": {
     "display": "flex",
-    "width": "100%",
     "flexDirection": "column",
     "justifyContent": "flex-start",
     "alignItems": "flex-start",
     "gap": "24px"
   },
-  "boundProps": [],
+  "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
   "componentProps": [
     {
-      "figmaRef": "title#169:15",
+      "figmaRef": "Title#169:15",
       "name": "title",
       "tsType": "string",
       "defaultValue": "The card is just the start"
     },
     {
-      "figmaRef": "body#169:14",
+      "figmaRef": "Body#169:14",
       "name": "body",
       "tsType": "string",
       "defaultValue": "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation."
     }
   ],
+  "textStyleClass": "",
+  "boundProps": [],
   "description": "To be added",
   "elementAttributes": {},
   "children": [
     {
-      "updated": "2024-05-23T18:25:49.763Z",
-      "name": "Card",
+      "name": "Asset",
       "styles": {
         "padding": "32px 24px 32px 24px",
         "overflow": "hidden",
         "background": "#efefef",
         "borderRadius": "8px"
       },
-      "boundProps": [],
+      "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]",
       "isText": false,
       "elementType": "div",
       "isComponent": false,
       "componentProps": [],
+      "textStyleClass": "",
+      "boundProps": [],
       "children": []
     },
     {
-      "updated": "2024-05-23T18:25:49.764Z",
-      "name": "Body",
+      "name": "Cardbody",
       "styles": {
         "display": "flex",
         "flexDirection": "column",
@@ -56,15 +56,16 @@ export const CardWithDescription = {
         "alignItems": "flex-start",
         "gap": "9px"
       },
-      "boundProps": [],
+      "className": "rounded-[0rem] flex p-0 flex-col gap-[0.5625rem] justify-start items-start",
       "isText": false,
       "elementType": "div",
       "isComponent": false,
       "componentProps": [],
+      "textStyleClass": "",
+      "boundProps": [],
       "children": [
         {
-          "updated": "2024-05-23T18:25:49.765Z",
-          "name": "TheCardIsJustTheStart",
+          "name": "Title",
           "styles": {
             "color": "#1c1b17",
             "fontSize": "20px",
@@ -72,43 +73,59 @@ export const CardWithDescription = {
             "fontFamily": "Satoshi Variable",
             "lineHeight": "24px"
           },
-          "boundProps": [
+          "className": "font-medium text-xl font-[Satoshi Variable] text-[#1c1b17] leading-6",
+          "isText": true,
+          "elementType": "p",
+          "isComponent": false,
+          "componentProps": [
             {
               "figmaPropType": "characters",
-              "figmaRef": "title#169:15",
+              "figmaRef": "Title#169:15",
               "name": "title",
               "type": "string"
             }
           ],
-          "isText": true,
-          "elementType": "p",
-          "isComponent": false,
-          "componentProps": [],
+          "textStyleClass": "st-lead",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "title",
+              "value": "Title#169:15"
+            }
+          ],
           "textValue": "The card is just the start"
         },
         {
-          "updated": "2024-05-23T18:25:49.767Z",
-          "name": "QuiOccaecatAmetAdipisicingExcepteurSitMollitAnimCulpaExercitationLoremDuisCupidatatLaborisLaborisExercitation",
+          "name": "Subtitle",
           "styles": {
             "height": "auto",
+            "width": "304px",
             "color": "#1c1b17cc",
             "fontSize": "16px",
             "fontWeight": "500",
             "fontFamily": "Satoshi Variable",
             "lineHeight": "22px"
           },
-          "boundProps": [
+          "className": "font-medium text-base font-[Satoshi Variable] text-[#1c1b17cc] leading-[1.375rem] h-auto w-[19rem]",
+          "isText": true,
+          "elementType": "p",
+          "isComponent": false,
+          "componentProps": [
             {
               "figmaPropType": "characters",
-              "figmaRef": "body#169:14",
+              "figmaRef": "Body#169:14",
               "name": "body",
               "type": "string"
             }
           ],
-          "isText": true,
-          "elementType": "p",
-          "isComponent": false,
-          "componentProps": [],
+          "textStyleClass": "st-body",
+          "boundProps": [
+            {
+              "figmaRef": "characters",
+              "name": "body",
+              "value": "Body#169:14"
+            }
+          ],
           "textValue": "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation."
         }
       ]

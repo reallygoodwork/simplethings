@@ -1,4 +1,9 @@
+// Generated with Anthropocene
+// 
+// Do not modify this file directly. Instead, modify the source file and re-run the generator.
+
 import React from 'react';
+import { cx } from 'class-variance-authority'
 
 export interface CardWithDescriptionProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -12,16 +17,14 @@ export const CardWithDescription: React.FC<CardWithDescriptionProps> = ({
   body = `Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.`,
 }) => {
   return (
-    <div className={
-
-    }>
-      <div className="card">
+    <div className={cx('rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start', className)}>
+      <div className="">
       </div>
-      <div className="body">
-        <p className="">
+      <div className="">
+        <p className="st-lead">
           {title}
         </p>
-        <p className="">
+        <p className="st-body">
           {body}
         </p>
       </div>

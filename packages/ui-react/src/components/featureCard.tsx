@@ -1,5 +1,5 @@
 // Generated with Anthropocene
-// 2024-05-27T19:53:18.297Z
+// 2024-05-28T15:29:19.534Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -44,7 +44,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   );
 };
 
-const FeatureCardCVA = cva('rounded-lg flex h-[36rem] overflow-hidden p-4 gap-4 justify-start items-start', {
+const FeatureCardCVA = cva('rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start', {
   variants: {
   "showLogo": {
     "true": "",
@@ -61,11 +61,11 @@ const FeatureCardCVA = cva('rounded-lg flex h-[36rem] overflow-hidden p-4 gap-4 
   compoundVariants: [
   {
     "variant": "default",
-    "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]"
+    "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]"
   },
   {
     "variant": "light",
-    "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]"
+    "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]"
   }
 ]
 })

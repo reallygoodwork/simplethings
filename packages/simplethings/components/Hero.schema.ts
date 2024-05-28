@@ -1,82 +1,50 @@
 export const Hero = {
   "name": "Hero",
   "styles": {
-    "height": "561px",
-    "width": "100%",
+    "height": "380px",
     "padding": "10px",
     "overflow": "hidden",
     "background": "#17332d"
   },
-  "boundProps": [],
+  "className": "rounded-[0rem] h-[23.75rem] overflow-hidden p-2.5 bg-[#17332d]",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
-  "componentProps": [],
+  "componentProps": [
+    {
+      "figmaRef": "Subtitle#351:1",
+      "name": "subtitle",
+      "tsType": "string",
+      "defaultValue": "Eco-friendly designs, templates and code to help build your dream business while respecting the earth"
+    },
+    {
+      "figmaRef": "Title#351:0",
+      "name": "title",
+      "tsType": "string",
+      "defaultValue": "It’s giving green."
+    }
+  ],
+  "textStyleClass": "",
+  "boundProps": [],
   "description": "Here is the party element of the component",
   "elementAttributes": {},
   "children": [
     {
       "name": "Container",
       "styles": {
-        "display": "flex",
         "maxWidth": "1440px",
-        "padding": "128px 24px 80px 24px",
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "center",
-        "gap": "48px"
+        "padding": "128px 24px 80px 24px"
       },
-      "boundProps": [],
+      "className": "rounded-[0rem] max-w-[90rem] pt-32 pb-20 px-6",
       "isText": false,
       "elementType": "div",
       "isComponent": false,
       "componentProps": [],
+      "textStyleClass": "",
+      "boundProps": [],
       "children": [
         {
-          "name": "BadgeGroup",
-          "styles": {
-            "display": "flex",
-            "padding": "4px 10px 4px 4px",
-            "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "12px",
-            "background": "rgba(255, 255, 255, 0.2)",
-            "borderColor": "#f2f2f166",
-            "borderWidth": "1px",
-            "borderRadius": "8px",
-            "borderStyle": "solid"
-          },
-          "boundProps": [
-            {
-              "figmaPropType": "TEXT",
-              "figmaRef": "Link Text#98:8",
-              "name": "Link Text",
-              "type": "string",
-              "value": "Join our remote team"
-            },
-            {
-              "figmaPropType": "INSTANCE_SWAP",
-              "figmaRef": "Badge Style#98:10",
-              "name": "Badge Style",
-              "type": "string",
-              "value": "98:23231"
-            },
-            {
-              "figmaPropType": "BOOLEAN",
-              "figmaRef": "Show Content#98:9",
-              "name": "Show Content",
-              "type": "string",
-              "value": true
-            }
-          ],
-          "isText": false,
-          "elementType": "div",
-          "isComponent": true,
-          "componentProps": [],
-          "elementAttributes": {}
-        },
-        {
-          "name": "Frame37",
+          "name": "Content",
           "styles": {
             "display": "flex",
             "maxWidth": "600px",
@@ -85,14 +53,16 @@ export const Hero = {
             "alignItems": "center",
             "gap": "16px"
           },
-          "boundProps": [],
+          "className": "rounded-[0rem] flex max-w-[37.5rem] p-0 flex-col gap-4 justify-start items-center",
           "isText": false,
           "elementType": "div",
           "isComponent": false,
           "componentProps": [],
+          "textStyleClass": "",
+          "boundProps": [],
           "children": [
             {
-              "name": "ItsGivingGreen",
+              "name": "Title",
               "styles": {
                 "height": "auto",
                 "color": "#ffffff",
@@ -103,15 +73,30 @@ export const Hero = {
                 "textAlign": "CENTER",
                 "letterSpacing": "-1px"
               },
-              "boundProps": [],
+              "className": "font-medium text-7xl font-[Satoshi Variable] text-white leading-none tracking-[-1px] h-auto",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
-              "componentProps": [],
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#351:0",
+                  "name": "title",
+                  "type": "string"
+                }
+              ],
+              "textStyleClass": "st-hero",
+              "boundProps": [
+                {
+                  "figmaRef": "characters",
+                  "name": "title",
+                  "value": "Title#351:0"
+                }
+              ],
               "textValue": "It’s giving green."
             },
             {
-              "name": "EcofriendlyDesignsTemplatesAndCodeToHelpBuildYourDreamBusinessWhileRespectingTheEarth",
+              "name": "Subtitle",
               "styles": {
                 "height": "auto",
                 "color": "#aabca3",
@@ -121,32 +106,29 @@ export const Hero = {
                 "lineHeight": "32px",
                 "textAlign": "CENTER"
               },
-              "boundProps": [],
+              "className": "font-medium text-2xl font-[Satoshi Variable] text-[#aabca3] leading-8 h-auto",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
-              "componentProps": [],
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Subtitle#351:1",
+                  "name": "subtitle",
+                  "type": "string"
+                }
+              ],
+              "textStyleClass": "st-subtitle",
+              "boundProps": [
+                {
+                  "figmaRef": "characters",
+                  "name": "subtitle",
+                  "value": "Subtitle#351:1"
+                }
+              ],
               "textValue": "Eco-friendly designs, templates and code to help build your dream business while respecting the earth"
             }
           ]
-        },
-        {
-          "name": "CtaInputForm",
-          "styles": {
-            "display": "flex",
-            "padding": "1px 4px 1px 4px",
-            "justifyContent": "flex-start",
-            "alignItems": "center",
-            "gap": "12px",
-            "background": "rgba(255, 255, 255, 0.4)",
-            "borderRadius": "6px"
-          },
-          "boundProps": [],
-          "isText": false,
-          "elementType": "div",
-          "isComponent": true,
-          "componentProps": [],
-          "elementAttributes": {}
         }
       ]
     }

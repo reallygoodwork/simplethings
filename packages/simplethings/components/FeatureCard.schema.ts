@@ -1,6 +1,6 @@
 export const FeatureCard = {
   "config": {},
-  "updated": "2024-05-27T19:53:18.297Z",
+  "updated": "2024-05-28T15:29:19.534Z",
   "name": "FeatureCard",
   "dependencies": [],
   "description": "To be added",
@@ -20,7 +20,7 @@ export const FeatureCard = {
     "gap": "16px",
     "borderRadius": "8px"
   },
-  "className": "rounded-lg flex h-[36rem] overflow-hidden p-4 gap-4 justify-start items-start",
+  "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start",
   "componentProps": [
     {
       "figmaRef": "showLogo#358:18",
@@ -72,7 +72,8 @@ export const FeatureCard = {
             "alignItems": "flex-start"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start"
+          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start",
+          "textStyleClass": ""
         },
         {
           "elementType": "div",
@@ -88,7 +89,8 @@ export const FeatureCard = {
             "alignItems": "flex-start"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start"
+          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start",
+          "textStyleClass": ""
         }
       ],
       "children": {
@@ -124,7 +126,8 @@ export const FeatureCard = {
                 "gap": "11px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start"
+              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start",
+              "textStyleClass": ""
             },
             {
               "elementType": "div",
@@ -146,7 +149,8 @@ export const FeatureCard = {
                 "gap": "11px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start"
+              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start",
+              "textStyleClass": ""
             }
           ],
           "children": {
@@ -166,7 +170,8 @@ export const FeatureCard = {
                     "background": "#e4ebf6"
                   },
                   "isText": false,
-                  "className": "bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]"
+                  "className": "bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]",
+                  "textStyleClass": ""
                 },
                 {
                   "elementType": "div",
@@ -178,7 +183,8 @@ export const FeatureCard = {
                     "background": "#1c1b17"
                   },
                   "isText": false,
-                  "className": "bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]"
+                  "className": "bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]",
+                  "textStyleClass": ""
                 }
               ]
             }
@@ -204,7 +210,8 @@ export const FeatureCard = {
                 "gap": "24px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start"
+              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start",
+              "textStyleClass": ""
             },
             {
               "elementType": "div",
@@ -220,7 +227,8 @@ export const FeatureCard = {
                 "gap": "24px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start"
+              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start",
+              "textStyleClass": ""
             }
           ],
           "children": {
@@ -251,6 +259,7 @@ export const FeatureCard = {
                   },
                   "styles": {
                     "height": "auto",
+                    "width": "600px",
                     "color": "#ffffff",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -258,7 +267,7 @@ export const FeatureCard = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-white leading-8 h-auto",
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-white leading-8 h-auto w-[37.5rem]",
                   "textStyleClass": "st-subtitle"
                 },
                 {
@@ -275,6 +284,7 @@ export const FeatureCard = {
                   },
                   "styles": {
                     "height": "auto",
+                    "width": "600px",
                     "color": "#1c1b17",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -282,7 +292,7 @@ export const FeatureCard = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17] leading-8 h-auto",
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17] leading-8 h-auto w-[37.5rem]",
                   "textStyleClass": "st-subtitle"
                 }
               ]
@@ -371,7 +381,8 @@ export const FeatureCard = {
             "object-fit": "cover"
           },
           "isText": false,
-          "className": "rounded-lg p-0"
+          "className": "rounded-lg p-0",
+          "textStyleClass": ""
         },
         {
           "elementType": "div",
@@ -384,7 +395,8 @@ export const FeatureCard = {
             "object-fit": "cover"
           },
           "isText": false,
-          "className": "rounded-lg p-0"
+          "className": "rounded-lg p-0",
+          "textStyleClass": ""
         }
       ]
     }
@@ -405,11 +417,11 @@ export const FeatureCard = {
   "compoundVariants": [
     {
       "variant": "default",
-      "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]"
+      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]"
     },
     {
       "variant": "light",
-      "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]"
+      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]"
     }
   ],
   "variants": [
@@ -418,10 +430,9 @@ export const FeatureCard = {
       "name": "Variant",
       "value": "Default",
       "styles": {
-        "width": "100%",
         "background": "#17332d"
       },
-      "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]",
+      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]",
       "props": [
         {
           "name": "variant",
@@ -457,10 +468,9 @@ export const FeatureCard = {
       "name": "Variant",
       "value": "Light",
       "styles": {
-        "width": "100%",
         "background": "#f4f3f3"
       },
-      "className": "rounded-lg flex h-[36rem] w-[6.25rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]",
+      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]",
       "props": [
         {
           "name": "variant",

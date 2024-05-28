@@ -13,13 +13,13 @@ import { generateTypography, typography } from "./styles/typography";
 
 
 const Components = [
-  // Hero,
+  Hero,
   Button,
-  // Badge,
+  Badge,
   SectionHeader,
-  // CardWithDescription,
+  CardWithDescription,
   FeatureCard,
-  // Card,
+  Card,
   // CardGrid
 ]
 
