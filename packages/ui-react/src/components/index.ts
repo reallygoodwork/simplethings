@@ -1,7 +1,9 @@
-export { Hero } from './hero';
-export { Button } from './button';
-export { Badge } from './badge';
-export { SectionHeader } from './sectionHeader';
-export { CardWithDescription } from './cardWithDescription';
-export { FeatureCard } from './featureCard';
-export { Card } from './card';
+export { Hero, type HeroProps } from './hero';
+export { Button, type ButtonProps } from './button';
+export { Badge, type BadgeProps } from './badge';
+export { SectionHeader, type SectionHeaderProps } from './sectionHeader';
+export { CardWithDescription, type CardWithDescriptionProps } from './cardWithDescription';
+export { FeatureCard, type FeatureCardProps } from './featureCard';
+export { Card, type CardProps } from './card';
+export { FeatureRow, type FeatureRowProps } from './featureRow';
+export { FeatureRowReversed, type FeatureRowReversedProps } from './featureRowReversed';

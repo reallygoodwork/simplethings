@@ -9,7 +9,8 @@ import { FeatureCard } from "./components/FeatureCard.schema";
 import { Card } from "./components/Card.schema";
 import { CardGrid } from "./components/CardGrid.schema";
 import { generateTypography, typography } from "./styles/typography";
-
+import { FeatureRow } from "./components/FeatureRow.schema";
+import { FeatureRowReversed } from "./components/FeatureRowReversed.schema";
 
 
 const Components = [
@@ -20,6 +21,8 @@ const Components = [
   CardWithDescription,
   FeatureCard,
   Card,
+  FeatureRow,
+  FeatureRowReversed,
   // CardGrid
 ]
 

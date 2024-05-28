@@ -1,6 +1,6 @@
 import { generateSpec } from './generators/generateSpec'
 
-figma.showUI(__html__, { width: 600, height: 600 })
+figma.showUI(__html__, { width: 600, height: 900 })
 
 figma.on('selectionchange', () => {
   if (figma.currentPage.selection[0]) {
@@ -34,7 +34,6 @@ figma.ui.onmessage = async (msg) => {
   if (msg.type === 'GENERATE_SPEC') {
     console.clear()
     if (figma.currentPage.selection[0]) {
-      console.log(figma.currentPage.selection[0])
       const spec = await generateSpec(figma.currentPage.selection[0])
       figma.ui.postMessage({ type: 'SPEC', spec })
     }

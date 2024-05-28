@@ -78,7 +78,7 @@ ${typography ? typography : ''}`)
 
 
     try {
-      await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)} } from './${camelCase(lowerCase(component.name))}';\n`)
+      await fsPromises.appendFile(outputDir + '/components/index.ts', `export { ${createComponentName(component.name)}, type ${createComponentName(component.name)}Props } from './${camelCase(lowerCase(component.name))}';\n`)
       console.log(color.bgCyanBright.bold(`React: Exported ${component.componentName}`))
     } catch (err) {
       console.error(err)

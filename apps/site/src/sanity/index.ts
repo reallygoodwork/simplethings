@@ -4,6 +4,8 @@ import { SectionHeader } from './SectionHeader';
 import { CardWithDescription } from './CardWithDescription';
 import { FeatureCard } from './FeatureCard';
 import { Card } from './Card';
+import { FeatureRow } from './FeatureRow';
+import { FeatureRowReversed } from './FeatureRowReversed';
 import { Page } from './page'
 
-export const sanityComponents = [Hero, Button, SectionHeader, CardWithDescription, FeatureCard, Card, Page]
+export const sanityComponents = [Hero, Button, SectionHeader, CardWithDescription, FeatureCard, Card, FeatureRow, FeatureRowReversed, Page]

@@ -496,6 +496,7 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
   })
 
   let children: any[] = []
+  const componentDependencies = await getComponentDependencies(spec)
 
   if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
     children = await processChildren(spec.children as SceneNode[])

@@ -178,6 +178,20 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
+"components/featurerow.mdx": {
+	id: "components/featurerow.mdx";
+  slug: "components/featurerow";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"components/featurerowreversed.mdx": {
+	id: "components/featurerowreversed.mdx";
+  slug: "components/featurerowreversed";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 "components/hero.mdx": {
 	id: "components/hero.mdx";
   slug: "components/hero";

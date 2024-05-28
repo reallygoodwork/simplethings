@@ -19,4 +19,10 @@ export const components = [{
 }, {
   label: "Card",
   link: "/components/card"
+}, {
+  label: "FeatureRow",
+  link: "/components/featurerow"
+}, {
+  label: "FeatureRowReversed",
+  link: "/components/featurerowreversed"
 }]

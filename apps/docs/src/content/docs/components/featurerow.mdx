@@ -1,0 +1,41 @@
+---
+title: FeatureRow
+description: To be added
+---
+
+import '@simplethings/react/styles.css'
+
+To be added
+
+## Props
+
+| Name | Type | Default | Options |
+| ---- | ---- | ------- | ------- |
+| cTAText | string | Stay in policy and on budget with proactive policy controls, configurable approvals, and AI-powered reconciliation. |  |
+| title | string | Set guardrails to prevent overspending |  |
+| showButton | boolean |  |  |
+| variant | string | alternate | alternate, centeredAlt |
+
+## Compound Variant API
+
+### Variant : Alternate
+
+```jsx live
+import { FeatureRow } from '@simplethings/react'
+
+export default () => {
+  return <FeatureRow variant={'alternate'}  />
+}
+
+```
+
+### Variant : Centered Alt
+
+```jsx live
+import { FeatureRow } from '@simplethings/react'
+
+export default () => {
+  return <FeatureRow variant={'centeredAlt'}  />
+}
+
+```

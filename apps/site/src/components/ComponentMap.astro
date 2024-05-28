@@ -1,5 +1,6 @@
 ---
-import { SectionHeader } from '@simplethings/react'
+import type { FeatureCardProps, HeroProps, SectionHeaderProps } from '@simplethings/react'
+import { FeatureCard, Hero, SectionHeader } from '@simplethings/react'
 
 interface Props {
   content: {
@@ -14,9 +15,14 @@ const { content } = Astro.props
 
 {
   content.map((item) => {
+    const { _type, _key, ...rest } = item
     switch (item._type) {
       case 'sectionHeader':
-        return <SectionHeader {...item} />
+        return <SectionHeader {...(rest as SectionHeaderProps)} />
+      case 'hero':
+        return <Hero {...(rest as HeroProps)} />
+      case 'featureCard':
+        return <FeatureCard {...(rest as FeatureCardProps)} />
       default:
         return <div>No Component: {item._type}</div>
     }

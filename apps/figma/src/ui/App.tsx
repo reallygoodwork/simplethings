@@ -1,4 +1,6 @@
 import React from 'react';
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
 
@@ -46,11 +48,12 @@ function App() {
 
   return <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
     <div style={{ display: 'flex', gap: '12px' }}>
-      <button disabled={!hasSavedSpec} style={{ flex: 1, height: 72, backgroundColor: 'greenyellow', appearance: 'none', border: 'none' }} onClick={useSaved}>Use saved spec</button>
+      {/* <button disabled={!hasSavedSpec} style={{ flex: 1, height: 72, backgroundColor: 'greenyellow', appearance: 'none', border: 'none' }} onClick={useSaved}>Use saved spec</button> */}
       <button style={{ flex: 1, height: 72, backgroundColor: 'blueviolet', appearance: 'none', border: 'none' }} onClick={generateTypo}>Generate Typography</button>
       <button style={{ flex: 1, height: 72, backgroundColor: 'olivedrab', appearance: 'none', border: 'none' }} onClick={onCreate}>Generate New Spec</button>
+      <button style={{ flex: 1, height: 72, backgroundColor: 'green', appearance: 'none', border: 'none' }} onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}>Copy</button>
       </div>
-    <textarea value={spec} id="spec" style={{ width: '100%', height: '500px' }} readOnly={true}></textarea>
+    <CodeMirror value={spec} height="700px" extensions={[javascript({ jsx: true })]} />
   </div>;
 }
 
