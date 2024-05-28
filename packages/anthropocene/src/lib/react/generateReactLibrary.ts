@@ -42,7 +42,11 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     if (!fs.existsSync(componentStyles)) {
       // Generate styles file
       try {
-        await fsPromises.writeFile(componentStyles, typography ? typography : '')
+        await fsPromises.writeFile(componentStyles, `html {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        ${typography ? typography : ''}`)
         console.log(color.bold.bgCyanBright('React: Styles file created'))
       } catch (err) {
         console.error(err)
@@ -57,7 +61,11 @@ export async function generateReactLibrary(components: ElementSchema[], outputDi
     }
 
     try {
-      await fsPromises.appendFile(componentStyles, typography ? typography : '')
+      await fsPromises.appendFile(componentStyles, `html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+${typography ? typography : ''}`)
       console.log(color.bgCyanBright.bold('React: Base Component styles added'))
     } catch (err) {
       console.error(err)

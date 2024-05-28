@@ -4,164 +4,152 @@ export const typography = [
     "fontSize": "16px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "22px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-hero",
     "fontSize": "72px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "100%",
-    "letterSpacing": "-1.440000057220459px",
-    "fontWeight": "medium",
+    "letterSpacing": "-1px",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-caption",
     "fontSize": "12px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "16px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-small",
     "fontSize": "14px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "20px",
-    "letterSpacing": "0%",
-    "fontWeight": "regular",
+    "letterSpacing": "0",
+    "fontWeight": 400,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-heading--bold",
     "fontSize": "18px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "24px",
-    "letterSpacing": "0%",
-    "fontWeight": "bold",
+    "letterSpacing": "0",
+    "fontWeight": 700,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-heading",
     "fontSize": "18px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "24px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-lead--tight",
     "fontSize": "20px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "22px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-lead",
     "fontSize": "20px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "24px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-title",
     "fontSize": "48px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "100%",
-    "letterSpacing": "-0.9599999785423279px",
-    "fontWeight": "medium",
+    "letterSpacing": "-1px",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-subtitle",
     "fontSize": "24px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "32px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-large",
     "fontSize": "36px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "40px",
-    "letterSpacing": "-0.18000000715255737px",
-    "fontWeight": "medium",
+    "letterSpacing": "-0px",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-input-small",
     "fontSize": "14px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "100%",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-input",
     "fontSize": "16px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "100%",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-label-small",
     "fontSize": "14px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "125%",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   },
   {
     "name": "st-label",
     "fontSize": "16px",
     "fontFamily": "Satoshi Variable",
     "lineHeight": "20px",
-    "letterSpacing": "0%",
-    "fontWeight": "medium",
+    "letterSpacing": "0",
+    "fontWeight": 500,
     "textDecoration": "none",
-    "textTransform": "original"
+    "textTransform": "none"
   }
 ]
-
-const fontWeightMap: any = {
-  'thin': 100,
-  'extraLight': 200,
-  'light': 300,
-  'regular': 400,
-  'medium': 500,
-  'semiBold': 600,
-  'bold': 700,
-  'extrabold': 800,
-  'black': 900
-}
 
 export const generateTypography = (textStyles: any[]): string => {
   let typo = ''
@@ -172,7 +160,7 @@ export const generateTypography = (textStyles: any[]): string => {
   font-size: ${textStyle.fontSize};
   line-height: ${textStyle.lineHeight};
   letter-spacing: ${textStyle.letterSpacing};
-  font-weight: ${fontWeightMap[textStyle.fontWeight]};
+  font-weight: ${textStyle.fontWeight};
   text-decoration: ${textStyle.textDecoration};
   text-transform: ${textStyle.textTransform};
 }

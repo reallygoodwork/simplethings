@@ -3,7 +3,6 @@ import { ElementSchema } from '@configTypes/element/element'
 import { createComponentName } from '@utils/createComponentName'
 import handlebars, { SafeString } from 'handlebars'
 import { camelCase, lowerCase } from 'lodash'
-import pug from 'pug'
 
 import { ComponentPartial, DomTreePartial, templateSource } from './template'
 

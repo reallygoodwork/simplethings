@@ -1,151 +1,155 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .st-body {
   font-family: Satoshi Variable;
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-hero {
   font-family: Satoshi Variable;
   font-size: 72px;
   line-height: 100%;
-  letter-spacing: -1.440000057220459px;
+  letter-spacing: -1px;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-caption {
   font-family: Satoshi Variable;
   font-size: 12px;
   line-height: 16px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-small {
   font-family: Satoshi Variable;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 400;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-heading--bold {
   font-family: Satoshi Variable;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 700;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-heading {
   font-family: Satoshi Variable;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-lead--tight {
   font-family: Satoshi Variable;
   font-size: 20px;
   line-height: 22px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-lead {
   font-family: Satoshi Variable;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-title {
   font-family: Satoshi Variable;
   font-size: 48px;
   line-height: 100%;
-  letter-spacing: -0.9599999785423279px;
+  letter-spacing: -1px;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-subtitle {
   font-family: Satoshi Variable;
   font-size: 24px;
   line-height: 32px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-large {
   font-family: Satoshi Variable;
   font-size: 36px;
   line-height: 40px;
-  letter-spacing: -0.18000000715255737px;
+  letter-spacing: -0px;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-input-small {
   font-family: Satoshi Variable;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-input {
   font-family: Satoshi Variable;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-label-small {
   font-family: Satoshi Variable;
   font-size: 14px;
   line-height: 125%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     
 .st-label {
   font-family: Satoshi Variable;
   font-size: 16px;
   line-height: 20px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  text-transform: original;
+  text-transform: none;
 }
     

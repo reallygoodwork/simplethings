@@ -1,5 +1,5 @@
 // Generated with Anthropocene
-// 2024-05-27T18:55:37.905Z
+// 2024-05-28T13:50:38.429Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -64,127 +64,127 @@ const ButtonCVA = cva('rounded-md', {
   {
     "size": "xs",
     "purpose": "primary",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]"
+    "className": "rounded-md py-2.5 px-6 bg-[#e4f221]"
   },
   {
     "size": "sm",
     "purpose": "primary",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]"
+    "className": "rounded-md py-2.5 px-5 bg-[#e4f223]"
   },
   {
     "size": "md",
     "purpose": "primary",
-    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]"
+    "className": "rounded-md py-3 px-5 bg-[#e4f223]"
   },
   {
     "size": "lg",
     "purpose": "primary",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+    "className": "rounded-md py-4 px-5 bg-[#e4f223]"
   },
   {
     "size": "xl",
     "purpose": "primary",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+    "className": "rounded-md py-4 px-5 bg-[#e4f223]"
   },
   {
     "size": "xs",
     "purpose": "secondary",
-    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+    "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white"
   },
   {
     "size": "sm",
     "purpose": "secondary",
-    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+    "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white"
   },
   {
     "size": "md",
     "purpose": "secondary",
-    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white"
+    "className": "rounded-md border border-[#f2f2f1] py-3 px-5 bg-white"
   },
   {
     "size": "lg",
     "purpose": "secondary",
-    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+    "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white"
   },
   {
     "size": "xl",
     "purpose": "secondary",
-    "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+    "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white"
   },
   {
     "size": "xs",
     "purpose": "soft",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+    "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]"
   },
   {
     "size": "sm",
     "purpose": "soft",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+    "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]"
   },
   {
     "size": "md",
     "purpose": "soft",
-    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]"
+    "className": "rounded-md py-3 px-5 bg-[#d7dfd3]"
   },
   {
     "size": "lg",
     "purpose": "soft",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+    "className": "rounded-md py-4 px-5 bg-[#d7dfd3]"
   },
   {
     "size": "xl",
     "purpose": "soft",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+    "className": "rounded-md py-4 px-5 bg-[#d7dfd3]"
   },
   {
     "size": "xs",
     "purpose": "link",
-    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    "className": "rounded-md py-1 px-0 bg-transparent"
   },
   {
     "size": "sm",
     "purpose": "link",
-    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    "className": "rounded-md py-1 px-0 bg-transparent"
   },
   {
     "size": "md",
     "purpose": "link",
-    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    "className": "rounded-md py-1 px-0 bg-transparent"
   },
   {
     "size": "lg",
     "purpose": "link",
-    "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+    "className": "rounded-md py-1 px-0 bg-transparent"
   },
   {
     "size": "xl",
     "purpose": "link",
-    "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent"
+    "className": "rounded-md py-[0.3125rem] px-0 bg-transparent"
   },
   {
     "size": "xs",
     "purpose": "solid",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+    "className": "rounded-md py-2.5 px-5 bg-[#17332d]"
   },
   {
     "size": "sm",
     "purpose": "solid",
-    "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+    "className": "rounded-md py-2.5 px-5 bg-[#17332d]"
   },
   {
     "size": "md",
     "purpose": "solid",
-    "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]"
+    "className": "rounded-md py-3 px-5 bg-[#17332d]"
   },
   {
     "size": "lg",
     "purpose": "solid",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+    "className": "rounded-md py-4 px-5 bg-[#17332d]"
   },
   {
     "size": "xl",
     "purpose": "solid",
-    "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+    "className": "rounded-md py-4 px-5 bg-[#17332d]"
   }
 ]
 })

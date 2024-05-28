@@ -3,13 +3,13 @@ export const SectionHeader = {
   "styles": {
     "display": "flex",
     "width": "100%",
-    "padding": "144px 0px 0px 0px",
+    "padding": "160px 0px 0px 0px",
     "flexDirection": "column",
     "justifyContent": "flex-start",
     "alignItems": "center",
-    "gap": "16px"
+    "gap": "13.6899995803833px"
   },
-  "className": "rounded-[0rem] flex w-[6.25rem] pt-36 pb-0 px-0 flex-col gap-4 justify-start items-center",
+  "className": "rounded-[0rem] flex w-full pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
@@ -119,6 +119,7 @@ export const SectionHeader = {
       "name": "Subtitle",
       "styles": {
         "height": "auto",
+        "width": "526px",
         "color": "#1c1b17cc",
         "fontSize": "18px",
         "fontWeight": "500",
@@ -126,7 +127,7 @@ export const SectionHeader = {
         "lineHeight": "24px",
         "textAlign": "CENTER"
       },
-      "className": "font-medium text-lg font-[Satoshi Variable] text-[#1c1b17cc] leading-6 h-auto",
+      "className": "font-medium text-lg font-[Satoshi Variable] text-[#1c1b17cc] leading-6 h-auto w-[32.875rem]",
       "isText": true,
       "elementType": "p",
       "isComponent": false,

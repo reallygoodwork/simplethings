@@ -1,6 +1,6 @@
 export const Button = {
   "config": {},
-  "updated": "2024-05-27T18:55:37.905Z",
+  "updated": "2024-05-28T13:50:38.429Z",
   "name": "Button",
   "dependencies": [],
   "description": "Generic Button Component",
@@ -90,11 +90,11 @@ export const Button = {
             "color": "#171e15",
             "fontSize": "12px",
             "fontWeight": "500",
-            "fontFamily": "Satoshi",
+            "fontFamily": "Satoshi Variable",
             "lineHeight": "12px"
           },
           "isText": true,
-          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]",
+          "className": "font-medium text-xs font-[Satoshi Variable] text-[#171e15] leading-[0.75rem]",
           "textStyleClass": ""
         },
         {
@@ -709,127 +709,127 @@ export const Button = {
     {
       "size": "xs",
       "purpose": "primary",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]"
+      "className": "rounded-md py-2.5 px-6 bg-[#e4f221]"
     },
     {
       "size": "sm",
       "purpose": "primary",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]"
+      "className": "rounded-md py-2.5 px-5 bg-[#e4f223]"
     },
     {
       "size": "md",
       "purpose": "primary",
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]"
+      "className": "rounded-md py-3 px-5 bg-[#e4f223]"
     },
     {
       "size": "lg",
       "purpose": "primary",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+      "className": "rounded-md py-4 px-5 bg-[#e4f223]"
     },
     {
       "size": "xl",
       "purpose": "primary",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]"
+      "className": "rounded-md py-4 px-5 bg-[#e4f223]"
     },
     {
       "size": "xs",
       "purpose": "secondary",
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+      "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white"
     },
     {
       "size": "sm",
       "purpose": "secondary",
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white"
+      "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white"
     },
     {
       "size": "md",
       "purpose": "secondary",
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white"
+      "className": "rounded-md border border-[#f2f2f1] py-3 px-5 bg-white"
     },
     {
       "size": "lg",
       "purpose": "secondary",
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+      "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white"
     },
     {
       "size": "xl",
       "purpose": "secondary",
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white"
+      "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white"
     },
     {
       "size": "xs",
       "purpose": "soft",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+      "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]"
     },
     {
       "size": "sm",
       "purpose": "soft",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]"
+      "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]"
     },
     {
       "size": "md",
       "purpose": "soft",
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]"
+      "className": "rounded-md py-3 px-5 bg-[#d7dfd3]"
     },
     {
       "size": "lg",
       "purpose": "soft",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+      "className": "rounded-md py-4 px-5 bg-[#d7dfd3]"
     },
     {
       "size": "xl",
       "purpose": "soft",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]"
+      "className": "rounded-md py-4 px-5 bg-[#d7dfd3]"
     },
     {
       "size": "xs",
       "purpose": "link",
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+      "className": "rounded-md py-1 px-0 bg-transparent"
     },
     {
       "size": "sm",
       "purpose": "link",
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+      "className": "rounded-md py-1 px-0 bg-transparent"
     },
     {
       "size": "md",
       "purpose": "link",
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+      "className": "rounded-md py-1 px-0 bg-transparent"
     },
     {
       "size": "lg",
       "purpose": "link",
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent"
+      "className": "rounded-md py-1 px-0 bg-transparent"
     },
     {
       "size": "xl",
       "purpose": "link",
-      "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent"
+      "className": "rounded-md py-[0.3125rem] px-0 bg-transparent"
     },
     {
       "size": "xs",
       "purpose": "solid",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+      "className": "rounded-md py-2.5 px-5 bg-[#17332d]"
     },
     {
       "size": "sm",
       "purpose": "solid",
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]"
+      "className": "rounded-md py-2.5 px-5 bg-[#17332d]"
     },
     {
       "size": "md",
       "purpose": "solid",
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]"
+      "className": "rounded-md py-3 px-5 bg-[#17332d]"
     },
     {
       "size": "lg",
       "purpose": "solid",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+      "className": "rounded-md py-4 px-5 bg-[#17332d]"
     },
     {
       "size": "xl",
       "purpose": "solid",
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]"
+      "className": "rounded-md py-4 px-5 bg-[#17332d]"
     }
   ],
   "variants": [
@@ -838,11 +838,10 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 24px 10px 24px",
-        "background": "#280aa2"
+        "background": "#e4f221"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-6 bg-[#280aa2]",
+      "className": "rounded-md py-2.5 px-6 bg-[#e4f221]",
       "props": [
         {
           "name": "size",
@@ -861,10 +860,10 @@ export const Button = {
             "color": "#171e15",
             "fontSize": "12px",
             "fontWeight": "500",
-            "fontFamily": "Satoshi",
+            "fontFamily": "Satoshi Variable",
             "lineHeight": "12px"
           },
-          "className": "font-medium text-xs font-[Satoshi] text-[#171e15] leading-[0.75rem]"
+          "className": "font-medium text-xs font-[Satoshi Variable] text-[#171e15] leading-[0.75rem]"
         }
       ]
     },
@@ -873,11 +872,10 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#e4f223"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#e4f223]",
+      "className": "rounded-md py-2.5 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -908,11 +906,10 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "12px 20px 12px 20px",
         "background": "#e4f223"
       },
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#e4f223]",
+      "className": "rounded-md py-3 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -943,11 +940,10 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#e4f223"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]",
+      "className": "rounded-md py-4 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -978,11 +974,10 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#e4f223"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#e4f223]",
+      "className": "rounded-md py-4 px-5 bg-[#e4f223]",
       "props": [
         {
           "name": "size",
@@ -1013,14 +1008,13 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white",
+      "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -1051,14 +1045,13 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-2.5 px-5 bg-white",
+      "className": "rounded-md border border-[#f2f2f1] py-2.5 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -1089,14 +1082,13 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "12px 20px 12px 20px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-3 px-5 bg-white",
+      "className": "rounded-md border border-[#f2f2f1] py-3 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -1127,14 +1119,13 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white",
+      "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -1165,14 +1156,13 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#ffffff",
         "borderColor": "#f2f2f1",
         "borderWidth": "1px",
         "borderStyle": "solid"
       },
-      "className": "rounded-md border border-[#f2f2f1] w-[6.25rem] py-4 px-5 bg-white",
+      "className": "rounded-md border border-[#f2f2f1] py-4 px-5 bg-white",
       "props": [
         {
           "name": "size",
@@ -1203,11 +1193,10 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#d7dfd3"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]",
+      "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -1238,11 +1227,10 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#d7dfd3"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#d7dfd3]",
+      "className": "rounded-md py-2.5 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -1273,11 +1261,10 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "12px 20px 12px 20px",
         "background": "#d7dfd3"
       },
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#d7dfd3]",
+      "className": "rounded-md py-3 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -1308,11 +1295,10 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#d7dfd3"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]",
+      "className": "rounded-md py-4 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -1343,11 +1329,10 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#d7dfd3"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#d7dfd3]",
+      "className": "rounded-md py-4 px-5 bg-[#d7dfd3]",
       "props": [
         {
           "name": "size",
@@ -1378,11 +1363,10 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
+      "className": "rounded-md py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -1414,11 +1398,10 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
+      "className": "rounded-md py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -1449,11 +1432,10 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
+      "className": "rounded-md py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -1484,11 +1466,10 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "4px 0px 4px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
-      "className": "rounded-md w-[6.25rem] py-1 px-0 bg-transparent",
+      "className": "rounded-md py-1 px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -1519,11 +1500,10 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "5px 0px 5px 0px",
         "background": "rgba(0, 0, 0, 0)"
       },
-      "className": "rounded-md w-[6.25rem] py-[0.3125rem] px-0 bg-transparent",
+      "className": "rounded-md py-[0.3125rem] px-0 bg-transparent",
       "props": [
         {
           "name": "size",
@@ -1554,11 +1534,10 @@ export const Button = {
       "name": "Size",
       "value": "xs, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#17332d"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]",
+      "className": "rounded-md py-2.5 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -1589,11 +1568,10 @@ export const Button = {
       "name": "Size",
       "value": "sm, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "10px 20px 10px 20px",
         "background": "#17332d"
       },
-      "className": "rounded-md w-[6.25rem] py-2.5 px-5 bg-[#17332d]",
+      "className": "rounded-md py-2.5 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -1624,11 +1602,10 @@ export const Button = {
       "name": "Size",
       "value": "md, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "12px 20px 12px 20px",
         "background": "#17332d"
       },
-      "className": "rounded-md w-[6.25rem] py-3 px-5 bg-[#17332d]",
+      "className": "rounded-md py-3 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -1659,11 +1636,10 @@ export const Button = {
       "name": "Size",
       "value": "lg, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#17332d"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]",
+      "className": "rounded-md py-4 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",
@@ -1694,11 +1670,10 @@ export const Button = {
       "name": "Size",
       "value": "xl, Purpose",
       "styles": {
-        "width": "100%",
         "padding": "16px 20px 16px 20px",
         "background": "#17332d"
       },
-      "className": "rounded-md w-[6.25rem] py-4 px-5 bg-[#17332d]",
+      "className": "rounded-md py-4 px-5 bg-[#17332d]",
       "props": [
         {
           "name": "size",

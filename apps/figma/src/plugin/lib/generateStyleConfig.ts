@@ -291,6 +291,15 @@ export function generateStyleConfig(
       styleConfig.fontStyle = fontStyle(styleConfig.fontStyle, node)
       styleConfig.color = color(styleConfig.color, node)
 
+      if (node.layoutSizingHorizontal === 'FIXED') {
+        styleConfig['width'] = {
+          ...styleConfig['width'],
+          value: node.width.toFixed(0),
+          unit: 'px',
+          defined: true,
+        }
+      }
+
       switch (node.textAutoResize) {
         case 'HEIGHT':
           styleConfig['height'] = {
@@ -333,7 +342,9 @@ export function generateStyleConfig(
         config.parentLayout !== 'NONE' &&
         node['counterAxisSizingMode'] === 'AUTO' &&
         node['layoutAlign'] !== 'STRETCH' &&
-        node['layoutPositioning'] !== 'ABSOLUTE'
+        node['layoutPositioning'] !== 'ABSOLUTE' &&
+        node['layoutSizingHorizontal'] !== 'FIXED' &&
+        node['layoutSizingHorizontal'] !== 'HUG'
       ) {
         styleConfig['width'] = {
           ...styleConfig['width'],

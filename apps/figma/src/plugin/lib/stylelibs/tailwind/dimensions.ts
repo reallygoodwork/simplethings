@@ -41,12 +41,23 @@ export default function dimensionsClasses(styleConfig: Styles): string {
     }
   }
 
+  if (styleConfig.maxWidth.defined) {
+    if (styleConfig.maxWidth.value === 'none') {
+      classes.push('max-w-none')
+    } else {
+      classes.push(`max-w${spacing(styleConfig.maxWidth.value as number)}`)
+    }
+  }
+
   if (styleConfig.width.defined) {
     if (styleConfig.width.value === 'auto') {
       classes.push('w-auto')
+    } else if (styleConfig.width.value === 100 && styleConfig.width.unit === '%') {
+      classes.push('w-full')
     } else {
       classes.push(`w${spacing(styleConfig.width.value as number)}`)
     }
+
   }
 
   if (styleConfig.overflow.defined) {
