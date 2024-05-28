@@ -1,8 +1,9 @@
 // Generated with Anthropocene
-// 2024-05-28T16:40:07.324Z
+// 2024-05-28T19:13:42.049Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
+import { Button } from './button'
 import { cva, cx, VariantProps } from 'class-variance-authority'
 
 export interface FeatureRowReversedProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof FeatureRowReversedCVA> {
@@ -11,6 +12,11 @@ export interface FeatureRowReversedProps extends React.HTMLAttributes<HTMLDivEle
   title: string;
   showButton: boolean;
   variant: 'default' | 'centered';
+  showTrailingIcon: boolean;
+  showLeadingIcon: boolean;
+  buttonText: string;
+  size: 'xs' | 'sm' | 'md' | 'xl' | 'lg';
+  purpose: 'primary' | 'secondary' | 'soft' | 'link' | 'solid';
 }
 
 export const FeatureRowReversed: React.FC<FeatureRowReversedProps> = ({
@@ -19,6 +25,11 @@ export const FeatureRowReversed: React.FC<FeatureRowReversedProps> = ({
   title = `Set guardrails to prevent overspending`,
   showButton = true,
   variant = `default`,
+  showTrailingIcon = false,
+  showLeadingIcon = false,
+  buttonText = `Learn More`,
+  size = `sm`,
+  purpose = `link`,
 }) => {
   return (
     <div className={FeatureRowReversedCVA({showButton, variant, className })}>
@@ -31,11 +42,7 @@ export const FeatureRowReversed: React.FC<FeatureRowReversedProps> = ({
             {cTAText}
           </p>
           {showButton ?
-            <div className={cx(variant === 'default' && 'rounded-md py-1 px-0 bg-transparent', variant === 'centered' && 'rounded-md py-1 px-0 bg-transparent')}>
-              <p className="">
-                {buttonText}
-              </p>
-            </div>
+            <Button showTrailingIcon={showTrailingIcon} showLeadingIcon={showLeadingIcon} buttonText={buttonText} size={size} purpose={purpose}  />
           : null}
         </div>
       </div>

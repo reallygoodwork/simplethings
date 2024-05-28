@@ -1,68 +1,55 @@
 import { camelize } from './utils'
 
 export async function generateComponentProps(node: SceneNode) {
-  const hasProperties = node.parent?.type === 'PAGE' && node.type === 'COMPONENT' || node.type === 'COMPONENT_SET'
+
 
   const props = []
 
-  if (hasProperties && node.componentPropertyDefinitions) {
-    Object.keys(node.componentPropertyDefinitions).forEach((key) => {
-      const prop = node.componentPropertyDefinitions[key]
-      props.push({
-        figmaRef: key,
-        name: camelize(key.split('#')[0]),
-        tsType: prop?.type === 'TEXT' || prop?.type === 'VARIANT' ? 'string' : 'boolean',
-        defaultValue: prop?.type === 'VARIANT' && prop?.variantOptions?.length > 0 ? camelize(prop.defaultValue as string) : prop.defaultValue,
-        options: prop?.variantOptions?.map((option) => camelize(option)),
-      })
-    })
-  }
+  async function processNode(node: SceneNode): Promise<void> {
+    const hasProperties = node.parent?.type === 'PAGE' && node.type === 'COMPONENT' || node.type === 'COMPONENT_SET'
 
-
-  if (node.type === 'COMPONENT_SET' || node.type === 'COMPONENT') {
-
-    for (let i = 0; i < node.children.length; i++) {
-      const child = node.children[i]
-
-      if (child.type === 'INSTANCE') {
-        const parent = await child.getMainComponentAsync()
-        Object.keys(child.componentProperties).forEach(async (key) => {
-          let object = {
-            figmaRef: key,
-            name: camelize(key.split('#')[0].toLowerCase()),
-            defaultValue: child.componentProperties[key]?.type === 'TEXT' ? child.componentProperties[key]?.value : child.componentProperties[key]?.type === 'VARIANT' ? camelize(child.componentProperties[key]?.value as string) : child.componentProperties[key]?.value === 'true' ? true : false,
-            tsType: child.componentProperties[key]?.type === 'TEXT' ? 'string' : child.componentProperties[key]?.type === 'VARIANT' ? 'any' : 'boolean',
-          }
-
-          if (parent.parent?.type === 'COMPONENT_SET') {
-            object['options'] = parent.parent?.variantGroupProperties?.[key]?.values.map((option) => camelize(option))
-          }
-
-          props.push(object)
-        })
-      }
+    if (hasProperties && node.componentPropertyDefinitions) {
+      Object.keys(node.componentPropertyDefinitions).forEach((key) => {
+        const prop = node.componentPropertyDefinitions[key];
+        props.push({
+          figmaRef: key,
+          name: camelize(key.split('#')[0]),
+          tsType: prop?.type === 'TEXT' || prop?.type === 'VARIANT' ? 'string' : 'boolean',
+          defaultValue: prop?.type === 'VARIANT' && prop?.variantOptions?.length > 0 ? camelize(prop.defaultValue as string) : prop.defaultValue,
+          options: prop?.variantOptions?.map((option) => camelize(option)),
+        });
+      });
     }
 
-    // node.children.forEach(async (child) => {
-    //   if (child.type === 'INSTANCE') {
-    //     const parent = await child.getMainComponentAsync()
-    //     Object.keys(child.componentProperties).forEach(async (key) => {
-    //       let object = {
-    //         figmaRef: key,
-    //         name: camelize(key.split('#')[0].toLowerCase()),
-    //         defaultValue: child.componentProperties[key]?.type === 'TEXT' ? child.componentProperties[key]?.value : child.componentProperties[key]?.type === 'VARIANT' ? camelize(child.componentProperties[key]?.value as string) : child.componentProperties[key]?.value === 'true' ? true : false,
-    //         tsType: child.componentProperties[key]?.type === 'TEXT' ? 'string' : child.componentProperties[key]?.type === 'VARIANT' ? 'any' : 'boolean',
-    //       }
+    if (node.children) {
+      for (const child of node.children) {
+        if (child.type === 'INSTANCE') {
+          const parent = await (child as InstanceNode).getMainComponentAsync();
+          Object.keys((child as InstanceNode).componentProperties).forEach((key) => {
+            const prop = (child as InstanceNode).componentProperties[key];
+            const object: any = {
+              figmaRef: key,
+              name: camelize(key.split('#')[0].toLowerCase()),
+              defaultValue: prop?.type === 'TEXT' ? prop?.value : prop?.type === 'VARIANT' ? camelize(prop?.value as string) : prop?.value === 'true' ? true : false,
+              tsType: prop?.type === 'TEXT' ? 'string' : prop?.type === 'VARIANT' ? 'any' : 'boolean',
+            };
 
-    //       if (parent.parent?.type === 'COMPONENT_SET') {
-    //         object['options'] = parent.parent?.variantGroupProperties?.[key]?.values.map((option) => camelize(option))
-    //       }
+            if (parent.parent?.type === 'COMPONENT_SET') {
+              object['options'] = parent.parent?.variantGroupProperties?.[key]?.values.map((option) => camelize(option));
+            }
 
-    //       props.push(object)
-    //     })
-    //   }
-    // })
+            props.push(object);
+          })
+        }
+
+        await processNode(child);
+      }
+    }
   }
+
+  await processNode(node);
+
+  console.log(props)
 
   return props.filter((value, index, self) =>
     index === self.findIndex((t) => (

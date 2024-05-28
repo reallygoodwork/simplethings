@@ -46,17 +46,26 @@ async function generateVariantStyles(children: SceneNode[]): Promise<StyleObject
 }
 
 async function getComponentDependencies(firstChild: SceneNode): Promise<any[]> {
-  const components = await Promise.all(
-    ((firstChild as any).children || [])
-      ?.filter((child) => child.type === 'INSTANCE')
+
+  async function processNode(node: SceneNode): Promise<any[]> {
+    const directComponents = ((node as any).children || [])
+      .filter((child) => child.type === 'INSTANCE')
       .map((child) => ({
         name: `{ ${transformString(child.name)} }`,
         packageName: `./${transformString(child.name).toLowerCase()}`,
-      })),
-  )
+      }));
 
-  return components.filter(
-    (value, index, self) => index === self.findIndex((t) => t.place === value.place && t.name === value.name),
+      const childComponentsPromises = ((node as any).children || []).map((child) => processNode(child));
+      const childComponents = await Promise.all(childComponentsPromises);
+
+      // Flatten the array of arrays and combine with direct components
+      return directComponents.concat(...childComponents);
+  }
+
+  const allComponents = await processNode(firstChild);
+
+  return allComponents.filter(
+    (value, index, self) => index === self.findIndex((t) => t.packageName === value.packageName && t.name === value.name)
   )
 }
 
@@ -212,6 +221,20 @@ const traverseChildren = async (
     const styles = generateStyleObject(childStyles[0])
     const hasBackgroundImage = typeof child.fills === 'object' ? (child?.fills as readonly Paint[])?.some((fill) => fill.type === 'IMAGE') : false
 
+    const isComponent = child.type === 'COMPONENT' || child.type === 'INSTANCE'
+
+
+  const boundProps = await generateBoundPropReferences(child)
+  const boundPropsArray = boundProps.filter((value, index) => {
+    const _value = JSON.stringify(value)
+    return (
+      index ===
+      boundProps.findIndex((obj) => {
+        return JSON.stringify(obj) === _value
+      })
+    )
+  })
+
     const object: StyleObjectType = {
       boundProps: Object.entries(child.componentPropertyReferences).map(([key, value]) => {
         return {
@@ -220,13 +243,15 @@ const traverseChildren = async (
           value: value,
         }
       }),
-      name: camelize(child.name),
+      isComponent,
+      name: isComponent ? transformString(child.name) : camelize(child.name),
       elementType: child.type === 'TEXT' ? 'p' : 'div',
       isText: child.type === 'TEXT',
       hasBackgroundImage,
       styles,
       textStyleClass: '',
       className: generateTailwindStyleString(childStyles).trim(),
+      componentProps: boundPropsArray
     }
 
     if (variantProperties) {
@@ -249,7 +274,7 @@ const traverseChildren = async (
       }
     }
 
-    if ((child as any).children) {
+    if ((child as any).children && !isComponent) {
       object['children'] = await traverseChildren((child as any).children as ChildrenNode[], variantProperties)
     }
 
@@ -271,6 +296,8 @@ type StyleObjectType = {
   textStyleClass?: string
   elementType?: string
   boundProps?: any
+  isComponent?: boolean
+  componentProps?: any
 }
 
 type StyleObjectTypeArray = StyleObjectType[][]
@@ -298,6 +325,8 @@ const processStyleObjectArrays = (styleObjectArrays: StyleObjectTypeArray) => {
           acc.children = child.children
           acc.variantProperties = child.variantProperties
           acc.boundProps = child.boundProps
+          acc.isComponent = child.isComponent
+          acc.componentProps = child.componentProps
           return acc
         }, {} as StyleObjectType)
       })
@@ -323,6 +352,7 @@ const generateVariantChildren = async (node: ComponentSetNode) => {
 }
 
 type Variant = {
+  name: string;
   properties: VariantProperties;
   styles: { [key: string]: any }
   className: string;
@@ -330,9 +360,12 @@ type Variant = {
   boundProps?: any;
   elementType?: string;
   isText: boolean;
+  isComponent?: boolean;
+  componentProps?: any;
 };
 
 type ResultNode = {
+  name: string;
   elementType?: string;
   variants: Variant[];
   children?: { [key: string]: ResultNode };
@@ -340,6 +373,8 @@ type ResultNode = {
   hasBackgroundImage: boolean;
   textValue?: string;
   boundProps?: any;
+  isComponent?: boolean;
+  componentProps?: any;
 };
 
 function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: ResultNode } {
@@ -348,12 +383,15 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
   function traverse(node: StyleObjectType, path: string) {
     if (!result[path]) {
       result[path] = {
+        name: node.name,
         boundProps: node.boundProps,
         elementType: node.isText ? 'p' : 'div',
         isText: node.isText,
+        isComponent: node.isComponent,
         hasBackgroundImage: node.hasBackgroundImage,
         textValue: node.textValue,
-        variants: []
+        variants: [],
+        componentProps: node.componentProps,
       };
     }
 
@@ -364,13 +402,16 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
       existingVariant.className += node.className;
     } else {
       result[path].variants.push({
+        name: node.name,
         elementType: node.isText ? 'p' : 'div',
         boundProps: node.boundProps,
         properties: variantProperties,
         styles: node.styles,
         isText: node.isText,
+        isComponent: node.isComponent,
         className: node.className,
-        textStyleClass: node.textStyleClass
+        textStyleClass: node.textStyleClass,
+        componentProps: node.componentProps,
       });
     }
 
@@ -496,7 +537,6 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
   })
 
   let children: any[] = []
-  const componentDependencies = await getComponentDependencies(spec)
 
   if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
     children = await processChildren(spec.children as SceneNode[])

@@ -30,7 +30,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   purpose = `link`,
 }) => {
   return (
-    <div className={cx('rounded-[0rem] flex w-full pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center', className)}>
+    <div className={cx('rounded-[0rem] flex pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center', className)}>
       <p className="st-title">
         {title}
       </p>

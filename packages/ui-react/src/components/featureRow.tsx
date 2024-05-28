@@ -1,8 +1,9 @@
 // Generated with Anthropocene
-// 2024-05-28T16:39:19.291Z
+// 2024-05-28T19:12:59.216Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
+import { Button } from './button'
 import { cva, cx, VariantProps } from 'class-variance-authority'
 
 export interface FeatureRowProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof FeatureRowCVA> {
@@ -11,6 +12,11 @@ export interface FeatureRowProps extends React.HTMLAttributes<HTMLDivElement>, V
   title: string;
   showButton: boolean;
   variant: 'alternate' | 'centeredAlt';
+  showTrailingIcon: boolean;
+  showLeadingIcon: boolean;
+  buttonText: string;
+  size: 'xs' | 'sm' | 'md' | 'xl' | 'lg';
+  purpose: 'primary' | 'secondary' | 'soft' | 'link' | 'solid';
 }
 
 export const FeatureRow: React.FC<FeatureRowProps> = ({
@@ -19,6 +25,11 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
   title = `Set guardrails to prevent overspending`,
   showButton = true,
   variant = `alternate`,
+  showTrailingIcon = false,
+  showLeadingIcon = false,
+  buttonText = `Learn More`,
+  size = `sm`,
+  purpose = `link`,
 }) => {
   return (
     <div className={FeatureRowCVA({showButton, variant, className })}>
@@ -33,11 +44,7 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
             {cTAText}
           </p>
           {showButton ?
-            <div className={cx(variant === 'alternate' && 'rounded-md py-1 px-0 bg-transparent', variant === 'centeredAlt' && 'rounded-md py-1 px-0 bg-transparent')}>
-              <p className="">
-                {buttonText}
-              </p>
-            </div>
+            <Button showTrailingIcon={showTrailingIcon} showLeadingIcon={showLeadingIcon} buttonText={buttonText} size={size} purpose={purpose}  />
           : null}
         </div>
       </div>

@@ -1,8 +1,13 @@
 export const FeatureRowReversed = {
   "config": {},
-  "updated": "2024-05-28T16:40:07.324Z",
+  "updated": "2024-05-28T19:13:42.049Z",
   "name": "FeatureRowReversed",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "{ Button }",
+      "packageName": "./button"
+    }
+  ],
   "description": "To be added",
   "isText": false,
   "isComponent": true,
@@ -48,16 +53,63 @@ export const FeatureRowReversed = {
         "default",
         "centered"
       ]
+    },
+    {
+      "figmaRef": "Show Trailing Icon#10:5",
+      "name": "showTrailingIcon",
+      "defaultValue": false,
+      "tsType": "boolean"
+    },
+    {
+      "figmaRef": "Show Leading Icon#10:3",
+      "name": "showLeadingIcon",
+      "defaultValue": false,
+      "tsType": "boolean"
+    },
+    {
+      "figmaRef": "Button Text#6:1",
+      "name": "buttonText",
+      "defaultValue": "Learn More",
+      "tsType": "string"
+    },
+    {
+      "figmaRef": "Size",
+      "name": "size",
+      "defaultValue": "sm",
+      "tsType": "any",
+      "options": [
+        "xs",
+        "sm",
+        "md",
+        "xl",
+        "lg"
+      ]
+    },
+    {
+      "figmaRef": "Purpose",
+      "name": "purpose",
+      "defaultValue": "link",
+      "tsType": "any",
+      "options": [
+        "primary",
+        "secondary",
+        "soft",
+        "link",
+        "solid"
+      ]
     }
   ],
   "children": {
     "content": {
+      "name": "content",
       "boundProps": [],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": false,
       "variants": [
         {
+          "name": "content",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -71,10 +123,13 @@ export const FeatureRowReversed = {
             "gap": "312px"
           },
           "isText": false,
+          "isComponent": false,
           "className": "rounded-[0rem] flex p-0 flex-col gap-[19.5rem] justify-start items-start",
-          "textStyleClass": ""
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "content",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -88,12 +143,16 @@ export const FeatureRowReversed = {
             "gap": "16px"
           },
           "isText": false,
+          "isComponent": false,
           "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-center items-start",
-          "textStyleClass": ""
+          "textStyleClass": "",
+          "componentProps": []
         }
       ],
+      "componentProps": [],
       "children": {
         "title": {
+          "name": "title",
           "boundProps": [
             {
               "figmaRef": "characters",
@@ -103,10 +162,12 @@ export const FeatureRowReversed = {
           ],
           "elementType": "p",
           "isText": true,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "textValue": "Set guardrails to prevent overspending",
           "variants": [
             {
+              "name": "title",
               "elementType": "p",
               "boundProps": [
                 {
@@ -127,10 +188,20 @@ export const FeatureRowReversed = {
                 "letterSpacing": "0px"
               },
               "isText": true,
+              "isComponent": false,
               "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px]",
-              "textStyleClass": "st-large"
+              "textStyleClass": "st-large",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#168:12",
+                  "name": "title",
+                  "type": "string"
+                }
+              ]
             },
             {
+              "name": "title",
               "elementType": "p",
               "boundProps": [
                 {
@@ -151,18 +222,38 @@ export const FeatureRowReversed = {
                 "letterSpacing": "0px"
               },
               "isText": true,
+              "isComponent": false,
               "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px]",
-              "textStyleClass": "st-large"
+              "textStyleClass": "st-large",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#168:12",
+                  "name": "title",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "componentProps": [
+            {
+              "figmaPropType": "characters",
+              "figmaRef": "Title#168:12",
+              "name": "title",
+              "type": "string"
             }
           ]
         },
         "cta": {
+          "name": "cta",
           "boundProps": [],
           "elementType": "div",
           "isText": false,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "variants": [
             {
+              "name": "cta",
               "elementType": "div",
               "boundProps": [],
               "properties": {
@@ -176,10 +267,13 @@ export const FeatureRowReversed = {
                 "gap": "16px"
               },
               "isText": false,
+              "isComponent": false,
               "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start",
-              "textStyleClass": ""
+              "textStyleClass": "",
+              "componentProps": []
             },
             {
+              "name": "cta",
               "elementType": "div",
               "boundProps": [],
               "properties": {
@@ -193,12 +287,16 @@ export const FeatureRowReversed = {
                 "gap": "16px"
               },
               "isText": false,
+              "isComponent": false,
               "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start",
-              "textStyleClass": ""
+              "textStyleClass": "",
+              "componentProps": []
             }
           ],
+          "componentProps": [],
           "children": {
             "ctaText": {
+              "name": "ctaText",
               "boundProps": [
                 {
                   "figmaRef": "characters",
@@ -208,10 +306,12 @@ export const FeatureRowReversed = {
               ],
               "elementType": "p",
               "isText": true,
+              "isComponent": false,
               "hasBackgroundImage": false,
               "textValue": "Stay in policy and on budget with proactive policy controls, configurable approvals, and AI-powered reconciliation.",
               "variants": [
                 {
+                  "name": "ctaText",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -233,10 +333,20 @@ export const FeatureRowReversed = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
+                  "isComponent": false,
                   "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 h-auto w-[36.25rem]",
-                  "textStyleClass": "st-subtitle"
+                  "textStyleClass": "st-subtitle",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "CTA Text#168:13",
+                      "name": "cTAText",
+                      "type": "string"
+                    }
+                  ]
                 },
                 {
+                  "name": "ctaText",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -258,12 +368,30 @@ export const FeatureRowReversed = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
+                  "isComponent": false,
                   "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 h-auto w-[36.25rem]",
-                  "textStyleClass": "st-subtitle"
+                  "textStyleClass": "st-subtitle",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "CTA Text#168:13",
+                      "name": "cTAText",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ],
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "CTA Text#168:13",
+                  "name": "cTAText",
+                  "type": "string"
                 }
               ]
             },
-            "button": {
+            "Button": {
+              "name": "Button",
               "boundProps": [
                 {
                   "figmaRef": "visible",
@@ -273,9 +401,11 @@ export const FeatureRowReversed = {
               ],
               "elementType": "div",
               "isText": false,
+              "isComponent": true,
               "hasBackgroundImage": false,
               "variants": [
                 {
+                  "name": "Button",
                   "elementType": "div",
                   "boundProps": [
                     {
@@ -293,10 +423,49 @@ export const FeatureRowReversed = {
                     "borderRadius": "6px"
                   },
                   "isText": false,
+                  "isComponent": true,
                   "className": "rounded-md py-1 px-0 bg-transparent",
-                  "textStyleClass": ""
+                  "textStyleClass": "",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "BOOLEAN",
+                      "figmaRef": "Show Trailing Icon#10:5",
+                      "name": "showTrailingIcon",
+                      "type": "string",
+                      "value": true
+                    },
+                    {
+                      "figmaPropType": "BOOLEAN",
+                      "figmaRef": "Show Leading Icon#10:3",
+                      "name": "showLeadingIcon",
+                      "type": "string",
+                      "value": false
+                    },
+                    {
+                      "figmaPropType": "TEXT",
+                      "figmaRef": "Button Text#6:1",
+                      "name": "buttonText",
+                      "type": "string",
+                      "value": "Learn More"
+                    },
+                    {
+                      "figmaPropType": "VARIANT",
+                      "figmaRef": "Size",
+                      "name": "size",
+                      "type": "string",
+                      "value": "sm"
+                    },
+                    {
+                      "figmaPropType": "VARIANT",
+                      "figmaRef": "Purpose",
+                      "name": "purpose",
+                      "type": "string",
+                      "value": "Link"
+                    }
+                  ]
                 },
                 {
+                  "name": "Button",
                   "elementType": "div",
                   "boundProps": [
                     {
@@ -314,85 +483,100 @@ export const FeatureRowReversed = {
                     "borderRadius": "6px"
                   },
                   "isText": false,
+                  "isComponent": true,
                   "className": "rounded-md py-1 px-0 bg-transparent",
-                  "textStyleClass": ""
-                }
-              ],
-              "children": {
-                "buttonText": {
-                  "boundProps": [
+                  "textStyleClass": "",
+                  "componentProps": [
                     {
-                      "figmaRef": "characters",
-                      "name": "buttonText",
-                      "value": "Button Text#6:1"
-                    }
-                  ],
-                  "elementType": "p",
-                  "isText": true,
-                  "hasBackgroundImage": false,
-                  "textValue": "Learn More",
-                  "variants": [
-                    {
-                      "elementType": "p",
-                      "boundProps": [
-                        {
-                          "figmaRef": "characters",
-                          "name": "buttonText",
-                          "value": "Button Text#6:1"
-                        }
-                      ],
-                      "properties": {
-                        "variant": "default"
-                      },
-                      "styles": {
-                        "color": "#455540",
-                        "fontSize": "14px",
-                        "fontWeight": "500",
-                        "fontFamily": "Satoshi",
-                        "lineHeight": "14px"
-                      },
-                      "isText": true,
-                      "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
-                      "textStyleClass": ""
+                      "figmaPropType": "BOOLEAN",
+                      "figmaRef": "Show Trailing Icon#10:5",
+                      "name": "showTrailingIcon",
+                      "type": "string",
+                      "value": true
                     },
                     {
-                      "elementType": "p",
-                      "boundProps": [
-                        {
-                          "figmaRef": "characters",
-                          "name": "buttonText",
-                          "value": "Button Text#6:1"
-                        }
-                      ],
-                      "properties": {
-                        "variant": "centered"
-                      },
-                      "styles": {
-                        "color": "#455540",
-                        "fontSize": "14px",
-                        "fontWeight": "500",
-                        "fontFamily": "Satoshi",
-                        "lineHeight": "14px"
-                      },
-                      "isText": true,
-                      "className": "font-medium text-sm font-[Satoshi] text-[#455540] leading-[0.875rem]",
-                      "textStyleClass": ""
+                      "figmaPropType": "BOOLEAN",
+                      "figmaRef": "Show Leading Icon#10:3",
+                      "name": "showLeadingIcon",
+                      "type": "string",
+                      "value": false
+                    },
+                    {
+                      "figmaPropType": "TEXT",
+                      "figmaRef": "Button Text#6:1",
+                      "name": "buttonText",
+                      "type": "string",
+                      "value": "Learn More"
+                    },
+                    {
+                      "figmaPropType": "VARIANT",
+                      "figmaRef": "Size",
+                      "name": "size",
+                      "type": "string",
+                      "value": "sm"
+                    },
+                    {
+                      "figmaPropType": "VARIANT",
+                      "figmaRef": "Purpose",
+                      "name": "purpose",
+                      "type": "string",
+                      "value": "Link"
                     }
                   ]
                 }
-              }
+              ],
+              "componentProps": [
+                {
+                  "figmaPropType": "BOOLEAN",
+                  "figmaRef": "Show Trailing Icon#10:5",
+                  "name": "showTrailingIcon",
+                  "type": "string",
+                  "value": true
+                },
+                {
+                  "figmaPropType": "BOOLEAN",
+                  "figmaRef": "Show Leading Icon#10:3",
+                  "name": "showLeadingIcon",
+                  "type": "string",
+                  "value": false
+                },
+                {
+                  "figmaPropType": "TEXT",
+                  "figmaRef": "Button Text#6:1",
+                  "name": "buttonText",
+                  "type": "string",
+                  "value": "Learn More"
+                },
+                {
+                  "figmaPropType": "VARIANT",
+                  "figmaRef": "Size",
+                  "name": "size",
+                  "type": "string",
+                  "value": "sm"
+                },
+                {
+                  "figmaPropType": "VARIANT",
+                  "figmaRef": "Purpose",
+                  "name": "purpose",
+                  "type": "string",
+                  "value": "Link"
+                }
+              ]
             }
           }
         }
       }
     },
     "media": {
+      "name": "media",
       "boundProps": [],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": false,
       "variants": [
         {
+          "name": "media",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -405,10 +589,13 @@ export const FeatureRowReversed = {
             "borderRadius": "8px"
           },
           "isText": false,
+          "isComponent": false,
           "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]",
-          "textStyleClass": ""
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "media",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -421,10 +608,13 @@ export const FeatureRowReversed = {
             "borderRadius": "8px"
           },
           "isText": false,
+          "isComponent": false,
           "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]",
-          "textStyleClass": ""
+          "textStyleClass": "",
+          "componentProps": []
         }
-      ]
+      ],
+      "componentProps": []
     }
   },
   "variantOptions": {

@@ -2,14 +2,13 @@ export const SectionHeader = {
   "name": "SectionHeader",
   "styles": {
     "display": "flex",
-    "width": "100%",
     "padding": "160px 0px 0px 0px",
     "flexDirection": "column",
     "justifyContent": "flex-start",
     "alignItems": "center",
     "gap": "13.6899995803833px"
   },
-  "className": "rounded-[0rem] flex w-full pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center",
+  "className": "rounded-[0rem] flex pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center",
   "isText": false,
   "elementType": "div",
   "isComponent": true,

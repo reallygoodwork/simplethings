@@ -30,5 +30,35 @@ export const FeatureRowReversed = defineField({
       initialValue: "default",
       options: { list: ['default', 'centered'] }
     }),
+    defineField({
+      name: 'showTrailingIcon',
+      title: 'showTrailingIcon',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'showLeadingIcon',
+      title: 'showLeadingIcon',
+      type: 'boolean',
+    }),
+    defineField({
+      name: 'buttonText',
+      title: 'buttonText',
+      type: 'string',
+      initialValue: "Learn More",
+    }),
+    defineField({
+      name: 'size',
+      title: 'size',
+      type: 'string',
+      initialValue: "sm",
+      options: { list: ['xs', 'sm', 'md', 'xl', 'lg'] }
+    }),
+    defineField({
+      name: 'purpose',
+      title: 'purpose',
+      type: 'string',
+      initialValue: "link",
+      options: { list: ['primary', 'secondary', 'soft', 'link', 'solid'] }
+    }),
   ]
 })
