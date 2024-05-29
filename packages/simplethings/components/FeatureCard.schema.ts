@@ -1,6 +1,6 @@
 export const FeatureCard = {
   "config": {},
-  "updated": "2024-05-29T20:08:06.503Z",
+  "updated": "2024-05-29T20:18:22.482Z",
   "name": "FeatureCard",
   "dependencies": [],
   "description": "To be added",
@@ -568,6 +568,7 @@ export const FeatureCard = {
             "width": "100%",
             "maxWidth": "520px",
             "maxHeight": "544px",
+            "overflow": "hidden",
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
@@ -576,7 +577,7 @@ export const FeatureCard = {
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
+          "className": "rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center",
           "textStyleClass": "",
           "componentProps": [
             {
@@ -617,6 +618,7 @@ export const FeatureCard = {
             "width": "100%",
             "maxWidth": "520px",
             "maxHeight": "544px",
+            "overflow": "hidden",
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
@@ -625,7 +627,7 @@ export const FeatureCard = {
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
+          "className": "rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center",
           "textStyleClass": "",
           "componentProps": [
             {
@@ -720,13 +722,14 @@ export const FeatureCard = {
             "width": "100%",
             "maxWidth": "520px",
             "maxHeight": "544px",
+            "overflow": "hidden",
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
-          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center"
+          "className": "rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center"
         }
       ]
     },
@@ -765,13 +768,14 @@ export const FeatureCard = {
             "width": "100%",
             "maxWidth": "520px",
             "maxHeight": "544px",
+            "overflow": "hidden",
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
-          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center"
+          "className": "rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center"
         }
       ]
     }

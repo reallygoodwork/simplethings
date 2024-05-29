@@ -1,5 +1,5 @@
 // Generated with Dave
-// 2024-05-29T20:08:06.503Z
+// 2024-05-29T20:18:22.482Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -49,7 +49,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
         </div>
       </div>
       
-        <div className={cx(variant === 'default' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center', variant === 'light' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center')}>
+        <div className={cx(variant === 'default' && 'rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center', variant === 'light' && 'rounded-lg flex max-w-[32.5rem] w-full overflow-hidden p-0 flex-col justify-start items-center')}>
           <img src={imageURI} alt={imageAlt} />
         </div>
     </div>

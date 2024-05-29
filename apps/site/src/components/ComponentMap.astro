@@ -8,6 +8,7 @@ import type {
 } from '@simplethings/react'
 import { FeatureCard, FeatureRow, FeatureRowReversed, Hero, SectionHeader } from '@simplethings/react'
 
+import { urlForImage } from '../urlForImage'
 import Container from './Container.astro'
 
 interface Props {
@@ -24,6 +25,11 @@ const { content } = Astro.props
 {
   content.map((item) => {
     const { _type, _key, ...rest } = item
+    let image = ''
+    if (rest.imageURI) {
+      image = urlForImage(rest.imageURI).format('webp').url() || ''
+    }
+
     switch (item._type) {
       case 'sectionHeader':
         return (
@@ -36,7 +42,7 @@ const { content } = Astro.props
       case 'featureCard':
         return (
           <Container>
-            <FeatureCard {...(rest as FeatureCardProps)} />
+            <FeatureCard {...(rest as FeatureCardProps)} imageURI={image} />
           </Container>
         )
       case 'featureRow':
