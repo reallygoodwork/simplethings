@@ -22,6 +22,16 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={CardCVA({showText, variant, className })}>
+      
+        <div className={cx(variant === 'default' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center', variant === 'noBottom' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center', variant === 'noPadding' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center')}>
+          
+          <p className="st-lead--tight text-black text-left">
+            {title}
+          </p>
+          <p className="st-small text-[#1c1b1799] text-center">
+            {body}
+          </p>
+        </div>
       {showText ?
         <div className={cx(variant === 'default' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center', variant === 'noBottom' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center', variant === 'noPadding' && 'flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center')}>
           <p className="st-lead--tight text-black text-left">

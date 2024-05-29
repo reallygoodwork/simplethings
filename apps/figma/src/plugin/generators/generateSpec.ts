@@ -249,24 +249,41 @@ const traverseChildren = async (
       )
     })
 
+    const boundPropsArrayMap = Object.entries(child.componentPropertyReferences).map(([key, value]) => {
+      return {
+        figmaRef: key,
+        name: camelize(value.split('#')[0]),
+        value: value,
+      }
+    })
+
+    if (child.name === 'image' || child.name === 'media') {
+      boundPropsArrayMap.push({
+        figmaRef: 'image',
+        name: 'imageURI',
+        value: 'imageURI',
+      }, {
+        figmaRef: 'string',
+        name: 'imageAlt',
+        value: 'Alt Text Missing',
+      })
+    }
+
     const object: StyleObjectType = {
-      boundProps: Object.entries(child.componentPropertyReferences).map(([key, value]) => {
-        return {
-          figmaRef: key,
-          name: camelize(value.split('#')[0]),
-          value: value,
-        }
-      }),
+      boundProps: boundPropsArrayMap,
       isComponent,
       name: isComponent ? transformString(child.name) : camelize(child.name),
       elementType: child.type === 'TEXT' ? 'p' : 'div',
       isText: child.type === 'TEXT',
       hasBackgroundImage,
+      hasImage: child.name.includes('image') || child.name.includes('media'),
       styles,
       textStyleClass: '',
       className: generateTailwindStyleString(childStyles).trim(),
       componentProps: boundPropsArray,
     }
+
+    console.log(object)
 
     if (variantProperties) {
       object['variantProperties'] = variantProperties
@@ -319,6 +336,7 @@ type StyleObjectType = {
   boundProps?: any
   isComponent?: boolean
   componentProps?: any
+  hasImage?: boolean
 }
 
 type StyleObjectTypeArray = StyleObjectType[][]
@@ -348,6 +366,7 @@ const processStyleObjectArrays = (styleObjectArrays: StyleObjectTypeArray) => {
           acc.boundProps = child.boundProps
           acc.isComponent = child.isComponent
           acc.componentProps = child.componentProps
+          acc.hasImage = child.hasImage
           return acc
         }, {} as StyleObjectType)
       })
@@ -383,6 +402,7 @@ type Variant = {
   isText: boolean
   isComponent?: boolean
   componentProps?: any
+  hasImage?: boolean
 }
 
 type ResultNode = {
@@ -396,6 +416,7 @@ type ResultNode = {
   boundProps?: any
   isComponent?: boolean
   componentProps?: any
+  hasImage?: boolean
 }
 
 function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: ResultNode } {
@@ -413,6 +434,7 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
         textValue: node.textValue,
         variants: [],
         componentProps: node.componentProps,
+        hasImage: node.hasImage,
       }
     }
 
@@ -435,6 +457,7 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
         className: node.className,
         textStyleClass: node.textStyleClass,
         componentProps: node.componentProps,
+        hasImage: node.hasImage,
       })
     }
 
@@ -485,6 +508,7 @@ const generateChildrenList = async (node: ComponentSetNode) => {
 export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promise<ElementSchema | null> => {
   const name = transformString(spec.name)
   const updated = new Date().toISOString()
+  const hasImage = spec.name.includes('image') || spec.name.includes('media')
 
   if (spec.type === 'COMPONENT_SET') {
     const children = spec.children as SceneNode[]
@@ -537,6 +561,7 @@ export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promi
       elementType,
       typeScriptType,
       styles: commonStyles,
+      hasImage,
       className: getCommonTailwindClasses(data).join(' '),
       componentProps: componentPropsArray,
       children: await generateChildrenList(spec as any),
@@ -574,6 +599,7 @@ export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promi
   const childrenList = await Promise.all(children)
 
   const commonAttributes = {
+    hasImage,
     isIterable: isIterable || false,
     updated,
     name,

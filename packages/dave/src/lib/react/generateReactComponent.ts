@@ -77,6 +77,12 @@ handlebars.registerHelper('hasBoundProps', function (this: any, boundProps: any,
   return boundProps?.length > 0 ? options.fn(this) : options.inverse(this)
 })
 
+handlebars.registerHelper('renderImage', function (this: any, boundProps: any, options: Options): string | undefined {
+  if (boundProps.find((boundProp: any) => boundProp.figmaRef === 'image')) {
+    return `<img src={${boundProps.find((boundProp: any) => boundProp.figmaRef === 'image').name}} alt={imageAlt} />`
+  }
+})
+
 handlebars.registerHelper('shouldIterate', function (this: any, iterable: any, options: Options): string {
   return iterable ? options.fn(this) : options.inverse(this)
 })
@@ -92,7 +98,6 @@ handlebars.registerHelper('handleIterable', function (this: any) {
     return '[]'
   }
   else {
-    console.log(this)
     return `<${this.elementType} className={${this.className}}>{${this.children.map((child: any) => handlebars.compile(DomTreePartial)(child)).join('')}</${this.elementType}>`
   }
 })
@@ -125,6 +130,8 @@ handlebars.registerHelper('asciim', function (text) {
 handlebars.registerHelper('raw-helper', function (options) {
   return options.fn()
 })
+
+
 
 
 function createCXString(variant: any) {

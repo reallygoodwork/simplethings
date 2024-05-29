@@ -22,6 +22,10 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
   return (
     <div className={BadgeCVA({showClose, showDot, theme, className })}>
+      
+        <div className={cx(theme === 'primary' && 'bg-[#6c8463]', theme === 'error' && 'bg-[#f23051]', theme === 'success' && 'bg-[#418b75]', theme === 'warning' && 'bg-[#fd7e14]', theme === 'default' && 'bg-[#8a8577]')}>
+          
+        </div>
       {showDot ?
         <div className={cx(theme === 'primary' && 'bg-[#6c8463]', theme === 'error' && 'bg-[#f23051]', theme === 'success' && 'bg-[#418b75]', theme === 'warning' && 'bg-[#fd7e14]', theme === 'default' && 'bg-[#8a8577]')}>
         </div>
@@ -29,6 +33,12 @@ export const Badge: React.FC<BadgeProps> = ({
       <p className="">
         {badgeText}
       </p>
+      
+        <div className={cx(theme === 'primary' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'error' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'success' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'warning' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'default' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative')}>
+          
+          <div className={cx(theme === 'primary' && '', theme === 'error' && '', theme === 'success' && '', theme === 'warning' && '', theme === 'default' && '')}>
+          </div>
+        </div>
       {showClose ?
         <div className={cx(theme === 'primary' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'error' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'success' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'warning' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative', theme === 'default' && 'rounded-[0rem] w-3.5 overflow-hidden p-0 relative')}>
           <div className={cx(theme === 'primary' && '', theme === 'error' && '', theme === 'success' && '', theme === 'warning' && '', theme === 'default' && '')}>

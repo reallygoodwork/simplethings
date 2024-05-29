@@ -12,9 +12,19 @@ export const generateSanityType = (configFile: ElementSchema) => {
     })
 
     handlebars.registerHelper('isAny', function (aString) {
-      if (aString === 'boolean') return aString
-      if (aString === 'any' || aString === 'string') return 'string'
-      return 'array'
+      if (aString.figmaRef === 'image') {
+        return 'image'
+      } else if (aString.tsType === 'boolean') {
+        return 'boolean'
+      } else if (aString.tsType === 'string') {
+        return 'string'
+      } else if (aString.tsType === 'number') {
+        return 'number'
+      } else if (aString.tsType === 'any') {
+        return 'string'
+      } else {
+        return 'array'
+      }
     })
 
     handlebars.registerHelper('isIterable', function (this: any) {
@@ -48,7 +58,7 @@ export const {{name}} = defineField({
     defineField({
       name: '{{name}}',
       title: '{{name}}',
-      type: '{{isAny this.tsType}}',
+      type: '{{isAny this}}',
       {{#if defaultValue}}
       initialValue: {{{loud this.defaultValue}}},
       {{/if}}

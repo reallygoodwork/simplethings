@@ -40,6 +40,18 @@ export async function generateComponentProps(node: SceneNode) {
 
             props.push(object);
           })
+        } if (child.name === 'image' || child.name === 'media') {
+          props.push({
+            figmaRef: 'image',
+            name: 'imageURI',
+            tsType: 'string',
+            defaultValue: '',
+          }, {
+            figmaRef: 'string',
+            name: 'imageAlt',
+            tsType: 'string',
+            defaultValue: 'Alt Text Missing',
+          })
         }
 
         await processNode(child);

@@ -71,6 +71,20 @@ export function generateBoundPropReferences(node: SceneNode) {
       })
     }
 
+    if (node.name === 'image' || node.name === 'media') {
+      boundProps.push({
+        figmaPropType: 'image',
+        figmaRef: 'image',
+        name: 'imageURI',
+        type: 'string',
+      }, {
+        figmaPropType: 'string',
+        figmaRef: 'string',
+        name: 'imageAlt',
+        type: 'string',
+      })
+    }
+
     resolve(boundProps)
   })
 }

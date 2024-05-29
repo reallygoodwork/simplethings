@@ -1,5 +1,5 @@
 // Generated with Dave
-// 2024-05-29T16:24:17.560Z
+// 2024-05-29T20:08:06.503Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -11,6 +11,8 @@ export interface FeatureCardProps extends React.HTMLAttributes<HTMLDivElement>, 
   attribution: string;
   quote: string;
   variant: 'default' | 'light';
+  imageURI: string;
+  imageAlt: string;
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -19,10 +21,18 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   attribution = `lorem ipsum dolor sit`,
   quote = `Velit commodo ipsum nulla labore incididunt ullamco ad voluptate cupidatat commodo. Veniam ex ad magna id. Adipisicing quis ut incididunt elit. Occaecat exercitation id aliqua exercitation eu laborum tempor nisi est aliqua enim ex voluptate.`,
   variant = 'default',
+  imageURI = ``,
+  imageAlt = `Alt Text Missing`,
 }) => {
   return (
     <div className={FeatureCardCVA({showLogo, variant, className })}>
       <div className={cx(variant === 'default' && 'flex p-8 flex-col justify-between items-start', variant === 'light' && 'flex p-8 flex-col justify-between items-start')}>
+        
+          <div className={cx(variant === 'default' && 'flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start', variant === 'light' && 'flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start')}>
+            
+            <div className={cx(variant === 'default' && 'flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]', variant === 'light' && 'flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]')}>
+            </div>
+          </div>
         {showLogo ?
           <div className={cx(variant === 'default' && 'flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start', variant === 'light' && 'flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start')}>
             <div className={cx(variant === 'default' && 'flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]', variant === 'light' && 'flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]')}>
@@ -38,8 +48,10 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
           </p>
         </div>
       </div>
-      <div className={cx(variant === 'default' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center', variant === 'light' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center')}>
-      </div>
+      
+        <div className={cx(variant === 'default' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center', variant === 'light' && 'rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center')}>
+          <img src={imageURI} alt={imageAlt} />
+        </div>
     </div>
   );
 };

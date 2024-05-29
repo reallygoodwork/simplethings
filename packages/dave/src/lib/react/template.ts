@@ -84,6 +84,11 @@ export const DomTreePartial = `{{#if children}}
   {{/hasBoundProps}}
 {{else}}
   {{#hasBoundProps this.boundProps}}
+
+  <{{this.elementType}} className={{#renderClassName this}}{{/renderClassName}}>
+    {{#renderImage this.boundProps}}{{/renderImage}}
+    {{> DomTreePartial}}
+  </{{this.elementType}}>
   {{#boundPropsVisible this.boundProps}}
 { {{~renderVisibleProp}} ?
   <{{this.elementType}} className={{#renderClassName this}}{{/renderClassName}}>

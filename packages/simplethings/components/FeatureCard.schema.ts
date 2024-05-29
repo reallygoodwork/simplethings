@@ -1,6 +1,6 @@
 export const FeatureCard = {
   "config": {},
-  "updated": "2024-05-29T16:24:17.560Z",
+  "updated": "2024-05-29T20:08:06.503Z",
   "name": "FeatureCard",
   "dependencies": [],
   "description": "To be added",
@@ -20,6 +20,7 @@ export const FeatureCard = {
     "gap": "16px",
     "borderRadius": "8px"
   },
+  "hasImage": false,
   "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start",
   "componentProps": [
     {
@@ -49,6 +50,18 @@ export const FeatureCard = {
         "default",
         "light"
       ]
+    },
+    {
+      "figmaRef": "image",
+      "name": "imageURI",
+      "tsType": "string",
+      "defaultValue": ""
+    },
+    {
+      "figmaRef": "string",
+      "name": "imageAlt",
+      "tsType": "string",
+      "defaultValue": "Alt Text Missing"
     }
   ],
   "children": {
@@ -78,7 +91,8 @@ export const FeatureCard = {
           "isComponent": false,
           "className": "flex p-8 flex-col justify-between items-start",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [],
+          "hasImage": false
         },
         {
           "name": "content",
@@ -98,10 +112,12 @@ export const FeatureCard = {
           "isComponent": false,
           "className": "flex p-8 flex-col justify-between items-start",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [],
+          "hasImage": false
         }
       ],
       "componentProps": [],
+      "hasImage": false,
       "children": {
         "mejuriLogo": {
           "name": "mejuriLogo",
@@ -149,7 +165,8 @@ export const FeatureCard = {
                   "name": "showLogo",
                   "type": "boolean"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "mejuriLogo",
@@ -183,7 +200,8 @@ export const FeatureCard = {
                   "name": "showLogo",
                   "type": "boolean"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           ],
           "componentProps": [
@@ -194,6 +212,7 @@ export const FeatureCard = {
               "type": "boolean"
             }
           ],
+          "hasImage": false,
           "children": {
             "vector": {
               "name": "vector",
@@ -219,7 +238,8 @@ export const FeatureCard = {
                   "isComponent": false,
                   "className": "flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]",
                   "textStyleClass": "",
-                  "componentProps": []
+                  "componentProps": [],
+                  "hasImage": false
                 },
                 {
                   "name": "vector",
@@ -237,10 +257,12 @@ export const FeatureCard = {
                   "isComponent": false,
                   "className": "flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]",
                   "textStyleClass": "",
-                  "componentProps": []
+                  "componentProps": [],
+                  "hasImage": false
                 }
               ],
-              "componentProps": []
+              "componentProps": [],
+              "hasImage": false
             }
           }
         },
@@ -270,7 +292,8 @@ export const FeatureCard = {
               "isComponent": false,
               "className": "flex p-0 flex-col gap-6 justify-start items-start",
               "textStyleClass": "",
-              "componentProps": []
+              "componentProps": [],
+              "hasImage": false
             },
             {
               "name": "lockup",
@@ -290,10 +313,12 @@ export const FeatureCard = {
               "isComponent": false,
               "className": "flex p-0 flex-col gap-6 justify-start items-start",
               "textStyleClass": "",
-              "componentProps": []
+              "componentProps": [],
+              "hasImage": false
             }
           ],
           "componentProps": [],
+          "hasImage": false,
           "children": {
             "quote": {
               "name": "quote",
@@ -345,7 +370,8 @@ export const FeatureCard = {
                       "name": "quote",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 },
                 {
                   "name": "quote",
@@ -382,7 +408,8 @@ export const FeatureCard = {
                       "name": "quote",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 }
               ],
               "componentProps": [
@@ -392,7 +419,8 @@ export const FeatureCard = {
                   "name": "quote",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             "attribution": {
               "name": "attribution",
@@ -443,7 +471,8 @@ export const FeatureCard = {
                       "name": "attribution",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 },
                 {
                   "name": "attribution",
@@ -479,7 +508,8 @@ export const FeatureCard = {
                       "name": "attribution",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 }
               ],
               "componentProps": [
@@ -489,24 +519,47 @@ export const FeatureCard = {
                   "name": "attribution",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           }
         }
       }
     },
-    "asset": {
-      "name": "asset",
-      "boundProps": [],
+    "media": {
+      "name": "media",
+      "boundProps": [
+        {
+          "figmaRef": "image",
+          "name": "imageURI",
+          "value": "imageURI"
+        },
+        {
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "value": "Alt Text Missing"
+        }
+      ],
       "elementType": "div",
       "isText": false,
       "isComponent": false,
       "hasBackgroundImage": true,
       "variants": [
         {
-          "name": "asset",
+          "name": "media",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "default"
           },
@@ -525,12 +578,37 @@ export const FeatureCard = {
           "isComponent": false,
           "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         },
         {
-          "name": "asset",
+          "name": "media",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "light"
           },
@@ -549,10 +627,38 @@ export const FeatureCard = {
           "isComponent": false,
           "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         }
       ],
-      "componentProps": []
+      "componentProps": [
+        {
+          "figmaPropType": "image",
+          "figmaRef": "image",
+          "name": "imageURI",
+          "type": "string"
+        },
+        {
+          "figmaPropType": "string",
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "type": "string"
+        }
+      ],
+      "hasImage": true
     }
   },
   "variantOptions": {
@@ -607,7 +713,7 @@ export const FeatureCard = {
           "className": "flex p-8 flex-col justify-between items-start"
         },
         {
-          "name": "Asset",
+          "name": "Media",
           "isText": false,
           "styles": {
             "display": "flex",
@@ -652,7 +758,7 @@ export const FeatureCard = {
           "className": "flex p-8 flex-col justify-between items-start"
         },
         {
-          "name": "Asset",
+          "name": "Media",
           "isText": false,
           "styles": {
             "display": "flex",
