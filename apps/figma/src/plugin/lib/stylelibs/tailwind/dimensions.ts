@@ -36,6 +36,8 @@ export default function dimensionsClasses(styleConfig: Styles): string {
   if (styleConfig.height.defined) {
     if (styleConfig.height.value === 'auto') {
       classes.push('h-auto')
+    } else if (styleConfig.height.value === '100' && styleConfig.height.unit === '%') {
+      classes.push('h-full')
     } else {
       classes.push(`h${spacing(styleConfig.height.value as number)}`)
     }
@@ -50,9 +52,10 @@ export default function dimensionsClasses(styleConfig: Styles): string {
   }
 
   if (styleConfig.width.defined) {
+    console.log(styleConfig.width.value, styleConfig.width.unit)
     if (styleConfig.width.value === 'auto') {
       classes.push('w-auto')
-    } else if (styleConfig.width.value === 100 && styleConfig.width.unit === '%') {
+    } else if ((styleConfig.width.value === '100' || styleConfig.width.value === 100) && styleConfig.width.unit === '%') {
       classes.push('w-full')
     } else {
       classes.push(`w${spacing(styleConfig.width.value as number)}`)

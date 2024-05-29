@@ -16,7 +16,7 @@
     "dev": "tsup --watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build:anthropocene": "tsup"
+    "build:dave": "tsup"
   },
   "devDependencies": {
     "@simplethings/eslint-config": "workspace:*",

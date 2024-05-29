@@ -1,4 +1,4 @@
-// Generated with Anthropocene
+// Generated with Dave
 // 2024-05-28T13:50:38.429Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
@@ -19,8 +19,8 @@ export const Button: React.FC<ButtonProps> = ({
   showTrailingIcon = false,
   showLeadingIcon = false,
   buttonText = `Button Text`,
-  size = `xs`,
-  purpose = `primary`,
+  size = 'xs',
+  purpose = 'primary',
 }) => {
   return (
     <button className={ButtonCVA({showTrailingIcon, showLeadingIcon, size, purpose, className })}>

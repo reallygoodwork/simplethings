@@ -1,6 +1,6 @@
 export const FeatureRowReversed = {
   "config": {},
-  "updated": "2024-05-28T19:13:42.049Z",
+  "updated": "2024-05-29T16:30:42.020Z",
   "name": "FeatureRowReversed",
   "dependencies": [
     {
@@ -16,15 +16,15 @@ export const FeatureRowReversed = {
   "typeScriptType": "HTMLDivElement",
   "styles": {
     "display": "flex",
-    "height": "628px",
     "padding": "64px 0px 64px 0px",
+    "flexDirection": "row",
     "justifyContent": "space-between",
     "gap": "16px",
     "borderColor": "#e2e2e2",
     "borderWidth": "1px 0px 1px 0px",
     "borderStyle": "solid"
   },
-  "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between",
+  "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between",
   "componentProps": [
     {
       "figmaRef": "CTA Text#168:13",
@@ -124,7 +124,7 @@ export const FeatureRowReversed = {
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-[0rem] flex p-0 flex-col gap-[19.5rem] justify-start items-start",
+          "className": "flex p-0 flex-col gap-[19.5rem] justify-start items-start",
           "textStyleClass": "",
           "componentProps": []
         },
@@ -144,7 +144,7 @@ export const FeatureRowReversed = {
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-center items-start",
+          "className": "flex p-0 flex-col gap-4 justify-center items-start",
           "textStyleClass": "",
           "componentProps": []
         }
@@ -180,6 +180,8 @@ export const FeatureRowReversed = {
                 "variant": "default"
               },
               "styles": {
+                "display": "flex",
+                "flexDirection": "row",
                 "color": "#1c1b17",
                 "fontSize": "36px",
                 "fontWeight": "500",
@@ -189,8 +191,8 @@ export const FeatureRowReversed = {
               },
               "isText": true,
               "isComponent": false,
-              "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px]",
-              "textStyleClass": "st-large",
+              "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px] flex flex-row",
+              "textStyleClass": "st-large text-[#1c1b17] text-left",
               "componentProps": [
                 {
                   "figmaPropType": "characters",
@@ -214,6 +216,8 @@ export const FeatureRowReversed = {
                 "variant": "centered"
               },
               "styles": {
+                "display": "flex",
+                "flexDirection": "row",
                 "color": "#1c1b17",
                 "fontSize": "36px",
                 "fontWeight": "500",
@@ -223,8 +227,8 @@ export const FeatureRowReversed = {
               },
               "isText": true,
               "isComponent": false,
-              "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px]",
-              "textStyleClass": "st-large",
+              "className": "font-medium text-4xl font-[Satoshi Variable] text-[#1c1b17] leading-10 tracking-[0px] flex flex-row",
+              "textStyleClass": "st-large text-[#1c1b17] text-left",
               "componentProps": [
                 {
                   "figmaPropType": "characters",
@@ -268,7 +272,7 @@ export const FeatureRowReversed = {
               },
               "isText": false,
               "isComponent": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start",
+              "className": "flex p-0 flex-col gap-4 justify-start items-start",
               "textStyleClass": "",
               "componentProps": []
             },
@@ -288,7 +292,7 @@ export const FeatureRowReversed = {
               },
               "isText": false,
               "isComponent": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start",
+              "className": "flex p-0 flex-col gap-4 justify-start items-start",
               "textStyleClass": "",
               "componentProps": []
             }
@@ -324,8 +328,10 @@ export const FeatureRowReversed = {
                     "variant": "default"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
                     "width": "580px",
+                    "flexDirection": "row",
                     "color": "#1c1b17cc",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -334,8 +340,8 @@ export const FeatureRowReversed = {
                   },
                   "isText": true,
                   "isComponent": false,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 h-auto w-[36.25rem]",
-                  "textStyleClass": "st-subtitle",
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 flex h-auto w-[36.25rem] flex-row",
+                  "textStyleClass": "st-subtitle text-[#1c1b17cc] text-left",
                   "componentProps": [
                     {
                       "figmaPropType": "characters",
@@ -359,8 +365,10 @@ export const FeatureRowReversed = {
                     "variant": "centered"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
                     "width": "580px",
+                    "flexDirection": "row",
                     "color": "#1c1b17cc",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -369,8 +377,8 @@ export const FeatureRowReversed = {
                   },
                   "isText": true,
                   "isComponent": false,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 h-auto w-[36.25rem]",
-                  "textStyleClass": "st-subtitle",
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17cc] leading-8 flex h-auto w-[36.25rem] flex-row",
+                  "textStyleClass": "st-subtitle text-[#1c1b17cc] text-left",
                   "componentProps": [
                     {
                       "figmaPropType": "characters",
@@ -418,13 +426,17 @@ export const FeatureRowReversed = {
                     "variant": "default"
                   },
                   "styles": {
+                    "display": "flex",
                     "padding": "4px 0px 4px 0px",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "alignItems": "center",
                     "background": "rgba(0, 0, 0, 0)",
                     "borderRadius": "6px"
                   },
                   "isText": false,
                   "isComponent": true,
-                  "className": "rounded-md py-1 px-0 bg-transparent",
+                  "className": "rounded-md flex py-1 px-0 flex-row justify-center items-center bg-transparent",
                   "textStyleClass": "",
                   "componentProps": [
                     {
@@ -478,13 +490,17 @@ export const FeatureRowReversed = {
                     "variant": "centered"
                   },
                   "styles": {
+                    "display": "flex",
                     "padding": "4px 0px 4px 0px",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "alignItems": "center",
                     "background": "rgba(0, 0, 0, 0)",
                     "borderRadius": "6px"
                   },
                   "isText": false,
                   "isComponent": true,
-                  "className": "rounded-md py-1 px-0 bg-transparent",
+                  "className": "rounded-md flex py-1 px-0 flex-row justify-center items-center bg-transparent",
                   "textStyleClass": "",
                   "componentProps": [
                     {
@@ -583,14 +599,21 @@ export const FeatureRowReversed = {
             "variant": "default"
           },
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "568px",
+            "maxHeight": "500px",
             "padding": "32px 24px 32px 24px",
             "overflow": "hidden",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start",
             "background": "#efefef",
             "borderRadius": "8px"
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]",
+          "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]",
           "textStyleClass": "",
           "componentProps": []
         },
@@ -602,14 +625,21 @@ export const FeatureRowReversed = {
             "variant": "centered"
           },
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "568px",
+            "maxHeight": "500px",
             "padding": "32px 24px 32px 24px",
             "overflow": "hidden",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start",
             "background": "#efefef",
             "borderRadius": "8px"
           },
           "isText": false,
           "isComponent": false,
-          "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]",
+          "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]",
           "textStyleClass": "",
           "componentProps": []
         }
@@ -633,11 +663,11 @@ export const FeatureRowReversed = {
   "compoundVariants": [
     {
       "variant": "default",
-      "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-start"
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-start"
     },
     {
       "variant": "centered",
-      "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-center"
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-center"
     }
   ],
   "variants": [
@@ -648,7 +678,7 @@ export const FeatureRowReversed = {
       "styles": {
         "alignItems": "flex-start"
       },
-      "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-start",
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-start",
       "props": [
         {
           "name": "variant",
@@ -666,18 +696,25 @@ export const FeatureRowReversed = {
             "alignItems": "flex-start",
             "gap": "312px"
           },
-          "className": "rounded-[0rem] flex p-0 flex-col gap-[19.5rem] justify-start items-start"
+          "className": "flex p-0 flex-col gap-[19.5rem] justify-start items-start"
         },
         {
           "name": "Media",
           "isText": false,
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "568px",
+            "maxHeight": "500px",
             "padding": "32px 24px 32px 24px",
             "overflow": "hidden",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start",
             "background": "#efefef",
             "borderRadius": "8px"
           },
-          "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]"
+          "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]"
         }
       ]
     },
@@ -688,7 +725,7 @@ export const FeatureRowReversed = {
       "styles": {
         "alignItems": "center"
       },
-      "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-center",
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-center",
       "props": [
         {
           "name": "variant",
@@ -706,18 +743,25 @@ export const FeatureRowReversed = {
             "alignItems": "flex-start",
             "gap": "16px"
           },
-          "className": "rounded-[0rem] flex p-0 flex-col gap-4 justify-center items-start"
+          "className": "flex p-0 flex-col gap-4 justify-center items-start"
         },
         {
           "name": "Media",
           "isText": false,
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "568px",
+            "maxHeight": "500px",
             "padding": "32px 24px 32px 24px",
             "overflow": "hidden",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start",
             "background": "#efefef",
             "borderRadius": "8px"
           },
-          "className": "rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]"
+          "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]"
         }
       ]
     }

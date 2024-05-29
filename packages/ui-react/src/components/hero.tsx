@@ -1,4 +1,4 @@
-// Generated with Anthropocene
+// Generated with Dave
 // 
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
@@ -17,13 +17,13 @@ export const Hero: React.FC<HeroProps> = ({
   title = `It’s giving green.`,
 }) => {
   return (
-    <div className={cx('rounded-[0rem] h-[23.75rem] overflow-hidden p-2.5 bg-[#17332d]', className)}>
-      <div className="">
-        <div className="">
-          <p className="st-hero">
+    <div className={cx('w-full flex p-2.5 flex-row justify-center items-start bg-[#17332d]', className)}>
+      <div className="flex max-w-[90rem] pt-32 pb-20 px-6 flex-col justify-start items-center">
+        <div className="flex max-w-[37.5rem] p-0 flex-col gap-6 justify-start items-center">
+          <p className="st-hero text-white text-center">
             {title}
           </p>
-          <p className="st-subtitle">
+          <p className="st-subtitle text-[#aabca3] text-center">
             {subtitle}
           </p>
         </div>

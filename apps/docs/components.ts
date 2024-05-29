@@ -25,4 +25,7 @@ export const components = [{
 }, {
   label: "FeatureRowReversed",
   link: "/components/featurerowreversed"
+}, {
+  label: "CardGrid",
+  link: "/components/cardgrid"
 }]

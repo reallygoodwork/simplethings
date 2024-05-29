@@ -30,5 +30,12 @@ export const FeatureCard = defineField({
       initialValue: "default",
       options: { list: ['default', 'light'] }
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'FeatureCard',
+      }
+    },
+  }
 })

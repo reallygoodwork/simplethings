@@ -1,57 +1,36 @@
 export const CardGrid = {
-  "updated": "2024-05-23T19:04:52.784Z",
+  "isIterable": false,
+  "updated": "2024-05-29T17:42:02.193Z",
   "name": "CardGrid",
   "styles": {
     "display": "flex",
-    "height": "1267px",
     "padding": "112px 0px 112px 0px",
+    "flexDirection": "row",
     "justifyContent": "flex-start",
     "alignItems": "flex-start",
     "gap": "24px"
   },
-  "boundProps": [
-    {
-      "figmaPropType": "BOOLEAN",
-      "figmaRef": "Show Text#168:7",
-      "name": "showText",
-      "type": "string",
-      "value": true
-    },
-    {
-      "figmaPropType": "VARIANT",
-      "figmaRef": "Image Padding",
-      "name": "imagePadding",
-      "type": "string",
-      "value": "Default"
-    }
-  ],
+  "className": "flex py-28 px-0 flex-row gap-6 justify-start items-start",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
   "componentProps": [
     {
-      "figmaRef": "Show Text#168:7",
-      "name": "showText",
-      "defaultValue": false,
-      "tsType": "boolean"
-    },
-    {
-      "figmaRef": "Image Padding",
-      "name": "imagePadding",
-      "defaultValue": "default",
-      "tsType": "any",
-      "options": [
-        "default",
-        "noBottom",
-        "noPadding"
-      ]
+      "figmaRef": "card",
+      "name": "cards",
+      "tsType": "CardProps[]",
+      "defaultValue": [],
+      "iterable": true
     }
   ],
+  "textStyleClass": "",
+  "boundProps": [],
   "description": "To be added",
   "elementAttributes": {},
   "children": [
     {
-      "updated": "2024-05-23T19:04:52.790Z",
+      "isIterable": true,
+      "updated": "2024-05-29T17:42:02.200Z",
       "name": "Card",
       "styles": {
         "display": "flex",
@@ -64,7 +43,11 @@ export const CardGrid = {
         "background": "#efefef",
         "borderRadius": "8px"
       },
-      "boundProps": [
+      "className": "rounded-lg flex overflow-hidden py-8 px-6 flex-col gap-4 justify-start items-center bg-[#efefef]",
+      "isText": false,
+      "elementType": "div",
+      "isComponent": true,
+      "componentProps": [
         {
           "figmaPropType": "BOOLEAN",
           "figmaRef": "Show Text#168:7",
@@ -73,167 +56,36 @@ export const CardGrid = {
           "value": true
         },
         {
-          "figmaPropType": "VARIANT",
-          "figmaRef": "Image Padding",
-          "name": "imagePadding",
+          "figmaPropType": "TEXT",
+          "figmaRef": "Title#357:10",
+          "name": "title",
           "type": "string",
-          "value": "Default"
-        }
-      ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
-      "elementAttributes": {}
-    },
-    {
-      "updated": "2024-05-23T19:04:52.793Z",
-      "name": "Card",
-      "styles": {
-        "display": "flex",
-        "padding": "32px 24px 32px 24px",
-        "overflow": "hidden",
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "center",
-        "gap": "16px",
-        "background": "#efefef",
-        "borderRadius": "8px"
-      },
-      "boundProps": [
+          "value": "You Believe in Authority"
+        },
         {
-          "figmaPropType": "BOOLEAN",
-          "figmaRef": "Show Text#168:7",
-          "name": "showText",
+          "figmaPropType": "TEXT",
+          "figmaRef": "Body#357:14",
+          "name": "body",
           "type": "string",
-          "value": true
+          "value": "'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day"
         },
         {
           "figmaPropType": "VARIANT",
-          "figmaRef": "Image Padding",
-          "name": "imagePadding",
+          "figmaRef": "Variant",
+          "name": "variant",
           "type": "string",
           "value": "Default"
         }
       ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
-      "elementAttributes": {}
-    },
-    {
-      "updated": "2024-05-23T19:04:52.795Z",
-      "name": "Card",
-      "styles": {
-        "display": "flex",
-        "padding": "32px 24px 32px 24px",
-        "overflow": "hidden",
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "center",
-        "gap": "16px",
-        "background": "#efefef",
-        "borderRadius": "8px"
-      },
-      "boundProps": [
-        {
-          "figmaPropType": "BOOLEAN",
-          "figmaRef": "Show Text#168:7",
-          "name": "showText",
-          "type": "string",
-          "value": true
-        },
-        {
-          "figmaPropType": "VARIANT",
-          "figmaRef": "Image Padding",
-          "name": "imagePadding",
-          "type": "string",
-          "value": "Default"
-        }
-      ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
-      "elementAttributes": {}
-    },
-    {
-      "updated": "2024-05-23T19:04:52.796Z",
-      "name": "Card",
-      "styles": {
-        "display": "flex",
-        "padding": "32px 24px 32px 24px",
-        "overflow": "hidden",
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "center",
-        "gap": "16px",
-        "background": "#efefef",
-        "borderRadius": "8px"
-      },
-      "boundProps": [
-        {
-          "figmaPropType": "BOOLEAN",
-          "figmaRef": "Show Text#168:7",
-          "name": "showText",
-          "type": "string",
-          "value": true
-        },
-        {
-          "figmaPropType": "VARIANT",
-          "figmaRef": "Image Padding",
-          "name": "imagePadding",
-          "type": "string",
-          "value": "Default"
-        }
-      ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
-      "elementAttributes": {}
-    },
-    {
-      "updated": "2024-05-23T19:04:52.797Z",
-      "name": "Card",
-      "styles": {
-        "display": "flex",
-        "padding": "32px 24px 32px 24px",
-        "overflow": "hidden",
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-        "alignItems": "center",
-        "gap": "16px",
-        "background": "#efefef",
-        "borderRadius": "8px"
-      },
-      "boundProps": [
-        {
-          "figmaPropType": "BOOLEAN",
-          "figmaRef": "Show Text#168:7",
-          "name": "showText",
-          "type": "string",
-          "value": true
-        },
-        {
-          "figmaPropType": "VARIANT",
-          "figmaRef": "Image Padding",
-          "name": "imagePadding",
-          "type": "string",
-          "value": "Default"
-        }
-      ],
-      "isText": false,
-      "elementType": "div",
-      "isComponent": true,
-      "componentProps": [],
-      "elementAttributes": {}
+      "textStyleClass": "",
+      "boundProps": [],
+      "elementAttributes": {},
+      "iterable": false
     }
   ],
   "dependencies": [
     {
-      "name": "{ Card }",
+      "name": "{ Card, type CardProps }",
       "packageName": "./card"
     }
   ]

@@ -8,6 +8,8 @@ import type {
 } from '@simplethings/react'
 import { FeatureCard, FeatureRow, FeatureRowReversed, Hero, SectionHeader } from '@simplethings/react'
 
+import Container from './Container.astro'
+
 interface Props {
   content: {
     _type: string
@@ -24,15 +26,31 @@ const { content } = Astro.props
     const { _type, _key, ...rest } = item
     switch (item._type) {
       case 'sectionHeader':
-        return <SectionHeader {...(rest as SectionHeaderProps)} />
+        return (
+          <Container>
+            <SectionHeader {...(rest as SectionHeaderProps)} />
+          </Container>
+        )
       case 'hero':
         return <Hero {...(rest as HeroProps)} />
       case 'featureCard':
-        return <FeatureCard {...(rest as FeatureCardProps)} />
+        return (
+          <Container>
+            <FeatureCard {...(rest as FeatureCardProps)} />
+          </Container>
+        )
       case 'featureRow':
-        return <FeatureRow {...(rest as FeatureRowProps)} />
+        return (
+          <Container>
+            <FeatureRow {...(rest as FeatureRowProps)} />
+          </Container>
+        )
       case 'featureRowReverse':
-        return <FeatureRowReversed {...(rest as FeatureRowReversedProps)} />
+        return (
+          <Container>
+            <FeatureRowReversed {...(rest as FeatureRowReversedProps)} />
+          </Container>
+        )
       default:
         return <div>No Component: {item._type}</div>
     }

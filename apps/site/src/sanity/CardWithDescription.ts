@@ -17,5 +17,12 @@ export const CardWithDescription = defineField({
       type: 'string',
       initialValue: "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.",
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'CardWithDescription',
+      }
+    },
+  }
 })

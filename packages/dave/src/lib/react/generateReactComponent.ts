@@ -9,11 +9,11 @@ import { ComponentPartial, DomTreePartial, templateSource } from './template'
 handlebars.registerPartial('ComponentPartial', ComponentPartial)
 
 function generateComponentProps(
-  props: { name: string; tsType: string; defaultValue: string | boolean; options: any[] }[],
+  props: { iterable?: boolean; name: string; tsType: string; defaultValue: string | boolean; options: any[] }[],
 ) {
   const properties = props.map((variant) => ({
     name: variant.name,
-    defaultValue: variant.defaultValue,
+    defaultValue: variant.iterable ? '[]' : variant.defaultValue,
     tsType: variant.options ? variant.options.map((option) => `'${option}'`).join(' | ') : variant.tsType,
   }))
 
@@ -50,6 +50,25 @@ handlebars.registerHelper('json', function (context) {
   return JSON.stringify(context, null, 2)
 })
 
+handlebars.registerHelper('renderPropHelper', function (this: any) {
+
+  if (this.tsType === 'boolean') {
+    return this.defaultValue
+  } else if (this.tsType === 'string') {
+    return `\`${this.defaultValue}\``
+  } else if (this.defaultValue === '[]') {
+    return '[]'
+  } else {
+    return `'${this.defaultValue}'`
+  }
+
+})
+
+handlebars.registerHelper('renderMap', function (this: any, name: string): string {
+
+  return `${name.toLowerCase()}s`
+})
+
 handlebars.registerHelper('isEmptyString', function (this: any, arg1: any, options: Options) {
   return arg1?.length === 0 ? options.fn(this) : options.inverse(this)
 })
@@ -58,11 +77,25 @@ handlebars.registerHelper('hasBoundProps', function (this: any, boundProps: any,
   return boundProps?.length > 0 ? options.fn(this) : options.inverse(this)
 })
 
+handlebars.registerHelper('shouldIterate', function (this: any, iterable: any, options: Options): string {
+  return iterable ? options.fn(this) : options.inverse(this)
+})
+
 handlebars.registerHelper('toLowerCase', function (str) {
   return str?.toLowerCase()
 })
 
 handlebars.registerPartial('DomTreePartial', DomTreePartial)
+
+handlebars.registerHelper('handleIterable', function (this: any) {
+  if (this.iterable) {
+    return '[]'
+  }
+  else {
+    console.log(this)
+    return `<${this.elementType} className={${this.className}}>{${this.children.map((child: any) => handlebars.compile(DomTreePartial)(child)).join('')}</${this.elementType}>`
+  }
+})
 
 handlebars.registerHelper('boundPropsAreText', function (this: any, boundProps: any, options: Options):
   | SafeString
@@ -117,13 +150,13 @@ handlebars.registerHelper('renderClassName', function (this: any) {
   if (this.variants && this.variants.length > 1) {
     return `{cx(${this.variants?.map((variant: any) => createCXString(variant)).join(', ')})}`
   } else {
-    console.log(this.variants)
-    return `""`
+    return `"${this.className}"`
   }
 })
 
 export const generateReactComponent = async (configFile: ElementSchema) => {
   const template = handlebars.compile(templateSource, { noEscape: true })
+
 
   const context = {
     isComponent: configFile.isComponent,

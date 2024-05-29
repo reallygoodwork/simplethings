@@ -7,3 +7,4 @@ export { FeatureCard, type FeatureCardProps } from './featureCard';
 export { Card, type CardProps } from './card';
 export { FeatureRow, type FeatureRowProps } from './featureRow';
 export { FeatureRowReversed, type FeatureRowReversedProps } from './featureRowReversed';
+export { CardGrid, type CardGridProps } from './cardGrid';

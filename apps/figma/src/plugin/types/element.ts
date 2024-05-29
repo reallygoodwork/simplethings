@@ -57,6 +57,7 @@ export const zElementConfig = z.object({
   className: z.string().optional(),
   styles: zStyleProperty.optional(),
   variants: zVariant.array().optional(),
+  iterable: z.boolean().optional(),
 })
 
 export type ElementConfig = z.infer<typeof zElementConfig> & {

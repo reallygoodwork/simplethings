@@ -1,6 +1,6 @@
 export const Card = {
   "config": {},
-  "updated": "2024-05-28T15:29:03.806Z",
+  "updated": "2024-05-28T23:33:03.137Z",
   "name": "Card",
   "dependencies": [],
   "description": "To be added",
@@ -53,6 +53,7 @@ export const Card = {
   ],
   "children": {
     "cardBody": {
+      "name": "cardBody",
       "boundProps": [
         {
           "figmaRef": "visible",
@@ -62,9 +63,11 @@ export const Card = {
       ],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": false,
       "variants": [
         {
+          "name": "cardBody",
           "elementType": "div",
           "boundProps": [
             {
@@ -85,10 +88,20 @@ export const Card = {
             "gap": "8px"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
+          "textStyleClass": "",
+          "componentProps": [
+            {
+              "figmaPropType": "visible",
+              "figmaRef": "Show Text#168:7",
+              "name": "showText",
+              "type": "boolean"
+            }
+          ]
         },
         {
+          "name": "cardBody",
           "elementType": "div",
           "boundProps": [
             {
@@ -109,10 +122,20 @@ export const Card = {
             "gap": "8px"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
+          "textStyleClass": "",
+          "componentProps": [
+            {
+              "figmaPropType": "visible",
+              "figmaRef": "Show Text#168:7",
+              "name": "showText",
+              "type": "boolean"
+            }
+          ]
         },
         {
+          "name": "cardBody",
           "elementType": "div",
           "boundProps": [
             {
@@ -133,12 +156,30 @@ export const Card = {
             "gap": "8px"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center",
+          "textStyleClass": "",
+          "componentProps": [
+            {
+              "figmaPropType": "visible",
+              "figmaRef": "Show Text#168:7",
+              "name": "showText",
+              "type": "boolean"
+            }
+          ]
+        }
+      ],
+      "componentProps": [
+        {
+          "figmaPropType": "visible",
+          "figmaRef": "Show Text#168:7",
+          "name": "showText",
+          "type": "boolean"
         }
       ],
       "children": {
         "title": {
+          "name": "title",
           "boundProps": [
             {
               "figmaRef": "characters",
@@ -148,10 +189,12 @@ export const Card = {
           ],
           "elementType": "p",
           "isText": true,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "textValue": "You Believe in Authority",
           "variants": [
             {
+              "name": "title",
               "elementType": "p",
               "boundProps": [
                 {
@@ -164,6 +207,8 @@ export const Card = {
                 "variant": "default"
               },
               "styles": {
+                "display": "flex",
+                "flexDirection": "row",
                 "color": "#000000",
                 "fontSize": "20px",
                 "fontWeight": "500",
@@ -171,10 +216,20 @@ export const Card = {
                 "lineHeight": "22px"
               },
               "isText": true,
-              "className": "font-medium text-xl font-[Satoshi Variable] text-black leading-[1.375rem]",
-              "textStyleClass": "st-lead--tight"
+              "isComponent": false,
+              "className": "font-medium text-xl font-[Satoshi Variable] text-black leading-[1.375rem] flex flex-row",
+              "textStyleClass": "st-lead--tight text-black text-left",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#357:10",
+                  "name": "title",
+                  "type": "string"
+                }
+              ]
             },
             {
+              "name": "title",
               "elementType": "p",
               "boundProps": [
                 {
@@ -187,6 +242,8 @@ export const Card = {
                 "variant": "noBottom"
               },
               "styles": {
+                "display": "flex",
+                "flexDirection": "row",
                 "color": "#000000",
                 "fontSize": "20px",
                 "fontWeight": "500",
@@ -194,10 +251,20 @@ export const Card = {
                 "lineHeight": "22px"
               },
               "isText": true,
-              "className": "font-medium text-xl font-[Satoshi Variable] text-black leading-[1.375rem]",
-              "textStyleClass": "st-lead--tight"
+              "isComponent": false,
+              "className": "font-medium text-xl font-[Satoshi Variable] text-black leading-[1.375rem] flex flex-row",
+              "textStyleClass": "st-lead--tight text-black text-left",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#357:10",
+                  "name": "title",
+                  "type": "string"
+                }
+              ]
             },
             {
+              "name": "title",
               "elementType": "p",
               "boundProps": [
                 {
@@ -210,6 +277,8 @@ export const Card = {
                 "variant": "noPadding"
               },
               "styles": {
+                "display": "flex",
+                "flexDirection": "row",
                 "color": "#1c1b17",
                 "fontSize": "20px",
                 "fontWeight": "500",
@@ -217,12 +286,30 @@ export const Card = {
                 "lineHeight": "22px"
               },
               "isText": true,
-              "className": "font-medium text-xl font-[Satoshi Variable] text-[#1c1b17] leading-[1.375rem]",
-              "textStyleClass": "st-lead--tight"
+              "isComponent": false,
+              "className": "font-medium text-xl font-[Satoshi Variable] text-[#1c1b17] leading-[1.375rem] flex flex-row",
+              "textStyleClass": "st-lead--tight text-[#1c1b17] text-left",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Title#357:10",
+                  "name": "title",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "componentProps": [
+            {
+              "figmaPropType": "characters",
+              "figmaRef": "Title#357:10",
+              "name": "title",
+              "type": "string"
             }
           ]
         },
         "body": {
+          "name": "body",
           "boundProps": [
             {
               "figmaRef": "characters",
@@ -232,10 +319,12 @@ export const Card = {
           ],
           "elementType": "p",
           "isText": true,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "textValue": "'Cause, baby, I'm an anarchist. You're a spineless liberal. We marched together for the eight-hour day",
           "variants": [
             {
+              "name": "body",
               "elementType": "p",
               "boundProps": [
                 {
@@ -248,7 +337,9 @@ export const Card = {
                 "variant": "default"
               },
               "styles": {
+                "display": "flex",
                 "height": "auto",
+                "flexDirection": "row",
                 "color": "#1c1b1799",
                 "fontSize": "14px",
                 "fontWeight": "400",
@@ -257,10 +348,20 @@ export const Card = {
                 "textAlign": "CENTER"
               },
               "isText": true,
-              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 h-auto",
-              "textStyleClass": "st-small"
+              "isComponent": false,
+              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 flex h-auto flex-row",
+              "textStyleClass": "st-small text-[#1c1b1799] text-center",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Body#357:14",
+                  "name": "body",
+                  "type": "string"
+                }
+              ]
             },
             {
+              "name": "body",
               "elementType": "p",
               "boundProps": [
                 {
@@ -273,7 +374,9 @@ export const Card = {
                 "variant": "noBottom"
               },
               "styles": {
+                "display": "flex",
                 "height": "auto",
+                "flexDirection": "row",
                 "color": "#1c1b1799",
                 "fontSize": "14px",
                 "fontWeight": "400",
@@ -282,10 +385,20 @@ export const Card = {
                 "textAlign": "CENTER"
               },
               "isText": true,
-              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 h-auto",
-              "textStyleClass": "st-small"
+              "isComponent": false,
+              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 flex h-auto flex-row",
+              "textStyleClass": "st-small text-[#1c1b1799] text-center",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Body#357:14",
+                  "name": "body",
+                  "type": "string"
+                }
+              ]
             },
             {
+              "name": "body",
               "elementType": "p",
               "boundProps": [
                 {
@@ -298,7 +411,9 @@ export const Card = {
                 "variant": "noPadding"
               },
               "styles": {
+                "display": "flex",
                 "height": "auto",
+                "flexDirection": "row",
                 "color": "#1c1b1799",
                 "fontSize": "14px",
                 "fontWeight": "400",
@@ -307,65 +422,100 @@ export const Card = {
                 "textAlign": "CENTER"
               },
               "isText": true,
-              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 h-auto",
-              "textStyleClass": "st-small"
+              "isComponent": false,
+              "className": "font-normal text-sm font-[Satoshi Variable] text-[#1c1b1799] leading-5 flex h-auto flex-row",
+              "textStyleClass": "st-small text-[#1c1b1799] text-center",
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Body#357:14",
+                  "name": "body",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "componentProps": [
+            {
+              "figmaPropType": "characters",
+              "figmaRef": "Body#357:14",
+              "name": "body",
+              "type": "string"
             }
           ]
         }
       }
     },
     "image": {
+      "name": "image",
       "boundProps": [],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": true,
       "variants": [
         {
+          "name": "image",
           "elementType": "div",
           "boundProps": [],
           "properties": {
             "variant": "default"
           },
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
           "isText": false,
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "image",
           "elementType": "div",
           "boundProps": [],
           "properties": {
             "variant": "noBottom"
           },
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
           "isText": false,
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "image",
           "elementType": "div",
           "boundProps": [],
           "properties": {
             "variant": "noPadding"
           },
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
           "isText": false,
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
+          "textStyleClass": "",
+          "componentProps": []
         }
-      ]
+      ],
+      "componentProps": []
     }
   },
   "variantOptions": {
@@ -423,17 +573,19 @@ export const Card = {
             "alignItems": "center",
             "gap": "8px"
           },
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
         },
         {
           "name": "Image",
           "isText": false,
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]"
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row"
         }
       ]
     },
@@ -463,17 +615,19 @@ export const Card = {
             "alignItems": "center",
             "gap": "8px"
           },
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
         },
         {
           "name": "Image",
           "isText": false,
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]"
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row"
         }
       ]
     },
@@ -503,17 +657,19 @@ export const Card = {
             "alignItems": "center",
             "gap": "8px"
           },
-          "className": "rounded-[0rem] flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
+          "className": "flex max-w-[16.25rem] p-0 flex-col gap-2 justify-start items-center"
         },
         {
           "name": "Image",
           "isText": false,
           "styles": {
+            "display": "flex",
             "height": "412px",
             "width": "600px",
+            "flexDirection": "row",
             "object-fit": "contain"
           },
-          "className": "rounded-[0rem] h-[25.75rem] w-[37.5rem]"
+          "className": "flex h-[25.75rem] w-[37.5rem] flex-row"
         }
       ]
     }

@@ -30,5 +30,12 @@ export const Card = defineField({
       initialValue: "default",
       options: { list: ['default', 'noBottom', 'noPadding'] }
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Card',
+      }
+    },
+  }
 })

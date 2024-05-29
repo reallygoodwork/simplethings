@@ -3,7 +3,7 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build", "^build:anthropocene", "^build:components"],
+      "dependsOn": ["^build", "^build:dave", "^build:components"],
       "outputs": [".astro/**", "!.astro/cache/**", "dist/**"]
     },
     "test:watch": {
@@ -18,15 +18,15 @@
       "cache": false
     },
     "dev": {
-      "dependsOn": ["build:anthropocene"],
+      "dependsOn": ["build:dave"],
       "persistent": true,
       "cache": false
     },
-    "dev:anthropocene": {
+    "dev:dave": {
       "persistent": true,
       "cache": false
     },
-    "build:anthropocene": {
+    "build:dave": {
       "cache": false,
       "outputs": ["dist/**"]
     },

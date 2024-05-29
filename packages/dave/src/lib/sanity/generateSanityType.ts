@@ -12,7 +12,14 @@ export const generateSanityType = (configFile: ElementSchema) => {
     })
 
     handlebars.registerHelper('isAny', function (aString) {
-      return aString === 'any' ? 'string' : aString
+      if (aString === 'boolean') return aString
+      if (aString === 'any' || aString === 'string') return 'string'
+      return 'array'
+    })
+
+    handlebars.registerHelper('isIterable', function (this: any) {
+      if (this.isIterable) return true
+      return false
     })
 
     const context = {
@@ -45,6 +52,9 @@ export const {{name}} = defineField({
       {{#if defaultValue}}
       initialValue: {{{loud this.defaultValue}}},
       {{/if}}
+      {{#if iterable}}
+      of: [{ type: '{{figmaRef}}' }],
+      {{/if}}
       {{#if options}}
       options: { list: [{{#each options}}'{{this}}'{{#unless @last}}, {{/unless}}{{/each}}] }
       {{/if}}
@@ -59,6 +69,13 @@ export const {{name}} = defineField({
     {{/if}}
     {{#if variants}}
     {{/if}}
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: '{{name}}',
+      }
+    },
+  }
 })
 `

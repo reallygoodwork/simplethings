@@ -1,38 +1,25 @@
-import React from 'react';
-import { Card } from './card'
-import { cva, cx, VariantProps } from 'class-variance-authority'
+// Generated with Dave
+// 2024-05-29T17:42:02.193Z
+// Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
-export interface CardGridProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof CardGridCVA> {
+import React from 'react';
+import { Card, type CardProps } from './card'
+import { cx } from 'class-variance-authority'
+
+export interface CardGridProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
-  showText: boolean;
-  imagePadding: 'default' | 'noBottom' | 'noPadding';
+  cards: CardProps[];
 }
 
 export const CardGrid: React.FC<CardGridProps> = ({
   className = '',
-  showText = false,
-  imagePadding = `default`,
+  cards = [],
 }) => {
   return (
-    <div className={CardGridCVA({ showText, className })}>
-      <Card showText={ showText } imagePadding={ imagePadding }  />
-      <Card showText={ showText } imagePadding={ imagePadding }  />
-      <Card showText={ showText } imagePadding={ imagePadding }  />
-      <Card showText={ showText } imagePadding={ imagePadding }  />
-      <Card showText={ showText } imagePadding={ imagePadding }  />
+    <div className={cx('flex py-28 px-0 flex-row gap-6 justify-start items-start', className)}>
+      {cards.map(props => <Card {...props} />) }
     </div>
   );
 };
 
-const CardGridCVA = cva('', {
-  variants: {
-    showText:{
-      true: '',
-      false: '',
-    },
-  },
-  defaultVariants: {
-    showText: false,
-  },
-})
 

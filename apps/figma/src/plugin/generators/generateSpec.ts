@@ -1,12 +1,16 @@
+import { colord } from 'colord'
+
 import { generateStyleConfig } from '../lib/generateStyleConfig'
 import { generateStyleObject } from '../lib/generateStyleObject'
 import { generateTailwindStyleString } from '../lib/generateTailwindStyleString'
+import { color } from '../lib/stylelibs/tailwind/utils/tailwindColor'
 import { ElementSchema } from '../types/element'
 import { generateBoundPropReferences } from './generateBoundPropReferences'
 import { generateComponentProps } from './generateComponentProps'
 import { getCommonStyles } from './getCommonStyles'
 import { removeCommonStyles } from './removeCommonStyles'
 import { camelize } from './utils'
+import { hasChildren } from '../utils/hasChildren'
 
 function transformString(input: string): string {
   return input
@@ -45,27 +49,27 @@ async function generateVariantStyles(children: SceneNode[]): Promise<StyleObject
   )
 }
 
-async function getComponentDependencies(firstChild: SceneNode): Promise<any[]> {
-
+async function getComponentDependencies(firstChild: SceneNode, includeTypes?: boolean): Promise<any[]> {
   async function processNode(node: SceneNode): Promise<any[]> {
     const directComponents = ((node as any).children || [])
       .filter((child) => child.type === 'INSTANCE')
       .map((child) => ({
-        name: `{ ${transformString(child.name)} }`,
+        name: `{ ${transformString(child.name)}${includeTypes ? `, type ${transformString(child.name)}Props` : '' } }`,
         packageName: `./${transformString(child.name).toLowerCase()}`,
-      }));
+      }))
 
-      const childComponentsPromises = ((node as any).children || []).map((child) => processNode(child));
-      const childComponents = await Promise.all(childComponentsPromises);
+    const childComponentsPromises = ((node as any).children || []).map((child) => processNode(child))
+    const childComponents = await Promise.all(childComponentsPromises)
 
-      // Flatten the array of arrays and combine with direct components
-      return directComponents.concat(...childComponents);
+    // Flatten the array of arrays and combine with direct components
+    return directComponents.concat(...childComponents)
   }
 
-  const allComponents = await processNode(firstChild);
+  const allComponents = await processNode(firstChild)
 
   return allComponents.filter(
-    (value, index, self) => index === self.findIndex((t) => t.packageName === value.packageName && t.name === value.name)
+    (value, index, self) =>
+      index === self.findIndex((t) => t.packageName === value.packageName && t.name === value.name),
   )
 }
 
@@ -112,8 +116,8 @@ function createVariant(child: SceneNode, commonStyles: any): any {
   }
 }
 
-async function processChildren(children: SceneNode[]): Promise<ElementSchema[]> {
-  return await Promise.all(children.map((child) => generateSpec(child)))
+async function processChildren(children: SceneNode[], isIterable?: boolean): Promise<ElementSchema[]> {
+  return await Promise.all(children.map((child) => generateSpec(child, isIterable)))
 }
 
 const getCommonTailwindClasses = (styles: StyleObject[]): string[] => {
@@ -206,7 +210,15 @@ const handleTextChild = async (child: TextNode) => {
 
     const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
 
-    textObject['textStyleClass'] = textStyle.name
+    const fills = child.fills[0].color
+    const alpha = child.fills[0].opacity ?? 1
+    const hex = colord({ r: fills.r * 255, g: fills.g * 255, b: fills.b * 255, a: alpha }).toHex()
+
+    const colorClass = color(hex)
+
+    const aligned = child.textAlignHorizontal.toLowerCase()
+
+    textObject['textStyleClass'] = textStyle.name + ' ' + `text${colorClass} text-${aligned}`
   }
 
   return textObject
@@ -219,21 +231,23 @@ const traverseChildren = async (
   const childPromises = children.map(async (child) => {
     const childStyles = generateStyleConfig(child as any)
     const styles = generateStyleObject(childStyles[0])
-    const hasBackgroundImage = typeof child.fills === 'object' ? (child?.fills as readonly Paint[])?.some((fill) => fill.type === 'IMAGE') : false
+    const hasBackgroundImage =
+      typeof child.fills === 'object'
+        ? (child?.fills as readonly Paint[])?.some((fill) => fill.type === 'IMAGE')
+        : false
 
     const isComponent = child.type === 'COMPONENT' || child.type === 'INSTANCE'
 
-
-  const boundProps = await generateBoundPropReferences(child)
-  const boundPropsArray = boundProps.filter((value, index) => {
-    const _value = JSON.stringify(value)
-    return (
-      index ===
-      boundProps.findIndex((obj) => {
-        return JSON.stringify(obj) === _value
-      })
-    )
-  })
+    const boundProps = await generateBoundPropReferences(child)
+    const boundPropsArray = boundProps.filter((value, index) => {
+      const _value = JSON.stringify(value)
+      return (
+        index ===
+        boundProps.findIndex((obj) => {
+          return JSON.stringify(obj) === _value
+        })
+      )
+    })
 
     const object: StyleObjectType = {
       boundProps: Object.entries(child.componentPropertyReferences).map(([key, value]) => {
@@ -251,13 +265,12 @@ const traverseChildren = async (
       styles,
       textStyleClass: '',
       className: generateTailwindStyleString(childStyles).trim(),
-      componentProps: boundPropsArray
+      componentProps: boundPropsArray,
     }
 
     if (variantProperties) {
       object['variantProperties'] = variantProperties
     }
-
 
     if (child.type === 'TEXT') {
       const textObject = await handleTextChild(child)
@@ -270,7 +283,15 @@ const traverseChildren = async (
 
         const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
 
-        object['textStyleClass'] = textStyle.name
+        const fills = child.fills[0].color
+        const alpha = child.fills[0].opacity ?? 1
+        const hex = colord({ r: fills.r * 255, g: fills.g * 255, b: fills.b * 255, a: alpha }).toHex()
+
+        const colorClass = color(hex)
+
+        const aligned = child.textAlignHorizontal.toLowerCase()
+
+        object['textStyleClass'] = textStyle.name + ' ' + `text${colorClass} text-${aligned}`
       }
     }
 
@@ -352,33 +373,33 @@ const generateVariantChildren = async (node: ComponentSetNode) => {
 }
 
 type Variant = {
-  name: string;
-  properties: VariantProperties;
+  name: string
+  properties: VariantProperties
   styles: { [key: string]: any }
-  className: string;
-  textStyleClass?: string;
-  boundProps?: any;
-  elementType?: string;
-  isText: boolean;
-  isComponent?: boolean;
-  componentProps?: any;
-};
+  className: string
+  textStyleClass?: string
+  boundProps?: any
+  elementType?: string
+  isText: boolean
+  isComponent?: boolean
+  componentProps?: any
+}
 
 type ResultNode = {
-  name: string;
-  elementType?: string;
-  variants: Variant[];
-  children?: { [key: string]: ResultNode };
-  isText: boolean;
-  hasBackgroundImage: boolean;
-  textValue?: string;
-  boundProps?: any;
-  isComponent?: boolean;
-  componentProps?: any;
-};
+  name: string
+  elementType?: string
+  variants: Variant[]
+  children?: { [key: string]: ResultNode }
+  isText: boolean
+  hasBackgroundImage: boolean
+  textValue?: string
+  boundProps?: any
+  isComponent?: boolean
+  componentProps?: any
+}
 
 function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: ResultNode } {
-  const result: { [key: string]: ResultNode } = {};
+  const result: { [key: string]: ResultNode } = {}
 
   function traverse(node: StyleObjectType, path: string) {
     if (!result[path]) {
@@ -392,14 +413,16 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
         textValue: node.textValue,
         variants: [],
         componentProps: node.componentProps,
-      };
+      }
     }
 
-    const variantProperties = node.variantProperties;
-    const existingVariant = result[path].variants.find(v => JSON.stringify(v.properties) === JSON.stringify(variantProperties));
+    const variantProperties = node.variantProperties
+    const existingVariant = result[path].variants.find(
+      (v) => JSON.stringify(v.properties) === JSON.stringify(variantProperties),
+    )
 
     if (existingVariant) {
-      existingVariant.className += node.className;
+      existingVariant.className += node.className
     } else {
       result[path].variants.push({
         name: node.name,
@@ -412,43 +435,45 @@ function consolidateVariants(structure: StyleObjectType[][]): { [key: string]: R
         className: node.className,
         textStyleClass: node.textStyleClass,
         componentProps: node.componentProps,
-      });
+      })
     }
 
     if (node.children) {
-      node.children.forEach(child => {
-        traverse(child, `${path}.${child.name}`);
-      });
+      node.children.forEach((child) => {
+        traverse(child, `${path}.${child.name}`)
+      })
     }
   }
 
-  structure.forEach(group => {
-    group.forEach(node => {
-      traverse(node, node.name);
-    });
-  });
+  structure.forEach((group) => {
+    group.forEach((node) => {
+      traverse(node, node.name)
+    })
+  })
 
   // Convert children objects into nested format
   function convertChildren(path: string, obj: ResultNode) {
-    const childrenPaths = Object.keys(result).filter(key => key.startsWith(`${path}.`) && key.split('.').length === path.split('.').length + 1);
-    childrenPaths.forEach(childPath => {
-      const childKey = childPath.split('.').slice(-1)[0];
-      if (!obj.children) obj.children = {};
-      obj.children[childKey] = result[childPath];
-      convertChildren(childPath, obj.children[childKey]);
-    });
+    const childrenPaths = Object.keys(result).filter(
+      (key) => key.startsWith(`${path}.`) && key.split('.').length === path.split('.').length + 1,
+    )
+    childrenPaths.forEach((childPath) => {
+      const childKey = childPath.split('.').slice(-1)[0]
+      if (!obj.children) obj.children = {}
+      obj.children[childKey] = result[childPath]
+      convertChildren(childPath, obj.children[childKey])
+    })
   }
 
+  const rootKeys = Array.from(new Set(structure.flat().map((node) => node.name)))
+  const consolidatedResult: { [key: string]: ResultNode } = {}
+  rootKeys.forEach((rootKey) => {
+    consolidatedResult[rootKey] = result[rootKey]
+    convertChildren(rootKey, consolidatedResult[rootKey])
+  })
 
-  const rootKeys = Array.from(new Set(structure.flat().map(node => node.name)));
-  const consolidatedResult: { [key: string]: ResultNode } = {};
-  rootKeys.forEach(rootKey => {
-    consolidatedResult[rootKey] = result[rootKey];
-    convertChildren(rootKey, consolidatedResult[rootKey]);
-  });
-
-  return consolidatedResult;
+  return consolidatedResult
 }
+
 
 
 const generateChildrenList = async (node: ComponentSetNode) => {
@@ -457,7 +482,7 @@ const generateChildrenList = async (node: ComponentSetNode) => {
 }
 
 // The main function that generates the spec
-export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | null> => {
+export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promise<ElementSchema | null> => {
   const name = transformString(spec.name)
   const updated = new Date().toISOString()
 
@@ -522,6 +547,8 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
     }
   }
 
+  const isAListOfTheSameComponents = isAListOfComponents(spec)
+
   const childStyles = generateStyleConfig(spec as any)
   const styles = generateStyleObject(childStyles[0])
   const tailwindStyles = generateTailwindStyleString(childStyles)
@@ -538,13 +565,17 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
 
   let children: any[] = []
 
-  if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
+  if (isAListOfTheSameComponents && hasChildren(spec)) {
+    children = await processChildren([spec.children[0] as SceneNode], true)
+  } else if (spec.type === 'GROUP' || spec.type === 'FRAME' || spec.type === 'COMPONENT') {
     children = await processChildren(spec.children as SceneNode[])
   }
 
   const childrenList = await Promise.all(children)
 
   const commonAttributes = {
+    isIterable: isIterable || false,
+    updated,
     name,
     styles,
     className: tailwindStyles,
@@ -562,6 +593,8 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
     }),
   }
 
+
+
   if (spec.type === 'TEXT') {
     const textObject = await handleTextChild(spec)
     commonAttributes['textStyleClass'] = textObject.textStyleClass
@@ -572,7 +605,15 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
 
       const textStyle = textStyles.find((textStyle) => textStyle.id === textStyleId)
 
-      commonAttributes['textStyleClass'] = textStyle.name
+      const fills = spec.fills[0].color
+      const alpha = spec.fills[0].opacity ?? 1
+      const hex = colord({ r: fills.r * 255, g: fills.g * 255, b: fills.b * 255, a: alpha }).toHex()
+
+      const colorClass = color(hex)
+
+      const aligned = spec.textAlignHorizontal.toLowerCase()
+
+      commonAttributes['textStyleClass'] = textStyle.name + ' ' + `text${colorClass} text-${aligned}`
     }
   }
 
@@ -622,20 +663,44 @@ export const generateSpec = async (spec: SceneNode): Promise<ElementSchema | nul
         isComponent: true,
         elementAttributes: {},
         componentProps: boundPropsArray,
+        iterable: isAListOfTheSameComponents,
       }
     case 'COMPONENT':
-      const componentDependencies = await getComponentDependencies(spec)
-
+      const componentDependencies = await getComponentDependencies(spec, isAListOfTheSameComponents)
+      let componentProps = componentPropsArray
+      if (isAListOfTheSameComponents) {
+        componentProps = [{
+          figmaRef: camelize(transformString(spec.children[0].name)),
+          name: `${camelize(transformString(spec.children[0].name))}s`,
+          tsType: `${transformString(spec.children[0].name)}Props[]`,
+          defaultValue: [],
+          iterable: true,
+        }]
+      }
       return {
         ...commonAttributes,
         description: spec.description || 'To be added',
         isComponent: true,
         elementAttributes: {},
-        componentProps: componentPropsArray,
+        componentProps,
         children: childrenList,
         dependencies: componentDependencies,
       }
     default:
       return null
   }
+}
+
+
+const isAListOfComponents = (node: SceneNode): boolean => {
+  if (!hasChildren(node)) return false
+
+  if ((node.children as SceneNode[]).every((child) => child.type === 'INSTANCE')) {
+    const id = node.children[0].id.split(':')[0]
+    return node.children.every((child) => child.id.split(':')[0] === id)
+
+  } else {
+    return false
+  }
+
 }

@@ -1,5 +1,5 @@
-// Generated with Anthropocene
-// 2024-05-28T19:13:42.049Z
+// Generated with Dave
+// 2024-05-29T16:30:42.020Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -24,21 +24,21 @@ export const FeatureRowReversed: React.FC<FeatureRowReversedProps> = ({
   cTAText = `Stay in policy and on budget with proactive policy controls, configurable approvals, and AI-powered reconciliation.`,
   title = `Set guardrails to prevent overspending`,
   showButton = true,
-  variant = `default`,
+  variant = 'default',
   showTrailingIcon = false,
   showLeadingIcon = false,
   buttonText = `Learn More`,
-  size = `sm`,
-  purpose = `link`,
+  size = 'sm',
+  purpose = 'link',
 }) => {
   return (
     <div className={FeatureRowReversedCVA({showButton, variant, className })}>
-      <div className={cx(variant === 'default' && 'rounded-[0rem] flex p-0 flex-col gap-[19.5rem] justify-start items-start', variant === 'centered' && 'rounded-[0rem] flex p-0 flex-col gap-4 justify-center items-start')}>
-        <p className="st-large">
+      <div className={cx(variant === 'default' && 'flex p-0 flex-col gap-[19.5rem] justify-start items-start', variant === 'centered' && 'flex p-0 flex-col gap-4 justify-center items-start')}>
+        <p className="st-large text-[#1c1b17] text-left">
           {title}
         </p>
-        <div className={cx(variant === 'default' && 'rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start', variant === 'centered' && 'rounded-[0rem] flex p-0 flex-col gap-4 justify-start items-start')}>
-          <p className="st-subtitle">
+        <div className={cx(variant === 'default' && 'flex p-0 flex-col gap-4 justify-start items-start', variant === 'centered' && 'flex p-0 flex-col gap-4 justify-start items-start')}>
+          <p className="st-subtitle text-[#1c1b17cc] text-left">
             {cTAText}
           </p>
           {showButton ?
@@ -46,13 +46,13 @@ export const FeatureRowReversed: React.FC<FeatureRowReversedProps> = ({
           : null}
         </div>
       </div>
-      <div className={cx(variant === 'default' && 'rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]', variant === 'centered' && 'rounded-lg overflow-hidden py-8 px-6 bg-[#efefef]')}>
+      <div className={cx(variant === 'default' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]', variant === 'centered' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]')}>
       </div>
     </div>
   );
 };
 
-const FeatureRowReversedCVA = cva('rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between', {
+const FeatureRowReversedCVA = cva('border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between', {
   variants: {
   "showButton": {
     "true": "",
@@ -69,11 +69,11 @@ const FeatureRowReversedCVA = cva('rounded-[0rem] border-t border-l-0 border-r-0
   compoundVariants: [
   {
     "variant": "default",
-    "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-start"
+    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-start"
   },
   {
     "variant": "centered",
-    "className": "rounded-[0rem] border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex h-[39.25rem] py-16 px-0 gap-4 justify-between items-center"
+    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-4 justify-between items-center"
   }
 ]
 })

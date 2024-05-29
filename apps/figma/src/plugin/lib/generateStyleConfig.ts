@@ -6,7 +6,7 @@ import { fontFamily } from './fontFamily'
 import { fontSize } from './fontSize'
 import { fontStyle } from './fontStyle'
 import { fontWeight } from './fontWeight'
-import StyleConfig, { Styles } from './interfaces'
+import StyleConfig, { Styles, units } from './interfaces'
 import { letterSpacing } from './letterSpacing'
 import { lineHeight } from './lineHeight'
 import { padding } from './padding'
@@ -318,17 +318,42 @@ export function generateStyleConfig(
       }
     }
 
-    styleConfig.borderRadius = borderRadius(styleConfig.borderRadius, node)
+    if (node.bottomLeftRadius !== 0 || node.topLeftRadius !== 0 || node.topRightRadius !== 0 || node.bottomRightRadius !== 0) {
+      styleConfig.borderRadius = borderRadius(styleConfig.borderRadius, node)
+    }
+
+    if (node.type === 'FRAME' && node.children.length === 0) {
+      styleConfig['maxHeight'] = {
+        ...styleConfig['maxHeight'],
+        value: node.height.toFixed(0),
+        unit: 'px',
+        defined: true,
+      }
+
+      styleConfig['maxWidth'] = {
+        ...styleConfig['maxWidth'],
+        value: node.width.toFixed(0),
+        unit: 'px',
+        defined: true,
+      }
+
+      styleConfig['width'] = {
+        ...styleConfig['width'],
+        value: '100',
+        unit: units['PERCENT'],
+        defined: true,
+      }
+    }
 
     if ((node.type !== 'FRAME' && node.type !== 'INSTANCE') || (node.type === 'FRAME' && node.layoutMode === 'NONE')) {
-      if (node['primaryAxisSizingMode'] === 'FIXED') {
-        styleConfig['height'] = {
-          ...styleConfig['height'],
-          value: node.height.toFixed(0),
-          unit: 'px',
-          defined: true,
-        }
-      }
+      // if (node['primaryAxisSizingMode'] === 'FIXED' && node.parent.type !== 'PAGE') {
+      //   styleConfig['height'] = {
+      //     ...styleConfig['height'],
+      //     value: node.height.toFixed(0),
+      //     unit: 'px',
+      //     defined: true,
+      //   }
+      // }
 
       if (node['counterAxisSizingMode'] === 'FIXED') {
         styleConfig['width'] = {
@@ -580,6 +605,95 @@ export function generateStyleConfig(
         styleConfig.borderStyle = borderStyle(styleConfig.borderStyle, node)
       }
     }
+
+
+    if (node.layoutMode !== 'NONE') {
+      styleConfig['display'] = {
+        ...styleConfig['display'],
+        value: 'flex',
+        defined: true,
+      }
+
+      if (node.layoutMode === 'VERTICAL') {
+        styleConfig.flexDirection = {
+          ...styleConfig.flexDirection,
+          value: 'column',
+          defined: true,
+        }
+      } else {
+        styleConfig.flexDirection = {
+          ...styleConfig.flexDirection,
+          value: 'row',
+          defined: true,
+        }
+      }
+
+      if (node.counterAxisAlignItems === 'CENTER') {
+        styleConfig.alignItems = {
+          ...styleConfig.alignItems,
+          value: 'center',
+          defined: true,
+        }
+      } else if (node.counterAxisAlignItems === 'MAX') {
+        styleConfig.alignItems = {
+          ...styleConfig.alignItems,
+          value: 'flex-end',
+          defined: true,
+        }
+      } else if (node.counterAxisAlignItems === 'MIN') {
+        styleConfig.alignItems = {
+          ...styleConfig.alignItems,
+          value: 'flex-start',
+          defined: true,
+        }
+      } else if (node.counterAxisAlignItems === 'BASELINE') {
+        styleConfig.alignItems = {
+          ...styleConfig.alignItems,
+          value: 'baseline',
+          defined: true,
+        }
+      } else if (node.counterAxisAlignItems === 'SPACE_BETWEEN') {
+        styleConfig.alignItems = {
+          ...styleConfig.alignItems,
+          value: 'space-between',
+          defined: true,
+        }
+      }
+
+
+      if (node.primaryAxisAlignItems === 'CENTER') {
+        styleConfig.justifyContent = {
+          ...styleConfig.justifyContent,
+          value: 'center',
+          defined: true,
+        }
+      } else if (node.primaryAxisAlignItems === 'MAX') {
+        styleConfig.justifyContent = {
+          ...styleConfig.justifyContent,
+          value: 'flex-end',
+          defined: true,
+        }
+      } else if (node.primaryAxisAlignItems === 'MIN') {
+        styleConfig.justifyContent = {
+          ...styleConfig.justifyContent,
+          value: 'flex-start',
+          defined: true,
+        }
+      } else if (node.primaryAxisAlignItems === 'SPACE_BETWEEN') {
+        styleConfig.justifyContent = {
+          ...styleConfig.justifyContent,
+          value: 'space-between',
+          defined: true,
+        }
+      } else if (node.primaryAxisAlignItems === 'SPACE_AROUND') {
+        styleConfig.justifyContent = {
+          ...styleConfig.justifyContent,
+          value: 'space-around',
+          defined: true,
+        }
+      }
+    }
+
 
     if (node.type === 'COMPONENT_SET' && node.children.length) {
       styleConfig['display'] = {

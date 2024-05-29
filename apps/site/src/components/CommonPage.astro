@@ -92,7 +92,9 @@ console.log('visualEditingEnabled', visualEditingEnabled)
     <Favicon />
   </head>
   <body>
-    <slot />
+    <div class="flex flex-col items-center justify-center">
+      <slot />
+    </div>
     <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
   </body>
 </html>

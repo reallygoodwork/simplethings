@@ -1,6 +1,6 @@
 export const FeatureCard = {
   "config": {},
-  "updated": "2024-05-28T15:29:19.534Z",
+  "updated": "2024-05-29T16:24:17.560Z",
   "name": "FeatureCard",
   "dependencies": [],
   "description": "To be added",
@@ -11,16 +11,16 @@ export const FeatureCard = {
   "typeScriptType": "HTMLDivElement",
   "styles": {
     "display": "flex",
-    "height": "576px",
     "maxWidth": "1440px",
     "padding": "16px",
     "overflow": "hidden",
+    "flexDirection": "row",
     "justifyContent": "flex-start",
     "alignItems": "flex-start",
     "gap": "16px",
     "borderRadius": "8px"
   },
-  "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start",
+  "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start",
   "componentProps": [
     {
       "figmaRef": "showLogo#358:18",
@@ -53,12 +53,15 @@ export const FeatureCard = {
   ],
   "children": {
     "content": {
+      "name": "content",
       "boundProps": [],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": false,
       "variants": [
         {
+          "name": "content",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -72,10 +75,13 @@ export const FeatureCard = {
             "alignItems": "flex-start"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex p-8 flex-col justify-between items-start",
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "content",
           "elementType": "div",
           "boundProps": [],
           "properties": {
@@ -89,12 +95,16 @@ export const FeatureCard = {
             "alignItems": "flex-start"
           },
           "isText": false,
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "flex p-8 flex-col justify-between items-start",
+          "textStyleClass": "",
+          "componentProps": []
         }
       ],
+      "componentProps": [],
       "children": {
         "mejuriLogo": {
+          "name": "mejuriLogo",
           "boundProps": [
             {
               "figmaRef": "visible",
@@ -104,9 +114,11 @@ export const FeatureCard = {
           ],
           "elementType": "div",
           "isText": false,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "variants": [
             {
+              "name": "mejuriLogo",
               "elementType": "div",
               "boundProps": [
                 {
@@ -121,15 +133,26 @@ export const FeatureCard = {
               "styles": {
                 "display": "flex",
                 "padding": "0px 0px 64px 0px",
+                "flexDirection": "row",
                 "justifyContent": "flex-start",
                 "alignItems": "flex-start",
                 "gap": "11px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start",
-              "textStyleClass": ""
+              "isComponent": false,
+              "className": "flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start",
+              "textStyleClass": "",
+              "componentProps": [
+                {
+                  "figmaPropType": "visible",
+                  "figmaRef": "showLogo#358:18",
+                  "name": "showLogo",
+                  "type": "boolean"
+                }
+              ]
             },
             {
+              "name": "mejuriLogo",
               "elementType": "div",
               "boundProps": [
                 {
@@ -144,59 +167,93 @@ export const FeatureCard = {
               "styles": {
                 "display": "flex",
                 "padding": "0px 0px 64px 0px",
+                "flexDirection": "row",
                 "justifyContent": "flex-start",
                 "alignItems": "flex-start",
                 "gap": "11px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex pt-0 pb-16 px-0 gap-[0.6875rem] justify-start items-start",
-              "textStyleClass": ""
+              "isComponent": false,
+              "className": "flex pt-0 pb-16 px-0 flex-row gap-[0.6875rem] justify-start items-start",
+              "textStyleClass": "",
+              "componentProps": [
+                {
+                  "figmaPropType": "visible",
+                  "figmaRef": "showLogo#358:18",
+                  "name": "showLogo",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "componentProps": [
+            {
+              "figmaPropType": "visible",
+              "figmaRef": "showLogo#358:18",
+              "name": "showLogo",
+              "type": "boolean"
             }
           ],
           "children": {
             "vector": {
+              "name": "vector",
               "boundProps": [],
               "elementType": "div",
               "isText": false,
+              "isComponent": false,
               "hasBackgroundImage": false,
               "variants": [
                 {
+                  "name": "vector",
                   "elementType": "div",
                   "boundProps": [],
                   "properties": {
                     "variant": "default"
                   },
                   "styles": {
+                    "display": "flex",
+                    "flexDirection": "row",
                     "background": "#e4ebf6"
                   },
                   "isText": false,
-                  "className": "bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]bg-[#e4ebf6]",
-                  "textStyleClass": ""
+                  "isComponent": false,
+                  "className": "flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]flex flex-row bg-[#e4ebf6]",
+                  "textStyleClass": "",
+                  "componentProps": []
                 },
                 {
+                  "name": "vector",
                   "elementType": "div",
                   "boundProps": [],
                   "properties": {
                     "variant": "light"
                   },
                   "styles": {
+                    "display": "flex",
+                    "flexDirection": "row",
                     "background": "#1c1b17"
                   },
                   "isText": false,
-                  "className": "bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]bg-[#1c1b17]",
-                  "textStyleClass": ""
+                  "isComponent": false,
+                  "className": "flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]flex flex-row bg-[#1c1b17]",
+                  "textStyleClass": "",
+                  "componentProps": []
                 }
-              ]
+              ],
+              "componentProps": []
             }
           }
         },
         "lockup": {
+          "name": "lockup",
           "boundProps": [],
           "elementType": "div",
           "isText": false,
+          "isComponent": false,
           "hasBackgroundImage": false,
           "variants": [
             {
+              "name": "lockup",
               "elementType": "div",
               "boundProps": [],
               "properties": {
@@ -210,10 +267,13 @@ export const FeatureCard = {
                 "gap": "24px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start",
-              "textStyleClass": ""
+              "isComponent": false,
+              "className": "flex p-0 flex-col gap-6 justify-start items-start",
+              "textStyleClass": "",
+              "componentProps": []
             },
             {
+              "name": "lockup",
               "elementType": "div",
               "boundProps": [],
               "properties": {
@@ -227,12 +287,16 @@ export const FeatureCard = {
                 "gap": "24px"
               },
               "isText": false,
-              "className": "rounded-[0rem] flex p-0 flex-col gap-6 justify-start items-start",
-              "textStyleClass": ""
+              "isComponent": false,
+              "className": "flex p-0 flex-col gap-6 justify-start items-start",
+              "textStyleClass": "",
+              "componentProps": []
             }
           ],
+          "componentProps": [],
           "children": {
             "quote": {
+              "name": "quote",
               "boundProps": [
                 {
                   "figmaRef": "characters",
@@ -242,10 +306,12 @@ export const FeatureCard = {
               ],
               "elementType": "p",
               "isText": true,
+              "isComponent": false,
               "hasBackgroundImage": false,
               "textValue": "Velit commodo ipsum nulla labore incididunt ullamco ad voluptate cupidatat commodo. Veniam ex ad magna id. Adipisicing quis ut incididunt elit. Occaecat exercitation id aliqua exercitation eu laborum tempor nisi est aliqua enim ex voluptate.",
               "variants": [
                 {
+                  "name": "quote",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -258,8 +324,10 @@ export const FeatureCard = {
                     "variant": "default"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
                     "width": "600px",
+                    "flexDirection": "row",
                     "color": "#ffffff",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -267,10 +335,20 @@ export const FeatureCard = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-white leading-8 h-auto w-[37.5rem]",
-                  "textStyleClass": "st-subtitle"
+                  "isComponent": false,
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-white leading-8 flex h-auto w-[37.5rem] flex-row",
+                  "textStyleClass": "st-subtitle text-white text-left",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "Quote#357:0",
+                      "name": "quote",
+                      "type": "string"
+                    }
+                  ]
                 },
                 {
+                  "name": "quote",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -283,8 +361,10 @@ export const FeatureCard = {
                     "variant": "light"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
                     "width": "600px",
+                    "flexDirection": "row",
                     "color": "#1c1b17",
                     "fontSize": "24px",
                     "fontWeight": "500",
@@ -292,12 +372,30 @@ export const FeatureCard = {
                     "lineHeight": "32px"
                   },
                   "isText": true,
-                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17] leading-8 h-auto w-[37.5rem]",
-                  "textStyleClass": "st-subtitle"
+                  "isComponent": false,
+                  "className": "font-medium text-2xl font-[Satoshi Variable] text-[#1c1b17] leading-8 flex h-auto w-[37.5rem] flex-row",
+                  "textStyleClass": "st-subtitle text-[#1c1b17] text-left",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "Quote#357:0",
+                      "name": "quote",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ],
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Quote#357:0",
+                  "name": "quote",
+                  "type": "string"
                 }
               ]
             },
             "attribution": {
+              "name": "attribution",
               "boundProps": [
                 {
                   "figmaRef": "characters",
@@ -307,10 +405,12 @@ export const FeatureCard = {
               ],
               "elementType": "p",
               "isText": true,
+              "isComponent": false,
               "hasBackgroundImage": false,
               "textValue": "lorem ipsum dolor sit",
               "variants": [
                 {
+                  "name": "attribution",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -323,7 +423,9 @@ export const FeatureCard = {
                     "variant": "default"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
+                    "flexDirection": "row",
                     "color": "#aabca3",
                     "fontSize": "16px",
                     "fontWeight": "500",
@@ -331,10 +433,20 @@ export const FeatureCard = {
                     "lineHeight": "22px"
                   },
                   "isText": true,
-                  "className": "font-medium text-base font-[Satoshi Variable] text-[#aabca3] leading-[1.375rem] h-auto",
-                  "textStyleClass": "st-body"
+                  "isComponent": false,
+                  "className": "font-medium text-base font-[Satoshi Variable] text-[#aabca3] leading-[1.375rem] flex h-auto flex-row",
+                  "textStyleClass": "st-body text-[#aabca3] text-left",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "Attribution#357:5",
+                      "name": "attribution",
+                      "type": "string"
+                    }
+                  ]
                 },
                 {
+                  "name": "attribution",
                   "elementType": "p",
                   "boundProps": [
                     {
@@ -347,7 +459,9 @@ export const FeatureCard = {
                     "variant": "light"
                   },
                   "styles": {
+                    "display": "flex",
                     "height": "auto",
+                    "flexDirection": "row",
                     "color": "#1c1b1799",
                     "fontSize": "16px",
                     "fontWeight": "500",
@@ -355,8 +469,25 @@ export const FeatureCard = {
                     "lineHeight": "22px"
                   },
                   "isText": true,
-                  "className": "font-medium text-base font-[Satoshi Variable] text-[#1c1b1799] leading-[1.375rem] h-auto",
-                  "textStyleClass": "st-body"
+                  "isComponent": false,
+                  "className": "font-medium text-base font-[Satoshi Variable] text-[#1c1b1799] leading-[1.375rem] flex h-auto flex-row",
+                  "textStyleClass": "st-body text-[#1c1b1799] text-left",
+                  "componentProps": [
+                    {
+                      "figmaPropType": "characters",
+                      "figmaRef": "Attribution#357:5",
+                      "name": "attribution",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ],
+              "componentProps": [
+                {
+                  "figmaPropType": "characters",
+                  "figmaRef": "Attribution#357:5",
+                  "name": "attribution",
+                  "type": "string"
                 }
               ]
             }
@@ -365,40 +496,63 @@ export const FeatureCard = {
       }
     },
     "asset": {
+      "name": "asset",
       "boundProps": [],
       "elementType": "div",
       "isText": false,
+      "isComponent": false,
       "hasBackgroundImage": true,
       "variants": [
         {
+          "name": "asset",
           "elementType": "div",
           "boundProps": [],
           "properties": {
             "variant": "default"
           },
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "520px",
+            "maxHeight": "544px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
           "isText": false,
-          "className": "rounded-lg p-0",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
+          "textStyleClass": "",
+          "componentProps": []
         },
         {
+          "name": "asset",
           "elementType": "div",
           "boundProps": [],
           "properties": {
             "variant": "light"
           },
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "520px",
+            "maxHeight": "544px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
           "isText": false,
-          "className": "rounded-lg p-0",
-          "textStyleClass": ""
+          "isComponent": false,
+          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center",
+          "textStyleClass": "",
+          "componentProps": []
         }
-      ]
+      ],
+      "componentProps": []
     }
   },
   "variantOptions": {
@@ -417,11 +571,11 @@ export const FeatureCard = {
   "compoundVariants": [
     {
       "variant": "default",
-      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]"
+      "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start bg-[#17332d]"
     },
     {
       "variant": "light",
-      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]"
+      "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start bg-[#f4f3f3]"
     }
   ],
   "variants": [
@@ -432,7 +586,7 @@ export const FeatureCard = {
       "styles": {
         "background": "#17332d"
       },
-      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#17332d]",
+      "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start bg-[#17332d]",
       "props": [
         {
           "name": "variant",
@@ -450,16 +604,23 @@ export const FeatureCard = {
             "justifyContent": "space-between",
             "alignItems": "flex-start"
           },
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start"
+          "className": "flex p-8 flex-col justify-between items-start"
         },
         {
           "name": "Asset",
           "isText": false,
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "520px",
+            "maxHeight": "544px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
-          "className": "rounded-lg p-0"
+          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center"
         }
       ]
     },
@@ -470,7 +631,7 @@ export const FeatureCard = {
       "styles": {
         "background": "#f4f3f3"
       },
-      "className": "rounded-lg flex h-[36rem] max-w-[90rem] overflow-hidden p-4 gap-4 justify-start items-start bg-[#f4f3f3]",
+      "className": "rounded-lg flex max-w-[90rem] overflow-hidden p-4 flex-row gap-4 justify-start items-start bg-[#f4f3f3]",
       "props": [
         {
           "name": "variant",
@@ -488,16 +649,23 @@ export const FeatureCard = {
             "justifyContent": "space-between",
             "alignItems": "flex-start"
           },
-          "className": "rounded-[0rem] flex p-8 flex-col justify-between items-start"
+          "className": "flex p-8 flex-col justify-between items-start"
         },
         {
           "name": "Asset",
           "isText": false,
           "styles": {
+            "display": "flex",
+            "width": "100%",
+            "maxWidth": "520px",
+            "maxHeight": "544px",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "alignItems": "center",
             "borderRadius": "8px",
             "object-fit": "cover"
           },
-          "className": "rounded-lg p-0"
+          "className": "rounded-lg flex max-w-[32.5rem] w-full p-0 flex-col justify-start items-center"
         }
       ]
     }

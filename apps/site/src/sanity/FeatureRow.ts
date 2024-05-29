@@ -60,5 +60,12 @@ export const FeatureRow = defineField({
       initialValue: "link",
       options: { list: ['primary', 'secondary', 'soft', 'link', 'solid'] }
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'FeatureRow',
+      }
+    },
+  }
 })

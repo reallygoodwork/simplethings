@@ -1,4 +1,4 @@
-// Generated with Anthropocene
+// Generated with Dave
 // 
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
@@ -26,8 +26,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   showTrailingIcon = false,
   showLeadingIcon = false,
   buttonText = `Learn More`,
-  size = `sm`,
-  purpose = `link`,
+  size = 'sm',
+  purpose = 'link',
 }) => {
   return (
     <div className={cx('rounded-[0rem] flex pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center', className)}>

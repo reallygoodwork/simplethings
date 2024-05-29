@@ -23,7 +23,7 @@ const Components = [
   Card,
   FeatureRow,
   FeatureRowReversed,
-  // CardGrid
+  CardGrid
 ]
 
 const reactLibraryPath = path.join(__dirname, '..', 'ui-react', 'src');

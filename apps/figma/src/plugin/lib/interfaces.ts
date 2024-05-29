@@ -682,6 +682,16 @@ export const maxWidth: StyleInterface = {
   canBeInherited: false,
 }
 
+export const maxHeight: StyleInterface = {
+  value: 'auto',
+  unit: 'auto',
+  type: 'NUMBER',
+  usage: 'ALL',
+  default: 'auto',
+  defined: false,
+  canBeInherited: false,
+}
+
 export const objectFit: StyleInterface = {
   value: 'fill',
   type: 'STRING',
@@ -853,6 +863,7 @@ export default {
   height,
   width,
   maxWidth,
+  maxHeight,
   padding,
   overflow,
   flexDirection,

@@ -1,7 +1,7 @@
+import { hasChildren } from '../utils/hasChildren';
 import { camelize } from './utils'
 
 export async function generateComponentProps(node: SceneNode) {
-
 
   const props = []
 
@@ -21,7 +21,7 @@ export async function generateComponentProps(node: SceneNode) {
       });
     }
 
-    if (node.children) {
+    if (hasChildren(node)) {
       for (const child of node.children) {
         if (child.type === 'INSTANCE') {
           const parent = await (child as InstanceNode).getMainComponentAsync();
@@ -48,8 +48,6 @@ export async function generateComponentProps(node: SceneNode) {
   }
 
   await processNode(node);
-
-  console.log(props)
 
   return props.filter((value, index, self) =>
     index === self.findIndex((t) => (

@@ -17,5 +17,12 @@ export const Hero = defineField({
       type: 'string',
       initialValue: "It’s giving green.",
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Hero',
+      }
+    },
+  }
 })

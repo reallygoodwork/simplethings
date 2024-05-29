@@ -1,4 +1,4 @@
-// Generated with Anthropocene
+// Generated with Dave
 // 2024-05-28T15:25:35.203Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
@@ -18,7 +18,7 @@ export const Badge: React.FC<BadgeProps> = ({
   badgeText = `Badge`,
   showClose = true,
   showDot = true,
-  theme = `primary`,
+  theme = 'primary',
 }) => {
   return (
     <div className={BadgeCVA({showClose, showDot, theme, className })}>

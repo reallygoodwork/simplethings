@@ -35,5 +35,12 @@ export const Button = defineField({
       initialValue: "primary",
       options: { list: ['primary', 'secondary', 'soft', 'link', 'solid'] }
     }),
-  ]
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Button',
+      }
+    },
+  }
 })

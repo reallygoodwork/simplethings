@@ -1,12 +1,14 @@
 export const Hero = {
   "name": "Hero",
   "styles": {
-    "height": "380px",
+    "display": "flex",
     "padding": "10px",
-    "overflow": "hidden",
+    "flexDirection": "row",
+    "justifyContent": "center",
+    "alignItems": "flex-start",
     "background": "#17332d"
   },
-  "className": "rounded-[0rem] h-[23.75rem] overflow-hidden p-2.5 bg-[#17332d]",
+  "className": "w-full flex p-2.5 flex-row justify-center items-start bg-[#17332d]",
   "isText": false,
   "elementType": "div",
   "isComponent": true,
@@ -32,10 +34,14 @@ export const Hero = {
     {
       "name": "Container",
       "styles": {
+        "display": "flex",
         "maxWidth": "1440px",
-        "padding": "128px 24px 80px 24px"
+        "padding": "128px 24px 80px 24px",
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "alignItems": "center"
       },
-      "className": "rounded-[0rem] max-w-[90rem] pt-32 pb-20 px-6",
+      "className": "flex max-w-[90rem] pt-32 pb-20 px-6 flex-col justify-start items-center",
       "isText": false,
       "elementType": "div",
       "isComponent": false,
@@ -51,9 +57,9 @@ export const Hero = {
             "flexDirection": "column",
             "justifyContent": "flex-start",
             "alignItems": "center",
-            "gap": "16px"
+            "gap": "24px"
           },
-          "className": "rounded-[0rem] flex max-w-[37.5rem] p-0 flex-col gap-4 justify-start items-center",
+          "className": "flex max-w-[37.5rem] p-0 flex-col gap-6 justify-start items-center",
           "isText": false,
           "elementType": "div",
           "isComponent": false,
@@ -64,7 +70,9 @@ export const Hero = {
             {
               "name": "Title",
               "styles": {
+                "display": "flex",
                 "height": "auto",
+                "flexDirection": "row",
                 "color": "#ffffff",
                 "fontSize": "72px",
                 "fontWeight": "500",
@@ -73,7 +81,7 @@ export const Hero = {
                 "textAlign": "CENTER",
                 "letterSpacing": "-1px"
               },
-              "className": "font-medium text-7xl font-[Satoshi Variable] text-white leading-none tracking-[-1px] h-auto",
+              "className": "font-medium text-7xl font-[Satoshi Variable] text-white leading-none tracking-[-1px] flex h-auto flex-row",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
@@ -85,7 +93,7 @@ export const Hero = {
                   "type": "string"
                 }
               ],
-              "textStyleClass": "st-hero",
+              "textStyleClass": "st-hero text-white text-center",
               "boundProps": [
                 {
                   "figmaRef": "characters",
@@ -98,7 +106,9 @@ export const Hero = {
             {
               "name": "Subtitle",
               "styles": {
+                "display": "flex",
                 "height": "auto",
+                "flexDirection": "row",
                 "color": "#aabca3",
                 "fontSize": "24px",
                 "fontWeight": "500",
@@ -106,7 +116,7 @@ export const Hero = {
                 "lineHeight": "32px",
                 "textAlign": "CENTER"
               },
-              "className": "font-medium text-2xl font-[Satoshi Variable] text-[#aabca3] leading-8 h-auto",
+              "className": "font-medium text-2xl font-[Satoshi Variable] text-[#aabca3] leading-8 flex h-auto flex-row",
               "isText": true,
               "elementType": "p",
               "isComponent": false,
@@ -118,7 +128,7 @@ export const Hero = {
                   "type": "string"
                 }
               ],
-              "textStyleClass": "st-subtitle",
+              "textStyleClass": "st-subtitle text-[#aabca3] text-center",
               "boundProps": [
                 {
                   "figmaRef": "characters",

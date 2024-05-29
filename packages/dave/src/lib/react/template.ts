@@ -1,4 +1,4 @@
-export const templateSource = `// Generated with Anthropocene
+export const templateSource = `// Generated with Dave
 // {{updated}}
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
@@ -24,7 +24,7 @@ export interface {{name}}Props extends React.HTMLAttributes<{{typeScriptType}}>{
 export const {{name}}: React.FC<{{name}}Props> = ({
   className = '',
   {{#each componentProps}}
-  {{name}} = {{#ifEquals tsType 'boolean'}}{{defaultValue}}{{else}}\`{{defaultValue}}\`{{/ifEquals}},
+  {{name}} = {{#renderPropHelper this}}{{/renderPropHelper}},
   {{/each}}
 }) => {
   return (
@@ -75,6 +75,12 @@ export const DomTreePartial = `{{#if children}}
   {{> ComponentPartial}}
 : null}
   {{/boundPropsVisible}}
+  {{else}}
+  {{#shouldIterate this.isIterable}}
+{ {{~renderMap this.name}}.map(props => <{{this.name}} {...props} />) }
+  {{else}}
+  {{> ComponentPartial}}
+  {{/shouldIterate}}
   {{/hasBoundProps}}
 {{else}}
   {{#hasBoundProps this.boundProps}}
