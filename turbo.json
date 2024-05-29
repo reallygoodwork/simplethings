@@ -3,6 +3,7 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
+      "env": ["SANITY_STUDIO_PREVIEW_URL", "SANITY_VISUAL_EDITING_ENABLED"],
       "dependsOn": ["^build", "^build:dave", "^build:components"],
       "outputs": [".astro/**", "!.astro/cache/**", "dist/**"]
     },
