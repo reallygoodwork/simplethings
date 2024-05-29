@@ -3,19 +3,27 @@ import CommonPage from '@components/CommonPage.astro'
 import ComponentMap from '@components/ComponentMap.astro'
 import { sanityClient } from 'sanity:client'
 
+export const prerender = true
+
 export async function getStaticPaths() {
   const pages = await sanityClient.fetch(`*[_type == "page"]`)
 
-  return pages.map(({ slug, title, content, seoTitle, seoKeywords, seoDescription }) => {
+  return pages.map(({ slug, pageSlug }) => {
     return {
       params: { slug },
-      props: { title, content, seoTitle, seoKeywords, seoDescription },
+      props: { pageSlug },
     }
   })
 }
 
-const { slug } = Astro.params
-const { title, content = [], seoTitle, seoKeywords, seoDescription } = Astro.props
+const { pageSlug } = Astro.props
+const {
+  title,
+  content = [],
+  seoTitle,
+  seoKeywords,
+  seoDescription,
+} = await sanityClient.fetch(`*[_type == "page" && pageSlug == $pageSlug][0]`, { pageSlug })
 ---
 
 <CommonPage title={seoTitle || title} description={seoDescription}>

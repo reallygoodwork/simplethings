@@ -1,7 +1,7 @@
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
-import { presentationTool } from 'sanity/presentation'
+import { presentationTool, defineDocuments } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
 
 import { sanityComponents } from './src/sanity'
@@ -18,6 +18,14 @@ export default defineConfig({
     visionTool(),
     presentationTool({
       previewUrl: SANITY_STUDIO_PREVIEW_URL,
+      resolve: {
+        mainDocuments: defineDocuments([
+          {
+            route: '/:slug',
+            filter: `_type == "page" && slug == $slug`
+          }
+        ])
+      }
     }),
     vercelDeployTool(),
   ],

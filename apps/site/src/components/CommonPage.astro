@@ -7,7 +7,7 @@ import '@simplethings/react/styles.css'
 // import '@simplethings/tailwind-config/simplethings.css'
 
 import Favicon from '@components/Favicon.astro'
-import { VisualEditing } from '@sanity/astro/visual-editing'
+import VisualEditing from '@components/visualEditing/VisualEditor.astro'
 
 const {
   title = 'Really Good Work Inc.',
@@ -94,6 +94,6 @@ const visualEditingEnabled = import.meta.env.SANITY_VISUAL_EDITING_ENABLED == 't
     <div class="flex flex-col items-center justify-center">
       <slot />
     </div>
-    <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
+    <VisualEditing enabled={true} zIndex={1000} />
   </body>
 </html>
