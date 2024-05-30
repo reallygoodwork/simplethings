@@ -1,6 +1,6 @@
 export const FeatureRow = {
   "config": {},
-  "updated": "2024-05-29T15:14:53.656Z",
+  "updated": "2024-05-30T13:05:33.733Z",
   "name": "FeatureRow",
   "dependencies": [
     {
@@ -16,6 +16,7 @@ export const FeatureRow = {
   "typeScriptType": "HTMLDivElement",
   "styles": {
     "display": "flex",
+    "maxWidth": "1440px",
     "padding": "64px 0px 64px 0px",
     "flexDirection": "row",
     "justifyContent": "flex-start",
@@ -24,7 +25,8 @@ export const FeatureRow = {
     "borderWidth": "1px 0px 1px 0px",
     "borderStyle": "solid"
   },
-  "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start",
+  "hasImage": false,
+  "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start",
   "componentProps": [
     {
       "figmaRef": "CTA Text#168:13",
@@ -53,6 +55,18 @@ export const FeatureRow = {
         "alternate",
         "centeredAlt"
       ]
+    },
+    {
+      "figmaRef": "image",
+      "name": "imageURI",
+      "tsType": "string",
+      "defaultValue": ""
+    },
+    {
+      "figmaRef": "string",
+      "name": "imageAlt",
+      "tsType": "string",
+      "defaultValue": "Alt Text Missing"
     },
     {
       "figmaRef": "Show Trailing Icon#10:5",
@@ -102,7 +116,18 @@ export const FeatureRow = {
   "children": {
     "media": {
       "name": "media",
-      "boundProps": [],
+      "boundProps": [
+        {
+          "figmaRef": "image",
+          "name": "imageURI",
+          "value": "imageURI"
+        },
+        {
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "value": "Alt Text Missing"
+        }
+      ],
       "elementType": "div",
       "isText": false,
       "isComponent": false,
@@ -111,7 +136,18 @@ export const FeatureRow = {
         {
           "name": "media",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "alternate"
           },
@@ -132,12 +168,37 @@ export const FeatureRow = {
           "isComponent": false,
           "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         },
         {
           "name": "media",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "centeredAlt"
           },
@@ -158,10 +219,38 @@ export const FeatureRow = {
           "isComponent": false,
           "className": "rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         }
       ],
-      "componentProps": []
+      "componentProps": [
+        {
+          "figmaPropType": "image",
+          "figmaRef": "image",
+          "name": "imageURI",
+          "type": "string"
+        },
+        {
+          "figmaPropType": "string",
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "type": "string"
+        }
+      ],
+      "hasImage": true
     },
     "content": {
       "name": "content",
@@ -189,7 +278,8 @@ export const FeatureRow = {
           "isComponent": false,
           "className": "flex p-0 flex-col gap-[19.5rem] justify-start items-start",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [],
+          "hasImage": false
         },
         {
           "name": "content",
@@ -209,10 +299,12 @@ export const FeatureRow = {
           "isComponent": false,
           "className": "flex p-0 flex-col gap-4 justify-center items-start",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [],
+          "hasImage": false
         }
       ],
       "componentProps": [],
+      "hasImage": false,
       "children": {
         "title": {
           "name": "title",
@@ -263,7 +355,8 @@ export const FeatureRow = {
                   "name": "title",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "title",
@@ -299,7 +392,8 @@ export const FeatureRow = {
                   "name": "title",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           ],
           "componentProps": [
@@ -309,7 +403,8 @@ export const FeatureRow = {
               "name": "title",
               "type": "string"
             }
-          ]
+          ],
+          "hasImage": false
         },
         "cta": {
           "name": "cta",
@@ -337,7 +432,8 @@ export const FeatureRow = {
               "isComponent": false,
               "className": "flex p-0 flex-col gap-4 justify-start items-start",
               "textStyleClass": "",
-              "componentProps": []
+              "componentProps": [],
+              "hasImage": false
             },
             {
               "name": "cta",
@@ -357,10 +453,12 @@ export const FeatureRow = {
               "isComponent": false,
               "className": "flex p-0 flex-col gap-4 justify-start items-start",
               "textStyleClass": "",
-              "componentProps": []
+              "componentProps": [],
+              "hasImage": false
             }
           ],
           "componentProps": [],
+          "hasImage": false,
           "children": {
             "ctaText": {
               "name": "ctaText",
@@ -412,7 +510,8 @@ export const FeatureRow = {
                       "name": "cTAText",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 },
                 {
                   "name": "ctaText",
@@ -449,7 +548,8 @@ export const FeatureRow = {
                       "name": "cTAText",
                       "type": "string"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 }
               ],
               "componentProps": [
@@ -459,7 +559,8 @@ export const FeatureRow = {
                   "name": "cTAText",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             "Button": {
               "name": "Button",
@@ -537,7 +638,8 @@ export const FeatureRow = {
                       "type": "string",
                       "value": "Link"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 },
                 {
                   "name": "Button",
@@ -601,7 +703,8 @@ export const FeatureRow = {
                       "type": "string",
                       "value": "Link"
                     }
-                  ]
+                  ],
+                  "hasImage": false
                 }
               ],
               "componentProps": [
@@ -640,7 +743,8 @@ export const FeatureRow = {
                   "type": "string",
                   "value": "Link"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           }
         }
@@ -663,11 +767,11 @@ export const FeatureRow = {
   "compoundVariants": [
     {
       "variant": "alternate",
-      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-start"
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-start"
     },
     {
       "variant": "centeredAlt",
-      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-center"
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-center"
     }
   ],
   "variants": [
@@ -678,7 +782,7 @@ export const FeatureRow = {
       "styles": {
         "alignItems": "flex-start"
       },
-      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-start",
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-start",
       "props": [
         {
           "name": "variant",
@@ -725,7 +829,7 @@ export const FeatureRow = {
       "styles": {
         "alignItems": "center"
       },
-      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-center",
+      "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-center",
       "props": [
         {
           "name": "variant",

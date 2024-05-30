@@ -1,4 +1,7 @@
 export const Hero = {
+  "hasImage": false,
+  "isIterable": false,
+  "updated": "2024-05-30T00:03:37.573Z",
   "name": "Hero",
   "styles": {
     "display": "flex",
@@ -32,6 +35,9 @@ export const Hero = {
   "elementAttributes": {},
   "children": [
     {
+      "hasImage": false,
+      "isIterable": false,
+      "updated": "2024-05-30T00:03:37.574Z",
       "name": "Container",
       "styles": {
         "display": "flex",
@@ -50,6 +56,9 @@ export const Hero = {
       "boundProps": [],
       "children": [
         {
+          "hasImage": false,
+          "isIterable": false,
+          "updated": "2024-05-30T00:03:37.574Z",
           "name": "Content",
           "styles": {
             "display": "flex",
@@ -68,6 +77,9 @@ export const Hero = {
           "boundProps": [],
           "children": [
             {
+              "hasImage": false,
+              "isIterable": false,
+              "updated": "2024-05-30T00:03:37.575Z",
               "name": "Title",
               "styles": {
                 "display": "flex",
@@ -104,6 +116,9 @@ export const Hero = {
               "textValue": "It’s giving green."
             },
             {
+              "hasImage": false,
+              "isIterable": false,
+              "updated": "2024-05-30T00:03:37.575Z",
               "name": "Subtitle",
               "styles": {
                 "display": "flex",

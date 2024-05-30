@@ -1,5 +1,5 @@
 // Generated with Dave
-// 2024-05-28T23:33:03.137Z
+// 2024-05-30T00:02:31.694Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -11,6 +11,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement>, Variant
   title: string;
   showText: boolean;
   variant: 'default' | 'noBottom' | 'noPadding';
+  imageURI: string;
+  imageAlt: string;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -19,6 +21,8 @@ export const Card: React.FC<CardProps> = ({
   title = `You Believe in Authority`,
   showText = true,
   variant = 'default',
+  imageURI = ``,
+  imageAlt = `Alt Text Missing`,
 }) => {
   return (
     <div className={CardCVA({showText, variant, className })}>
@@ -42,8 +46,10 @@ export const Card: React.FC<CardProps> = ({
           </p>
         </div>
       : null}
-      <div className={cx(variant === 'default' && 'flex h-[25.75rem] w-[37.5rem] flex-row', variant === 'noBottom' && 'flex h-[25.75rem] w-[37.5rem] flex-row', variant === 'noPadding' && 'flex h-[25.75rem] w-[37.5rem] flex-row')}>
-      </div>
+      
+        <div className={cx(variant === 'default' && 'flex h-[25.75rem] w-[37.5rem] flex-row', variant === 'noBottom' && 'flex h-[25.75rem] w-[37.5rem] flex-row', variant === 'noPadding' && 'flex h-[25.75rem] w-[37.5rem] flex-row')}>
+          <img src={imageURI} alt={imageAlt} />
+        </div>
     </div>
   );
 };

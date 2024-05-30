@@ -1,6 +1,6 @@
 export const FeatureCard = {
   "config": {},
-  "updated": "2024-05-29T20:18:22.482Z",
+  "updated": "2024-05-30T00:03:00.014Z",
   "name": "FeatureCard",
   "dependencies": [],
   "description": "To be added",

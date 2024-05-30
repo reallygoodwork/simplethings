@@ -30,6 +30,17 @@ export const Card = defineField({
       initialValue: "default",
       options: { list: ['default', 'noBottom', 'noPadding'] }
     }),
+    defineField({
+      name: 'imageURI',
+      title: 'imageURI',
+      type: 'image',
+    }),
+    defineField({
+      name: 'imageAlt',
+      title: 'imageAlt',
+      type: 'string',
+      initialValue: "Alt Text Missing",
+    }),
   ],
   preview: {
     prepare() {

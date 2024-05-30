@@ -17,6 +17,17 @@ export const CardWithDescription = defineField({
       type: 'string',
       initialValue: "Qui occaecat amet adipisicing excepteur sit mollit anim culpa exercitation Lorem duis cupidatat laboris laboris exercitation.",
     }),
+    defineField({
+      name: 'imageURI',
+      title: 'imageURI',
+      type: 'image',
+    }),
+    defineField({
+      name: 'imageAlt',
+      title: 'imageAlt',
+      type: 'string',
+      initialValue: "Alt Text Missing",
+    }),
   ],
   preview: {
     prepare() {

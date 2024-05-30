@@ -283,8 +283,6 @@ const traverseChildren = async (
       componentProps: boundPropsArray,
     }
 
-    console.log(object)
-
     if (variantProperties) {
       object['variantProperties'] = variantProperties
     }
@@ -683,6 +681,17 @@ export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promi
         children: childrenList,
       }
     case 'INSTANCE':
+      if (spec.children.some((child) => child.name === 'image' || child.name === 'media')) {
+        boundPropsArray.push({
+          figmaRef: 'image',
+          name: 'imageURI',
+          value: 'imageURI',
+        }, {
+          figmaRef: 'string',
+          name: 'imageAlt',
+          value: 'Alt Text Missing',
+        })
+      }
       return {
         ...commonAttributes,
         name: transformString(spec.name),
@@ -721,6 +730,7 @@ export const generateSpec = async (spec: SceneNode, isIterable?: boolean): Promi
 const isAListOfComponents = (node: SceneNode): boolean => {
   if (!hasChildren(node)) return false
 
+  if (node.children.length === 0) return false
   if ((node.children as SceneNode[]).every((child) => child.type === 'INSTANCE')) {
     const id = node.children[0].id.split(':')[0]
     return node.children.every((child) => child.id.split(':')[0] === id)

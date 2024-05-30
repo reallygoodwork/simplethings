@@ -1,5 +1,5 @@
 // Generated with Dave
-// 2024-05-29T15:14:53.656Z
+// 2024-05-30T13:05:33.733Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -12,6 +12,8 @@ export interface FeatureRowProps extends React.HTMLAttributes<HTMLDivElement>, V
   title: string;
   showButton: boolean;
   variant: 'alternate' | 'centeredAlt';
+  imageURI: string;
+  imageAlt: string;
   showTrailingIcon: boolean;
   showLeadingIcon: boolean;
   buttonText: string;
@@ -25,6 +27,8 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
   title = `Set guardrails to prevent overspending`,
   showButton = true,
   variant = 'alternate',
+  imageURI = ``,
+  imageAlt = `Alt Text Missing`,
   showTrailingIcon = false,
   showLeadingIcon = false,
   buttonText = `Learn More`,
@@ -33,8 +37,10 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
 }) => {
   return (
     <div className={FeatureRowCVA({showButton, variant, className })}>
-      <div className={cx(variant === 'alternate' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]', variant === 'centeredAlt' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]')}>
-      </div>
+      
+        <div className={cx(variant === 'alternate' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]', variant === 'centeredAlt' && 'rounded-lg flex max-w-[35.5rem] w-full overflow-hidden py-8 px-6 flex-col justify-start items-start bg-[#efefef]')}>
+          <img src={imageURI} alt={imageAlt} />
+        </div>
       <div className={cx(variant === 'alternate' && 'flex p-0 flex-col gap-[19.5rem] justify-start items-start', variant === 'centeredAlt' && 'flex p-0 flex-col gap-4 justify-center items-start')}>
         <p className="st-large text-[#1c1b17] text-left">
           {title}
@@ -52,7 +58,7 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
   );
 };
 
-const FeatureRowCVA = cva('border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start', {
+const FeatureRowCVA = cva('border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start', {
   variants: {
   "showButton": {
     "true": "",
@@ -69,11 +75,11 @@ const FeatureRowCVA = cva('border-t border-l-0 border-r-0 border-b border-[#e2e2
   compoundVariants: [
   {
     "variant": "alternate",
-    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-start"
+    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-start"
   },
   {
     "variant": "centeredAlt",
-    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex py-16 px-0 flex-row gap-[9.75rem] justify-start items-center"
+    "className": "border-t border-l-0 border-r-0 border-b border-[#e2e2e2] flex max-w-[90rem] py-16 px-0 flex-row gap-[9.75rem] justify-start items-center"
   }
 ]
 })

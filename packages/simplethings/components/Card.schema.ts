@@ -1,6 +1,6 @@
 export const Card = {
   "config": {},
-  "updated": "2024-05-28T23:33:03.137Z",
+  "updated": "2024-05-30T00:02:31.694Z",
   "name": "Card",
   "dependencies": [],
   "description": "To be added",
@@ -19,6 +19,7 @@ export const Card = {
     "background": "#efefef",
     "borderRadius": "8px"
   },
+  "hasImage": false,
   "className": "rounded-lg flex overflow-hidden flex-col gap-4 justify-start items-center bg-[#efefef]",
   "componentProps": [
     {
@@ -49,6 +50,18 @@ export const Card = {
         "noBottom",
         "noPadding"
       ]
+    },
+    {
+      "figmaRef": "image",
+      "name": "imageURI",
+      "tsType": "string",
+      "defaultValue": ""
+    },
+    {
+      "figmaRef": "string",
+      "name": "imageAlt",
+      "tsType": "string",
+      "defaultValue": "Alt Text Missing"
     }
   ],
   "children": {
@@ -98,7 +111,8 @@ export const Card = {
               "name": "showText",
               "type": "boolean"
             }
-          ]
+          ],
+          "hasImage": false
         },
         {
           "name": "cardBody",
@@ -132,7 +146,8 @@ export const Card = {
               "name": "showText",
               "type": "boolean"
             }
-          ]
+          ],
+          "hasImage": false
         },
         {
           "name": "cardBody",
@@ -166,7 +181,8 @@ export const Card = {
               "name": "showText",
               "type": "boolean"
             }
-          ]
+          ],
+          "hasImage": false
         }
       ],
       "componentProps": [
@@ -177,6 +193,7 @@ export const Card = {
           "type": "boolean"
         }
       ],
+      "hasImage": false,
       "children": {
         "title": {
           "name": "title",
@@ -226,7 +243,8 @@ export const Card = {
                   "name": "title",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "title",
@@ -261,7 +279,8 @@ export const Card = {
                   "name": "title",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "title",
@@ -296,7 +315,8 @@ export const Card = {
                   "name": "title",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           ],
           "componentProps": [
@@ -306,7 +326,8 @@ export const Card = {
               "name": "title",
               "type": "string"
             }
-          ]
+          ],
+          "hasImage": false
         },
         "body": {
           "name": "body",
@@ -358,7 +379,8 @@ export const Card = {
                   "name": "body",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "body",
@@ -395,7 +417,8 @@ export const Card = {
                   "name": "body",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             },
             {
               "name": "body",
@@ -432,7 +455,8 @@ export const Card = {
                   "name": "body",
                   "type": "string"
                 }
-              ]
+              ],
+              "hasImage": false
             }
           ],
           "componentProps": [
@@ -442,13 +466,25 @@ export const Card = {
               "name": "body",
               "type": "string"
             }
-          ]
+          ],
+          "hasImage": false
         }
       }
     },
     "image": {
       "name": "image",
-      "boundProps": [],
+      "boundProps": [
+        {
+          "figmaRef": "image",
+          "name": "imageURI",
+          "value": "imageURI"
+        },
+        {
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "value": "Alt Text Missing"
+        }
+      ],
       "elementType": "div",
       "isText": false,
       "isComponent": false,
@@ -457,7 +493,18 @@ export const Card = {
         {
           "name": "image",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "default"
           },
@@ -472,12 +519,37 @@ export const Card = {
           "isComponent": false,
           "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         },
         {
           "name": "image",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "noBottom"
           },
@@ -492,12 +564,37 @@ export const Card = {
           "isComponent": false,
           "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         },
         {
           "name": "image",
           "elementType": "div",
-          "boundProps": [],
+          "boundProps": [
+            {
+              "figmaRef": "image",
+              "name": "imageURI",
+              "value": "imageURI"
+            },
+            {
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "value": "Alt Text Missing"
+            }
+          ],
           "properties": {
             "variant": "noPadding"
           },
@@ -512,10 +609,38 @@ export const Card = {
           "isComponent": false,
           "className": "flex h-[25.75rem] w-[37.5rem] flex-row",
           "textStyleClass": "",
-          "componentProps": []
+          "componentProps": [
+            {
+              "figmaPropType": "image",
+              "figmaRef": "image",
+              "name": "imageURI",
+              "type": "string"
+            },
+            {
+              "figmaPropType": "string",
+              "figmaRef": "string",
+              "name": "imageAlt",
+              "type": "string"
+            }
+          ],
+          "hasImage": true
         }
       ],
-      "componentProps": []
+      "componentProps": [
+        {
+          "figmaPropType": "image",
+          "figmaRef": "image",
+          "name": "imageURI",
+          "type": "string"
+        },
+        {
+          "figmaPropType": "string",
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "type": "string"
+        }
+      ],
+      "hasImage": true
     }
   },
   "variantOptions": {

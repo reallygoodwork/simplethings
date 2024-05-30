@@ -1,5 +1,5 @@
 // Generated with Dave
-// 
+// 2024-05-30T00:03:26.921Z
 // Do not modify this file directly. Instead, modify the source file and re-run the generator.
 
 import React from 'react';
@@ -30,11 +30,11 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   purpose = 'link',
 }) => {
   return (
-    <div className={cx('rounded-[0rem] flex pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center', className)}>
-      <p className="st-title">
+    <div className={cx('flex pt-40 pb-0 px-0 flex-col gap-[0.8556249737739563rem] justify-start items-center', className)}>
+      <p className="st-title text-black text-center">
         {title}
       </p>
-      <p className="st-heading">
+      <p className="st-heading text-[#1c1b17cc] text-center">
         {subtitle}
       </p>
       {showButton ?

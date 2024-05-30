@@ -31,6 +31,17 @@ export const FeatureRow = defineField({
       options: { list: ['alternate', 'centeredAlt'] }
     }),
     defineField({
+      name: 'imageURI',
+      title: 'imageURI',
+      type: 'image',
+    }),
+    defineField({
+      name: 'imageAlt',
+      title: 'imageAlt',
+      type: 'string',
+      initialValue: "Alt Text Missing",
+    }),
+    defineField({
       name: 'showTrailingIcon',
       title: 'showTrailingIcon',
       type: 'boolean',

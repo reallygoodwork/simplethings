@@ -1,6 +1,7 @@
 export const CardGrid = {
+  "hasImage": false,
   "isIterable": false,
-  "updated": "2024-05-29T17:42:02.193Z",
+  "updated": "2024-05-29T23:59:57.925Z",
   "name": "CardGrid",
   "styles": {
     "display": "flex",
@@ -29,8 +30,9 @@ export const CardGrid = {
   "elementAttributes": {},
   "children": [
     {
+      "hasImage": false,
       "isIterable": true,
-      "updated": "2024-05-29T17:42:02.200Z",
+      "updated": "2024-05-29T23:59:57.931Z",
       "name": "Card",
       "styles": {
         "display": "flex",
@@ -75,6 +77,16 @@ export const CardGrid = {
           "name": "variant",
           "type": "string",
           "value": "Default"
+        },
+        {
+          "figmaRef": "image",
+          "name": "imageURI",
+          "value": "imageURI"
+        },
+        {
+          "figmaRef": "string",
+          "name": "imageAlt",
+          "value": "Alt Text Missing"
         }
       ],
       "textStyleClass": "",
